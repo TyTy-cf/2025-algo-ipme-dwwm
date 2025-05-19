@@ -43,6 +43,7 @@ DEBUT
     (résultat = (température * 1.8) + 32) + " °F"
     SINON SI (unité == F) ALORS
     (résultat = (température - 32) / 1.8) + " °C"
+    FINSI
     AFFICHER résultat
 FIN
 ```
