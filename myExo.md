@@ -33,12 +33,12 @@ Fin
             Lire <-- A
             variable Fahrenhait (float) <-- A
             B <-- (A - 32) * 5/9;
-            ECRIRE " Votre température Fahrenhait " A " est égale a votre température celsius " B
-        SINON le sens de conversion est "celsius en fahrenheit"
+            ECRIRE " Votre température Fahrenhait " + A  + " est égale a votre température celsius " + B
+        SINON
             Lire <-- B
             variable celsius (float) <-- B
             A <-- B * 9/5 + 32
-            ECRIRE " Votre température celsius " B " est égale a votre température Fahrenheit " A
+            ECRIRE " Votre température celsius " + B  + " est égale a votre température Fahrenheit " + A
 
 Fin```
 ````
