@@ -6,10 +6,10 @@
 
 ```
 Début
-    variables : A , chaîne de caractère
-    Ecrire "Quel est votre nom?"
-    Lire A <- Nom
-    Ecrire "Bonjour" + Nom
+    variables : A , chaîne de caractère ;
+    Ecrire "Quel est votre nom?" ;
+    Lire <- A;
+    Ecrire "Bonjour" + A ;
 Fin
 ```
 
@@ -17,7 +17,9 @@ Fin
 
 ```
 Début
-variables: B, entier
-Ecrire "Quel est votre Age?"
-lire B <- Age
+    variables: B, entier ;
+    Ecrire "Quel est votre Age?" ;
+    lire <- B ;
+    Ecrire "Vous êtes né en"+ 2025 - B ;
+Fin
 ```
