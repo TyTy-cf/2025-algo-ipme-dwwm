@@ -6,11 +6,19 @@
 
 
 #### 1. On demande le nom de l’utilisateur et on lui dit bonjour
-Lire nom
-Ecrire "Bonjour " + nom
+```
+DEBUT
+	LIRE nom
+	ECRIRE "Bonjour " + nom
+FIN
+```
 
 #### 2. On demande son âge et on lui dit en quelle année il est né
-Ecrire "Quel est ton age ?"
-Lire age
-date <- 2025 - age
-Ecrire "Tu es né le " + date
+```
+DEBUT
+	ECRIRE "Quel est ton age ?"
+	LIRE age
+	date <- 2025 - age
+	ECRIRE "Tu es né le " + date
+FIN
+```
