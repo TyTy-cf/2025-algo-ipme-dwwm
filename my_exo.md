@@ -9,7 +9,7 @@
 ```
 DEBUT
 	ECRIRE "Quel est ton nom ?"
-	LIRE nom
+	LIRE<-nom
 	ECRIRE "Bonjour " + nom
 FIN
 ```
@@ -18,10 +18,25 @@ FIN
 ```
 DEBUT
 	ECRIRE "Quel est ton age ?"
-	LIRE age
+	LIRE<-age
 	ECRIRE "Dans quel année est on ?"
-	LIRE currentYear
+	LIRE<-currentYear
 	date <- currentYear - age
 	ECRIRE "Tu es né le " + date
 FIN
+```
+
+### 3.
+```
+DEBUT
+	ECRIRE "Sens de la conversion 'F' pour Celsius-> Fareinheit n'importe quoi d'autre pour Fareinheit-> Celsius"
+	LIRE<-convertChoice
+	ECRIRE "Temperature à convertir :"
+	LIRE<-temperature
+	SI (convertChoice == 'F') ALORS,
+		ECRIRE (temperature) + "°C fait " + (temperature * 1.8 + 32) + "°F"
+	SINON
+		ECRIRE (temperature) + "°F fait " + ((temperature -32) / 1.8) + "°F"
+FIN
+
 ```
