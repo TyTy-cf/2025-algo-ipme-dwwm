@@ -32,14 +32,6 @@ fin
 ### On demande la température à convertir
 ### En fonction de la demande de conversion de l'utilisateur on affiche le résultat (avec la bonne unité !)
 
-'''
-début 
-
-Ecrire "Température à  en Fahrenheit : (NumbFahrenheit) "
-Ecrire "Température à  en Celsius : (NumbCelsius) "
-Lire <- NumbFahrenheit - 32 = result / 1,8 = ConvertionCelsius
-Lire <- NumbCelsius * 1,8 = result + 32 = ConvertionFahrenheit
-Ecrire "résultat en celsius = 
 
 
 
@@ -48,5 +40,6 @@ Ecrire "résultat en celsius =
 
 
 
-fin
-'''
+
+
+
