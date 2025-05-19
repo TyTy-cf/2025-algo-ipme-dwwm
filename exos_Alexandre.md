@@ -5,11 +5,19 @@
 #### 1. On demande le nom de l’utilisateur et on lui dit bonjour
 
 ```
-DEBUT
-    ECRIRE "Quel est votre nom ?"
-    LIRE <- A
-    ECRIRE "Bonjour " + A
-FIN
+Début
+    Ecrire "Quel est votre nom?"
+    Lire <- A
+    Ecrire "Bonjour" + A
+Fin
 ```
 
 #### 2. On demande son âge et on lui dit en quelle année il est né
+
+```
+Début
+    Ecrire "Quel est votre Age?"
+    lire <- B
+    Ecrire "Vous êtes né en"+ 2025 - B
+Fin
+```
