@@ -19,6 +19,7 @@ FIN
 
 ```
 DEBUT
+    Ecrire "Quel est votre âge ?"
     Lire <- âge
     annéeNaissance <- année n - âge
     Ecrire annéeNaissance
