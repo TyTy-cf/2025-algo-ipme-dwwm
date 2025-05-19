@@ -51,14 +51,14 @@ DEBUT
     ECRIRE "Convertir degres Celsius vers Fahrenheit ?"
     LIRE <- A
     Si (A == "Oui")
-        ECRIRE "Remplir votre temperature : "
+        ECRIRE "Degres Celsius : "
         LIRE <- B
-        (B * 9/5) + 32 = C
+        C <- (B * 9/5) + 32
         ECRIRE C + " Fahrenheit"
     SINON
-        ECRIRE "Remplir votre temperature : "
+        ECRIRE "Degres Fahrenheit : "
         LIRE <- B
-        (B - 32) * 5/9 = C
+        C <- (B - 32) * 5/9
         ECRIRE C + " Celsius"
     FINSI
 FIN
