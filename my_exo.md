@@ -8,6 +8,7 @@
 #### 1. On demande le nom de l’utilisateur et on lui dit bonjour
 ```
 DEBUT
+	ECRIRE "Quel est ton nom ?"
 	LIRE nom
 	ECRIRE "Bonjour " + nom
 FIN
