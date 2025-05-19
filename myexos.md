@@ -13,6 +13,7 @@ FIN
 ```plaintext
 DEBUT
     LIRE <- age
-    ECRIRE "Vous êtes né.e en " + (2025 - age)
+    LIRE <- annee
+    ECRIRE "Vous êtes né.e en " + (annee - age)
 FIN
 ```
