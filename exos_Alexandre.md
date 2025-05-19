@@ -38,6 +38,4 @@ Début
             Ecrire "La temperature convertie est" + temperatureUtilisateur + "C°"
         FinSi
 Fin
-
-
 ```
