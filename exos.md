@@ -17,8 +17,6 @@ FIN
 
 #### 2. On demande son âge et on lui dit en quelle année il est né
 
-<<<<<<< HEAD
-=======
 ```
 DEBUT
     ECRIRE "Quel est ton âge ?"
@@ -28,4 +26,3 @@ FIN
 ```
 
 ### 3.
->>>>>>> c21941e97bf183518d96d6482b6e54ca17062ba7
