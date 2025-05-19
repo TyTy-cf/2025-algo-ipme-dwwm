@@ -4,6 +4,13 @@
 
 #### 1. On demande le nom de l’utilisateur et on lui dit bonjour
 
-Ecrire Quel est votre nom?
+Début
+variables : A , chaîne de caractère
+Ecrire "Quel est votre nom?"
+Lire A <- Nom
+Ecrire "Bonjour" + Nom
+Fin
 
 #### 2. On demande son âge et on lui dit en quelle année il est né
+
+Début
