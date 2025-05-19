@@ -9,11 +9,23 @@
 
 ```
 DEBUT
-    ECRIRE "Quel est votre nom ?"
-    LIRE <- A
-    ECRIRE "Bonjour " + A
+    ECRIRE "Quel est ton nom ?"
+    LIRE <- name
+    ECRIRE "Bonjour " + name
 FIN
 ```
 
 #### 2. On demande son âge et on lui dit en quelle année il est né
 
+<<<<<<< HEAD
+=======
+```
+DEBUT
+    ECRIRE "Quel est ton âge ?"
+    LIRE <- age
+    ECRIRE "Tu es né.e en " + (YEAR(DATE()) - age)
+FIN
+```
+
+### 3.
+>>>>>>> c21941e97bf183518d96d6482b6e54ca17062ba7
