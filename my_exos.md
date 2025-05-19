@@ -6,7 +6,7 @@
 
 DEBUT
 LIRE username
-ECRIRE username
+ECRIRE "bonjour + username"
 FIN
 
 #### 2. On demande son âge et on lui dit en quelle année il est né
