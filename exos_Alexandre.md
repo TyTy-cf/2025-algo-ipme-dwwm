@@ -21,3 +21,13 @@ Début
     Ecrire "Vous êtes né en"+ ((YEAR(DATE())) - age)
 Fin
 ```
+
+### 3.Je souhaite un convertisseur de degrés Celsius en fahrenheit ou vice versa !
+
+### On demande le sens de la conversion (libre à vous de choisir comment)
+
+### Ecoute de la réponse de l'utilisateur
+
+### On demande la température à convertir
+
+### En fonction de la demande de conversion de l'utilisateur on affiche le résultat (avec la bonne unité !)
