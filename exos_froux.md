@@ -12,6 +12,9 @@ DEBUT
 
 Lire Username
 Ecrire "Bonjour"
+ECRIRE "Quek est votre nom?"
+Lire <- A
+Ecrire "Bonjour" + A
 
 FIN
 ...
