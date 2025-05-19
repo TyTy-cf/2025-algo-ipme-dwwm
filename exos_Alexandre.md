@@ -37,6 +37,7 @@ Début
             temperatureUtilisateur <- (temperatureUtilisateur-32)*(5/9)
             Ecrire "La temperature convertie est" + temperatureUtilisateur + "C°"
         FinSi
+Fin
 
 
 ```
