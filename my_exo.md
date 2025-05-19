@@ -18,7 +18,9 @@ FIN
 DEBUT
 	ECRIRE "Quel est ton age ?"
 	LIRE age
-	date <- 2025 - age
+	ECRIRE "Dans quel année est on ?"
+	LIRE currentYear
+	date <- currentYear - age
 	ECRIRE "Tu es né le " + date
 FIN
 ```
