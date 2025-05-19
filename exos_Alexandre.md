@@ -24,10 +24,19 @@ Fin
 
 ### 3.Je souhaite un convertisseur de degrés Celsius en fahrenheit ou vice versa !
 
-### On demande le sens de la conversion (libre à vous de choisir comment)
+```
+Début
+    Ecrire "Entrez 1 pour convertir des degrés Celsius en Farenheit ou 2 pour convertir des degrés Farenheit en degrés Celsius"
+    Lire <- choixUtilisateur
+    Ecrire "Entrez la température à convertir"
+    Lire <- TemperatureUtilisateur
+        Si (choixUtilisateur == 1) Alors
+            temperatureUtilisateur <- (temperatureUtilisateur*1.8)+32
+            Ecrire "La temperature convertie est" + temperatureUtilisateur + "F°"
+        Sinon (choixUtilisateur == 2)
+            temperatureUtilisateur <- (temperatureUtilisateur-32)*(5/9)
+            Ecrire "La temperature convertie est" + temperatureUtilisateur + "C°"
+        FinSi
 
-### Ecoute de la réponse de l'utilisateur
 
-### On demande la température à convertir
-
-### En fonction de la demande de conversion de l'utilisateur on affiche le résultat (avec la bonne unité !)
+```
