@@ -36,7 +36,8 @@ DEBUT
 	SI (convertChoice == 'F') ALORS,
 		ECRIRE (temperature) + "°C fait " + (temperature * 1.8 + 32) + "°F"
 	SINON
-		ECRIRE (temperature) + "°F fait " + ((temperature -32) / 1.8) + "°F"
+		ECRIRE (temperature) + "°F fait " + ((temperature - 32) / 1.8) + "°C"
+	FINSI
 FIN
 
 ```
