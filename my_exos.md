@@ -60,5 +60,6 @@ DEBUT
         LIRE <- B
         (B - 32) * 5/9 = C
         ECRIRE C + " Celsius"
+    FINSI
 FIN
 ```
