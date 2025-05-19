@@ -12,8 +12,12 @@ FIN
 
 ```plaintext
 DEBUT
-    LIRE <- age
+    ECRIRE "Saisissez l'année actuelle"
     LIRE <- annee
+
+    ECRIRE "Saisissez votre age"
+    LIRE <- age
+
     ECRIRE "Vous êtes né.e en " + (annee - age)
 FIN
 ```
