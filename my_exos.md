@@ -32,3 +32,33 @@ DEBUT
     ECRIRE "Vous etes né en " + C
 FIN
 ```
+
+### 3.Je souhaite un convertisseur de degrés Celsius en fahrenheit ou vice versa !
+
+### On demande le sens de la conversion (libre à vous de choisir comment)
+
+### Ecoute de la réponse de l'utilisateur
+
+### On demande la température à convertir
+
+### En fonction de la demande de conversion de l'utilisateur on affiche le résultat (avec la bonne unité !)
+
+<!-- c to f : (0 °C × 9/5) + 32 = 32 °F -->
+<!-- f to c : (32 °F − 32) × 5/9 = 0 °C -->
+
+```
+DEBUT
+    ECRIRE "Convertir degres Celsius vers Fahrenheit ?"
+    LIRE <- A
+    Si (A == "Oui")
+        ECRIRE "Remplir votre temperature : "
+        LIRE <- B
+        (B * 9/5) + 32 = C
+        ECRIRE C + " Fahrenheit"
+    SINON
+        ECRIRE "Remplir votre temperature : "
+        LIRE <- B
+        (B - 32) * 5/9 = C
+        ECRIRE C + " Celsius"
+FIN
+```
