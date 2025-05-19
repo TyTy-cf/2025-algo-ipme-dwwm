@@ -17,7 +17,7 @@ Fin
 ```
 Début
     Ecrire "Quel est votre Age?"
-    lire <- B
-    Ecrire "Vous êtes né en"+ 2025 - B
+    lire <- age
+    Ecrire "Vous êtes né en"+ ((YEAR(DATE())) - age)
 Fin
 ```
