@@ -9,9 +9,35 @@ Fin
 #### 2. On demande son âge et on lui dit en quelle année il est né
 
 Debut  
- Ecrire "Entre votre âge"
+Ecrire "Entre votre âge"
 Lire (int) == A
 Lire (int) Annee actuel == B
 Variable C "En quelle année il est né" == B - A
 Lire "Votre âge est " + C
+Fin
+
+### 3.Je souhaite un convertisseur de degrés Celsius en fahrenheit ou vice versa !
+
+### On demande le sens de la conversion (libre à vous de choisir comment)
+
+### Ecoute de la réponse de l'utilisateur
+
+### On demande la température à convertir
+
+### En fonction de la demande de conversion de l'utilisateur on affiche le résultat (avec la bonne unité !)
+
+Debut
+
+ECRIRE "Choisissez le sens de conversion pour les degrés celsius en fahrenheit et inversement"
+SI le sens de conversion est "Fahrenhait en celsius"
+Lire <--
+variable Fahrenhait (float) <-- A
+B <-- (A - 26) / 2
+ECRIRE " Votre température Fahrenhait " A " est égale a votre température celsius " B
+SINON le sens de conversion est "celsius en fahrenheit"
+Lire <-- Celsius en Fahrenheit
+variable celsius (float) <-- B
+A <-- (B - 32) / 1.8
+ECRIRE " Votre température celsius " B " est égale a votre température Fahrenheit " A
+
 Fin
