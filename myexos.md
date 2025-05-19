@@ -2,8 +2,8 @@
 
 ```plaintext
 DEBUT
-	LIRE <- nom
-	ECRIRE "Bonjour " + nom + " !"
+    LIRE <- nom
+    ECRIRE "Bonjour " + nom + " !"
 FIN
 ```
 
@@ -12,8 +12,7 @@ FIN
 
 ```plaintext
 DEBUT
-	LIRE <- age
-	annee <- 2025 - age
-	ECRIRE "Vous êtes né.e en " + annee
+    LIRE <- age
+    ECRIRE "Vous êtes né.e en " + (2025 - age)
 FIN
 ```
