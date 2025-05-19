@@ -24,3 +24,5 @@ DEBUT
     ECRIRE "Tu es né.e en " + (YEAR(DATE()) - age)
 FIN
 ```
+
+### 3.
