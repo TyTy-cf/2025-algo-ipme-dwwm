@@ -6,8 +6,18 @@
 
 ```
 DEBUT
-LIRE username
-ECRIRE "bonjour + username"
+    LIRE username
+    ECRIRE "bonjour + username"
+FIN
+```
+
+Correction :
+
+```
+DEBUT
+    ECRIRE "Quel est votre nom ?"
+    LIRE <- A
+    ECRIRE "Bonjour " + A
 FIN
 ```
 
@@ -15,8 +25,10 @@ FIN
 
 ```
 DEBUT
-LIRE age
-year - age = birthyear
-ECRIRE birthyear
+    ECRIRE "Quelle est votre age?"
+    LIRE <- A
+    B <- currentYear
+    B - A = C
+    ECRIRE "Vous etes né en " + C
 FIN
 ```
