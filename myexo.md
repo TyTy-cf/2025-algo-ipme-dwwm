@@ -25,3 +25,24 @@ DEBUT
     Ecrire annéeNaissance
 FIN
 ```
+
+
+### 3.Je souhaite un convertisseur de degrés Celsius en fahrenheit ou vice versa !
+### On demande le sens de la conversion (libre à vous de choisir comment)
+### Ecoute de la réponse de l'utilisateur
+### On demande la température à convertir
+### En fonction de la demande de conversion de l'utilisateur on affiche le résultat (avec la bonne unité !)
+
+```
+DEBUT
+    ECRIRE "Choisir l'unité à convertir (C ou F)"
+    LIRE <- unité
+    ECRIRE "Saisir la température à convertir"
+    LIRE <- température
+    SI (unité == C) ALORS
+    (résultat = (température * 1.8) + 32) + " °F"
+    SINON SI (unité == F) ALORS
+    (résultat = (température - 32) / 1.8) + " °C"
+    AFFICHER résultat
+FIN
+```
