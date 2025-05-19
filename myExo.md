@@ -26,18 +26,19 @@ Fin
 
 ### En fonction de la demande de conversion de l'utilisateur on affiche le résultat (avec la bonne unité !)
 
-Debut
+````Debut
 
-ECRIRE "Choisissez le sens de conversion pour les degrés celsius en fahrenheit et inversement"
-SI le sens de conversion est "Fahrenhait en celsius"
-Lire <--
-variable Fahrenhait (float) <-- A
-B <-- (A - 26) / 2
-ECRIRE " Votre température Fahrenhait " A " est égale a votre température celsius " B
-SINON le sens de conversion est "celsius en fahrenheit"
-Lire <-- Celsius en Fahrenheit
-variable celsius (float) <-- B
-A <-- (B - 32) / 1.8
-ECRIRE " Votre température celsius " B " est égale a votre température Fahrenheit " A
+        ECRIRE "Choisissez le sens de conversion entre Celsius et Fahrenheit"
+        SI le sens de conversion est "Fahrenhait en celsius"
+            Lire <-- A
+            variable Fahrenhait (float) <-- A
+            B <-- (A - 32) * 5/9;
+            ECRIRE " Votre température Fahrenhait " A " est égale a votre température celsius " B
+        SINON le sens de conversion est "celsius en fahrenheit"
+            Lire <-- B
+            variable celsius (float) <-- B
+            A <-- B * 9/5 + 32
+            ECRIRE " Votre température celsius " B " est égale a votre température Fahrenheit " A
 
-Fin
+Fin```
+````
