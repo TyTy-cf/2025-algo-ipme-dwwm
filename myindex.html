@@ -35,9 +35,9 @@
       if (copy <= 10) {
         price = copy * 0.1;
       } else if (copy <= 50) {
-          price = (copy - 10) * 0.09 + 1;
+          price = copy * 0.09;
       } else {
-          price = (copy - 50) * 0.08 + 4.6;
+          price = copy * 0.08;
       }
 
       price = Math.round(price * 100) / 100
@@ -70,7 +70,36 @@
 
   /* EXERCICE 5 */
 
-  
+  function displayMultiply(digit) {
+    for (let i = 1; i <= 12; i++) {
+      console.log(digit + " x " + i + " = " + (digit * i));
+    }
+  }
+
+  // displayMultiply(3);
+
+  /* EXERCICE 6 */
+
+  function addUpTo(max) {
+    let i = 1;
+    let sum = 0;
+    while (i <= max) {
+      sum += i;
+      i++;
+    }
+    console.log(sum)
+  }
+
+  // addUpTo(5);
+
+  /* EXERCICE 7 */
+
+  function displayVowels() {
+    let vowels = ["a", "e", "i", "o", "u", "y"];
+    console.log(vowels);
+  }
+
+  displayVowels();
 
 </script>
 </head>
