@@ -50,5 +50,21 @@
     console.log(copy);
     }
 
-    calculPriceBy(50);
+    // calculPriceBy();
+
+    //exercice 3
+
+      function getAge(){
+        let year = prompt("En quelle année est tu né? :");
+        year = parseInt(year);
+        let currentYear = new Date();
+
+        // console.log(currentYear);
+        // console.log(currentYear.getFullYear());
+
+        year = currentYear.getFullYear() - year;
+        console.log("Tu as "+year+" ans !")
+      }
+
+      getAge();
 </script>
