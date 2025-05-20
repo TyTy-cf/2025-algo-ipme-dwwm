@@ -6,59 +6,117 @@
     //
     // toto(10);
 
+    // exo 1
     function predictFutur() {
-        let hour = prompt("Heure actuelle :")
-        let minute = prompt("Minute actuelle :")
+        let hour = prompt("Heure actuelle :");
+        let minute = prompt("Minute actuelle :");
 
-        hour = parseInt(hour)
-        minute = parseInt(minute)
+        hour = parseInt(hour);
+        minute = parseInt(minute);
 
         if (minute >= 0 && minute <= 58 ) {
-            minute++
+            minute++;
+            if(hour <= 9) {
+                hour = "0" + hour;
+              }
+          }
+          else if (minute === 59){
+              minute = 0;
+              hour++;
+              if (minute === 0) {
+                minute = "0" + 0;
+              }
         }
-        else if (minute === 59){
-            minute = 0
-            hour++
+        else if (hour === 23) {
+          hour = 0;
         }
         else {
-          console.log("erreur")
+          console.log("erreur");
         }
 
-        console.log("Dans une minute il sera " + hour + "h" + minute)
+        console.log("Dans une minute il sera " + hour + "h" + minute);
     }
-  //   predictFutur()
+  //   predictFutur();
 
+    // exo 2
     function reprographieStore(nbCopie){
       let price;
+      let totalPrice = 0;
       if(nbCopie <= 10){
-          price = "0.10€"
+          price = 0.10;
+          totalPrice = price * nbCopie;
       }
       else if(nbCopie <= 50){
-          price = "0.09€"
+          price = 0.09;
+          totalPrice = price * nbCopie;
       }
       else if(nbCopie >= 100){
-          price = "0.08"
+          price = 0.08;
+          totalPrice = price * nbCopie;
       }
       else {
-          console.log("erreur")
+          console.log("erreur");
       }
-      console.log(price)
+      console.log(totalPrice + "€");
     }
-    reprographieStore(110)
+    // reprographieStore(110);
 
-
+    // exo 3
     function getAge(year) {
         let date = new Date();
         let currentYear= date.getFullYear();
         let age = currentYear - year;
-      console.log(age)
+      console.log("Vous avez " + age + "ans");
     }
-    getAge(1995)
+    // getAge(1995);
 
-    // function countUpToTen(startFrom){
-    //     for (let i = startFrom; i <= startFrom + 10, i++) {
+    // exo 4
+    function countUpToTen(startFrom){
+        for (let i = startFrom; i < startFrom + 10;) {
+            ++i;
+            console.log(i);
+        }
+    }
+    // countUpToTen(17);
 
-    //     }
-    // }
-    // countUpToTen(0)
+    // exo 5
+    function displayMultiply(digit) {
+        for(i = 1; i <= 12; i++) {
+            console.log(`${i} X ${digit} = ${i*digit}`)
+        }
+    }
+    // displayMultiply(3)
+
+    // exo 6
+    function addUpTo(max) {
+        let sum = 0;
+        for(let i = 0; i <= max; i++) {
+            sum = sum + i;
+        }
+        console.log(sum)
+    }
+    // addUpTo(5)
+
+    // exo 7
+    function displayVowels() {
+        let vowels = ["a", "e", "i", "o", "u", "y"];
+        for (let i = 0; i < vowels.length; i++) {
+            console.log(vowels[i])
+        }
+    }
+    // displayVowels()
+
+    // exo 8
+    function getAverage(grades) {
+        let sum = 0;
+        let tailleArray = grades.length;
+        for(let i = 0; i < tailleArray; i++) {
+            sum = sum + grades[i];
+        }
+        console.log(sum/tailleArray)
+    }
+
+    getAverage([10, 15, 15, 12, 18])
+    getAverage([14, 16, 17, 13, 10])
+    getAverage([14, 16, 17, 13, 18, 2, 14])
 </script>
