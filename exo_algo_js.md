@@ -23,6 +23,7 @@ L'algo doit écrire : "Dans 1 minute il sera 11h14"
 - Paramètres :
   - "copy", un entier
 ```
+- Par défaut le prix est de 0.11€
 - De 10 à 49 copies, alors le prix unitaire est de 0.10€
 - De 50 à 99 copies, alors le prix unitaire est de 0.09€
 - Au delà de 100 copies, alors le prix unitaire est de 0.08€

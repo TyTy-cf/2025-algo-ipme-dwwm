@@ -44,7 +44,20 @@
     // predictFuture();
 
     function calculPriceBy(copy) {
-
+        let price = 0.11;
+        if (copy >= 100) {
+            price = 0.08;
+        } else if (copy >= 50) {
+            price = 0.09;
+        } else if (copy >= 10) {
+            price = 0.1;
+        }
+        console.log("Prix pour " + copy + " : " + price * copy + "€");
     }
+
+    calculPriceBy(8);
+    calculPriceBy(42);
+    calculPriceBy(51);
+    calculPriceBy(120);
 
 </script>
