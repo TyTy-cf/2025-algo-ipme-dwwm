@@ -9,20 +9,33 @@
 <script>
 	// preditAvenir();
 
-	// calculPriceBy(45);
-	// calculPriceBy('gello');
+	console.warn('calculPriceBy');
+	calculPriceBy(45);
+	calculPriceBy('gello');
 
+	console.log(' ');
+	console.warn('getAge');
 	getAge('thierry');
 	getAge(1940);
 	getAge(2030);
 
+	console.log(' ');
+	console.warn('countUpToTen');
 	countUpToTen();
 	countUpToTen(true);
 	countUpToTen(13);
 
+	console.log(' ');
+	console.warn('displayMultiply');
 	displayMultiply();
 	displayMultiply(true);
 	displayMultiply(3);
+
+	console.log(' ');
+	console.warn('addUpTo');
+	addUpTo(1);
+	addUpTo(13);
+	addUpTo(14);
 
 	//
 	// Fn
@@ -136,5 +149,9 @@
 		for (let i = 1; i <= 12; i++) {
 			console.log(`${digit} × ${i} = ${digit * i}`);
 		}
+	}
+
+	function addUpTo(max) {
+		console.log(Array.from(Array(max), (_, i) => i + 1).reduce((a, b) => a + b));
 	}
 </script>
