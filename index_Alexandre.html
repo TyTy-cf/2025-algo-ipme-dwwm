@@ -149,14 +149,25 @@
           }
           console.log(sum/grades.length);
       }
-  getAverage([10, 15, 15, 12, 18]);
-  getAverage([10, 15, 15, 12, 18, 20, 4, 12]);
-  getAverage([10, 15, 15, 12, 18, 15, 15, 16, 14]);
+  // getAverage([10, 15, 15, 12, 18]);
+  // getAverage([10, 15, 15, 12, 18, 20, 4, 12]);
+  // getAverage([10, 15, 15, 12, 18, 15, 15, 16, 14]);
 
       // exercice 9
 
       function addArray(firstArray, secondArray){
         let sumArray = [];
-        for (s)
+        if (firstArray.length === secondArray.length){
+          for (let i = 0; i<firstArray.length; i++){
+            sumArray.push(firstArray[i]+secondArray[i]);
+        }
+        }
+        console.log(sumArray);
       }
+      // addArray([2, 5, 3], [5, 8, 7]);
+      // addArray([2, 5, 3, 6, 2], [5, 8, 7, 5, 6]);
+      // // ne fait rien
+      // addArray([2, 5, 3, 5], [5, 8, 7]);
+
+      // exercice 10
 </script>
