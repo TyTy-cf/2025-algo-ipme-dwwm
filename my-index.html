@@ -119,10 +119,7 @@
         let sumArray = [];
         if(first.length === second.length){
             for(let i = 0; i < first.length; i++) {
-                for(let j = 0; j < second.length; j++) {
-                    sumArray.push(first[i] + second[j]);
-                    i++;
-                }
+                    sumArray.push(first[i] + second[i]);
             }
             console.log(sumArray);
         }
@@ -149,5 +146,5 @@
         let string = str.split("");
         console.log(string.reverse().join(""))
     }
-    inverseWord("espion")
+    // inverseWord("espion")
 </script>
