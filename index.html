@@ -1,33 +1,23 @@
+<script lang="js">
 
-<!-- <script lang="js"> 
-    function predictFuture() {  
-    let heures = prompt("donne moi une heure "); 
-    heures = parseInt(heures);
-console.log(heures)
-   let minutes = prompt("donne moi les minutes"); 
-    minutes = parseInt(minutes);
-     console.log(minutes)
-     minutes++;
-     if ( minutes === 60) {
-     minutes = 0;
-     houres++;
-     if}
-     if ()
-     for(minuts=0 , minutes<=59 , minutes++) {
-       console.log("il est"+" "+()+"heures"+"et"+()+" "+" "minutes");}
-}
-</script> -->
+    // function toto(toto) {
+    //     console.log(toto);
+    // }
+    //
+    // toto(10);
 
-<script>
     function predictFuture() {
         // Demander à l'utilisateur heure & minutes, les récupérer dans des variables
         let hours = prompt("Donne moi une heure ");
         let minutes = prompt("Donne moi les minutes ");
+
         // On converti les valeurs saisies par l'utilisateur en entier
         hours = parseInt(hours);
         minutes = parseInt(minutes);
+
         // On incrémente de 1 les minutes
         minutes++;
+
         // si les minutes sont égales à 60, alors
         if (minutes === 60) {
             // On met les minutes à 0
@@ -45,8 +35,15 @@ console.log(heures)
             // On concatène un "0" aux minutes
             minutes = '0' + minutes;
         }
+
         // On affiche le résultat
         console.log("Dans 1min il va etre " + hours + "h" + minutes);
     }
-    predictFuture();
+
+    // predictFuture();
+
+    function calculPriceBy(copy) {
+
+    }
+
 </script>
