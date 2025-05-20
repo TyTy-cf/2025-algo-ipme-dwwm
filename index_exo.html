@@ -29,7 +29,8 @@
            // predict(hour, minutes);
 
             // EXERCICE 2 :
-         //   let copy = prompt("nombre de copies")
+   
+            //   let copy = prompt("nombre de copies")
             function calculPriceBy(copy) {
             if (copy <= 10){
                 copy = copy * 0.10;
@@ -48,14 +49,14 @@
 
         let year = prompt("En quelle année êtes vous né.e ?")
         function getAge(year) {
-            const d = new Date();
-            let currentYear = d.getFullYear();
+            const currentYear = new Date().getFullYear();
             year = currentYear - year;
             console.log(year + "ans");
         }
         getAge(year);
 
     // EXERCICE 4 :
+
     function countUpToTen(startFrom){
         for (let i = 1; i < 11; i++) {
         console.log(startFrom + i);
@@ -66,13 +67,14 @@
     // EXERCICE 5 :
 
     function displayMultiply(digit) {
-     for (let i = 1; i < 13; i++) {
+     for (let i = 1; i <=12 ; i++) {
         console.log(i + " x " + digit + " = " + i * digit);
      }
     }
     displayMultiply(3)
 
     // EXERCICE 6 :
+
     function addUpTo(max) {
         let total = 0;
         for (let i=1; i <= max; i++) {
@@ -84,4 +86,8 @@
 
     //EXERCICE 7 :
 
+    function displayVowels () {
+        let vowels = [ "a", "e", "i", "o", "u", "y"];
+
+}
 </script>
