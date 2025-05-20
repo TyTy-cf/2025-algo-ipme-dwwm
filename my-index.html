@@ -85,7 +85,7 @@
     function addUpTo(max) {
         let sum = 0;
         for(let i = 0; i <= max; i++) {
-            sum = sum + i;
+            sum += i;
         }
         console.log(sum)
     }
@@ -143,8 +143,29 @@
 
     // exo 11
     function inverseWord(str) {
-        let string = str.split("");
-        console.log(string.reverse().join(""))
+        // let string = str.split("");
+        // console.log(string.reverse().join(""))
+
+        let string = "";
+        for(let i = str.length -1; i >= 0; i--) {
+            string += str[i];
+        }
+        console.log(string)
     }
     // inverseWord("espion")
+
+    // exo 12
+    function changeSentences(sentences){
+        const vowels = ["a", "e", "i", "o", "u", "y"];
+        let sentenceChange = "";
+        for(let i = 0; i < sentences.length; i++) {
+            sentenceChange += sentences[i]
+            if(sentences[i] === "a" || sentences[i] === "e" || sentences[i] === "i" || sentences[i] === "o" ||  sentences[i] === "u" ||  sentences[i] === "y" ) {
+
+                sentenceChange += `fe${sentences[i]}`
+            }
+        }
+        console.log(sentenceChange)
+    }
+    changeSentences("chat");
 </script>
