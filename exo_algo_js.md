@@ -150,6 +150,20 @@ Par exemple :
 La fonction affiche donc [1, 2, 5, 8, 7]
  ```
 
+### 11. Inversement de mot
+
+```
+- Nom de la fonction : "inverseWord"
+- Paramètres :
+  - "str", une chaine de caractères
+```
+
+La fonction doit afficher la chaine de caractères inverses de celle passée en paramètres.
+Exemple avec : "espion" :
+```
+La fonction affiche "noipse"
+ ```
+
 
 
 
