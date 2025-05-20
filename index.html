@@ -1,15 +1,33 @@
-<script lang="js">
 
-    // function toto(toto) {
-    //     console.log(toto);
-    // }
-    //
-    // toto(10);
+<!-- <script lang="js"> 
+    function predictFuture() {  
+    let heures = prompt("donne moi une heure "); 
+    heures = parseInt(heures);
+console.log(heures)
+   let minutes = prompt("donne moi les minutes"); 
+    minutes = parseInt(minutes);
+     console.log(minutes)
+     minutes++;
+     if ( minutes === 60) {
+     minutes = 0;
+     houres++;
+     if}
+     if ()
+     for(minuts=0 , minutes<=59 , minutes++) {
+       console.log("il est"+" "+()+"heures"+"et"+()+" "+" "minutes");}
+}
+</script> -->
+<<<<<<< Updated upstream
 
+<<<<<<< Updated upstream
+=======
+<script>
+>>>>>>> Stashed changes
     function predictFuture() {
         // Demander à l'utilisateur heure & minutes, les récupérer dans des variables
         let hours = prompt("Donne moi une heure ");
         let minutes = prompt("Donne moi les minutes ");
+<<<<<<< Updated upstream
 
         // On converti les valeurs saisies par l'utilisateur en entier
         hours = parseInt(hours);
@@ -18,6 +36,13 @@
         // On incrémente de 1 les minutes
         minutes++;
 
+=======
+        // On converti les valeurs saisies par l'utilisateur en entier
+        hours = parseInt(hours);
+        minutes = parseInt(minutes);
+        // On incrémente de 1 les minutes
+        minutes++;
+>>>>>>> Stashed changes
         // si les minutes sont égales à 60, alors
         if (minutes === 60) {
             // On met les minutes à 0
@@ -35,6 +60,7 @@
             // On concatène un "0" aux minutes
             minutes = '0' + minutes;
         }
+<<<<<<< Updated upstream
 
         // On affiche le résultat
         console.log("Dans 1min il va etre " + hours + "h" + minutes);
@@ -47,3 +73,44 @@
     }
 
 </script>
+=======
+=======
+
+<script>
+    function predictFuture() {
+        // Demander à l'utilisateur heure & minutes, les récupérer dans des variables
+        let hours = prompt("Donne moi une heure ");
+        let minutes = prompt("Donne moi les minutes ");
+        // On converti les valeurs saisies par l'utilisateur en entier
+        hours = parseInt(hours);
+        minutes = parseInt(minutes);
+        // On incrémente de 1 les minutes
+        minutes++;
+        // si les minutes sont égales à 60, alors
+        if (minutes === 60) {
+            // On met les minutes à 0
+            minutes = 0;
+            // On incrémente de 1 les heures
+            hours++;
+            // si les heures sont égales à 24, alors
+            if (hours === 24) {
+                // On met les heures à 0
+                hours = 0;
+            }
+        }
+        // si les minutes sont inférieures à 10, alors
+        if (minutes < 10) {
+            // On concatène un "0" aux minutes
+            minutes = '0' + minutes;
+        }
+>>>>>>> Stashed changes
+        // On affiche le résultat
+        console.log("Dans 1min il va etre " + hours + "h" + minutes);
+    }
+    predictFuture();
+<<<<<<< Updated upstream
+</script>
+>>>>>>> Stashed changes
+=======
+</script>
+>>>>>>> Stashed changes
