@@ -7,9 +7,10 @@
 	</head>
 </html>
 <script>
-	// preditAvenir()
-	calculPriceBy(45);
-	calculPriceBy('gello');
+	preditAvenir();
+
+	// calculPriceBy(45);
+	// calculPriceBy('gello');
 
 	function preditAvenir() {
 		const { prompt, parseInt, location } = window;
@@ -45,7 +46,11 @@
 			minutes = '0' + minutes;
 		}
 
-		alert(`Dans une minute, il sera ${heure}h${minutes} !`);
+		setTimeout(() => {
+			alert(`Il est ${heure}h${minutes} !`);
+		}, 1000 * 60);
+
+		alert(`Vous serez notifié dans une minute`);
 	}
 
 	function calculPriceBy(amount) {
