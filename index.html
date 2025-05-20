@@ -1,9 +1,39 @@
 <script lang="js">
 
-    // function toto(toto) {
-    //     console.log(toto);
-    // }
-    //
-    // toto(10);
+          // function toto(toto) {
+          //     console.log(toto);
+          // }
+          //
+          // toto(10);
+      //exercice 1
+      let heure = parseInt(prompt("Indique l'heure svp"));
+        console.log(heure);
+      let minute = parseInt(prompt("Indique les minutes aussi , c'est mieux"));
+        console.log(minute);
 
+    function ajouter1Minute(heure, minute){
+        if (minute === 59){
+            minute = 0;
+            heure ++;
+        }else{
+            minute ++;
+        }
+        if (heure === 24){
+            heure = 0;
+        }
+          return console.log("Il est "+heure+"h:"+minute+ " !");
+      }
+
+      ajouter1Minute(heure, minute);
+
+      // exercice 2
+
+  let nbrCopies = parseInt(prompt("combien de copies avez vous achetez ?"));
+
+      function totalPriceCopie(nbrCopies){
+        let prixTotal=0;
+        if(nbrCopies<=10){
+
+        }
+      }
 </script>
