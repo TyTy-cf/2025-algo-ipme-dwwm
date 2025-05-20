@@ -3,7 +3,44 @@
     // function toto(toto) {
     //     console.log(toto);
     // }
-    //
+
     // toto(10);
 
+    function future(hour, min, minJump = 1)
+    {
+        let result = "";
+        let addedHour = Math.floor((min + minJump)/ 60);
+
+        result += ((hour + addedHour) % 24) +"h ";
+        console.log(result);
+
+        result+= (min + minJump)%60 + "min";
+        return result;
+    }
+    function totalPrice(nb)
+    {
+        let individualPrice;
+        if(nb <= 10)
+        {
+            individualPrice = 0.10;
+        }
+        else if (nb <= 100)
+        {
+            individualPrice = 0.09;  
+        }
+        else 
+        {
+            individualPrice = 0.08;
+        }
+        return individualPrice * nb;
+    }
+
+    // let hour = parseInt(prompt("Heure ?"));
+    // let min = parseInt(prompt("Minutes ?"));
+    // let time = parseInt(prompt("Temps passé ? (en min)"));
+
+    // console.log(future(hour, min, time));
+
+    let nbCopy = parseInt(prompt("Nombre de copies ?"));
+    console.log(totalPrice(nbCopy));
 </script>
