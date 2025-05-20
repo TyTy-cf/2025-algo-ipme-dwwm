@@ -185,4 +185,24 @@
     // let str = "Hello World !";
     // console.log(inverseWord(str));
 
+    function addFE(mot)
+    {
+        const voyels = ['a', 'e', 'i', 'o', 'u', 'y'];
+        let newMot = "";
+        for (let i = 0; i < mot.length; i++) 
+        {
+            newMot += mot[i];
+            for(let j = 0; j < voyels.length; j++)
+            {
+                if(mot[i] === voyels[j])
+                {
+                    newMot += "fe" + mot[i];
+                    j = voyels.length;
+                }
+            }
+        }
+        return newMot;
+    }
+
+    // console.log(addFE("chat"));
 </script>
