@@ -8,70 +8,70 @@
 </html>
 <script>
 	// preditAvenir()
-	calculPriceBy(45)
-	calculPriceBy('gello')
+	calculPriceBy(45);
+	calculPriceBy('gello');
 
 	function preditAvenir() {
-		const { prompt, parseInt, location } = window
+		const { prompt, parseInt, location } = window;
 
-		let heure = parseInt(prompt("Saisissez l'heure actuelle"))
+		let heure = parseInt(prompt("Saisissez l'heure actuelle"));
 
 		if (isNaN(heure) || heure < 0 || heure > 23) {
-			alert('Heure incorrect')
-			location.reload()
+			alert('Heure incorrect');
+			location.reload();
 		}
 
-		let minutes = parseInt(prompt('Saisissez les minutes actuelle'))
+		let minutes = parseInt(prompt('Saisissez les minutes actuelle'));
 
 		if (isNaN(minutes) || minutes < 0 || minutes > 59) {
-			alert('Minutes incorrect')
-			location.reload()
+			alert('Minutes incorrect');
+			location.reload();
 		}
 
 		if (heure === 23 && minutes === 59) {
-			minutes = 0
-			heure = 0
+			minutes = 0;
+			heure = 0;
 		} else if (minutes === 59) {
-			minutes = 0
-			heure++
+			minutes = 0;
+			heure++;
 		} else {
-			minutes++
+			minutes++;
 		}
 
 		if (heure < 10) {
-			heure = '0' + heure
+			heure = '0' + heure;
 		}
 		if (minutes < 10) {
-			minutes = '0' + minutes
+			minutes = '0' + minutes;
 		}
 
-		alert(`Dans une minute, il sera ${heure}h${minutes} !`)
+		alert(`Dans une minute, il sera ${heure}h${minutes} !`);
 	}
 
 	function calculPriceBy(amount) {
 		if (window.isNaN(amount) || amount <= 0) {
-			console.info("La quantité n'est pas bonne")
-			return
+			console.info("La quantité n'est pas bonne");
+			return;
 		}
 
-		let total = 0
+		let total = 0;
 
 		if (amount > 100) {
-			total = amount * 0.08
+			total = amount * 0.08;
 		} else if (amount > 50) {
-			total = amount * 0.09
+			total = amount * 0.09;
 		} else {
-			total = amount * 0.1
+			total = amount * 0.1;
 		}
 
-		console.log(`Votre total: ${total}e`)
+		console.log(`Votre total: ${total}e`);
 	}
 
 	function getAge(year) {
 		if (window.isNaN(year)) {
-			throw "L'année n'est pas un nombre"
+			throw "L'année n'est pas un nombre";
 		}
 
-		year = window.parseInt(year)
+		year = window.parseInt(year);
 	}
 </script>
