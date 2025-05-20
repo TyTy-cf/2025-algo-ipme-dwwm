@@ -1,9 +1,31 @@
-<script lang="js">
+<script>
+	function preditAvenir() {
+		let heure = window.parseInt(window.prompt("Saisissez l'heure actuelle"))
 
-    // function toto(toto) {
-    //     console.log(toto);
-    // }
-    //
-    // toto(10);
+		if (isNaN(heure) || heure < 0 || heure > 23) {
+			alert('Heure incorrect')
+			window.location.reload()
+		}
 
+		let minutes = window.parseInt(window.prompt('Saisissez les minutes actuelle'))
+
+		if (isNaN(minutes) || minutes < 0 || minutes > 59) {
+			alert('Minutes incorrect')
+			window.location.reload()
+		}
+
+		if (heure === 23 && minutes === 59) {
+			minutes = 0
+			heure = 0
+		} else if (minutes === 59) {
+			minutes = 0
+			heure++
+		} else {
+			minutes++
+		}
+
+		alert(`Dans une minute, il sera ${heure}h${minutes} !`)
+	}
+
+	preditAvenir()
 </script>
