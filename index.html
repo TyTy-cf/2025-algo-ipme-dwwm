@@ -1,9 +1,28 @@
 <script lang="js">
 
-    // function toto(toto) {
-    //     console.log(toto);
-    // }
-    //
-    // toto(10);
+  function definirHeure() {
+      let heure = prompt("Saisir l'heure au format HH");
+      heure = parseInt(heure);
+      let minutes = prompt("Saisir les minutes au format MM");
+      minutes = parseInt(minutes);
 
+      if (minutes <= 58) {
+          minutes++;
+      } else if (minutes === 59) {
+          heure++;
+          minutes = 0;
+      } else {
+          throw new Error("format incorrect");
+      }
+
+      console.log(`Dans 1 minute il sera ${heure}h${minutes}`);
+  }
+
+  definirHeure();
+
+  function prixCopies(copies) {
+    if (copies <= 10) {
+        
+    }
+  }
 </script>
