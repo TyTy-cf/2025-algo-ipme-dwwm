@@ -4,6 +4,11 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Exos</title>
+		<style>
+			body {
+				background-color: #222;
+			}
+		</style>
 	</head>
 </html>
 <script>
@@ -36,6 +41,16 @@
 	addUpTo(1);
 	addUpTo(13);
 	addUpTo(14);
+
+	console.log(' ');
+	console.warn('displayVowels');
+	displayVowels();
+
+	console.log(' ');
+	console.warn('moyenne');
+	moyenne();
+	moyenne([]);
+	moyenne([10, 14, 49, 27]);
 
 	//
 	// Fn
@@ -153,5 +168,26 @@
 
 	function addUpTo(max) {
 		console.log(Array.from(Array(max), (_, i) => i + 1).reduce((a, b) => a + b));
+	}
+
+	function displayVowels() {
+		// console.log(Array.from(Array(26), (_, i) => String.fromCharCode(i + 97)).filter((char) => 'aeiouy'.split('').includes(char)));
+		console.log('aeiouy'.split(''));
+	}
+
+	function moyenne(grades) {
+		if (Array.isArray(grades)) {
+			grades.unshift(grades.length);
+			grades.unshift(0);
+
+			while (grades.length > 2) {
+				grades[0] += grades[grades.length - 1] / grades[1];
+				grades.pop();
+			}
+
+			grades.pop();
+		}
+
+		console.log(grades);
 	}
 </script>
