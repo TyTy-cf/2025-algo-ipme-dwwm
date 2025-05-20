@@ -1,64 +1,49 @@
 <script lang="js">
 
-    // function toto(toto) {
-    //     console.log(toto);
-    // }
-    //
-    // toto(10);
+  // function toto(toto) {
+  //     console.log(toto);
+  // }
+  //
+  // toto(10);
 
-    function predictFutur() {
-        let hour = prompt("Heure actuelle :")
-        let minute = prompt("Minute actuelle :")
+  function predictFuture() {
+      // Demander à l'utilisateur heure & minutes, les récupérer dans des variables
+      let hours = prompt("Donne moi une heure ");
+      let minutes = prompt("Donne moi les minutes ");
 
-        hour = parseInt(hour)
-        minute = parseInt(minute)
+      // On converti les valeurs saisies par l'utilisateur en entier
+      hours = parseInt(hours);
+      minutes = parseInt(minutes);
 
-        if (minute >= 0 && minute <= 58 ) {
-            minute++
-        }
-        else if (minute === 59){
-            minute = 0
-            hour++
-        }
-        else {
-          console.log("erreur")
-        }
+      // On incrémente de 1 les minutes
+      minutes++;
 
-        console.log("Dans une minute il sera " + hour + "h" + minute)
-    }
-  //   predictFutur()
-
-    function reprographieStore(nbCopie){
-      let price;
-      if(nbCopie <= 10){
-          price = "0.10€"
+      // si les minutes sont égales à 60, alors
+      if (minutes === 60) {
+          // On met les minutes à 0
+          minutes = 0;
+          // On incrémente de 1 les heures
+          hours++;
+          // si les heures sont égales à 24, alors
+          if (hours === 24) {
+              // On met les heures à 0
+              hours = 0;
+          }
       }
-      else if(nbCopie <= 50){
-          price = "0.09€"
+
+      // si les minutes sont inférieures à 10, alors
+      if (minutes < 10) {
+          // On concatène un "0" aux minutes
+          minutes = '0' + minutes;
       }
-      else if(nbCopie >= 100){
-          price = "0.08"
-      }
-      else {
-          console.log("erreur")
-      }
-      console.log(price)
-    }
-    reprographieStore(110)
 
+      // On affiche le résultat
+      console.log("Dans 1min il va etre " + hours + "h" + minutes);
+  }
 
-    function getAge(year) {
-        let date = new Date();
-        let currentYear= date.getFullYear();
-        let age = currentYear - year;
-      console.log(age)
-    }
-    getAge(1995)
+  // predictFuture();
 
-    // function countUpToTen(startFrom){
-    //     for (let i = startFrom; i <= startFrom + 10, i++) {
+  function calculPriceBy(copy) {
 
-    //     }
-    // }
-    // countUpToTen(0)
+  }
 </script>
