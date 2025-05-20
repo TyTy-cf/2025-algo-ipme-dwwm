@@ -46,15 +46,9 @@ L'algo doit écrire : "Dans 1 minute il sera 11h14"
 - Paramètres :
   - "copy", un entier
 ```
-<<<<<<< HEAD
-- S'il y a moins ou 10 copies, alors le prix unitaire est de 0.10€
-- S'il y a moins ou 50 copies, alors le prix unitaire est de 0.09€
-- S'il y a plus ou 100 copies, alors le prix unitaire est de 0.08€
-=======
 - De 10 à 49 copies, alors le prix unitaire est de 0.10€
 - De 50 à 99 copies, alors le prix unitaire est de 0.09€
 - Au delà de 100 copies, alors le prix unitaire est de 0.08€
->>>>>>> main
 
 ### 3. Le calcul d'âge
 
@@ -148,8 +142,6 @@ moyenne([14, 16, 17, 13, 10]) #14
 moyenne([14, 16, 17, 13, 18, 2, 14]) #14
 ```
 
-<<<<<<< HEAD
-=======
 ### 9. Ajout de tableau
 
 ```
@@ -196,6 +188,5 @@ La fonction affiche "noipse"
  ```
 
 
->>>>>>> main
 
 
