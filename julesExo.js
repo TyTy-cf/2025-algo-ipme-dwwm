@@ -61,7 +61,7 @@ function getAge() {
 function countUpToTen() {
     let startFrom = prompt("De quel chiffre voulez vous partir ?");
     startFrom = parseInt(startFrom);
-    for (let i = startFrom; i <= startFrom + 10; i++) {
+    for (let i = startFrom + 1; i <= startFrom + 10; i++) {
         console.log(i);
     }
 }
@@ -74,7 +74,7 @@ function displayMultiply() {
     let digit = prompt("Choisissez un entier");
     digit = parseInt(digit);
     for (let i = 1; i <= 12; i++) {
-        console.log(digit * i);
+        console.log(i + " x " + digit + "=" + digit * i);
     }
 }
 
@@ -92,12 +92,12 @@ function addUpTo() {
     }
 }
 
-//addUpTo();
+addUpTo();
 
 //7
 
 function displayVowels() {
-    let voyelles = ["A", "E", "I", "O", "U"];
+    let voyelles = ["A", "E", "I", "O", "U", "Y"];
     console.log(voyelles);
 }
 
@@ -106,5 +106,9 @@ function displayVowels() {
 //8
 
 function getAverage() {
-    let grades = [];
+    let grades = [10, 15, 15, 12, 18];
 }
+
+//getAverage([10, 15, 15, 12, 18]);
+//getAverage([14, 16, 17, 13, 10]);
+//getAverage([14, 16, 17, 13, 18, 2, 14]);
