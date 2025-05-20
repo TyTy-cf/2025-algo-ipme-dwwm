@@ -1,47 +1,64 @@
 <script lang="js">
 
-  // function toto(toto) {
-  //     console.log(toto);
-  // }
-  //
-  // toto(10);
+    // function toto(toto) {
+    //     console.log(toto);
+    // }
+    //
+    // toto(10);
 
-  function predictFutur() {
-      let hour = prompt("Heure actuelle :")
-      let minute = prompt("Minute actuelle :")
+    function predictFutur() {
+        let hour = prompt("Heure actuelle :")
+        let minute = prompt("Minute actuelle :")
 
-      if (minute >= 0 && minute <= 58 ) {
-          minute++
+        hour = parseInt(hour)
+        minute = parseInt(minute)
+
+        if (minute >= 0 && minute <= 58 ) {
+            minute++
+        }
+        else if (minute === 59){
+            minute = 0
+            hour++
+        }
+        else {
+          console.log("erreur")
+        }
+
+        console.log("Dans une minute il sera " + hour + "h" + minute)
+    }
+  //   predictFutur()
+
+    function reprographieStore(nbCopie){
+      let price;
+      if(nbCopie <= 10){
+          price = "0.10€"
       }
-      else if (minute == 59){
-          minute = 0
-          hour++
+      else if(nbCopie <= 50){
+          price = "0.09€"
+      }
+      else if(nbCopie >= 100){
+          price = "0.08"
       }
       else {
-        console.log("erreur")
+          console.log("erreur")
       }
-
-      console.log("Dans une minute il sera " + hour + "h" + minute)
-  }
-
-  predictFutur()
-
-  function reprographieStore(nbCopie){
-    let price;
-    if(nbCopie <= 10){
-        price = "0.10€"
+      console.log(price)
     }
-    else if(nbCopie <= 50){
-        price = "0.09€"
-    }
-    else if(nbCopie >= 100){
-        price = "0.08"
-    }
-    else {
-        console.log("erreur")
-    }
-    console.log(price)
-  }
+    reprographieStore(110)
 
-  reprographieStore(110)
+
+    function getAge(year) {
+        let date = new Date();
+        let currentYear= date.getFullYear();
+        let age = currentYear - year;
+      console.log(age)
+    }
+    getAge(1995)
+
+    // function countUpToTen(startFrom){
+    //     for (let i = startFrom; i <= startFrom + 10, i++) {
+
+    //     }
+    // }
+    // countUpToTen(0)
 </script>
