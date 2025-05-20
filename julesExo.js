@@ -1,4 +1,4 @@
-//1//
+//1
 
 function predictFuture() {
     let heure = prompt("Quel heure est-il");
@@ -18,9 +18,9 @@ function predictFuture() {
     console.log("Dans 1 minutes il sera " + heure + "h" + minutes);
 }
 
-predictFuture();
+//predictFuture();
 
-//2//
+//2
 
 function calculByPrice() {
     let nbCopie = prompt("Indiquez le nombre de copie ?");
@@ -41,4 +41,70 @@ function calculByPrice() {
     console.log("Le prix total des copies est de " + prixTotal + "€");
 }
 
-calculByPrice();
+// calculByPrice();
+
+//3
+
+function getAge() {
+    let anneeNaissance = prompt("Quel est votre année de naissance ?");
+    anneeNaissance = parseInt(anneeNaissance);
+    const anneeActuel = new Date().getFullYear();
+
+    let age = anneeActuel - anneeNaissance;
+    console.log("Vous avez " + age + "ans");
+}
+
+// getAge();
+
+//4
+
+function countUpToTen() {
+    let startFrom = prompt("De quel chiffre voulez vous partir ?");
+    startFrom = parseInt(startFrom);
+    for (let i = startFrom; i <= startFrom + 10; i++) {
+        console.log(i);
+    }
+}
+
+// countUpToTen();
+
+//5
+
+function displayMultiply() {
+    let digit = prompt("Choisissez un entier");
+    digit = parseInt(digit);
+    for (let i = 1; i <= 12; i++) {
+        console.log(digit * i);
+    }
+}
+
+//displayMultiply();
+
+//6
+
+function addUpTo() {
+    let max = prompt("Choisissez un entier");
+    max = parseInt(max);
+    let sum = 0;
+    for (let i = 1; i <= max; i++) {
+        sum = sum + i;
+        console.log("La somme de i est " + sum);
+    }
+}
+
+//addUpTo();
+
+//7
+
+function displayVowels() {
+    let voyelles = ["A", "E", "I", "O", "U"];
+    console.log(voyelles);
+}
+
+//displayVowels();
+
+//8
+
+function getAverage() {
+    let grades = [];
+}
