@@ -55,10 +55,50 @@
         console.log("Prix pour " + copy + " : " + price * copy + "€");
     }
 
-    calculPriceBy(8);
-    calculPriceBy(42);
-    calculPriceBy(51);
-    calculPriceBy(120);
+    // calculPriceBy(8);
+    // calculPriceBy(42);
+    // calculPriceBy(51);
+    // calculPriceBy(120);
+
+    function getAge(year) {
+        const currentYear = new Date().getFullYear();
+        console.log("Vous avez : " + (currentYear - year) + " ans");
+    }
+
+    // getAge(1990);
+    // getAge(1995);
+    // getAge(2000);
+    // getAge(2005);
+
+    function countUpToTen(startFrom) {
+        for (let i = (startFrom + 1); i <= (startFrom + 10); i++) {
+            console.log(i);
+        }
+        // for (let i = 1; i <= 10; i++) {
+        //     console.log(startFrom + i);
+        // }
+    }
+
+    // countUpToTen(17);
+
+    function displayMultiply(digit) {
+        for (let i = 1; i <= 12; i++) {
+            console.log(i + " x " + digit + " = " + (i * digit));
+        }
+    }
+
+    // displayMultiply(3);
+    // displayMultiply(5);
+
+    function addUpTo(max) {
+        let sum = 0;
+        for (let i = 1; i <= max; i++) {
+            sum += i; // sum = sum + i
+        }
+        console.log("Somme finale : " + sum);
+    }
+
+    addUpTo(5);
 
   function calculPriceBy(copy) {
 
