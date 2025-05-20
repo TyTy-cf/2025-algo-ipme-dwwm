@@ -44,22 +44,17 @@
       let totalPrice = 0;
       if(nbCopie <= 10){
           price = 0.10;
-          totalPrice = price * nbCopie;
       }
       else if(nbCopie <= 50){
-          price = 0.09;
-          totalPrice = price * nbCopie;
+            price = 0.09;
       }
-      else if(nbCopie >= 100){
-          price = 0.08;
-          totalPrice = price * nbCopie;
+      else{
+            price = 0.08;
       }
-      else {
-          console.log("erreur");
-      }
+      totalPrice = price * nbCopie;
       console.log(totalPrice + "€");
     }
-    // reprographieStore(110);
+    reprographieStore(110);
 
     // exo 3
     function getAge(year) {
@@ -72,16 +67,15 @@
 
     // exo 4
     function countUpToTen(startFrom){
-        for (let i = startFrom; i < startFrom + 10;) {
-            ++i;
+        for (let i = startFrom + 1; i <= startFrom + 10; i++) {
             console.log(i);
         }
     }
-    // countUpToTen(17);
+    countUpToTen(17);
 
     // exo 5
     function displayMultiply(digit) {
-        for(i = 1; i <= 12; i++) {
+        for(let i = 1; i <= 12; i++) {
             console.log(`${i} X ${digit} = ${i*digit}`)
         }
     }
@@ -111,12 +105,12 @@
         let sum = 0;
         let tailleArray = grades.length;
         for(let i = 0; i < tailleArray; i++) {
-            sum = sum + grades[i];
+            sum += grades[i];
         }
         console.log(sum/tailleArray)
     }
 
-    getAverage([10, 15, 15, 12, 18])
-    getAverage([14, 16, 17, 13, 10])
-    getAverage([14, 16, 17, 13, 18, 2, 14])
+    // getAverage([10, 15, 15, 12, 18])
+    // getAverage([14, 16, 17, 13, 10])
+    // getAverage([14, 16, 17, 13, 18, 2, 14])
 </script>
