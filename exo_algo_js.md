@@ -46,6 +46,7 @@ La fonction doit renvoyer l'age de l'utilisateur à partie de l'année de naissa
   - "startFrom", un entier
 ```
 
+
 La fonction doit compter depuis le nombre "startFrom" + 10, et afficher les différents chiffres.
 Par exemple, si je lui passe "17", la fonction doit afficher les nombres de "18 à 27".
 
