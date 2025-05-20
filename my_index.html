@@ -11,12 +11,19 @@
         let result = "";
         let addedHour = Math.floor((min + minJump)/ 60);
 
-        result += ((hour + addedHour) % 24) +"h ";
-        console.log(result);
+        result += ((hour + addedHour) % 24) +"h";
 
-        result+= (min + minJump)%60 + "min";
+        let newMin = (min + minJump)%60;
+        result += ((newMin < 10)? "0" : "") + newMin + "min";
         return result;
     }
+
+    // let hour = parseInt(prompt("Heure ?"));
+    // let min = parseInt(prompt("Minutes ?"));
+    // let time = parseInt(prompt("Temps passé ? (en min)"));
+
+    //console.log(future(hour, min, time));
+
     function totalPrice(nb)
     {
         let individualPrice;
@@ -35,12 +42,71 @@
         return individualPrice * nb;
     }
 
-    // let hour = parseInt(prompt("Heure ?"));
-    // let min = parseInt(prompt("Minutes ?"));
-    // let time = parseInt(prompt("Temps passé ? (en min)"));
 
-    // console.log(future(hour, min, time));
+    // let nbCopy = parseInt(prompt("Nombre de copies ?"));
+    // console.log(totalPrice(nbCopy) + "€");
 
-    let nbCopy = parseInt(prompt("Nombre de copies ?"));
-    console.log(totalPrice(nbCopy));
+    function getAge(birthYear)
+    {
+        let currentYear = parseInt(new Date().getFullYear());
+        return currentYear - birthYear;
+    }
+    // let birthYear = parseInt(prompt("Age de naissance ?"));
+    // console.log(getAge(birthYear));
+
+    function countUpToTen(startFrom)
+    {
+        for (let i = 1; i <= 10; i++) 
+        {
+            console.log(startFrom + i);
+        }
+    }
+
+    // countUpToTen(17);
+
+    function displayMultiply(digit)
+    {
+        for (let i = 1; i <= 12; i++) 
+        {
+
+            console.log(i + " x " + digit + " = " + (digit * i));
+        }
+    }
+
+    // displayMultiply(10);
+
+    function addUpTo(max)
+    {
+        let total = 0;
+        for (let i = 1; i <= max; i++) 
+        {
+            total += i;
+        }
+        return total;
+    }
+
+    // console.log(addUpTo(5));
+
+    function displayVoyels()
+    {
+        const voyels = ['a', 'e', 'i', 'o', 'u', 'y'];
+        voyels.forEach(letter => 
+        {
+            console.log(letter);    
+        });
+    }
+
+    // displayVoyels();
+
+    function getAverage(grades)
+    {
+        let total = 0;
+        for (let i = 0; i < grades.length; i++) 
+        {
+            total += grades[i];
+        }
+        return total/grades.length;
+    }
+    // let grades = [10, 15, 15, 20];
+    // console.log(getAverage(grades));
 </script>
