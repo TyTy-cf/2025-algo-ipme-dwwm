@@ -24,6 +24,8 @@ Si l'utilisateur saisie :
   - "copy", un entier
 ```
 
+- Par défaut le prix est de 0.11€
+
 - De 10 à 49 copies, alors le prix unitaire est de 0.10€
 - De 50 à 99 copies, alors le prix unitaire est de 0.09€
 - Au delà de 100 copies, alors le prix unitaire est de 0.08€
@@ -152,4 +154,23 @@ Par exemple :
 ```
 [1, 1, 1, 2, 5, 8, 7, 5]
 La fonction affiche donc [1, 2, 5, 8, 7]
+```
+
+### 11. Inversement de mot
+
+```
+- Nom de la fonction : "inverseWord"
+- Paramètres :
+  - "str", une chaine de caractères
+```
+
+La fonction doit afficher la chaine de caractères inverses de celle passée en paramètres.
+Exemple avec : "espion" :
+
+```
+La fonction affiche "noipse"
+```
+
+```
+
 ```
