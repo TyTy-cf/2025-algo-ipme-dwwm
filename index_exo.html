@@ -1,22 +1,46 @@
 <script lang="js">
 
-    // function toto(toto) {
-    //     console.log(toto);
-    // }
-    //
-    // toto(10);
+        // function toto(toto) {
+        //     console.log(toto);
+        // }
+        //
+        // toto(10);
 
-    // EXERCICE 1 :
+        // EXERCICE 1 :
 
-    let hour = prompt("Quelle heure est-il ?");
-    let minutes = prompt("Combien de minutes y a-t-il ?");
-    fonction prediction(hour, minutes)
-    hour = parseInt(hour)
-    minutes = parseInt(minutes)
-    
-    console.log()
+      //  let hour = prompt("Quelle heure est-il ?");
+      //  let minutes = prompt("Combien de minutes y a-t-il ?");
+        function predict(hour, minutes) {
+            hour = parseInt(hour);
+            minutes = parseInt(minutes);
+            minutes++
+            if (minutes ===60) {
+                minutes = 0;
+                hour++;
+            if (hour ===24) {
+                hour = 0;
+            }
+            }
+            if (minutes <10) {
+                minutes = "0" + minutes;
+            }
+            console.log("Dans 1 minutes il sera " + hour + "h" + minutes);
+        }
+       // predict(hour, minutes);
 
-    //EXERCICE 2 :
-
-
+        // EXERCICE 2 :
+        let copy = prompt("nombre de copies")
+        function calculPriceBy(copy) {
+        if (copy <= 10){
+            copy = copy * 0.10;
+        }
+        if (copy < 100) {
+            copy = copy * 0.09;
+        }
+        if (copy >= 100) {
+            copy = copy * 0.08;
+        }
+        console.log(copy + "€")
+    }
+    calculPriceBy(copy)
 </script>
