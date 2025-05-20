@@ -188,6 +188,21 @@ Exemple avec : "espion" :
 La fonction affiche "noipse"
  ```
 
+### 12. Transformation de mot...
+
+```
+- Nom de la fonction : "changeSentences"
+- Paramètres :
+  - "sentences" : une chaine de caractères
+```
+
+La fonction doit, pour chaque voyelle présente dans le mot, ajouter "fe" après elle, et répéter la voyelle.
+Exemple avec : "chat" :
+```
+La fonction affiche "chafeat"
+ ```
+
+
 
 
 
