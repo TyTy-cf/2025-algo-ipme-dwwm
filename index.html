@@ -1,8 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Exos</title>
+	</head>
+</html>
 <script>
 	// preditAvenir()
 
-	reprographie(45)
-	reprographie('gello')
+	calculPriceBy(45)
+	calculPriceBy('gello')
 
 	//
 	// Les fonctions
@@ -38,7 +46,7 @@
 		alert(`Dans une minute, il sera ${heure}h${minutes} !`)
 	}
 
-	function reprographie(amount) {
+	function calculPriceBy(amount) {
 		if (window.isNaN(amount) || amount <= 0) {
 			throw "La quantité n'est pas bonne"
 		}
