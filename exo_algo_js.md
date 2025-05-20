@@ -60,9 +60,6 @@ La fonction doit afficher la table de multiplication du paramètre "digit", jusq
 
 Par exemple pour digit = 3 :
 ```
-1 x 3 = 3 
-2 x 3 = 6 
-3 x 3 = 9 
 ...
 12 x 3 = 36
  ```

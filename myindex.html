@@ -6,6 +6,15 @@
       //
       // toto(10);
 
+
+
+
+
+
+
+
+      //1
+
   function predictFuture() {
           // Demander à l'utilisateur heure & minutes, les récupérer dans des variables
           let hours = prompt("Donne moi une heure ");
@@ -45,7 +54,7 @@
 
 
 
-
+//2
 
   function totalprice(copies){
     let price = [0.10,0.09,0.08]
@@ -63,13 +72,14 @@
    console.log(total + "€");
     
   }
-  //totalprice(65)
+  totalprice(7)
 
+
+  //3
 
 function getage (birthdate) {
     
     let yearnow = new Date(2025)
-
     let age = yearnow - birthdate
 
 console.log ("vous avez " + age + " ans")    
@@ -77,10 +87,29 @@ console.log ("vous avez " + age + " ans")
 getage(1971)
 
 
-function coutUptoTen(number) {
-    startFrom = 0
+//4
 
+function coutUptoTen(number) {
+   for (let i = number + 1 ; i < number +10 ; i++) {
     
+    console.log(i)
+   }
+   
 }
-coutUptoTen()
+coutUptoTen(17)
+
+//5
+
+function displayMultiply(digit) {
+  for (let i = 1; i < 12 ; i++) {
+      console.log (i + "x" + digit + "=" + (i*digit))
+    }
+}
+displayMultiply(10)
+
+//6
+ function addUpTo(max) {
+    
+ }
+
 </script>
