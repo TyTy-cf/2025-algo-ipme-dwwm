@@ -52,6 +52,11 @@
 	moyenne([]);
 	moyenne([10, 14, 49, 27]);
 
+	console.log(' ');
+	console.warn('addArray');
+	addArray([10, 11], [1, 2]);
+	addArray([42 ** 4], [20895 ** 6]);
+
 	//
 	// Fn
 	//
@@ -189,5 +194,15 @@
 		}
 
 		console.log(grades);
+	}
+
+	function addArray(arr1, arr2) {
+		if (arr1.length === arr2.length) {
+			for (let i = 0; i < arr1.length; i++) {
+				arr1[i] += arr2[i];
+			}
+
+			console.log(arr1);
+		}
 	}
 </script>
