@@ -1,46 +1,87 @@
 <script lang="js">
 
-        // function toto(toto) {
-        //     console.log(toto);
-        // }
-        //
-        // toto(10);
+            // function toto(toto) {
+            //     console.log(toto);
+            // }
+            //
+            // toto(10);
 
-        // EXERCICE 1 :
+            // EXERCICE 1 :
 
-      //  let hour = prompt("Quelle heure est-il ?");
-      //  let minutes = prompt("Combien de minutes y a-t-il ?");
-        function predict(hour, minutes) {
-            hour = parseInt(hour);
-            minutes = parseInt(minutes);
-            minutes++
-            if (minutes ===60) {
-                minutes = 0;
-                hour++;
-            if (hour ===24) {
-                hour = 0;
+          //  let hour = prompt("Quelle heure est-il ?");
+          //  let minutes = prompt("Combien de minutes y a-t-il ?");
+            function predict(hour, minutes) {
+                hour = parseInt(hour);
+                minutes = parseInt(minutes);
+                minutes++
+                if (minutes ===60) {
+                    minutes = 0;
+                    hour++;
+                if (hour ===24) {
+                    hour = 0;
+                }
+                }
+                if (minutes <10) {
+                    minutes = "0" + minutes;
+                }
+                console.log("Dans 1 minutes il sera " + hour + "h" + minutes);
             }
-            }
-            if (minutes <10) {
-                minutes = "0" + minutes;
-            }
-            console.log("Dans 1 minutes il sera " + hour + "h" + minutes);
-        }
-       // predict(hour, minutes);
+           // predict(hour, minutes);
 
-        // EXERCICE 2 :
-        let copy = prompt("nombre de copies")
-        function calculPriceBy(copy) {
-        if (copy <= 10){
-            copy = copy * 0.10;
+            // EXERCICE 2 :
+         //   let copy = prompt("nombre de copies")
+            function calculPriceBy(copy) {
+            if (copy <= 10){
+                copy = copy * 0.10;
+            }
+            if (copy < 100) {
+                copy = copy * 0.09;
+            }
+            if (copy >= 100) {
+                copy = copy * 0.08;
+            }
+            console.log(copy + "€")
         }
-        if (copy < 100) {
-            copy = copy * 0.09;
+        //calculPriceBy(copy)
+
+        //EXERCICE 3 :
+
+        let year = prompt("En quelle année êtes vous né.e ?")
+        function getAge(year) {
+            const d = new Date();
+            let currentYear = d.getFullYear();
+            year = currentYear - year;
+            console.log(year + "ans");
         }
-        if (copy >= 100) {
-            copy = copy * 0.08;
-        }
-        console.log(copy + "€")
+        getAge(year);
+
+    // EXERCICE 4 :
+    function countUpToTen(startFrom){
+        for (let i = 1; i < 11; i++) {
+        console.log(startFrom + i);
     }
-    calculPriceBy(copy)
+    }
+    countUpToTen(20);
+
+    //EXERCICE 5 :
+
+    function displayMultiply(digit) {
+     for (let i = 1; i < 13; i++) {
+        console.log(i + " x " + digit + " = " + i * digit);
+    }
+    }
+    displayMultiply(3)
+
+    // EXERCICE 6 :
+    function addUpTo(max) {
+        let i = 1;
+        for (i; i <= max; i++) {
+        console.log(max);
+    }
+    }
+    addUpTo(15)
+
+    //EXERCICE 7 :
+
+
 </script>
