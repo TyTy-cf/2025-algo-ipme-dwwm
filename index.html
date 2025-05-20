@@ -6,41 +6,45 @@
 
     // toto(10);
 
-    function future(hour, min, minJump = 1)
-    {
-        let result = "";
-        let addedHour = Math.floor((min + minJump)/ 60);
+    function predictFuture() {
+        // Demander à l'utilisateur heure & minutes, les récupérer dans des variables
+        let hours = prompt("Donne moi une heure ");
+        let minutes = prompt("Donne moi les minutes ");
 
-        result += ((hour + addedHour) % 24) +"h ";
-        console.log(result);
+        // On converti les valeurs saisies par l'utilisateur en entier
+        hours = parseInt(hours);
+        minutes = parseInt(minutes);
 
-        result+= (min + minJump)%60 + "min";
-        return result;
+        // On incrémente de 1 les minutes
+        minutes++;
+
+        // si les minutes sont égales à 60, alors
+        if (minutes === 60) {
+            // On met les minutes à 0
+            minutes = 0;
+            // On incrémente de 1 les heures
+            hours++;
+            // si les heures sont égales à 24, alors
+            if (hours === 24) {
+                // On met les heures à 0
+                hours = 0;
+            }
+        }
+
+        // si les minutes sont inférieures à 10, alors
+        if (minutes < 10) {
+            // On concatène un "0" aux minutes
+            minutes = '0' + minutes;
+        }
+
+        // On affiche le résultat
+        console.log("Dans 1min il va etre " + hours + "h" + minutes);
     }
-    function totalPrice(nb)
-    {
-        let individualPrice;
-        if(nb <= 10)
-        {
-            individualPrice = 0.10;
-        }
-        else if (nb <= 100)
-        {
-            individualPrice = 0.09;  
-        }
-        else 
-        {
-            individualPrice = 0.08;
-        }
-        return individualPrice * nb;
+
+    // predictFuture();
+
+    function calculPriceBy(copy) {
+
     }
 
-    // let hour = parseInt(prompt("Heure ?"));
-    // let min = parseInt(prompt("Minutes ?"));
-    // let time = parseInt(prompt("Temps passé ? (en min)"));
-
-    // console.log(future(hour, min, time));
-
-    let nbCopy = parseInt(prompt("Nombre de copies ?"));
-    console.log(totalPrice(nbCopy));
 </script>
