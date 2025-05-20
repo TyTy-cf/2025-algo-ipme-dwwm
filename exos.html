@@ -57,6 +57,12 @@
 	addArray([10, 11], [1, 2]);
 	addArray([42 ** 4], [20895 ** 6]);
 
+	console.log(' ');
+	console.warn('changeSentences');
+	changeSentences('Gros rythme.');
+	changeSentences('Comment il va en vrai ?');
+	changeSentences('La femelle oiseau à créée un nît.');
+
 	//
 	// Fn
 	//
@@ -204,5 +210,19 @@
 
 			console.log(arr1);
 		}
+	}
+
+	function changeSentences(sentence) {
+		const voyelles = 'AEIOUYaàeéèêiïouùy'.split('');
+		let result = '';
+
+		for (let i = 0; i < sentence.length; i++) {
+			const char = sentence[i];
+			const isVoyelle = voyelles.includes(char);
+
+			result += char + (isVoyelle ? 'fe' : '');
+		}
+
+		console.log(result);
 	}
 </script>
