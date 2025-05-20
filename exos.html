@@ -8,13 +8,8 @@
 </html>
 <script>
 	// preditAvenir()
-
 	calculPriceBy(45)
 	calculPriceBy('gello')
-
-	//
-	// Les fonctions
-	//
 
 	function preditAvenir() {
 		const { prompt, parseInt, location } = window
@@ -43,6 +38,13 @@
 			minutes++
 		}
 
+		if (heure < 10) {
+			heure = '0' + heure
+		}
+		if (minutes < 10) {
+			minutes = '0' + minutes
+		}
+
 		alert(`Dans une minute, il sera ${heure}h${minutes} !`)
 	}
 
@@ -63,5 +65,13 @@
 		}
 
 		console.log(`Votre total: ${total}e`)
+	}
+
+	function getAge(year) {
+		if (window.isNaN(year)) {
+			throw "L'année n'est pas un nombre"
+		}
+
+		year = window.parseInt(year)
 	}
 </script>
