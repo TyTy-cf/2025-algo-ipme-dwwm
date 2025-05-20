@@ -16,6 +16,29 @@ L'algo doit écrire : "Dans 1 minute il sera 11h14"
 
 (Bonus : pour ceux qui trouve comment afficher réellement qu'il est 11h14, 1 min après !)
 
+<script lang="js">
+    
+    let heures = prompt("ecrit lheurs endeux chifre") 
+    heures = parseInt(heures)
+
+   let minutes = prompt("ecrit les minutes endeux chifre" ) 
+    minutes = parseInt(minutes)
+     console.log()
+```js
+ // Demande à l'utilisateur un chiffre et le converti réellement en entier, car c'est une chaine de caractère lorsqu'on le récupère du prompt
+ let toto = prompt("Donne moi un chiffre ?");
+ toto = parseInt(toto);
+```
+
+    // function toto(toto) {
+    //     console.log(toto);
+    // }
+    //
+    // toto(10);
+
+</script>
+
+
 ### 2. Le magasin de reprographie
 
 La fonction ici, prendra en paramètre le nombre de copie
