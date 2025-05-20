@@ -1,4 +1,3 @@
-
 ## Algo Javascript
 
 ### Variables
@@ -24,14 +23,14 @@ console.log(toto); // [10, 15, 12, 15, 18]
 // Soit vous les écrivez avec les simples quotes : ''
 
 const toto = "L'étang";
-const toto2 = 'L\'étang'; // l'anti-slash permet d'échapper le caratère suivant, ici la simple quote afin qu'elle ne détermine pas la fin de la chaine de caractères
+const toto2 = "L'étang"; // l'anti-slash permet d'échapper le caratère suivant, ici la simple quote afin qu'elle ne détermine pas la fin de la chaine de caractères
 
 // La concaténation de chaînes de caractères en JS est le "+"
 
 let toto3 = toto + " est bleu";
 
 // Récupérer la taille de la chaine de caractères :
-toto3.length // ici ça donnerai : 16
+toto3.length; // ici ça donnerai : 16
 
 // Passer la chaine en minuscule ou en majuscule :
 toto3.toUpperCase(); // majuscule
@@ -42,17 +41,17 @@ toto3.toLowerCase(); // minuscule
 
 ```js
 const toto = 9;
-if (toto == 100) { // ici on ne vérifit pas le typage, à savoir si ma variable est un entier ou une chaine de caractère ou un booléen
-    
+if (toto == 100) {
+    // ici on ne vérifit pas le typage, à savoir si ma variable est un entier ou une chaine de caractère ou un booléen
 }
 
-if (toto == '10') {
-  // Oui je passe dans le if !
+if (toto == "10") {
+    // Oui je passe dans le if !
 }
 
 // On utilisera donc que celle-la !
-if (toto === 100) { // On prend ne compte le typage ici
-
+if (toto === 100) {
+    // On prend ne compte le typage ici
 }
 ```
 
@@ -61,7 +60,7 @@ if (toto === 100) { // On prend ne compte le typage ici
 ```js
 // Boucle "for"
 for (let i = 1; 1 <= 10; i++) {
-// for (let i = 1; 1 < 11; i++) {
+    // for (let i = 1; 1 < 11; i++) {
     console.log(i);
 }
 
