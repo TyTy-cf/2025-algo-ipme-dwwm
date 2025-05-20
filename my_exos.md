@@ -1,8 +1,8 @@
-## Exos Algo 19/05/2025
+# Exos Algo 19/05/2025
 
-### Algo papier français
+## Algo papier français
 
-#### 1. On demande le nom de l’utilisateur et on lui dit bonjour
+### 1. On demande le nom de l’utilisateur et on lui dit bonjour
 
 name <- name
 
@@ -11,3 +11,35 @@ Ecrire <- "bonjour"
 Lire <- "bonjour"+name
 
 #### 2. On demande son âge et on lui dit en quelle année il est né
+
+```
+DEBUT
+    ECRIRE "Quel est ton âge ?"
+    LIRE <- age
+    ECRIRE "Tu es né.e en " + (YEAR(DATE()) - age)
+FIN
+
+
+### 3.Je souhaite un convertisseur de degrés Celsius en fahrenheit ou vice versa!
+### On demande le sens de la conversion (libre à vous de choisir comment)
+### Ecoute de la réponse de l'utilisateur
+### On demande la température à convertir
+### En fonction de la demande de conversion de l'utilisateur on affiche le résultat (avec la bonne unité !)
+
+Solution qui effectue tout le temps le calcul :
+
+```
+
+DEBUT
+ECRIRE "Convertir degrés Celsius vers Fahrenheit ?"
+LIRE <- conversion
+ECRIRE "Saisir température : "
+LIRE <- temperature
+SI (conversion == "Oui")
+res <- (temperature _ 9/5) + 32
+ECRIRE res + " Fahrenheit"
+SINON
+res <- (temperature - 32) _ 5/9
+ECRIRE res + " Celsius"
+FINSI
+FIN
