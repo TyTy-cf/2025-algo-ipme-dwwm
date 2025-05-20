@@ -12,3 +12,30 @@ DEBUT
  ECRIRE <- "bonjour"+ name
 FIN
 #### 2. On demande son âge et on lui dit en quelle année il est né
+<<<<<<< Updated upstream
+=======
+DEBUT
+   ECRIRE <- "quel est votre age ?"
+   LIRE <- age
+   ecrire <-"
+FIN
+
+### 3.Je souhaite un convertisseur de degrés Celsius en fahrenheit ou vice versa !
+### On demande le sens de la conversion (libre à vous de choisir comment)
+### Ecoute de la réponse de l'utilisateur
+### On demande la température à convertir
+### En fonction de la demande de conversion de l'utilisateur on affiche le résultat (avec la bonne unité !)
+Debut
+ecrire  <- "En quoi est vous temperature initiale (Degrés celsius ou Fahrenheit)?"
+Lire     <- reponse
+  SI (reponse == Degrés celsius) alors,
+resultatD<- (reponse*1.8)+32
+resultatF <-
+  sinon 
+  resultatF <- (reponse-32)/1.8
+  resultatF <-
+  finsi
+
+  ecrire <- 
+End
+>>>>>>> Stashed changes
