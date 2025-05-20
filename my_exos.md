@@ -36,5 +36,7 @@ debut
 ecrire "une temperature en degré "
 lire <- temperature
 ecrire " convertire la temperature en fahrenheit:" + ( F = 1,8 * "temperature" + 32 ) "
-lire <- conversion agit
+lire <- conversion 
 fin
+<!-- echap:wq pour echaper au ereurs sur git qui nous bloque d'ecrire sur git -->
+<!-- avg <-avg + grades[i] a regarder  -->
