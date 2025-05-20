@@ -63,6 +63,12 @@
 	changeSentences('Comment il va en vrai ?');
 	changeSentences('La femelle oiseau à créée un nît.');
 
+	console.log(' ');
+	console.warn('changeSentencesAlt');
+	changeSentencesAlt('Gros rythme.');
+	changeSentencesAlt('Comment il va en vrai ?');
+	changeSentencesAlt('La femelle oiseau à créée un nît.');
+
 	//
 	// Fn
 	//
@@ -220,9 +226,21 @@
 			const char = sentence[i];
 			const isVoyelle = voyelles.includes(char);
 
-			result += char + (isVoyelle ? 'fe' : '');
+			if (isVoyelle) {
+				result += char + 'fe';
+			} else {
+				result += char;
+			}
 		}
 
 		console.log(result);
+	}
+
+	function changeSentencesAlt(sentence) {
+		console.log(
+			sentence
+				.split('')
+				.reduce((acc, char) => (acc += char + ('AEIOUYaàeéèêiïouùy'.split('').includes(char) ? 'fe' : '')))
+		);
 	}
 </script>
