@@ -1,17 +1,28 @@
 <script>
+	// preditAvenir()
+
+	reprographie(45)
+	reprographie('gello')
+
+	//
+	// Les fonctions
+	//
+
 	function preditAvenir() {
-		let heure = window.parseInt(window.prompt("Saisissez l'heure actuelle"))
+		const { prompt, parseInt, location } = window
+
+		let heure = parseInt(prompt("Saisissez l'heure actuelle"))
 
 		if (isNaN(heure) || heure < 0 || heure > 23) {
 			alert('Heure incorrect')
-			window.location.reload()
+			location.reload()
 		}
 
-		let minutes = window.parseInt(window.prompt('Saisissez les minutes actuelle'))
+		let minutes = parseInt(prompt('Saisissez les minutes actuelle'))
 
 		if (isNaN(minutes) || minutes < 0 || minutes > 59) {
 			alert('Minutes incorrect')
-			window.location.reload()
+			location.reload()
 		}
 
 		if (heure === 23 && minutes === 59) {
@@ -27,5 +38,21 @@
 		alert(`Dans une minute, il sera ${heure}h${minutes} !`)
 	}
 
-	preditAvenir()
+	function reprographie(amount) {
+		if (window.isNaN(amount) || amount <= 0) {
+			throw "La quantité n'est pas bonne"
+		}
+
+		let total = 0
+
+		if (amount > 100) {
+			total = amount * 0.08
+		} else if (amount > 50) {
+			total = amount * 0.09
+		} else {
+			total = amount * 0.1
+		}
+
+		console.log(`Votre total: ${total}e`)
+	}
 </script>
