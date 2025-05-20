@@ -1,48 +1,54 @@
 <script lang="js">
 
-          // function toto(toto) {
-          //     console.log(toto);
-          // }
-          //
-          // toto(10);
-      //exercice 1
-      let heure = parseInt(prompt("Indique l'heure svp"));
-        console.log(heure);
-      let minute = parseInt(prompt("Indique les minutes aussi , c'est mieux"));
-        console.log(minute);
+        // function toto(toto) {
+        //     console.log(toto);
+        // }
+        //
+        // toto(10);
+    //exercice 1
 
-    function ajouter1Minute(heure, minute){
-        if (minute === 59){
-            minute = 0;
-            heure ++;
-        }else{
-            minute ++;
-        }
+  function predictFuture() {
 
-        if (heure === 24){
-            heure = 0;
+        let hours = prompt("Donne moi une heure ");
+        let minutes = prompt("Donne moi les minutes ");
+
+        hours = parseInt(hours);
+        minutes = parseInt(minutes);
+
+        minutes++;
+        if (minutes === 60) {
+            minutes = 0;
+            hours++;
+        if (hours === 24) {
+                hours = 0;
+            }
         }
-        // formatage de l'heure
-        if (heure<10){
-          heure="0"+heure;
+        if (minutes < 10) {
+            minutes = '0' + minutes;
         }
-        if(minute<10){
-          minute= "0"+ minute;
+        if (hours < 10) {
+          hours = "0"+ hours;
         }
-          return console.log("Dans 1 minute il sera "+heure+"h:"+minute+ " !");
+        console.log("Dans 1min il sera " + hours + "h" + minutes);
+    }
+
+    predictFuture();
+
+    // exercice 2
+
+
+    function calculPriceBy(copy){
+      if(copy<=10){
+        copy = copy*0.1;
       }
-
-      ajouter1Minute(heure, minute);
-
-      // exercice 2
-
-  let copy = parseInt(prompt("combien de copies avez vous achetez ?"));
-
-      function calculPriceBy(copy){
-        if(copy<=10){
-          let price = copy*0.1;
-        }else if(copy<=100){
-          price = copy*0.09
-        }
+      if(copy>10 && copy<100){
+        copy=copy*0.09;
       }
+      if(copy>=100){
+        copy=copy*0.08;
+      }
+      return console.log(copy);
+    }
+
+    calculPriceBy(10);
 </script>
