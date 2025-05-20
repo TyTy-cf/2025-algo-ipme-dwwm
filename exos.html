@@ -7,10 +7,26 @@
 	</head>
 </html>
 <script>
-	preditAvenir();
+	// preditAvenir();
 
 	// calculPriceBy(45);
 	// calculPriceBy('gello');
+
+	getAge('thierry');
+	getAge(1940);
+	getAge(2030);
+
+	countUpToTen();
+	countUpToTen(true);
+	countUpToTen(13);
+
+	displayMultiply();
+	displayMultiply(true);
+	displayMultiply(3);
+
+	//
+	// Fn
+	//
 
 	function preditAvenir() {
 		const { prompt, parseInt, location } = window;
@@ -73,10 +89,52 @@
 	}
 
 	function getAge(year) {
+		const currentYear = new Date().getFullYear();
+		const userYear = window.parseInt(year);
+
 		if (window.isNaN(year)) {
-			throw "L'année n'est pas un nombre";
+			console.info("L'année n'est pas un nombre");
+			return;
+		}
+		if (userYear > currentYear) {
+			console.info("Vous n'êtes visiblement pas encore né.e");
+			return;
 		}
 
-		year = window.parseInt(year);
+		const result = currentYear - userYear;
+
+		console.log(`Vous avez ${result} ans !`);
+	}
+
+	function countUpToTen(startFrom) {
+		if (typeof startFrom !== 'number') {
+			console.info('Pas un nombre');
+			return;
+		}
+
+		console.log(startFrom + 1);
+		console.log(startFrom + 2);
+		console.log(startFrom + 3);
+		console.log(startFrom + 4);
+		console.log(startFrom + 5);
+		console.log(startFrom + 6);
+		console.log(startFrom + 7);
+		console.log(startFrom + 8);
+		console.log(startFrom + 9);
+		console.log(startFrom + 10);
+		console.log('👍');
+	}
+
+	function displayMultiply(digit) {
+		if (typeof digit !== 'number') {
+			console.info('Pas un nombre');
+			return;
+		}
+
+		digit = window.parseInt(digit);
+
+		for (let i = 1; i <= 12; i++) {
+			console.log(`${digit} × ${i} = ${digit * i}`);
+		}
 	}
 </script>
