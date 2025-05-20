@@ -24,4 +24,3 @@ Elle doit calculer le prix de ces copies :
 - S'il y a moins ou 50 copies, alors le prix unitaire est de 0.09€
 - S'il y a plus ou 100 copies, alors le prix unitaire est de 0.08€
 
-
