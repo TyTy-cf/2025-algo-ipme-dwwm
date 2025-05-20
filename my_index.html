@@ -6,6 +6,7 @@
 
     // toto(10);
 
+    //1)
     function future(hour, min, minJump = 1)
     {
         let result = "";
@@ -24,6 +25,7 @@
 
     //console.log(future(hour, min, time));
 
+    //2)
     function totalPrice(nb)
     {
         let individualPrice;
@@ -33,9 +35,9 @@
         }
         else if (nb <= 100)
         {
-            individualPrice = 0.09;  
+            individualPrice = 0.09;
         }
-        else 
+        else
         {
             individualPrice = 0.08;
         }
@@ -46,6 +48,7 @@
     // let nbCopy = parseInt(prompt("Nombre de copies ?"));
     // console.log(totalPrice(nbCopy) + "€");
 
+    //3)
     function getAge(birthYear)
     {
         let currentYear = parseInt(new Date().getFullYear());
@@ -54,9 +57,10 @@
     // let birthYear = parseInt(prompt("Age de naissance ?"));
     // console.log(getAge(birthYear));
 
+    //4)
     function countUpToTen(startFrom)
     {
-        for (let i = 1; i <= 10; i++) 
+        for (let i = 1; i <= 10; i++)
         {
             console.log(startFrom + i);
         }
@@ -64,9 +68,10 @@
 
     // countUpToTen(17);
 
+    //5)
     function displayMultiply(digit)
     {
-        for (let i = 1; i <= 12; i++) 
+        for (let i = 1; i <= 12; i++)
         {
 
             console.log(i + " x " + digit + " = " + (digit * i));
@@ -75,10 +80,11 @@
 
     // displayMultiply(10);
 
+    //6)
     function addUpTo(max)
     {
         let total = 0;
-        for (let i = 1; i <= max; i++) 
+        for (let i = 1; i <= max; i++)
         {
             total += i;
         }
@@ -87,21 +93,23 @@
 
     // console.log(addUpTo(5));
 
+    //7)
     function displayVoyels()
     {
         const voyels = ['a', 'e', 'i', 'o', 'u', 'y'];
-        voyels.forEach(letter => 
+        voyels.forEach(letter =>
         {
-            console.log(letter);    
+            console.log(letter);
         });
     }
 
     // displayVoyels();
 
+    //8)
     function getAverage(grades)
     {
         let total = 0;
-        for (let i = 0; i < grades.length; i++) 
+        for (let i = 0; i < grades.length; i++)
         {
             total += grades[i];
         }
@@ -109,4 +117,70 @@
     }
     // let grades = [10, 15, 15, 20];
     // console.log(getAverage(grades));
+
+    //9)
+    function addArray(first, second)
+    {
+        if(first.length != second.length)
+        {
+            console.log("ERREUR : LES TABLEAUX N'ONT PAS LA MEME LONGUEUR")
+            return;
+        }
+
+        let newArray = new Array(first.length);
+        for (let i = 0; i < first.length; i++)
+        {
+            newArray[i] = first[i] + second[i];
+        }
+        return newArray;
+    }
+
+    // arr1 = [1,2,3];
+    // arr2 = [1,2,3,4];
+    // console.log(addArray(arr1, arr2));
+    // arr3 = [1,2,3];
+    // arr4 = [1,2,3];
+    // console.log(addArray(arr3, arr4));
+
+    //10)
+
+    function removeDuplicate(array)
+    {
+        let newArray = new Array();
+        for (let i = 0; i < array.length; i++)
+        {
+            let isDuplicate = false;
+            for (let j = 0; j < newArray.length; j++)
+            {
+                if(newArray[j] === array[i])
+                {
+                    isDuplicate = true;
+                }
+            }
+            if(!isDuplicate)
+            {
+                newArray.push(array[i]);
+            }
+        }
+        return newArray;
+    }
+
+    // let array = [0, 9, 1, 1, 5, 8, 3, 3, 3, 12, 11, 11, 8, 9];
+    // console.log(removeDuplicate(array));
+
+    //11)
+
+    function inverseWord(str)
+    {
+        let newStr = "";
+        for (let i = str.length - 1; i >= 0; i--) 
+        {
+            newStr += str[i];
+        }
+        return newStr;
+    }
+
+    let str = "Hello World !";
+    console.log(inverseWord(str));
+
 </script>
