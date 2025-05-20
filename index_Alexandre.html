@@ -89,5 +89,20 @@
       }
 
     }
-    displayMultiply();
+    // displayMultiply();
+
+    // exercice 6
+
+    function addUpTo(){
+      let max = prompt("entre un nombre pour connaitre la somme de tous ceux qui le précède");
+      max = parseInt(max);
+      let sum=0;
+      const sumArray = [];
+      for (i=1; i<=max;i++){
+        sum = sum + i;
+        sumArray.push(i);
+      }
+      console.log(sumArray.join("+")+" = "+sum);
+    }
+    addUpTo();
 </script>
