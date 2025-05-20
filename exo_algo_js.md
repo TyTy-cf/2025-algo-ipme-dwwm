@@ -48,3 +48,76 @@ La fonction doit renvoyer l'age de l'utilisateur à partie de l'année de naissa
 La fonction doit compter depuis le nombre "startFrom" + 10, et afficher les différents chiffres.
 Par exemple, si je lui passe "17", la fonction doit afficher les nombres de "18 à 27".
 
+### 5. La table de multiplication
+
+```
+- Nom de la fonction : "displayMultiply"
+- Paramètres :
+  - "digit", un entier
+```
+
+La fonction doit afficher la table de multiplication du paramètre "digit", jusqu'à 12.
+
+Par exemple pour digit = 3 :
+```
+1 x 3 = 3 
+2 x 3 = 6 
+3 x 3 = 9 
+...
+12 x 3 = 36
+ ```
+
+### 6. Calcul somme
+
+```
+- Nom de la fonction : "addUpTo"
+- Paramètres :
+  - "max", un entier
+```
+
+La fonction doit addition tous les chiffres jusqu'à "max", le paramètre et afficher le résultat.
+Exemple pour max = 5
+```
+1 + 2 + 3 + 4 + 5 = 15
+La fonction affiche donc "15"
+ ```
+
+### 7. Les voyelles
+
+```
+- Nom de la fonction : "displayVowels"
+- Paramètres :
+  - Aucun
+```
+
+La fonction doit créer un tableau des voyelles de notre alphabet, et l'afficher.
+
+### 8. Calcul de la moyenne
+
+```
+- Nom de la fonction : "getAverage"
+- Paramètres :
+  - "grades", un tableau de nombre (entier ou à virgules)
+```
+
+Reprennez cet algorithme pour l'adapter en Javascript :
+
+```
+FONCTION moyenne(grades)
+DEBUT
+    sum <- 0
+    tailleArray <- LONGUEUR(grades)
+    POUR i <- 0 JUSQU'A i < tailleArray FAIRE
+       sum <- sum + grades[i]
+       i <- i + 1
+    FINPOUR
+    RETOUR sum / tailleArray
+FIN
+
+moyenne([10, 15, 15, 12, 18]) #14
+moyenne([14, 16, 17, 13, 10]) #14
+moyenne([14, 16, 17, 13, 18, 2, 14]) #14
+```
+
+
+
