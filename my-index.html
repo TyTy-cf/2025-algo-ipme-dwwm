@@ -156,18 +156,23 @@
 
       // exo 12
       function isSecuredPassword(password) {
-        let msg = ";"
-          if(password.length >= 9 && password.includes("@") || password.includes("!")){
-            msg = "Mot de passe correct"
-            return msg;
-          }
-          else {
-            msg = "Le mot de passe doit contenir au moins 9 caracteères et un @ ou un !"
-              return msg;
-          }
-      }
+        let msg = "";
+        const symbols = ["@", "!"];
+        if(password.length >= 9){
+            for (let i = 0; i < symbols.length; i++) {
+                if(password.includes(symbols[i])) {
+                    msg = "Mot de passe correct"
+                }
+            }
+        }
+        else {
+            msg = "Le mot de passe doit contenir au moins 9 caractères et un @ ou un !"
+        }
+        return msg;
+    }
       console.log(isSecuredPassword("test"));
       console.log(isSecuredPassword("myP@ssword"));
+      console.log(isSecuredPassword("myP!ssword"));
 
       // exo 13
       function changeSentences(sentences) {
