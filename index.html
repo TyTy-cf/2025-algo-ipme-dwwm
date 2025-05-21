@@ -139,8 +139,8 @@
         return parseFloat((sum / sizeArray).toFixed(2));
     }
 
-    console.log(getAverage([10, 15, 15, 12, 18]));
-    console.log(getAverage([10, 15, 15, 12, 18, 5, 14, 17, 6]));
+    // console.log(getAverage([10, 15, 15, 12, 18]));
+    // console.log(getAverage([10, 15, 15, 12, 18, 5, 14, 17, 6]));
 
     function addArray(first, second) {
         const sizeFirst = first.length;
@@ -160,7 +160,69 @@
 
     const aFirst = [1, 2, 3, 4, 5];
     const aSecond = [6, 7, 8, 9, 10];
-    console.log(addArray(aFirst, aSecond)); // [7, 9, 11, 13, 15]
+    // console.log(addArray(aFirst, aSecond)); // [7, 9, 11, 13, 15]
 
+    function removeDuplicate(array) {
+        const noDuplicate = [];
+
+        for (let i = 0; i < array.length; i++) {
+            const element = array[i];
+            // if (noDuplicate.indexOf(element) === -1) { // version sans le "!" car si un element n'est pas trouvé avec indexOf il vous renvoie -1
+            // if (!noDuplicate.includes(element)) {
+            if (myIndexOf(noDuplicate, element) === -1) {
+                noDuplicate.push(array[i]);
+            }
+        }
+
+        return noDuplicate;
+    }
+
+    // console.log(removeDuplicate([1, 1, 1, 2, 5, 8, 7, 5]));
+
+    function inverseWord(str) {
+        // Créer une variable pour recréer le mot à l'envers (nom : "inverse")
+        let inverse = '';
+        // Parcourir le mot mais en commençant de la fin
+        for (let i = str.length - 1; i >= 0; i--) {
+            // ajouter la lettre en cours de parcours à la variable "inverse"
+            inverse += str[i];
+        }
+        // fin parcours
+        return inverse;
+    }
+
+    // console.log(inverseWord("espion"));
+
+    function isSecuredPassword(password) {
+        if ((password.includes('@') || password.includes('!')) && password.length >= 9) {
+            return true;
+        }
+        return false;
+        // En une seule ligne !
+        // return (password.includes('@') || password.includes('!')) && password.length >= 9;
+    }
+
+    console.log(isSecuredPassword("espion@developpeur")); // vrai
+    console.log(isSecuredPassword("espion!developpeur")); // vrai
+    console.log(isSecuredPassword("espiondeveloppeur")); // faux
+    console.log(isSecuredPassword("espion@")); // faux
+
+    function myIndexOf(haystack, needle) {
+        for (let i = 0; i < haystack.length; i++) {
+            if (haystack[i] === needle) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    function isPangram(str) {
+        let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        let alphabetStr = [];
+        for (let i = 0; i <= alphabet.length; i++) {
+            // ?
+        }
+        return alphabet.length === alphabetStr.length;
+    }
 
 </script>
