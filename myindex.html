@@ -197,8 +197,28 @@
         }
       }
 
-      console.log(excerpt("Lorem quisque class vestibulum"));
-      console.log(excerpt("Lorem ipsum"));
+      // console.log(excerpt("Lorem quisque class vestibulum"));
+      // console.log(excerpt("Lorem ipsum"));
+
+      /* EXERCICE 14 */
+
+      function isPangram(str) {
+        const strCase = str.toLowerCase();
+        const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        const alphabetOfStr = [];
+      
+        for (let i = 0; i < strCase.length; i++) {
+          if (!alphabetOfStr.includes(strCase[i])) {
+            alphabetOfStr.push(strCase[i]);
+          }
+        }
+
+        console.log(alphabetOfStr);
+
+        return alphabetOfStr.length === 26;
+      }
+
+      console.log(isPangram("The quick brown fox jumps over the lazy dog."));
 
       /* EXERCICE 18 */
 
