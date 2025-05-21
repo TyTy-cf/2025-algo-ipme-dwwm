@@ -217,7 +217,7 @@
     //14)
     function isPangram(str) 
     {
-        let lowerStr = String(str).toLowerCase();
+        let lowerStr = String(str).toLowerCase().s;
         let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
         for (let i = 0; i < lowerStr.length; i++) 
         {
@@ -254,6 +254,30 @@
     // console.log(getRange([15, 78, 45, 96, 12, 32, 65, 78, 91]));
 
     //16)
+    function isPalindrome(str) 
+    {
+        let newStr = str;
+        newStr = String(newStr).replace('ê','e');
+        newStr = String(newStr).replace('é','e');
+        newStr = String(newStr).replace('è','e');
+        newStr = String(newStr).replace('à','a');
+        newStr = String(newStr).replace('ç','c');
+        // console.log(newStr);
+        for (let i = 0; i < newStr.length/2; i++)
+        {
+            if (newStr[i] != newStr[newStr.length - 1 - i]) 
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // console.log(isPalindrome("ressasser"));
+    // console.log(isPalindrome("rêver"));
+    // console.log(isPalindrome("toto"));
+
+    //17)
 
     function getScrabbleScore(str) 
     {
@@ -277,6 +301,10 @@
             {
                 score += 2;
             }
+            else if (points3.includes(strUp[i])) 
+            {
+                score += 3;
+            }
             else if (points4.includes(strUp[i])) 
             {
                 score += 4;
@@ -296,7 +324,7 @@
     // console.log(getScrabbleScore("lazy"));
 
 
-    //17)
+    //18)
     function changeSentence(mot)
     {
         const voyels = ['a', 'e', 'i', 'o', 'u', 'y'];
@@ -317,4 +345,29 @@
     }
 
     // console.log(changeSentence("chat"));
+
+    //19)
+    function encrypt(str, gap = 3) 
+    {
+        let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+        let newStr = "";
+        for (let i = 0; i < str.length; i++)
+        {
+            newStr += alphabet[(alphabet.indexOf(str[i]) + gap) % 26];
+        }
+        return newStr;
+    }
+    function decrypt(str, gap = 3) 
+    {
+        let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+        let newStr = "";
+        for (let i = 0; i < str.length; i++)
+        {
+            newStr += alphabet[(alphabet.indexOf(str[i]) - gap) % 26];
+        }
+        return newStr;
+    }
+    // console.log(encrypt("chat"));
+    // console.log(decrypt("fkdw"));
+    // console.log(decrypt(encrypt("koala")));
 </script>
