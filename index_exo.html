@@ -1,172 +1,194 @@
 <script lang="js">
 
-               // function toto(toto) {
-               //     console.log(toto);
-               // }
-               //
-               // toto(10);
+                       // function toto(toto) {
+                       //     console.log(toto);
+                       // }
+                       //
+                       // toto(10);
 
-               // EXERCICE 1 :
+                       // EXERCICE 1 :
 
-             //  let hour = prompt("Quelle heure est-il ?");
-             //  let minutes = prompt("Combien de minutes y a-t-il ?");
-               function predict(hour, minutes) {
-                   hour = parseInt(hour);
-                   minutes = parseInt(minutes);
-                   minutes++
-                   if (minutes ===60) {
-                       minutes = 0;
-                       hour++;
-                   if (hour ===24) {
-                       hour = 0;
+                     //  let hour = prompt("Quelle heure est-il ?");
+                     //  let minutes = prompt("Combien de minutes y a-t-il ?");
+                       function predict(hour, minutes) {
+                           hour = parseInt(hour);
+                           minutes = parseInt(minutes);
+                           minutes++
+                           if (minutes ===60) {
+                               minutes = 0;
+                               hour++;
+                           if (hour ===24) {
+                               hour = 0;
+                           }
+                           }
+                           if (minutes <10) {
+                               minutes = "0" + minutes;
+                           }
+                           console.log("Dans 1 minutes il sera " + hour + "h" + minutes);
+                       }
+                      // predict(hour, minutes);
+
+                       // EXERCICE 2 :
+
+                       //   let copy = prompt("nombre de copies")
+                       function calculPriceBy(copy) {
+                       if (copy <= 10){
+                           copy = copy * 0.10;
+                       }
+                       if (copy < 100) {
+                           copy = copy * 0.09;
+                       }
+                       if (copy >= 100) {
+                           copy = copy * 0.08;
+                       }
+            //           console.log(copy + "€")
                    }
+                   //calculPriceBy(copy)
+
+                   // EXERCICE 3 :
+
+               //    let year = prompt("En quelle année êtes vous né.e ?")
+                   function getAge(year) {
+                       const currentYear = new Date().getFullYear();
+                       year = currentYear - year;
+            //           console.log(year + "ans");
                    }
-                   if (minutes <10) {
-                       minutes = "0" + minutes;
+            //       getAge(year);
+
+               // EXERCICE 4 :
+
+               function countUpToTen(startFrom){
+                   for (let i = 1; i < 11; i++) {
+            //       console.log(startFrom + i);
+               }
+               }
+            //   countUpToTen(20);
+
+               // EXERCICE 5 :
+
+                function displayMultiply(digit) {
+                for (let i = 1; i <=12 ; i++) {
+             //      console.log(i + " x " + digit + " = " + i * digit);
+                }
+               }
+             //  displayMultiply(3)
+
+               // EXERCICE 6 :
+
+                function addUpTo(max) {
+                   let total = 0;
+                   for (let i=1; i <= max; i++) {
+                       total += i
                    }
-                   console.log("Dans 1 minutes il sera " + hour + "h" + minutes);
+             //  console.log(total)
                }
-              // predict(hour, minutes);
+             //  addUpTo(5)
 
-               // EXERCICE 2 :
+               //EXERCICE 7 :
 
-               //   let copy = prompt("nombre de copies")
-               function calculPriceBy(copy) {
-               if (copy <= 10){
-                   copy = copy * 0.10;
+               function displayVowels () {
+                   let vowels = ["a", "e", "i", "o", "u", "y"];
+              //     console.log(vowels)
                }
-               if (copy < 100) {
-                   copy = copy * 0.09;
+               displayVowels()
+
+               // EXERCICE 8 :
+               function getAverage(grades) {
+
+                   let sum = 0;
+                   const sizeArray = grades.length;
+                   for (let i = 0; i < sizeArray; i++) {
+                       sum += grades[i];
+                   }
+                   return sum / sizeArray;
                }
-               if (copy >= 100) {
-                   copy = copy * 0.08;
+              // console.log(getAverage([10, 15, 15, 12, 18]));
+
+               //EXERCICE 9 :
+               function addArray(first, second){
+                   let i = 0;
+                   if (first.length === second.length) {
+                       let third = [];
+                       for (let i =0; i <first.length; i++){
+                          third[i] = first[i] + second[i];
+                       }
+                       return third;
+                   }
                }
-    //           console.log(copy + "€")
-           }
-           //calculPriceBy(copy)
+             //  console.log(addArray([8, 4, 7, 25], [2, 8, 7, 8]));
 
-           // EXERCICE 3 :
+               // EXERCICE 10 :
+               function removeDuplicate(array){
+                   let newArray = [];
+                   for (let i =0; i < array.length; i++){
+                       let valeur = array[i]
+                       if (!newArray.includes(valeur)){
+                           newArray.push(valeur);
+                       }
+                       }
+                       return newArray;
+                   }
+             //  console.log(removeDuplicate([1, 8, 5, 8, 4, 3, 8]))
 
-       //    let year = prompt("En quelle année êtes vous né.e ?")
-           function getAge(year) {
-               const currentYear = new Date().getFullYear();
-               year = currentYear - year;
-    //           console.log(year + "ans");
-           }
-    //       getAge(year);
+                   //EXERCICE 11 :
+                   function inverseWord(str) {
+                       let newStr = "";
+                       for (let i = str.length - 1; i >= 0; i--){
+                            newStr += str[i];
+                       }
+                       return newStr;
+                   }
+                 // console.log(inverseWord("espion"));
 
-       // EXERCICE 4 :
+                  //EXERCICE 12 :
+                  function isSecuredPassword(password){
+                    if ((password.includes("@")|| password.includes("!")) && password.length >= 9){
+                        return true;
+                    }
+                    return false;
+                  }
+              //   console.log(isSecuredPassword("hello"));
 
-       function countUpToTen(startFrom){
-           for (let i = 1; i < 11; i++) {
-    //       console.log(startFrom + i);
-       }
-       }
-    //   countUpToTen(20);
+               // EXERCICE 13 :
+               function excerpt(str, from = 15){
+                if (str.length > from){
+                    return str.slice(0, from) + "...";
+                }
+                return str;
+               }
+              // console.log(excerpt("Il était une fois"));
 
-       // EXERCICE 5 :
-
-        function displayMultiply(digit) {
-        for (let i = 1; i <=12 ; i++) {
-     //      console.log(i + " x " + digit + " = " + i * digit);
+               //EXERCICE 14 :
+               function isPangram(str){
+                let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+                let alphabetStr = [];
+                for (let i = 0; i < str.length; i++) {
+                     if (alphabet.includes(str[i]) && !alphabetStr.includes(str[i])) {
+                     alphabetStr.push(str[i]);
+                     }
         }
-       }
-     //  displayMultiply(3)
-
-       // EXERCICE 6 :
-
-        function addUpTo(max) {
-           let total = 0;
-           for (let i=1; i <= max; i++) {
-               total += i
-           }
-     //  console.log(total)
-       }
-     //  addUpTo(5)
-
-       //EXERCICE 7 :
-
-       function displayVowels () {
-           let vowels = ["a", "e", "i", "o", "u", "y"];
-      //     console.log(vowels)
-       }
-       displayVowels()
-
-       // EXERCICE 8 :
-       function getAverage(grades) {
-
-           let sum = 0;
-           const sizeArray = grades.length;
-           for (let i = 0; i < sizeArray; i++) {
-               sum += grades[i];
-           }
-           return sum / sizeArray;
-       }
-      // console.log(getAverage([10, 15, 15, 12, 18]));
-
-       //EXERCICE 9 :
-       function addArray(first, second){
-           let i = 0;
-           if (first.length === second.length) {
-               let third = [];
-               for (let i =0; i <first.length; i++){
-                  third[i] = first[i] + second[i];
-               }
-               return third;
-           }
-       }
-     //  console.log(addArray([8, 4, 7, 25], [2, 8, 7, 8]));
-
-       // EXERCICE 10 :
-       function removeDuplicate(array){
-           let newArray = [];
-           for (let i =0; i < array.length; i++){
-               let valeur = array[i]
-               if (!newArray.includes(valeur)){
-                   newArray.push(valeur);
-               }
-               }
-               return newArray;
-           }
-     //  console.log(removeDuplicate([1, 8, 5, 8, 4, 3, 8]))
-
-           //EXERCICE 11 :
-           function inverseWord(str) {
-               let newStr = "";
-               for (let i = str.length - 1; i >= 0; i--){
-                    newStr += str[i];
-               }
-               return newStr;
-           }
-         // console.log(inverseWord("espion"));
-
-          //EXERCICE 12 :
-          function isSecuredPassword(password){
-            if ((password.includes("@")|| password.includes("!")) && password.length >= 9){
-                return true;
-            }
-            return false;
-          }
-      //   console.log(isSecuredPassword("hello"));
-
-       // EXERCICE 13 :
-       function excerpt(str, from = 15){
-        if (str.length > from){
-            return str.slice(0, from) + "...";
-        }
-        return str;
-       }
-      // console.log(excerpt("Il était une fois"));
-
-       //EXERCICE 14 :
-       function isPangram(str){
-        let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-       for (let i=0; i <= alphabet.length; i++){
-         if (str.includes(alphabet[i], alphabet.length)){
-        return true;
-       }
-       return false;
-       }
+        return alphabetStr.length === alphabet.length;
     }
-        console.log(isPangram("The quick brown fox jumps over the lazy dog."))
+          //   console.log(isPangram("the quick brown fox jumps over the lazy dog."))
+
+             //EXERCICE 15 : 
+             function getRange(anArray) {
+               let min = Math.min(...anArray);
+               let max = Math.max(...anArray);
+               return max - min; 
+             }
+          //   console.log(getRange([15, 78, 45, 96, 12, 32, 65, 78, 91]));
+
+             // Exercice 16 :
+              function isPalindrome(str) {
+                       let newStr = "";
+                       for (let i = str.length - 1; i >= 0; i--){
+                            newStr += str[i];
+                          if(newStr === str){
+                              return true;
+                          }  
+                       }
+                        return false;
+                   }
+                  console.log(isPalindrome("rever"));
 </script>
