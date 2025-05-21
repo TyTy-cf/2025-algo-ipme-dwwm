@@ -183,7 +183,88 @@ La fonction doit vérifier si le mot de passe est sécurisé ou non, un mot de p
 - Il contient un @ ou un !
 - Il fait au moins 9 caractères
 
-### 13. Transformation de mot...
+### 13. Fonction de "excerpt"
+
+```
+- Nom de la fonction : "excerpt"
+- Paramètres :
+  - "str", une chaine de caractères
+  - "from", un entier, par défaut à 15
+- Retour : une chaine de caractère
+```
+
+La fonction effectue le traitement suivant :
+    - Si la chaine excède 15 caractères, alors on affiche la chaîne coupée jusqu'à 15 caractères puis '...'
+    - Sinon elle renvoie simplement la chaîne de caractères
+
+Exemple :
+```
+- Paramète "str" : 'Lorem quisque class vestibulum'
+- Retour : 'Lorem quisque c...'
+ ```
+
+### 14. Fonction de "pangram"
+
+```
+- Nom de la fonction : "isPangram"
+- Paramètres :
+  - "str", une chaine de caractères
+- Retour : un booléen
+```
+
+La fonction indique si la chaine de caractère est un pangram, autrement dit si la chaine de caractères contient toutes les lettres de l'alphabet latin, au moins une fois.
+
+Exemple :
+```
+- Paramètre "str" : "The quick brown fox jumps over the lazy dog."
+- Retour : true
+ ```
+
+### 15. Fonction de "getRange"
+
+```
+- Nom de la fonction : "isPangram"
+- Paramètres :
+  - "anArray", un tableau d'entier
+- Retour : un entier
+```
+
+La fonction retourne l'écart entre la plus petite valeur du tableau, et la plus grande
+
+Exemple :
+```
+- Paramètre "anArray" : [15, 78, 45, 96, 12, 32, 65, 78, 91]
+- Retour : 84 (écart entre 96 et 12)
+ ```
+
+### 16. Fonction de calcul de points au Scrabble
+
+```
+- Nom de la fonction : "getScrabbleScore"
+- Paramètres :
+  - "str", une chaine de caractère
+- Retour : un entier
+```
+
+La fonction retourne le nombre de points réalisés par la chaine de caractères "str" passée en paramètre.
+
+Valeurs des lettres :
+
+- 1 point: "A", "E", "I", "O", "U", "L", "N", "R", "S", "T",
+- 2 points: "D", "G",
+- 3 points: "B", "C", "M", "P",
+- 4 points: "F", "H", "V", "W", "Y",
+- 5 points: "K",
+- 8 points: "J", "X",
+- 10 points: "Q", "Z",
+
+Exemple :
+```
+- Paramètre "str" : "lazy"
+- Retour : 16
+ ```
+
+### 17. Transformation de mot...
 
 ```
 - Nom de la fonction : "changeSentences"
