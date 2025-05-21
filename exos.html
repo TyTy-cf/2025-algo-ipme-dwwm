@@ -84,6 +84,12 @@
 	console.warn('inverseWord');
 	console.log(inverseWord('hello world'));
 
+	console.log(' ');
+	console.warn('getRange');
+	console.log(getRange([4, 9, 199, 27]));
+	console.log(getRange([9, 3, 'ok', 1]));
+	console.log(getRange([-(9372 ** 24), 2 ** 24]));
+
 	//
 	// Fn
 	//
@@ -325,7 +331,25 @@
 
 	// 15
 	function getRange(arr) {
-		return 0;
+		const len = arr.length;
+		let min;
+		let max;
+
+		for (let ii = 0; ii < len; ii++) {
+			if (isNaN(arr[ii])) {
+				console.info('NaN détecté');
+				return NaN;
+			}
+
+			if (!min || arr[ii] < min) {
+				min = arr[ii];
+			}
+			if (!max || arr[ii] > max) {
+				max = arr[ii];
+			}
+		}
+
+		return max - min;
 	}
 
 	// 16
