@@ -213,22 +213,23 @@
             // créer une fonction qui vérifie si un tableau est un palindrome
             // 1. un palindrome est un mot ou une phrase qui se lit de la même manière à l'envers qu'à l'endroit
             // logique c'est une symétrie il faut comparer le premier élément avec le dernier élément
-            function isPalindrome(array) {
-        for (let i = 0; i < array.length / 2; i++) {
-          if (array[i] !== array[array.length - 1 - i]) {
-            console.log("Ce n'est pas un palindrome");
-            return;
-          }
-        }
-        console.log("C'est un palindrome");
-      }
-            // appeler la fonction
-            isPalindrome([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-            isPalindrome(["u", "e", "i", "o", "a", "u", "e", "i", "o", "a"]);
-            isPalindrome(["free", "free", "free", "free", "free", "free", "free", "free", "free", "free"]);
-            isPalindrome(["radar"]);
-            isPalindrome(["level"]);
-            isPalindrome([1, 2, 3, 2, 1]);
+      //       function isPalindrome(array) {
+      //   for (let i = 0; i < array.length / 2; i++) {
+      //     if (array[i] !== array[array.length - 1 - i]) {
+      //       console.log("Ce n'est pas un palindrome");
+      //       return;
+      //     }
+      //   }
+      //   console.log("C'est un palindrome");
+      // }
+      //       // appeler la fonction
+      //       isPalindrome([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+      //       isPalindrome(["u", "e", "i", "o", "a", "u", "e", "i", "o", "a"]);
+      //       isPalindrome(["free", "free", "free", "free", "free", "free", "free", "free", "free", "free"]);
+      //       isPalindrome(["radar"]);
+      //       isPalindrome(["level"]);
+      //       isPalindrome([1, 2, 3, 2, 1]);
+
 
             // exercice 11
             // 1. créer une fonction qui inverse la chaîne de caractères
@@ -237,11 +238,28 @@
             // 4. la fonction doit utiliser une boucle for pour inverser la chaîne de caractères
             // 5. la fonction doit utiliser une variable temporaire pour stocker la chaîne de caractères inversée
             // 6. la fonction doit retourner la chaîne de caractères inversée
+            // function inverseWord(str) {
+            //   // créer une variable temporaire pour stocker la chaîne de caractères inversée
+            //   let temp = "";
+            //   // parcourir la chaîne de caractères
+            //   for (let i = str.length - 1; i >= 0; i--) {
+            //     // ajouter chaque caractère à la variable temporaire
+            //     temp += str[i];
+            //   }
+            //   // retourner la chaîne de caractères inversée
+            //   return temp;
+            // }
+            // // appeler la fonction
+            // console.log(inverseWord("Hello World"));
+            // console.log(inverseWord("espion"));
+
+            // exercise 11 b
+            // créer une fonction qui inverse la chaîne de caractères sans utiliser .length
             function inverseWord(str) {
               // créer une variable temporaire pour stocker la chaîne de caractères inversée
               let temp = "";
               // parcourir la chaîne de caractères
-              for (let i = str.length - 1; i >= 0; i--) {
+              for (let i = str.indexOf(str[str.length - 1]); i >= 0; i--) {
                 // ajouter chaque caractère à la variable temporaire
                 temp += str[i];
               }
@@ -252,7 +270,29 @@
             console.log(inverseWord("Hello World"));
             console.log(inverseWord("espion"));
 
+
             // exercice 12
+            //créer une fonction qui vérifie si le password
+            //  a au moin 9 caractères et contient un @ ou un !
+            // paramètre password = une chaîne de caractères
+            function isSecuredPassword(password) {
+              // vérifier si le mot de passe a au moins 9 caractères
+              if (password.length < 9) {
+                console.log("Le mot de passe doit contenir au moins 9 caractères");
+                return;
+              }
+              // vérifier si le mot de passe contient un @ ou un !
+              if (!password.includes("@") && !password.includes("!")) {
+                console.log("Le mot de passe doit contenir un @ ou un !");
+                return;
+              }
+              return true;
+              // console.log("Le mot de passe est sécurisé");
+            }
+            // appeler la fonction
+            console.log(isSecuredPassword("passworza@!"));
+
+            // exercice 13
             // 1. créer une fonction qui ajoute "fe" à la fin
             //  de chaque voyelle d'une chaîne de caractères
             // 2. la fonction doit prendre en paramètre une chaîne de caractères
