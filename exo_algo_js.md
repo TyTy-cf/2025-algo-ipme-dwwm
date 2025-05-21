@@ -165,7 +165,19 @@ Exemple avec : "espion" :
 La fonction affiche "noipse"
  ```
 
-### 12. Transformation de mot...
+### 12. Le mot de passe sécurisé
+
+```
+- Nom de la fonction : "isSecuredPassword"
+- Paramètres :
+  - "password", une chaine de caractères corespondant au mot de passe
+```
+
+La fonction doit vérifier si le mot de passe est sécurisé ou non, un mot de passe est considéré sécurisé si :
+- Il contient un @ ou un !
+- Il fait au moins 9 caractères
+
+### 13. Transformation de mot...
 
 ```
 - Nom de la fonction : "changeSentences"
