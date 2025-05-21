@@ -144,6 +144,7 @@ On affiche le nouveau tableau, exemple :
 ```
 
 La fonction doit créer un nouveau tableau, n'ayant plus les éléments en doublons du tableau initial.
+(Sans utiliser de fonction native à Javascript, autre que le ".length")
 
 Par exemple :
 ```
