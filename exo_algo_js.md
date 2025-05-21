@@ -298,6 +298,36 @@ Exemple avec : "chat" :
 La fonction affiche "chafeat"
  ```
 
+### 19. Algorithme de "César"
+
+```
+- Nom de la fonction : "encrypt"
+- Paramètres :
+  - "str" : une chaine de caractères
+  - "gap" : un entier
+- Retour : la chaine cryptée
+```
+
+La fonction doit permet de crypter la chaine de caractères "str", passée en paramètre, en utilisant le "gap" et renvoyer la chaine cryptée.
+L'algorithme de césar crypte en se basant sur un décalage de l'alphabet, par exemple si j'ai un "gap" de 6, on transforme les "a" en "g", les "b" en "h", etc 
+
+Exemple :
+```
+- Paramètre "str" : "chat"
+- Paramètre "gap" : 3
+- Retour : "fkdw"
+ ```
+
+On a crypté, maintenant, on aimerai pouvoir décrypter aussi :
+
+```
+- Nom de la fonction : "decrypt"
+- Paramètres :
+  - "str" : une chaine de caractères crypté
+  - "gap" : un entier
+- Retour : la chaine décryptée
+```
+
 
 
 
