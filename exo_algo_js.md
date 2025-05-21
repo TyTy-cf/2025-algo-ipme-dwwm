@@ -231,7 +231,30 @@ Exemple :
 - Retour : 84 (écart entre 96 et 12)
  ```
 
-### 16. Fonction de calcul de points au Scrabble
+### 16. Fonction de palindromes
+
+```
+- Nom de la fonction : "isPalindrome"
+- Paramètres :
+  - "str", une chaine de caractères
+- Retour : un booléen
+```
+
+La fonction retourne vrai si le mot est un palindrome, faux, sinon
+
+Exemple :
+```
+- Paramètre "str" : "ressasser"
+- Retour : true
+
+- Paramètre "str" : "rêver"
+- Retour : true
+
+- Paramètre "str" : "toto"
+- Retour : false
+ ```
+
+### 17. Fonction de calcul de points au Scrabble
 
 ```
 - Nom de la fonction : "getScrabbleScore"
@@ -258,7 +281,7 @@ Exemple :
 - Retour : 16
  ```
 
-### 17. Transformation de mot...
+### 18. Transformation de mot...
 
 ```
 - Nom de la fonction : "changeSentences"
