@@ -41,37 +41,37 @@
             if (copy >= 100) {
                 copy = copy * 0.08;
             }
-            console.log(copy + "€")
+ //           console.log(copy + "€")
         }
         //calculPriceBy(copy)
 
         // EXERCICE 3 :
 
-        let year = prompt("En quelle année êtes vous né.e ?")
+    //    let year = prompt("En quelle année êtes vous né.e ?")
         function getAge(year) {
             const currentYear = new Date().getFullYear();
             year = currentYear - year;
-            console.log(year + "ans");
+ //           console.log(year + "ans");
         }
-        getAge(year);
+ //       getAge(year);
 
     // EXERCICE 4 :
 
     function countUpToTen(startFrom){
         for (let i = 1; i < 11; i++) {
-        console.log(startFrom + i);
+ //       console.log(startFrom + i);
     }
     }
-    countUpToTen(20);
+ //   countUpToTen(20);
 
     // EXERCICE 5 :
 
      function displayMultiply(digit) {
      for (let i = 1; i <=12 ; i++) {
-        console.log(i + " x " + digit + " = " + i * digit);
+  //      console.log(i + " x " + digit + " = " + i * digit);
      }
     }
-    displayMultiply(3)
+  //  displayMultiply(3)
 
     // EXERCICE 6 :
 
@@ -80,15 +80,15 @@
         for (let i=1; i <= max; i++) {
             total += i
         }
-    console.log(total)
+  //  console.log(total)
     }
-    addUpTo(5)
+  //  addUpTo(5)
 
     //EXERCICE 7 :
 
     function displayVowels () {
         let vowels = ["a", "e", "i", "o", "u", "y"];
-        console.log(vowels)
+   //     console.log(vowels)
     }
     displayVowels()
 
@@ -102,8 +102,31 @@
         }
         return sum / sizeArray;
     }
-    console.log(getAverage([10, 15, 15, 12, 18]));
+   // console.log(getAverage([10, 15, 15, 12, 18]));
 
     //EXERCICE 9 :
-    
+    function addArray(first, second){
+        let i = 0;
+        if (first.length === second.length) {
+            let third = [];
+            for (let i =0; i <first.length; i++){
+               third[i] = first[i] + second[i];
+            }
+            return third;
+        }
+    }
+  //  console.log(addArray([8, 4, 7, 25], [2, 8, 7, 8]));
+
+    // EXERCICE 10 : 
+    function removeDuplicate(array){
+        let newArray = [];
+        for (let i =0; i < array.length; i++){
+            let valeur = array[i]
+            if (!newArray.includes(valeur)){
+                newArray.push(valeur);
+            }
+            }
+            return newArray;
+        }
+  //  console.log(removeDuplicate([1, 8, 5, 8, 4, 3, 8]))
 </script>
