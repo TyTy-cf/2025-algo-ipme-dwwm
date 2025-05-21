@@ -137,10 +137,18 @@
       /* EXERCICE 10 */
 
       function removeDuplicate(array) {
-        console.log([...new Set(array)]);
+        const newArray = [];
+
+        for (let i = 0; i < array.length; i++) {
+          if (!newArray.includes(array[i])) {
+            newArray.push(array[i]);
+          }
+        }
+
+        return newArray;
       }
 
-      removeDuplicate([1, 1, 1, 2, 5, 8, 7, 5]);
+      // console.log(removeDuplicate([1, 1, 1, 2, 5, 8, 7, 5]));
 
       /* EXERCICE 11 */
 
@@ -175,6 +183,25 @@
 
       /* EXERCICE 13 */
 
+      function excerpt(str, from = 15) {
+        if (str.length > from) {
+          let shortString = "";
+
+          for (let i = 0; i < from; i++) {
+            shortString += str[i];
+          }
+
+          return shortString + "...";
+        } else {
+          return str;
+        }
+      }
+
+      console.log(excerpt("Lorem quisque class vestibulum"));
+      console.log(excerpt("Lorem ipsum"));
+
+      /* EXERCICE 18 */
+
       function changeSentences(sentences) {
         const vowels = ["a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "Y"];
         let newSentences = "";
@@ -193,7 +220,6 @@
       /* changeSentences("chat");
       changeSentences("Intel");
       changeSentences("Ultra Y"); */
-
     </script>
   </head>
   <body></body>
