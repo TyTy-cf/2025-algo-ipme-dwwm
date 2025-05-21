@@ -14,60 +14,71 @@
 <script>
 	// preditAvenir();
 
-	console.warn('calculPriceBy');
-	calculPriceBy(45);
-	calculPriceBy('gello');
+	// console.warn('calculPriceBy');
+	// calculPriceBy(45);
+	// calculPriceBy('gello');
+
+	// console.log(' ');
+	// console.warn('getAge');
+	// getAge('thierry');
+	// getAge(1940);
+	// getAge(2030);
+
+	// console.log(' ');
+	// console.warn('countUpToTen');
+	// countUpToTen();
+	// countUpToTen(true);
+	// countUpToTen(13);
+
+	// console.log(' ');
+	// console.warn('displayMultiply');
+	// displayMultiply();
+	// displayMultiply(true);
+	// displayMultiply(3);
+
+	// console.log(' ');
+	// console.warn('addUpTo');
+	// addUpTo(1);
+	// addUpTo(13);
+	// addUpTo(14);
+
+	// console.log(' ');
+	// console.warn('displayVowels');
+	// displayVowels();
+
+	// console.log(' ');
+	// console.warn('moyenne');
+	// moyenne();
+	// moyenne([]);
+	// moyenne([10, 14, 49, 27]);
+
+	// console.log(' ');
+	// console.warn('addArray');
+	// addArray([10, 11], [1, 2]);
+	// addArray([42 ** 4], [20895 ** 6]);
+
+	// console.log(' ');
+	// console.warn('changeSentences');
+	// changeSentences('Gros rythme.');
+	// changeSentences('Comment il va en vrai ?');
+	// changeSentences('La femelle oiseau à créée un nît.');
+
+	// console.log(' ');
+	// console.warn('changeSentencesAlt');
+	// changeSentencesAlt('Gros rythme.');
+	// changeSentencesAlt('Comment il va en vrai ?');
+	// changeSentencesAlt('La femelle oiseau à créée un nît.');
 
 	console.log(' ');
-	console.warn('getAge');
-	getAge('thierry');
-	getAge(1940);
-	getAge(2030);
+	console.warn('isSecuredPassword');
+	console.log(isSecuredPassword('Gros rythme.'));
+	console.log(isSecuredPassword('password@gmail.com!'));
+	console.log(isSecuredPassword('@!'));
 
 	console.log(' ');
-	console.warn('countUpToTen');
-	countUpToTen();
-	countUpToTen(true);
-	countUpToTen(13);
-
-	console.log(' ');
-	console.warn('displayMultiply');
-	displayMultiply();
-	displayMultiply(true);
-	displayMultiply(3);
-
-	console.log(' ');
-	console.warn('addUpTo');
-	addUpTo(1);
-	addUpTo(13);
-	addUpTo(14);
-
-	console.log(' ');
-	console.warn('displayVowels');
-	displayVowels();
-
-	console.log(' ');
-	console.warn('moyenne');
-	moyenne();
-	moyenne([]);
-	moyenne([10, 14, 49, 27]);
-
-	console.log(' ');
-	console.warn('addArray');
-	addArray([10, 11], [1, 2]);
-	addArray([42 ** 4], [20895 ** 6]);
-
-	console.log(' ');
-	console.warn('changeSentences');
-	changeSentences('Gros rythme.');
-	changeSentences('Comment il va en vrai ?');
-	changeSentences('La femelle oiseau à créée un nît.');
-
-	console.log(' ');
-	console.warn('changeSentencesAlt');
-	changeSentencesAlt('Gros rythme.');
-	changeSentencesAlt('Comment il va en vrai ?');
-	changeSentencesAlt('La femelle oiseau à créée un nît.');
+	console.warn('removeDuplicate');
+	console.log(removeDuplicate([]));
+	console.log(removeDuplicate([1, 2, 2, 4, 5, 2, 1, 2, 1, 6]));
 
 	//
 	// Fn
@@ -242,5 +253,65 @@
 				.split('')
 				.reduce((acc, char) => (acc += char + ('AEIOUYaàeéèêiïouùy'.split('').includes(char) ? 'fe' : '')))
 		);
+	}
+
+	function isSecuredPassword(password) {
+		if (typeof password === 'string' && password.length >= 9) {
+			let at, exc, i;
+
+			for (i = 0; i < password.length; i++) {
+				if (password[i] === '!') {
+					exc = true;
+				}
+				if (password[i] === '@') {
+					at = true;
+				}
+				if (at && exc) {
+					return true;
+				}
+			}
+		}
+
+		return false;
+	}
+
+	function removeDuplicate(array) {
+		// Remove duplicate comme en 1979
+
+		const result = [];
+		let arrayLength = 0;
+		let resultLength = 0;
+		let isDuplicate = false;
+		let ii = 0;
+		let jj = 0;
+
+		// Get array length
+		while (array[arrayLength]) {
+			arrayLength++;
+		}
+
+		// For array length
+		while (array[ii]) {
+			// For result length or found duplicate
+			while (!(isDuplicate || jj >= resultLength)) {
+				if (array[ii] === result[jj]) {
+					isDuplicate = true;
+				} else {
+					jj++;
+				}
+			}
+
+			// Add
+			if (isDuplicate === false) {
+				result[resultLength] = array[ii];
+				resultLength++;
+			}
+
+			isDuplicate = false;
+			jj = 0;
+			ii++;
+		}
+
+		return result;
 	}
 </script>
