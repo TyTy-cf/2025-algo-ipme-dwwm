@@ -172,10 +172,15 @@
       // exercice 10
 
       function removeDuplicate(array){
-        const arraySansDoublons = [];
-
-        console.log(arraySansDoublons);
+        const noDuplicate = [];
+        for (let i = 0; i<array.length; i++){
+          if(!noDuplicate.includes(array[i])){
+            noDuplicate.push(array[i]);
+          }
+        }
+        console.log(noDuplicate);
       }
+      removeDuplicate([1, 1, 1, 2, 5, 8, 7, 5, 6, 6]);
 
-      removeDuplicate([1, 1, 1, 2, 5, 8, 7, 5]);
+      //
 </script>
