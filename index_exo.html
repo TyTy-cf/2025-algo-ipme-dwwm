@@ -138,9 +138,16 @@
                }
                return newStr;
            }
-          console.log(inverseWord("espion"));
+         // console.log(inverseWord("espion"));
 
           //EXERCICE 12 : 
-          
-
+          function isSecuredPassword(password){
+            if (password.includes("@")|| password.includes("!") && password.length >= 9){
+                return true;
+            }
+            else {
+                return false;
+            }
+          }
+       //   console.log(isSecuredPassword("hello"));
 </script>
