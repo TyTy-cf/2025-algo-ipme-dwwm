@@ -137,8 +137,7 @@
       /* EXERCICE 10 */
 
       function removeDuplicate(array) {
-        let s = new Set(array);
-        console.log(s);
+        console.log([...new Set(array)]);
       }
 
       removeDuplicate([1, 1, 1, 2, 5, 8, 7, 5]);
@@ -146,7 +145,13 @@
       /* EXERCICE 11 */
 
       function inverseWord(str) {
-        console.log(str.split('').reverse().join(''));
+        let newWord = "";
+
+        for (let i = str.length - 1; i >= 0; i--) {
+          newWord += str[i];
+        }
+
+        console.log(newWord);
       }
 
       // inverseWord("espion");
