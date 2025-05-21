@@ -88,8 +88,8 @@ function addUpTo() {
     let sum = 0;
     for (let i = 1; i <= max; i++) {
         sum = sum + i;
-        console.log("La somme de i est " + sum);
     }
+    console.log("La somme de i est " + sum);
 }
 
 addUpTo();

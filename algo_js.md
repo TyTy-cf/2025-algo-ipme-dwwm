@@ -92,3 +92,21 @@ function countTo(max, startAtZero = true) {
 countTo(40);
 countTo(25, false);
 ```
+
+#### Le "return"
+
+Le "return" est un moyen pour une fonction de "RETOURNER" une valeur, ce qui permet de l'exploiter en dehors la fonction.
+
+Une fonction qui n'a pas de "return" est considérée comme retournant "void", autrement dit du "vide", rien du tout, et en Javascript cela se montre par "undefined".
+
+Exemple sur la fonction "getAge" :
+
+```js
+function getAge(year) {
+    const currentYear = new Date().getFullYear();
+    return currentYear - year;
+}
+
+const age = getAge(2000);
+console.log(age);
+```
