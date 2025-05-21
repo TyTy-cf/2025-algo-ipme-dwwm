@@ -160,6 +160,8 @@ La fonction affiche donc [1, 2, 5, 8, 7]
 ```
 
 La fonction doit afficher la chaine de caractères inverses de celle passée en paramètres.
+(Sans utiliser de fonction native à Javascript, autre que le ".length")
+
 Exemple avec : "espion" :
 ```
 La fonction affiche "noipse"
