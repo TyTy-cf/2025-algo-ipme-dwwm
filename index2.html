@@ -256,42 +256,42 @@
 
             // exercise 11 b
             // créer une fonction qui inverse la chaîne de caractères sans utiliser .length
-            function inverseWord(str) {
-              // créer une variable temporaire pour stocker la chaîne de caractères inversée
-              let temp = "";
-              // parcourir la chaîne de caractères
-              for (let i = str.indexOf(str[str.length - 1]); i >= 0; i--) {
-                // ajouter chaque caractère à la variable temporaire
-                temp += str[i];
-              }
-              // retourner la chaîne de caractères inversée
-              return temp;
-            }
-            // appeler la fonction
-            console.log(inverseWord("Hello World"));
-            console.log(inverseWord("espion"));
+            // function inverseWord(str) {
+            //   // créer une variable temporaire pour stocker la chaîne de caractères inversée
+            //   let temp = "";
+            //   // parcourir la chaîne de caractères
+            //   for (let i = str.indexOf(str[str.length - 1]); i >= 0; i--) {
+            //     // ajouter chaque caractère à la variable temporaire
+            //     temp += str[i];
+            //   }
+            //   // retourner la chaîne de caractères inversée
+            //   return temp;
+            // }
+            // // appeler la fonction
+            // console.log(inverseWord("Hello World"));
+            // console.log(inverseWord("espion"));
 
 
             // exercice 12
             //créer une fonction qui vérifie si le password
             //  a au moin 9 caractères et contient un @ ou un !
             // paramètre password = une chaîne de caractères
-            function isSecuredPassword(password) {
-              // vérifier si le mot de passe a au moins 9 caractères
-              if (password.length < 9) {
-                console.log("Le mot de passe doit contenir au moins 9 caractères");
-                return;
-              }
-              // vérifier si le mot de passe contient un @ ou un !
-              if (!password.includes("@") && !password.includes("!")) {
-                console.log("Le mot de passe doit contenir un @ ou un !");
-                return;
-              }
-              return true;
-              // console.log("Le mot de passe est sécurisé");
-            }
-            // appeler la fonction
-            console.log(isSecuredPassword("passworza@!"));
+            // function isSecuredPassword(password) {
+            //   // vérifier si le mot de passe a au moins 9 caractères
+            //   if (password.length < 9) {
+            //     console.log("Le mot de passe doit contenir au moins 9 caractères");
+            //     return;
+            //   }
+            //   // vérifier si le mot de passe contient un @ ou un !
+            //   if (!password.includes("@") && !password.includes("!")) {
+            //     console.log("Le mot de passe doit contenir un @ ou un !");
+            //     return;
+            //   }
+            //   return true;
+            //   // console.log("Le mot de passe est sécurisé");
+            // }
+            // // appeler la fonction
+            // console.log(isSecuredPassword("passworza@!"));
 
             // exercice 13
             // 1. créer une fonction qui ajoute "fe" à la fin
@@ -300,26 +300,26 @@
             // 3. la fonction doit retourner la chaîne de caractères modifiée
             // 4. la fonction doit utiliser une boucle for pour parcourir la chaîne de caractères
             // 5. la fonction doit utiliser une variable temporaire pour stocker la chaîne de caractères modifiée
-            function changeSentences(sentences) {
-              // créer une variable temporaire pour stocker la chaîne de caractères modifiée
-              let temp = "";
-              // parcourir la chaîne de caractères
-              for (let i = 0; i < sentences.length; i++) {
-                // vérifier si le caractère est une voyelle
-                if (sentences[i] === "a" || sentences[i] === "e" || sentences[i] === "i" || sentences[i] === "o" || sentences[i] === "u") {
-                  // ajouter "fe" à la fin de la voyelle + la voyelle de l'index i
-                  temp += sentences[i] + "fe" + sentences[i];
-                } else {
-                  // ajouter le caractère à la variable temporaire
-                  temp += sentences[i];
-                }
-              }
-              // retourner la chaîne de caractères modifiée
-              return temp;
-            }
-            // appeler la fonction
-            console.log(changeSentences("Hello World"));
-            console.log(changeSentences("chat"));
+            // function changeSentences(sentences) {
+            //   // créer une variable temporaire pour stocker la chaîne de caractères modifiée
+            //   let temp = "";
+            //   // parcourir la chaîne de caractères
+            //   for (let i = 0; i < sentences.length; i++) {
+            //     // vérifier si le caractère est une voyelle
+            //     if (sentences[i] === "a" || sentences[i] === "e" || sentences[i] === "i" || sentences[i] === "o" || sentences[i] === "u") {
+            //       // ajouter "fe" à la fin de la voyelle + la voyelle de l'index i
+            //       temp += sentences[i] + "fe" + sentences[i];
+            //     } else {
+            //       // ajouter le caractère à la variable temporaire
+            //       temp += sentences[i];
+            //     }
+            //   }
+            //   // retourner la chaîne de caractères modifiée
+            //   return temp;
+            // }
+            // // appeler la fonction
+            // console.log(changeSentences("Hello World"));
+            // console.log(changeSentences("chat"));
 
             // exercice 13 excerpt
             // 1. créer une fonction qui limite une chaîne de caractères à 15 caractères maximum
@@ -337,6 +337,50 @@
               }
             // appeler la fonction
             console.log(excerpt("Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum debitis eaque mollitia officia? Repellendus ipsum a earum ea aspernatur velit facere consequatur reiciendis iste dolorem, explicabo, quidem, recusandae quibusdam. Hic?", 15));
+
+            // exercice 14
+            // 1. créer une fonction qui vérifie si une chaîne de caractères contient toutes les lettres de l'alphabet
+            // 2. la fonction doit prendre en paramètre une chaîne de caractères str et retourne un boolean
+            function isPangram(str) {
+              // créer un tableau pour stocker les lettres de l'alphabet
+              const alphabet = "abcdefghijklmnopqrstuvwxyz";
+              // parcourir le tableau
+              for (let i = 0; i < alphabet.length; i++) {
+                // vérifier si la lettre n'est pas dans la chaîne de caractères
+                if (!str.includes(alphabet[i])) {
+                  return false;
+                }
+              }
+              return true;
+              // console.log("La chaîne de caractères contient toutes les lettres de l'alphabet");
+            }
+            // appeler la fonction
+            console.log(isPangram("The quick brown fox jumps over the lazy dog"));
+            console.log(isPangram("The over the lazy dog"));
+
+            // exercice 15
+            // 1. créer une fonction qui retourne la différence entre la valeur la plus petite et la plus grande valeur du tableau anArray
+            // 2. la fonction doit prendre en paramètre anArray = un tableau d'entiers
+            function isPangrams(anArray) {
+              // initialiser une variable pour stocker la valeur la plus petite
+              let min = anArray[0];
+              // initialiser une variable pour stocker la valeur la plus grande
+              let max = anArray[0];
+              // parcourir le tableau
+              for (let i = 0; i < anArray.length; i++) {
+                // vérifier si la valeur est plus petite que la valeur la plus petite
+                if (anArray[i] < min) {
+                  min = anArray[i];
+                }
+                // vérifier si la valeur est plus grande que la valeur la plus grande
+                if (anArray[i] > max) {
+                  max = anArray[i];
+                }
+              }
+              return max - min;
+            }
+            // appeler la fonction
+            console.log(isPangrams([15, 78, 45, 96, 12, 32, 65, 78, 91]));
     </script>
   </body>
 </html>
