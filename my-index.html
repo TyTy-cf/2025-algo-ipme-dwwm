@@ -156,7 +156,7 @@
 
       // exo 12
       function isSecuredPassword(password) {
-        let msg = "";
+        let msg = "Le mot de passe doit contenir au moins 9 caractères et un @ ou un !";
         const symbols = ["@", "!"];
         if(password.length >= 9){
             for (let i = 0; i < symbols.length; i++) {
@@ -165,16 +165,31 @@
                 }
             }
         }
-        else {
-            msg = "Le mot de passe doit contenir au moins 9 caractères et un @ ou un !"
-        }
         return msg;
     }
-      console.log(isSecuredPassword("test"));
-      console.log(isSecuredPassword("myP@ssword"));
-      console.log(isSecuredPassword("myP!ssword"));
+    //   console.log(isSecuredPassword("test"));
+    //   console.log(isSecuredPassword("myP@ssword"));
+    //   console.log(isSecuredPassword("myP!ssword"));
 
-      // exo 13
+    // exo 13
+    function excerpt(str, from = 15){
+        let newString = "";
+        if(str.length > from) {
+            newString = str.slice(0, from) + "...";
+            return newString
+        }
+        return str;
+    }
+    console.log(excerpt("Bonjour"))
+    console.log(excerpt("Lorem quisque class vestibulum"))
+
+    // exo 14
+    // function isPangram(str){
+
+    // }
+    // console.log(isPangram("The quick brown fox jumps over the lazy dog."))
+
+      // exo 17
       function changeSentences(sentences) {
       const vowels = ["a", "e", "i", "o", "u", "y"];
       let newSentences = "";
