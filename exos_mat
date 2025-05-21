@@ -7,6 +7,37 @@ Faites une fonction par exercices...
 /!\.PENSEZ.AU.CONSOLE.LOG.C.EST.VOTRE.MEILLEUR.AMI./!\
 
 ### 1. Algorithme de prédiction d'avenir
+script lang="js">
+
+    // function toto(toto) {
+    //     console.log(toto);
+    // }
+    //
+    // toto(10);
+
+
+    // 1. Algorithme de prédiction d'avenir
+
+    function_add_a_minute_and_show(hour, minutes) {
+
+        if(minutes==59) {
+            hour = hour + 1;
+            minutes =0;
+        }
+        
+        if(minutes!=59) {
+            hour= hour;
+            minutes =minutes +1;
+        }
+        
+
+         console.log("Dans une minute, il est" +hour, "et", +minutes, "minutes");
+
+    }
+
+    
+
+</script>
 
 Il demande à l'utilisateur de donner une heure et des minutes (séparemment)
 

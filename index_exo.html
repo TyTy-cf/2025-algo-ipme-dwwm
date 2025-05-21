@@ -9,14 +9,14 @@
 
     // 1. Algorithme de prédiction d'avenir
 
-    function_add_a_minute_and_show(hour, minutes) {
+    function add_a_minute_and_show(hour, minutes) {
 
-        if(minutes==59) {
-            hour = hour + 1;
-            minutes =0;
+        if(minutes===59) {
+            minutes = minutes + 1;
+            minutes = 0;
         }
         
-        if(minutes!=59) {
+        if(x!=59) {
             hour= hour;
             minutes =minutes +1;
         }
@@ -25,7 +25,25 @@
          console.log("Dans une minute, il est" +hour, "et", +minutes, "minutes");
 
     }
+///   Le magasin de reprographie
+ function calculPriceBy(copy) {
+    let priceCopy =0;
 
-    
+    if (copy<=10 ){
+        priceCopy = copy *0.10;
+    }
+    if ((copy<=50) &&(copy<10) ){
+        priceCopy = copy *0.09;
+    }
+    if (copy<=100 ){
+        priceCopy = copy *0.08;
+    }
+    console.log(priceCopy)
+ }
+
+calculPriceBy(12);
+calculPriceBy(52);
+
+
 
 </script>
