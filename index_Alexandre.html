@@ -259,43 +259,9 @@
 
       // exercice 17
       function getScrabbleScore(str){
-        const un = "aeioulnr";
-        const deux = "dg";
-        const trois ="bcmp";
-        const quatre = "fhvwy";
-        const cinq = "k";
-        const huit = "jx";
-        const dix = "qz";
-        let sum = 0;
-         for (let i = 0 ; i<str.length;i++){
-          switch (str[i]) {
-            case un.includes(str[i]):
-            sum += 1;
-              break;
-            case deux.includes(str[i]):
-            sum += 2;
-              break;
-            case trois.includes(str[i]):
-            sum += 3;
-              break;
-            case quatre.includes(str[i]):
-            sum += 4;
-              break;
-            case cinq.includes(str[i]):
-            sum += 5;
-              break;
-            case huit.includes(str[i]):
-            sum += 8;
-              break;
-            case huit.includes(str[i]):
-            sum += 10;
-              break;
-            default:
-              console.log("tu ne sais probablement pas jouer au scrabble");
-              break;
-         }
-         return sum
+      
       }
+    
       console.log(getScrabbleScore("lazy"));
 
       // exercice 18
