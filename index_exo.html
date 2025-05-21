@@ -29,7 +29,7 @@
            // predict(hour, minutes);
 
             // EXERCICE 2 :
-   
+
             //   let copy = prompt("nombre de copies")
             function calculPriceBy(copy) {
             if (copy <= 10){
@@ -93,7 +93,16 @@
     displayVowels()
 
     // EXERCICE 8 :
-    //voir correction
+    function getAverage(grades) {
+
+        let sum = 0;
+        const sizeArray = grades.length;
+        for (let i = 0; i < sizeArray; i++) {
+            sum += grades[i];
+        }
+        return sum / sizeArray;
+    }
+    console.log(getAverage([10, 15, 15, 12, 18]));
 
     //EXERCICE 9 :
     
