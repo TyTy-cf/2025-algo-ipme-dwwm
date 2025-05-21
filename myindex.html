@@ -147,8 +147,8 @@
 
   function inverseword(Mot) {
     let NewMot = "" ;
-      for (let i = Mot.length; i > Mot; i--) {
-      NewMot += i;
+      for (let i = Mot.length - 1 ; i >= 0 ; i--) {
+      NewMot += Mot[i];
       }
      
       return NewMot

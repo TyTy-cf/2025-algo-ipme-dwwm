@@ -141,6 +141,7 @@ On affiche le nouveau tableau, exemple :
 ```
 
 La fonction doit créer un nouveau tableau, n'ayant plus les éléments en doublons du tableau initial.
+(Sans utiliser de fonction native à Javascript, autre que le ".length")
 
 Par exemple :
 ```
@@ -157,12 +158,130 @@ La fonction affiche donc [1, 2, 5, 8, 7]
 ```
 
 La fonction doit afficher la chaine de caractères inverses de celle passée en paramètres.
+(Sans utiliser de fonction native à Javascript, autre que le ".length")
+
 Exemple avec : "espion" :
 ```
 La fonction affiche "noipse"
  ```
 
-### 12. Transformation de mot...
+### 12. Le mot de passe sécurisé
+
+```
+- Nom de la fonction : "isSecuredPassword"
+- Paramètres :
+  - "password", une chaine de caractères corespondant au mot de passe
+```
+
+La fonction doit vérifier si le mot de passe est sécurisé ou non, un mot de passe est considéré sécurisé si :
+- Il contient un @ ou un !
+- Il fait au moins 9 caractères
+
+### 13. Fonction de "excerpt"
+
+```
+- Nom de la fonction : "excerpt"
+- Paramètres :
+  - "str", une chaine de caractères
+  - "from", un entier, par défaut à 15
+- Retour : une chaine de caractère
+```
+
+La fonction effectue le traitement suivant :
+    - Si la chaine excède 15 caractères, alors on affiche la chaîne coupée jusqu'à 15 caractères puis '...'
+    - Sinon elle renvoie simplement la chaîne de caractères
+
+Exemple :
+```
+- Paramète "str" : 'Lorem quisque class vestibulum'
+- Retour : 'Lorem quisque c...'
+ ```
+
+### 14. Fonction de "pangram"
+
+```
+- Nom de la fonction : "isPangram"
+- Paramètres :
+  - "str", une chaine de caractères
+- Retour : un booléen
+```
+
+La fonction indique si la chaine de caractère est un pangram, autrement dit si la chaine de caractères contient toutes les lettres de l'alphabet latin, au moins une fois.
+
+Exemple :
+```
+- Paramètre "str" : "The quick brown fox jumps over the lazy dog."
+- Retour : true
+ ```
+
+### 15. Fonction de "getRange"
+
+```
+- Nom de la fonction : "isPangram"
+- Paramètres :
+  - "anArray", un tableau d'entier
+- Retour : un entier
+```
+
+La fonction retourne l'écart entre la plus petite valeur du tableau, et la plus grande
+
+Exemple :
+```
+- Paramètre "anArray" : [15, 78, 45, 96, 12, 32, 65, 78, 91]
+- Retour : 84 (écart entre 96 et 12)
+ ```
+
+### 16. Fonction de palindromes
+
+```
+- Nom de la fonction : "isPalindrome"
+- Paramètres :
+  - "str", une chaine de caractères
+- Retour : un booléen
+```
+
+La fonction retourne vrai si le mot est un palindrome, faux, sinon
+
+Exemple :
+```
+- Paramètre "str" : "ressasser"
+- Retour : true
+
+- Paramètre "str" : "rêver"
+- Retour : true
+
+- Paramètre "str" : "toto"
+- Retour : false
+ ```
+
+### 17. Fonction de calcul de points au Scrabble
+
+```
+- Nom de la fonction : "getScrabbleScore"
+- Paramètres :
+  - "str", une chaine de caractère
+- Retour : un entier
+```
+
+La fonction retourne le nombre de points réalisés par la chaine de caractères "str" passée en paramètre.
+
+Valeurs des lettres :
+
+- 1 point: "A", "E", "I", "O", "U", "L", "N", "R", "S", "T",
+- 2 points: "D", "G",
+- 3 points: "B", "C", "M", "P",
+- 4 points: "F", "H", "V", "W", "Y",
+- 5 points: "K",
+- 8 points: "J", "X",
+- 10 points: "Q", "Z",
+
+Exemple :
+```
+- Paramètre "str" : "lazy"
+- Retour : 16
+ ```
+
+### 18. Transformation de mot...
 
 ```
 - Nom de la fonction : "changeSentences"
@@ -175,6 +294,36 @@ Exemple avec : "chat" :
 ```
 La fonction affiche "chafeat"
  ```
+
+### 19. Algorithme de "César"
+
+```
+- Nom de la fonction : "encrypt"
+- Paramètres :
+  - "str" : une chaine de caractères
+  - "gap" : un entier
+- Retour : la chaine cryptée
+```
+
+La fonction doit permet de crypter la chaine de caractères "str", passée en paramètre, en utilisant le "gap" et renvoyer la chaine cryptée.
+L'algorithme de césar crypte en se basant sur un décalage de l'alphabet, par exemple si j'ai un "gap" de 6, on transforme les "a" en "g", les "b" en "h", etc 
+
+Exemple :
+```
+- Paramètre "str" : "chat"
+- Paramètre "gap" : 3
+- Retour : "fkdw"
+ ```
+
+On a crypté, maintenant, on aimerai pouvoir décrypter aussi :
+
+```
+- Nom de la fonction : "decrypt"
+- Paramètres :
+  - "str" : une chaine de caractères crypté
+  - "gap" : un entier
+- Retour : la chaine décryptée
+```
 
 
 
