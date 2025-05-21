@@ -48,5 +48,106 @@ console.log(heures)
         // On affiche le résultat
         console.log("Dans 1min il va etre " + hours + "h" + minutes);
     }
-    predictFuture();
+
+     // predictFuture();
+
+    function calculPriceBy(copy) {
+        let price = 0.11;
+        if (copy >= 100) {
+            price = 0.08;
+        } else if (copy >= 50) {
+            price = 0.09;
+        } else if (copy >= 10) {
+            price = 0.1;
+        }
+        console.log("Prix pour " + copy + " : " + price * copy + "€");
+    }
+
+    // calculPriceBy(8);
+    // calculPriceBy(42);
+    // calculPriceBy(51);
+    // calculPriceBy(120);
+
+    function getAge(year) {
+        const currentYear = new Date().getFullYear();
+        return currentYear - year;
+    }
+
+    const age = getAge(1990);
+    // console.log("Vous avez : " + age + " ans");
+    // getAge(1995);
+    // getAge(2000);
+    // getAge(2005);
+
+    function countUpToTen(startFrom) {
+        for (let i = (startFrom + 1); i <= (startFrom + 10); i++) {
+            console.log(i);
+        }
+        // for (let i = 1; i <= 10; i++) {
+        //     console.log(startFrom + i);
+        // }
+    }
+
+    // countUpToTen(17);
+
+    function displayMultiply(digit) {
+        for (let i = 1; i <= 12; i++) {
+            console.log(i + " x " + digit + " = " + (i * digit));
+        }
+    }
+
+    // displayMultiply(3);
+    // displayMultiply(5);
+
+    function addUpTo(max) {
+        // initialiser variable "sum" à 0, elle sert à faire la somme à l'intérieur de la boucle
+        let sum = 0;
+        // initialiser variable "i" à 0, elle sert à incrémenter notre boucle
+        let i = 1;
+        // intialiser variable "sumDetails" à i, elle sert à recréer le détail du calcul sous forme de chaine de caractères
+        let sumDetails = i;
+        // POUR i, JUSQU'A i <= max, ALORS
+        for (i; i <= max; i++) {
+            // SI i est différent de 1, ALORS
+            if (i !== 1) {
+                // Concatène " + " + 1 à la variable "sumDetails" (recréer chaque portion du calcul par passage de boucle)
+                sumDetails += ' + ' + i;
+            }
+            // Ajoute la valeur de "i" + la valeur actuelle de "sum" à la variable "sum"
+            sum += i; // sum = sum + i
+        }
+        // Concatène " = " + sum à la variable "sumDetails" (ajoute la fin du calcul)
+        sumDetails += ' = ' + sum;
+        console.log(sumDetails);
+        // Renvoie la valeur de "sum"
+        return sum;
+    }
+
+    // const sum = addUpTo(7);
+    // console.log("Somme finale : " + sum);
+
+    function displayVowels() {
+        return ['a', 'e', 'i', 'o', 'u', 'y'];
+    }
+    // const vowels = displayVowels();
+    // console.log(vowels);
+    // console.log(displayVowels()); // Identiques aux deux lignes au-dessus
+
+    function getAverage(grades) {
+        // initialiser variable "sum" à 0, elle sert à faire la somme à l'intérieur de la boucle
+        let sum = 0;
+        // intialiser variable "sizeArray" à la taille du tableau
+        const sizeArray = grades.length;
+        // POUR i <- 0 JUSQU'A i < tailleArray FAIRE
+        for (let i = 0; i < sizeArray; i++) {
+            // sum <- sum + grades[i]
+            sum += grades[i];
+        }
+        // converti en "float" la division de "sum" par "sizeArray", qui a été arrondi à 2 chiffres après la virgule (toFixed)
+        return parseFloat((sum / sizeArray).toFixed(2));
+    }
+
+    console.log(getAverage([10, 15, 15, 12, 18]));
+    console.log(getAverage([10, 15, 15, 12, 18, 5, 14, 17, 6]));
+
 </script>

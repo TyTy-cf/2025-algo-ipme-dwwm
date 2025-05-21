@@ -40,6 +40,7 @@ L'algo doit écrire : "Dans 1 minute il sera 11h14"
 - Paramètres :
   - "copy", un entier
 ```
+- Par défaut le prix est de 0.11€
 - De 10 à 49 copies, alors le prix unitaire est de 0.10€
 - De 50 à 99 copies, alors le prix unitaire est de 0.09€
 - Au delà de 100 copies, alors le prix unitaire est de 0.08€
@@ -180,6 +181,33 @@ Exemple avec : "espion" :
 ```
 La fonction affiche "noipse"
  ```
+
+### 12. Le mot de passe sécurisé
+
+```
+- Nom de la fonction : "isSecuredPassword"
+- Paramètres :
+  - "password", une chaine de caractères corespondant au mot de passe
+```
+
+La fonction doit vérifier si le mot de passe est sécurisé ou non, un mot de passe est considéré sécurisé si :
+- Il contient un @ ou un !
+- Il fait au moins 9 caractères
+
+### 13. Transformation de mot...
+
+```
+- Nom de la fonction : "changeSentences"
+- Paramètres :
+  - "sentences" : une chaine de caractères
+```
+
+La fonction doit, pour chaque voyelle présente dans le mot, ajouter "fe" après elle, et répéter la voyelle.
+Exemple avec : "chat" :
+```
+La fonction affiche "chafeat"
+ ```
+
 
 
 
