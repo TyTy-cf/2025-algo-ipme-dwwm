@@ -180,14 +180,28 @@
         }
         return str;
     }
-    console.log(excerpt("Bonjour"))
-    console.log(excerpt("Lorem quisque class vestibulum"))
+    // console.log(excerpt("Bonjour"));
+    // console.log(excerpt("Lorem quisque class vestibulum"));
 
     // exo 14
-    // function isPangram(str){
+    function isPangram(str){
+        const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-    // }
-    // console.log(isPangram("The quick brown fox jumps over the lazy dog."))
+        for (let i = 0; i < alphabet.length; i++) {
+            if(str.includes(alphabet[i])){
+                return true;
+            }
+            return false;
+        }
+    }
+    // console.log(isPangram("The quick brown fox jumps over the lazy dog."));
+    // console.log(isPangram("Test test"));
+
+    // exo 15
+    function isRange(anArray){
+        return anArray.at(-1) - anArray[0];
+    }
+    console.log(isRange([12, 78, 45, 96, 12, 32, 65, 78, 96]))
 
       // exo 17
       function changeSentences(sentences) {
