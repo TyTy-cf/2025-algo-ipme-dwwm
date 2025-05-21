@@ -47,18 +47,52 @@
 ///3. Le calcul d'âge
 
 
-function getAge(year){
-   let age = parseInt(year - 2025);
-   console.log("Vous avez :", + age + "ans.");
+// function getAge(year){
+//     let annee = new Date.get
+//    let age = parseInt(year - 2025);
+//    console.log("Vous avez :", + age + "ans.");
+// }
+
+// getAge(2026);
+
+//  Ajout de tableau
+
+function addArray(first,second){
+
+   // const maxlenghttab= 100;
+//let first =  new array(maxlenghttab);
+   //  let second = new array(maxlenghttab);
+     
+
+    // verification de l'égalité des tailles des tableaux
+    const sizefirst = first.length;
+    const sizesecond = second.length;
+     
+    let third = [];
+     
+    if (sizefirst==sizesecond) {
+
+        // calcul 
+    
+
+        for (i=0; i<sizefirst ; i++ ){
+       //     third[i]= first[i]+ second[i];
+       third.push(first[i]+second[i]);
+        }
+
+    }
+
+     return third;
 }
 
-getAge(2026);
+const first=[1,2,3];
+const second=[3,4,3];
+console.log(addArray([1,2,3],[3,4,3]));
 
-//  On compte !
+//console.log(addArray(first,second));
 
-function countUpToTen(){
+/// les doublons
 
-}
 
 
 </script>
