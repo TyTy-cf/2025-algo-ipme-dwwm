@@ -7,6 +7,7 @@ Faites une fonction par exercices...
 
 ### 1. Algorithme de prédiction d'avenir
 
+
 Il demande à l'utilisateur de donner une heure et des minutes (séparemment)
 
 Si l'utilisateur saisie : 
@@ -16,16 +17,6 @@ L'algo doit écrire : "Dans 1 minute il sera 11h14"
 
 (Bonus : pour ceux qui trouve comment afficher réellement qu'il est 11h14, 1 min après !)
 
-<script lang="js">    
-    let heures = prompt("ecrit lheurs") 
-    heures = parseInt(heures)
-console.log(heures)
-   let minutes = prompt("ecrit les minutes") 
-    minutes = parseInt(minutes)
-     console.log(minutes)
-     for(minuts=0 , minutes<=59 , minutes++) {
-       console.log("il est"+" "+()+"heures"+"et"+()+" "+" "minutes");}
-</script>
 
 
 
@@ -35,7 +26,7 @@ console.log(heures)
 //  toto = parseInt(toto);
 // ```
 
-//     // function toto(toto) {
+//     // function toto(toto) 
 //     //     console.log(toto);
 //     // }
 //     //
