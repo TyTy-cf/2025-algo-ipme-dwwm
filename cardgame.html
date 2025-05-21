@@ -1,0 +1,125 @@
+<script lang="js">
+class Card 
+{
+    color = "";
+    value = "";
+    power = "";
+
+    constructor(color, value, power) 
+    {
+        this.color = color;
+        this.value = value;
+        this.power = power;
+    }
+
+    display()
+    {
+        console.log(this.value + " of " + this.color + " (" + this.power + ")");
+    }
+}
+
+class Deck {
+
+    cards = [];
+
+    constructor() 
+    {   
+        const colors = ["heart", "diamond", "club", "spade"];
+        const values = ["2", "3", "4", "5","6", "7", "8", "9", "10", "Jack", "Queen", "King", "As"];
+        for (let i = 0; i < colors.length; i++)
+        {
+            for (let j = 0; j < values.length; j++)
+            {
+                this.cards.push(new Card(colors[i], values[j], j));
+            }
+        }
+    }
+
+    display()
+    {
+        this.cards.forEach(card => 
+        {
+            card.display();
+        });
+    }
+
+    schuffle()
+    {
+        let newCards = [];
+        while (this.cards.length != 0)
+        {
+            newCards.splice(Math.floor(Math.random() * newCards.length), 0, this.cards[this.cards.length - 1]);
+            this.cards.pop();
+        }
+        this.cards = newCards;
+    }
+
+    draw(nbCard = 1)
+    {
+        let cardDrawn = [];
+        for (let i = 0; i < nbCard; i++)
+        {
+            cardDrawn.push(this.cards.pop());
+        }
+        return cardDrawn;
+    }
+} 
+
+class Player
+{
+    name = "";
+    hand = [];
+
+    constructor(name)
+    {
+        this.name = name;
+    }
+
+    draw(deck, nbCard = 1)
+    {
+        for (let i = 0; i < nbCard; i++)
+        {
+            hand.push(deck.draw());
+        }
+    }
+
+    display()
+    {
+        console.log("")
+    }
+}
+
+class PokerGame
+{
+    players = [];
+    deck;
+
+    constructor(players)
+    {
+        this.players = players;
+        deck = new Deck();
+    }
+
+    distribute(nbCard)
+    {
+        for (let i = 0; i < players.length; i++)
+        {
+            players[i].draw(this.deck, nbCard);
+        }
+    }
+}
+
+
+let deck = new Deck();
+deck.schuffle();
+console.log("Deck schuffled")
+deck.display();
+console.log("DRAAAAAAAAAAW");
+let cardDrawn = deck.draw(5);
+for (let i = 0; i < cardDrawn.length; i++)
+{
+    cardDrawn[i].display();
+}
+console.log("DISPLAY NEW DEEEEEEEEEEEEEEEEEEEEEEEECK");
+deck.display();
+</script>
