@@ -195,7 +195,19 @@
 
       // exercice 12
       function changeSentences(sentences){
+        let newStr = "";
+        const voyelles = "aeiouy";
+        for (let i = 0; i<sentences.length; i++){
+          for(let j = 0; j<voyelles.length; j++){
+            if (sentences[i] === voyelles[j]){
+              newStr=newStr+"fe"+voyelles[i];
+            }else{
+              newStr=newStr+sentences[i];
+            }
+          }
 
+        }
+        return newStr
       }
       console.log(changeSentences("chat"));
 </script>
