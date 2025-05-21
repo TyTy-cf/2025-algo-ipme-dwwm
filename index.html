@@ -139,6 +139,66 @@
         return parseFloat((sum / sizeArray).toFixed(2));
     }
 
-    console.log(getAverage([10, 15, 15, 12, 18]));
-    console.log(getAverage([10, 15, 15, 12, 18, 5, 14, 17, 6]));
+    // console.log(getAverage([10, 15, 15, 12, 18]));
+    // console.log(getAverage([10, 15, 15, 12, 18, 5, 14, 17, 6]));
+
+    function addArray(first, second) {
+        const sizeFirst = first.length;
+        const sizeSecond = second.length;
+        const newArray = [];
+        // SI, sizeFirst == sizeSecond, ALORS
+        if (sizeFirst === sizeSecond) {
+            // POUR, i = 0 JUSQU'A i < size?, ALORS
+            for (let i = 0; i < sizeFirst; i++) {
+                // newArray.push( ? + ? )
+            // FINPOUR
+            }
+        // FINSI
+        }
+        // RETOUR newArray
+    }
+
+    const aFirst = [1, 2, 3, 4, 5];
+    const aSecond = [6, 7, 8, 9, 10];
+    // console.log(addArray(aFirst, aSecond)); // [7, 9, 11, 13, 15]
+
+    function removeDuplicate(array) {
+        const noDuplicate = [];
+
+        for (let i = 0; i < array.length; i++) {
+            const element = array[i];
+            // if (noDuplicate.indexOf(element) === -1) { // version sans le "!" car si un element n'est pas trouvé avec indexOf il vous renvoie -1
+            // if (!noDuplicate.includes(element)) {
+            if (myIndexOf(noDuplicate, element) === -1) {
+                noDuplicate.push(array[i]);
+            }
+        }
+
+        return noDuplicate;
+    }
+
+    console.log(removeDuplicate([1, 1, 1, 2, 5, 8, 7, 5]));
+
+    function inverseWord(str) {
+        // Créer une variable pour recréer le mot à l'envers (nom : "inverse")
+        let inverse = '';
+        // Parcourir le mot mais en commençant de la fin
+        for (let i = str.length - 1; i >= 0; i--) {
+            // ajouter la lettre en cours de parcours à la variable "inverse"
+            inverse += str[i];
+        }
+        // fin parcours
+        return inverse;
+    }
+
+    console.log(inverseWord("espion"));
+
+    function myIndexOf(haystack, needle) {
+        for (let i = 0; i < haystack.length; i++) {
+            if (haystack[i] === needle) {
+                return i;
+            }
+        }
+        return -1;
+    }
 </script>
