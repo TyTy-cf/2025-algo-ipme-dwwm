@@ -198,16 +198,14 @@
         let newStr = "";
         const voyelles = "aeiouy";
         for (let i = 0; i<sentences.length; i++){
-          for(let j = 0; j<voyelles.length; j++){
-            if (sentences[i] === voyelles[j]){
-              newStr=newStr+"fe"+voyelles[i];
+            if (voyelles.includes(sentences[i])){
+              newStr+=sentences[i]+"fe"+sentences[i];
             }else{
-              newStr=newStr+sentences[i];
+              newStr+=sentences[i];
             }
-          }
 
         }
         return newStr
       }
-      console.log(changeSentences("chat"));
+      console.log(changeSentences("chateau"));
 </script>
