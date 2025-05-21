@@ -287,8 +287,8 @@
         }
         return newSentences;
     }
-    console.log(encrypt("chat", 3));
-    console.log(encrypt("chatz", 3));
+    // console.log(encrypt("chat", 3));
+    // console.log(encrypt("chatz", 3));
 
     function decrypt(str, gap) {
         const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -301,6 +301,27 @@
         }
         return newSentences;
     }
-    console.log(decrypt("fkdw", 3))
-    console.log(decrypt("fkdwa", 3))
+    // console.log(decrypt("fkdw", 3));
+    // console.log(decrypt("fkdwa", 3));
+
+    function encryptDescrypt(str, gap, encrypt){
+        const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        let newSentences= "";
+
+        for (let i = 0; i < str.length; i++) {
+            let char = str[i];
+            let alphabetIndex;
+            if(encrypt){
+                alphabetIndex = (alphabet.indexOf(char) + gap) % 26;
+            } else {
+                alphabetIndex = (alphabet.indexOf(char) - gap + alphabet.length) % 26;
+            }
+            newSentences += alphabet[alphabetIndex];
+        }
+        return newSentences;
+    }
+    console.log(encryptDescrypt("chat", 3, true))
+    console.log(encryptDescrypt("chatz", 3, true))
+    console.log(encryptDescrypt("fkdw", 3, false))
+    console.log(encryptDescrypt("fkdwa", 3, false))
 </script>
