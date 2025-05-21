@@ -221,7 +221,7 @@ Exemple :
 ### 15. Fonction de "getRange"
 
 ```
-- Nom de la fonction : "isPangram"
+- Nom de la fonction : "getRange"
 - Paramètres :
   - "anArray", un tableau d'entier
 - Retour : un entier
