@@ -192,19 +192,13 @@
         {
             stars += "*";
         }
-        if(password.length >= 9 && String(password).includes('@') && String(password).includes('!'))
-        {
-            console.log(stars + " is a secured password");
-        }
-        else
-        {
-            console.log(stars + " is not a secured password");
-        }
+        console.log(stars);
+        return password.length >= 9 && String(password).includes('@') && String(password).includes('!');
     }
 
-    // isSecuredPassword("1234");
-    // isSecuredPassword("123456789@");
-    // isSecuredPassword("123456789@!");
+    console.log(isSecuredPassword("1234")? "is a secured password":"is not a secured password");
+    console.log(isSecuredPassword("123456789@")? "is a secured password":"is not a secured password");
+    console.log(isSecuredPassword("123456789@!")? "is a secured password":"is not a secured password");
 
     //13)
     function addFE(mot)
