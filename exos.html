@@ -284,12 +284,12 @@
 	}
 
 	// 11
-	function inverseWord(str = '', rv = '') {
-		if (rv.length < str.length) {
-			rv = inverseWord(str, rv + str[str.length - 1 - rv.length]);
+	function inverseWord(str = '', inv = '') {
+		if (inv.length < str.length) {
+			inv = invWord(str, inv + str[str.length - inv.length - 1]);
 		}
 
-		return rv;
+		return inv;
 	}
 
 	// 12
