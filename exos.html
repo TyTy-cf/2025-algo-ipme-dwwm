@@ -286,7 +286,7 @@
 	// 11
 	function inverseWord(str = '', inv = '') {
 		if (inv.length < str.length) {
-			inv = invWord(str, inv + str[str.length - inv.length - 1]);
+			inv = inverseWord(str, inv + str[str.length - inv.length - 1]);
 		}
 
 		return inv;
