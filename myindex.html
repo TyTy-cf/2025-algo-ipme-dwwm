@@ -153,6 +153,23 @@
 
       /* EXERCICE 12 */
 
+      function isSecuredPassword(password) {
+        charList = ["@", "!"];
+
+        if (password.length >= 9 && password.includes(charList[0]) || password.includes(charList[1])) {
+          return true;
+        }
+        return false;
+      }
+
+      /* isSecuredPassword("123"); // false
+      isSecuredPassword("123456789"); // false
+      isSecuredPassword("12345678@"); // true
+      isSecuredPassword("12345678!"); // true
+      isSecuredPassword("!2345678@"); // true */
+
+      /* EXERCICE 13 */
+
       function changeSentences(sentences) {
         const vowels = ["a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "Y"];
         let newSentences = "";
