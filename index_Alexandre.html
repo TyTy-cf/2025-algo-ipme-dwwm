@@ -193,28 +193,31 @@
 
       // console.log(inverseWord("espion"));
 
-      // exercice 12
 
-
-
-
-
-
-
-
-      // exercice 13 (anciennement 12)
+    // exercice chafeat
       function changeSentences(sentences){
         let newStr = "";
         const voyelles = "aeiouy";
         for (let i = 0; i<sentences.length; i++){
-            if (voyelles.includes(sentences[i])){
-              newStr+=sentences[i]+"fe"+sentences[i];
-            }else{
-              newStr+=sentences[i];
-            }
-
+          newStr+=sentences[i];
+          if (voyelles.includes(sentences[i])){
+            newStr+="fe"+sentences[i];
+          }
         }
         return newStr
       }
       console.log(changeSentences("chateau"));
+
+
+
+      // exercice 12
+
+      function isSecuredPassword(password){
+        if((password.includes("@)") || password.includes("!"))  && password.length>=9){
+          return true
+        }else{
+          return false
+        }
+      }
+      // console.log(isSecuredPassword("154g568o"))
 </script>
