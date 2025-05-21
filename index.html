@@ -115,7 +115,31 @@
         return sum;
     }
 
-    const sum = addUpTo(7);
-    console.log("Somme finale : " + sum);
+    // const sum = addUpTo(7);
+    // console.log("Somme finale : " + sum);
+
+    function displayVowels() {
+        return ['a', 'e', 'i', 'o', 'u', 'y'];
+    }
+    // const vowels = displayVowels();
+    // console.log(vowels);
+    // console.log(displayVowels()); // Identiques aux deux lignes au-dessus
+
+    function getAverage(grades) {
+        // initialiser variable "sum" à 0, elle sert à faire la somme à l'intérieur de la boucle
+        let sum = 0;
+        // intialiser variable "sizeArray" à la taille du tableau
+        const sizeArray = grades.length;
+        // POUR i <- 0 JUSQU'A i < tailleArray FAIRE
+        for (let i = 0; i < sizeArray; i++) {
+            // sum <- sum + grades[i]
+            sum += grades[i];
+        }
+        // converti en "float" la division de "sum" par "sizeArray", qui a été arrondi à 2 chiffres après la virgule (toFixed)
+        return parseFloat((sum / sizeArray).toFixed(2));
+    }
+
+    console.log(getAverage([10, 15, 15, 12, 18]));
+    console.log(getAverage([10, 15, 15, 12, 18, 5, 14, 17, 6]));
 
 </script>
