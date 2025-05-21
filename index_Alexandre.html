@@ -243,7 +243,24 @@
             array.push(str[i]);
           }
         }
-        return array.sort().join("") === alphabet;
+        return array.length === alphabet.length;
       }
-      console.log(isPangram("The quick brown fox jumps over the lazy dog."));
+      // console.log(isPangram("The quick brown fox jumps over the lazy dog."));
+
+      // exercice 15
+      function getRange(anArray){
+        let maxValue = anArray[0];
+        let minValue = anArray[0];
+        for (let i=0; i<anArray.length;i++){
+            if(anArray[i]> maxValue){
+              maxValue = anArray[i];
+            }else if(anArray[i]<minValue){
+              minValue = anArray[i];
+            }
+          }
+          console.log(maxValue);
+          console.log(minValue);
+        return maxValue-minValue;
+      }
+      console.log(getRange([15, 78, 45,-4, 96, 12, 32, 65, 78, 91]));
 </script>
