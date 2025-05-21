@@ -80,10 +80,15 @@
 	console.log(removeDuplicate([]));
 	console.log(removeDuplicate([1, 2, 2, 4, 5, 2, 1, 2, 1, 6]));
 
+	console.log(' ');
+	console.warn('inverseWord');
+	console.log(inverseWord('hello world'));
+
 	//
 	// Fn
 	//
 
+	// 1
 	function preditAvenir() {
 		const { prompt, parseInt, location } = window;
 
@@ -125,6 +130,7 @@
 		alert(`Vous serez notifié dans une minute`);
 	}
 
+	// 2
 	function calculPriceBy(amount) {
 		if (window.isNaN(amount) || amount <= 0) {
 			console.info("La quantité n'est pas bonne");
@@ -144,6 +150,7 @@
 		console.log(`Votre total: ${total}e`);
 	}
 
+	// 3
 	function getAge(year) {
 		const currentYear = new Date().getFullYear();
 		const userYear = window.parseInt(year);
@@ -162,6 +169,7 @@
 		console.log(`Vous avez ${result} ans !`);
 	}
 
+	// 4
 	function countUpToTen(startFrom) {
 		if (typeof startFrom !== 'number') {
 			console.info('Pas un nombre');
@@ -181,6 +189,7 @@
 		console.log('👍');
 	}
 
+	// 5
 	function displayMultiply(digit) {
 		if (typeof digit !== 'number') {
 			console.info('Pas un nombre');
@@ -194,15 +203,18 @@
 		}
 	}
 
+	// 6
 	function addUpTo(max) {
 		console.log(Array.from(Array(max), (_, i) => i + 1).reduce((a, b) => a + b));
 	}
 
+	// 7
 	function displayVowels() {
 		// console.log(Array.from(Array(26), (_, i) => String.fromCharCode(i + 97)).filter((char) => 'aeiouy'.split('').includes(char)));
 		console.log('aeiouy'.split(''));
 	}
 
+	// 8
 	function moyenne(grades) {
 		if (Array.isArray(grades)) {
 			grades.unshift(grades.length);
@@ -219,6 +231,7 @@
 		console.log(grades);
 	}
 
+	// 9
 	function addArray(arr1, arr2) {
 		if (arr1.length === arr2.length) {
 			for (let i = 0; i < arr1.length; i++) {
@@ -229,52 +242,7 @@
 		}
 	}
 
-	function changeSentences(sentence) {
-		const voyelles = 'AEIOUYaàeéèêiïouùy'.split('');
-		let result = '';
-
-		for (let i = 0; i < sentence.length; i++) {
-			const char = sentence[i];
-			const isVoyelle = voyelles.includes(char);
-
-			if (isVoyelle) {
-				result += char + 'fe';
-			} else {
-				result += char;
-			}
-		}
-
-		console.log(result);
-	}
-
-	function changeSentencesAlt(sentence) {
-		console.log(
-			sentence
-				.split('')
-				.reduce((acc, char) => (acc += char + ('AEIOUYaàeéèêiïouùy'.split('').includes(char) ? 'fe' : '')))
-		);
-	}
-
-	function isSecuredPassword(password) {
-		if (typeof password === 'string' && password.length >= 9) {
-			let at, exc, i;
-
-			for (i = 0; i < password.length; i++) {
-				if (password[i] === '!') {
-					exc = true;
-				}
-				if (password[i] === '@') {
-					at = true;
-				}
-				if (at && exc) {
-					return true;
-				}
-			}
-		}
-
-		return false;
-	}
-
+	// 10
 	function removeDuplicate(array) {
 		// Remove duplicate comme en 1979
 
@@ -313,5 +281,96 @@
 		}
 
 		return result;
+	}
+
+	// 11
+	function inverseWord(str = '', rv = '') {
+		if (rv.length < str.length) {
+			rv = inverseWord(str, rv + str[str.length - 1 - rv.length]);
+		}
+
+		return rv;
+	}
+
+	// 12
+	function isSecuredPassword(password) {
+		if (typeof password === 'string' && password.length >= 9) {
+			let at, exc, i;
+
+			for (i = 0; i < password.length; i++) {
+				if (password[i] === '!') {
+					exc = true;
+				}
+				if (password[i] === '@') {
+					at = true;
+				}
+				if (at && exc) {
+					return true;
+				}
+			}
+		}
+
+		return false;
+	}
+
+	// 13
+	function excerpt(str, from) {
+		return '';
+	}
+
+	// 14
+	function isPangram(str) {
+		return false;
+	}
+
+	// 15
+	function getRange(arr) {
+		return 0;
+	}
+
+	// 16
+	function isPalindrome(str) {
+		return false;
+	}
+
+	// 17
+	function getScrabbleScore(str) {
+		return 0;
+	}
+
+	// 18
+	function changeSentences(sentence) {
+		const voyelles = 'AEIOUYaàeéèêiïouùy'.split('');
+		let result = '';
+
+		for (let i = 0; i < sentence.length; i++) {
+			const char = sentence[i];
+			const isVoyelle = voyelles.includes(char);
+
+			if (isVoyelle) {
+				result += char + 'fe';
+			} else {
+				result += char;
+			}
+		}
+
+		return result;
+	}
+
+	// 18 bis
+	function changeSentencesAlt(sentence) {
+		return sentence
+			.split('')
+			.reduce((acc, char) => (acc += char + ('AEIOUYaàeéèêiïouùy'.split('').includes(char) ? 'fe' : '')));
+	}
+
+	// 19
+	function encrypt(str, gap) {
+		// ...
+	}
+
+	// 19 bis
+	function decrypt(str, gap) {
+		// ...
 	}
 </script>
