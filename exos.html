@@ -90,6 +90,12 @@
 	console.log(getRange([9, 3, 'ok', 1]));
 	console.log(getRange([-(9372 ** 24), 2 ** 24]));
 
+	console.log(' ');
+	console.warn('isPangram');
+	console.log(isPangram(''));
+	console.log(isPangram('hello woreld'));
+	console.log(isPangram('The quick brown fox jumps over the lazy dog'));
+
 	//
 	// Fn
 	//
@@ -325,8 +331,28 @@
 	}
 
 	// 14
-	function isPangram(str) {
-		return false;
+	function isPangram(str = '') {
+		// Pas assez intelligent
+		// const codes = [];
+
+		// for (let ii = 0; ii < str.length; ii++) {
+		// 	const charcode = str[ii].charCodeAt(0);
+		// 	const isAlphabet = charcode >= 122 && charcode < 64;
+		// 	const isUppercase = charcode < 98;
+
+		// 	if (isAlphabet) {
+		// 		if (isUppercase) {
+		// 			codes.push(charcode + 26);
+		// 		} else {
+		// 			codes.push(charcode);
+		// 		}
+		// 	}
+		// }
+
+		return str
+			.toLocaleLowerCase()
+			.split('')
+			.every((c) => 'abcdefghijklmnopqrstuvwxyz'.split('').includes(c));
 	}
 
 	// 15
