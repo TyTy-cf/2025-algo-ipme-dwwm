@@ -140,14 +140,33 @@
            }
          // console.log(inverseWord("espion"));
 
-          //EXERCICE 12 : 
+          //EXERCICE 12 :
           function isSecuredPassword(password){
-            if (password.includes("@")|| password.includes("!") && password.length >= 9){
+            if ((password.includes("@")|| password.includes("!")) && password.length >= 9){
                 return true;
             }
-            else {
-                return false;
-            }
+            return false;
           }
-       //   console.log(isSecuredPassword("hello"));
+      //   console.log(isSecuredPassword("hello"));
+
+       // EXERCICE 13 :
+       function excerpt(str, from = 15){
+        if (str.length > from){
+            return str.slice(0, from) + "...";
+        }
+        return str;
+       }
+      // console.log(excerpt("Il était une fois"));
+
+       //EXERCICE 14 :
+       function isPangram(str){
+        let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+       for (let i=0; i <= alphabet.length; i++){
+         if (str.includes(alphabet[i], alphabet.length)){
+        return true;
+       }
+       return false;
+       }
+    }
+        console.log(isPangram("The quick brown fox jumps over the lazy dog."))
 </script>
