@@ -1,172 +1,187 @@
 <script lang="js">
 
-    // function toto(toto) {
-    //     console.log(toto);
-    // }
-    //
-    // toto(10);
+      // function toto(toto) {
+      //     console.log(toto);
+      // }
+      //
+      // toto(10);
 
-    // exo 1
-    function predictFutur() {
-        let hour = prompt("Heure actuelle :");
-        let minute = prompt("Minute actuelle :");
+      // exo 1
+      function predictFutur() {
+          let hour = prompt("Heure actuelle :");
+          let minute = prompt("Minute actuelle :");
 
-        hour = parseInt(hour);
-        minute = parseInt(minute);
+          hour = parseInt(hour);
+          minute = parseInt(minute);
 
-        if (minute >= 0 && minute <= 58 ) {
-            minute++;
-            if(hour <= 9) {
-                hour = "0" + hour;
-              }
+          if (minute >= 0 && minute <= 58 ) {
+              minute++;
+              if(hour <= 9) {
+                  hour = "0" + hour;
+                }
+            }
+            else if (minute === 59){
+                minute = 0;
+                hour++;
+                if (minute === 0) {
+                  minute = "0" + 0;
+                }
           }
-          else if (minute === 59){
-              minute = 0;
-              hour++;
-              if (minute === 0) {
-                minute = "0" + 0;
+          else if (hour === 23) {
+            hour = 0;
+          }
+          else {
+            console.log("erreur");
+          }
+
+          console.log("Dans une minute il sera " + hour + "h" + minute);
+      }
+    //   predictFutur();
+
+      // exo 2
+      function reprographieStore(nbCopie){
+        let price;
+        let totalPrice = 0;
+        if(nbCopie <= 10){
+            price = 0.10;
+        }
+        else if(nbCopie <= 50){
+              price = 0.09;
+        }
+        else{
+              price = 0.08;
+        }
+        totalPrice = price * nbCopie;
+        console.log(totalPrice + "€");
+      }
+      // reprographieStore(110);
+
+      // exo 3
+      function getAge(year) {
+          let date = new Date();
+          let currentYear= date.getFullYear();
+          let age = currentYear - year;
+        console.log("Vous avez " + age + "ans");
+      }
+      // getAge(1995);
+
+      // exo 4
+      function countUpToTen(startFrom){
+          for (let i = startFrom + 1; i <= startFrom + 10; i++) {
+              console.log(i);
+          }
+      }
+      // countUpToTen(17);
+
+      // exo 5
+      function displayMultiply(digit) {
+          for(let i = 1; i <= 12; i++) {
+              console.log(`${i} X ${digit} = ${i*digit}`)
+          }
+      }
+      // displayMultiply(3)
+
+      // exo 6
+      function addUpTo(max) {
+          let sum = 0;
+          for(let i = 0; i <= max; i++) {
+              sum += i;
+          }
+          console.log(sum)
+      }
+      // addUpTo(5)
+
+      // exo 7
+      function displayVowels() {
+          let vowels = ["a", "e", "i", "o", "u", "y"];
+          for (let i = 0; i < vowels.length; i++) {
+              console.log(vowels[i])
+          }
+      }
+      // displayVowels()
+
+      // exo 8
+      function getAverage(grades) {
+          let sum = 0;
+          let tailleArray = grades.length;
+          for(let i = 0; i < tailleArray; i++) {
+              sum += grades[i];
+          }
+          console.log(sum/tailleArray)
+      }
+
+      // getAverage([10, 15, 15, 12, 18])
+      // getAverage([14, 16, 17, 13, 10])
+      // getAverage([14, 16, 17, 13, 18, 2, 14])
+
+      // exo 9
+      function addArray(first, second){
+          let sumArray = [];
+          if(first.length === second.length){
+              for(let i = 0; i < first.length; i++) {
+                      sumArray.push(first[i] + second[i]);
               }
-        }
-        else if (hour === 23) {
-          hour = 0;
-        }
-        else {
-          console.log("erreur");
-        }
-
-        console.log("Dans une minute il sera " + hour + "h" + minute);
-    }
-  //   predictFutur();
-
-    // exo 2
-    function reprographieStore(nbCopie){
-      let price;
-      let totalPrice = 0;
-      if(nbCopie <= 10){
-          price = 0.10;
+              console.log(sumArray);
+          }
+          else {
+              console.log("Les deux tableaux doivent faire la même longueur");
+          }
       }
-      else if(nbCopie <= 50){
-            price = 0.09;
+      // addArray([4,8,7,9,1,5,4,6], [7,6,5,2,1,3,7,4]);
+
+      // exo 10
+      function removeDuplicate(array) {
+          let deleteDuplicate = [];
+          for (let i = 0; i < array.length; i++) {
+              if(!deleteDuplicate.includes(array[i])) {
+                  deleteDuplicate.push(array[i]);
+              }
+              console.log(deleteDuplicate);
+          }
       }
-      else{
-            price = 0.08;
+      // removeDuplicate([1, 1, 1, 2, 5, 8, 7, 5]);
+
+      // exo 11
+      function inverseWord(str) {
+          // let string = str.split("");
+          // console.log(string.reverse().join(""))
+
+          let string = "";
+          for(let i = str.length -1; i >= 0; i--) {
+              string += str[i];
+          }
+          console.log(string)
       }
-      totalPrice = price * nbCopie;
-      console.log(totalPrice + "€");
-    }
-    // reprographieStore(110);
+      // inverseWord("espion")
 
-    // exo 3
-    function getAge(year) {
-        let date = new Date();
-        let currentYear= date.getFullYear();
-        let age = currentYear - year;
-      console.log("Vous avez " + age + "ans");
-    }
-    // getAge(1995);
-
-    // exo 4
-    function countUpToTen(startFrom){
-        for (let i = startFrom + 1; i <= startFrom + 10; i++) {
-            console.log(i);
-        }
-    }
-    // countUpToTen(17);
-
-    // exo 5
-    function displayMultiply(digit) {
-        for(let i = 1; i <= 12; i++) {
-            console.log(`${i} X ${digit} = ${i*digit}`)
-        }
-    }
-    // displayMultiply(3)
-
-    // exo 6
-    function addUpTo(max) {
-        let sum = 0;
-        for(let i = 0; i <= max; i++) {
-            sum += i;
-        }
-        console.log(sum)
-    }
-    // addUpTo(5)
-
-    // exo 7
-    function displayVowels() {
-        let vowels = ["a", "e", "i", "o", "u", "y"];
-        for (let i = 0; i < vowels.length; i++) {
-            console.log(vowels[i])
-        }
-    }
-    // displayVowels()
-
-    // exo 8
-    function getAverage(grades) {
-        let sum = 0;
-        let tailleArray = grades.length;
-        for(let i = 0; i < tailleArray; i++) {
-            sum += grades[i];
-        }
-        console.log(sum/tailleArray)
-    }
-
-    // getAverage([10, 15, 15, 12, 18])
-    // getAverage([14, 16, 17, 13, 10])
-    // getAverage([14, 16, 17, 13, 18, 2, 14])
-
-    // exo 9
-    function addArray(first, second){
-        let sumArray = [];
-        if(first.length === second.length){
-            for(let i = 0; i < first.length; i++) {
-                    sumArray.push(first[i] + second[i]);
-            }
-            console.log(sumArray);
-        }
-        else {
-            console.log("Les deux tableaux doivent faire la même longueur");
-        }
-    }
-    // addArray([4,8,7,9,1,5,4,6], [7,6,5,2,1,3,7,4]);
-
-    // exo 10
-    function removeDuplicate(array) {
-        let deleteDuplicate = [];
-        for (let i = 0; i < array.length; i++) {
-            if(!deleteDuplicate.includes(array[i])) {
-                deleteDuplicate.push(array[i]);
-            }
-            console.log(deleteDuplicate);
-        }
-    }
-    // removeDuplicate([1, 1, 1, 2, 5, 8, 7, 5]);
-
-    // exo 11
-    function inverseWord(str) {
-        // let string = str.split("");
-        // console.log(string.reverse().join(""))
-
-        let string = "";
-        for(let i = str.length -1; i >= 0; i--) {
-            string += str[i];
-        }
-        console.log(string)
-    }
-    // inverseWord("espion")
-
-    // exo 12
-    function changeSentences(sentences) {
-    const vowels = ["a", "e", "i", "o", "u", "y"];
-    let newSentences = "";
-    for (let i = 0; i < sentences.length; i++) {
-      const currentChar = sentences[i];
-      if (vowels.includes(currentChar)) {
-        newSentences += `${currentChar}fe${currentChar}`;
-      } else {
-        newSentences += currentChar;
+      // exo 12
+      function isSecuredPassword(password) {
+        let msg = ";"
+          if(password.length >= 9 && password.includes("@") || password.includes("!")){
+            msg = "Mot de passe correct"
+            return msg;
+          }
+          else {
+            msg = "Le mot de passe doit contenir au moins 9 caracteères et un @ ou un !"
+              return msg;
+          }
       }
-      console.log(newSentences);
+      console.log(isSecuredPassword("test"));
+      console.log(isSecuredPassword("myP@ssword"));
+
+      // exo 13
+      function changeSentences(sentences) {
+      const vowels = ["a", "e", "i", "o", "u", "y"];
+      let newSentences = "";
+      for (let i = 0; i < sentences.length; i++) {
+        const currentChar = sentences[i];
+        if (vowels.includes(currentChar)) {
+          newSentences += `${currentChar}fe${currentChar}`;
+        } else {
+          newSentences += currentChar;
+        }
+        console.log(newSentences);
+      }
     }
-  }
-  changeSentences("chat")
+  //   changeSentences("chat")
 </script>
