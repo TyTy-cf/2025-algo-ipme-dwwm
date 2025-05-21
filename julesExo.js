@@ -1,8 +1,8 @@
 //1
 
-function predictFuture() {
-    let heure = prompt("Quel heure est-il");
-    let minutes = prompt("Combien de minutes ?");
+function predictFuture(heure, minutes) {
+    // let heure = prompt("Quel heure est-il");
+    // let minutes = prompt("Combien de minutes ?");
     heure = parseInt(heure);
     minutes = parseInt(minutes);
 
@@ -14,18 +14,17 @@ function predictFuture() {
     if (heure === 24) {
         heure = 0;
     }
-
-    console.log("Dans 1 minutes il sera " + heure + "h" + minutes);
+    return "Dans 1 minutes il sera " + heure + "h" + minutes;
 }
-
-//predictFuture();
+//const future = predictFuture(23, 44);
+//console.log(future);
 
 //2
 
-function calculByPrice() {
-    let nbCopie = prompt("Indiquez le nombre de copie ?");
-    nbCopie = parseInt(nbCopie);
+function calculByPrice(nbCopie) {
+    //let nbCopie = prompt("Indiquez le nombre de copie ?");
     let prixUnitaire = 1;
+    nbCopie = parseInt(nbCopie);
 
     if (nbCopie <= 10) {
         prixUnitaire = 0.1;
@@ -92,7 +91,7 @@ function addUpTo() {
     console.log("La somme de i est " + sum);
 }
 
-addUpTo();
+//addUpTo();
 
 //7
 
@@ -105,10 +104,49 @@ function displayVowels() {
 
 //8
 
-function getAverage() {
-    let grades = [10, 15, 15, 12, 18];
+function getAverage(grades) {
+    let sum = 0;
+    const sizeArray = grades.length;
+    for (let i = 0; i < sizeArray; i++) {
+        sum += grades[i];
+    }
+    return sum / sizeArray;
 }
 
-//getAverage([10, 15, 15, 12, 18]);
-//getAverage([14, 16, 17, 13, 10]);
-//getAverage([14, 16, 17, 13, 18, 2, 14]);
+//console.log(getAverage([10, 15, 15, 12, 18]));
+//console.log(getAverage([14, 16, 17, 13, 10]));
+//console.log(getAverage([14, 16, 17, 13, 18]));
+
+//9
+
+function addArray(first, second) {
+    let sum = [];
+
+    if (first.length === second.length) {
+        for (let i = 0; i < first.length; i++) {
+            sum.push(first[i] + second[i]);
+        }
+    }
+    return sum;
+}
+//const ajoutTablo = addArray([1, 2, 3], [1, 2, 3]);
+//console.log(ajoutTablo);
+
+//10
+
+function removeDuplicate(array) {
+    let newArray = [];
+
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        const isDuplicate = newArray.includes(element);
+
+        if (isDuplicate === false) {
+            newArray.push(array[i]);
+        }
+    }
+    return newArray;
+}
+
+//const corriger = removeDuplicate([4, 1, 2, 2, 1, 3, 4, 3, 5]);
+//console.log(corriger);
