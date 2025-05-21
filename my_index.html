@@ -347,27 +347,19 @@
     // console.log(changeSentence("chat"));
 
     //19)
-    function encrypt(str, gap = 3) 
+    function cesarCrypt(str, gap = 3, mode = true) 
     {
         let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
         let newStr = "";
+        let modeFactor = mode? 1:-1; 
         for (let i = 0; i < str.length; i++)
         {
-            newStr += alphabet[(alphabet.indexOf(str[i]) + gap) % 26];
+            newStr += alphabet[(alphabet.indexOf(str[i]) + (modeFactor * gap)) % 26];
         }
         return newStr;
     }
-    function decrypt(str, gap = 3) 
-    {
-        let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-        let newStr = "";
-        for (let i = 0; i < str.length; i++)
-        {
-            newStr += alphabet[(alphabet.indexOf(str[i]) - gap) % 26];
-        }
-        return newStr;
-    }
-    // console.log(encrypt("chat"));
-    // console.log(decrypt("fkdw"));
-    // console.log(decrypt(encrypt("koala")));
+
+    console.log(cesarCrypt("chat"));
+    console.log(cesarCrypt("fkdw", 3, false));
+    console.log(cesarCrypt(cesarCrypt("koala"), 3, false));
 </script>
