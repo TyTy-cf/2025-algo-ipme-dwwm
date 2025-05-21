@@ -177,7 +177,7 @@
         return noDuplicate;
     }
 
-    console.log(removeDuplicate([1, 1, 1, 2, 5, 8, 7, 5]));
+    // console.log(removeDuplicate([1, 1, 1, 2, 5, 8, 7, 5]));
 
     function inverseWord(str) {
         // Créer une variable pour recréer le mot à l'envers (nom : "inverse")
@@ -191,7 +191,21 @@
         return inverse;
     }
 
-    console.log(inverseWord("espion"));
+    // console.log(inverseWord("espion"));
+
+    function isSecuredPassword(password) {
+        if ((password.includes('@') || password.includes('!')) && password.length >= 9) {
+            return true;
+        }
+        return false;
+        // En une seule ligne !
+        // return (password.includes('@') || password.includes('!')) && password.length >= 9;
+    }
+
+    console.log(isSecuredPassword("espion@developpeur")); // vrai
+    console.log(isSecuredPassword("espion!developpeur")); // vrai
+    console.log(isSecuredPassword("espiondeveloppeur")); // faux
+    console.log(isSecuredPassword("espion@")); // faux
 
     function myIndexOf(haystack, needle) {
         for (let i = 0; i < haystack.length; i++) {
@@ -200,6 +214,15 @@
             }
         }
         return -1;
+    }
+
+    function isPangram(str) {
+        let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        let alphabetStr = [];
+        for (let i = 0; i <= alphabet.length; i++) {
+            // ?
+        }
+        return alphabet.length === alphabetStr.length;
     }
 
 </script>
