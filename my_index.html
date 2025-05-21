@@ -181,10 +181,32 @@
         }
         return newStr;
     }
-
     // let str = "Hello World !";
     // console.log(inverseWord(str));
 
+    //12)
+    function isSecuredPassword(password)
+    {
+        stars = "";
+        for (let i = 0; i < password.length; i++)
+        {
+            stars += "*";
+        }
+        if(password.length >= 9 && String(password).includes('@') && String(password).includes('!'))
+        {
+            console.log(stars + " is a secured password");
+        }
+        else
+        {
+            console.log(stars + " is not a secured password");
+        }
+    }
+
+    // isSecuredPassword("1234");
+    // isSecuredPassword("123456789@");
+    // isSecuredPassword("123456789@!");
+
+    //13)
     function addFE(mot)
     {
         const voyels = ['a', 'e', 'i', 'o', 'u', 'y'];
