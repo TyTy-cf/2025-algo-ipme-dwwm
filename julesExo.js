@@ -140,7 +140,7 @@ function removeDuplicate(array) {
     for (let i = 0; i < array.length; i++) {
         const element = array[i];
         const isDuplicate = newArray.includes(element);
-
+        // if (newArray.includes(array[1]))
         if (isDuplicate === false) {
             newArray.push(array[i]);
         }
@@ -150,3 +150,17 @@ function removeDuplicate(array) {
 
 //const corriger = removeDuplicate([4, 1, 2, 2, 1, 3, 4, 3, 5]);
 //console.log(corriger);
+
+//11 (raccourci .reverse)
+
+function inverseWord(str) {
+    let strReverse = "";
+
+    for (let i = str.length; i >= 0; i = i - 1) {
+        strReverse.push(str);
+    }
+    return strReverse;
+}
+
+const inverser = inverseWord("coucou les copinous");
+console.log(inverser);
