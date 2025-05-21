@@ -185,7 +185,7 @@
       //exercice 11
       function inverseWord(str){
         const inversed = []
-        for (let i=str.length;i>=0;i--){
+        for (let i=str.length-1;i>=0;i--){
           inversed.push(str[i])
         }
         return inversed.join("");
@@ -262,5 +262,15 @@
           console.log(minValue);
         return maxValue-minValue;
       }
-      console.log(getRange([15, 78, 45,-4, 96, 12, 32, 65, 78, 91]));
+      // console.log(getRange([15, 78, 45,-4, 96, 12, 32, 65, 78, 91]));
+
+      // exercice 16
+      function isPalindrome(str){
+        let inverse = "";
+        for (let i=str.length-1;i>=0;i--){
+          inverse +=str[i];
+        }
+        return str === inverse;
+      }
+      console.log(isPalindrome("toto"));
 </script>
