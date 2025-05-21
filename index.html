@@ -179,6 +179,20 @@
 
     console.log(removeDuplicate([1, 1, 1, 2, 5, 8, 7, 5]));
 
+    function inverseWord(str) {
+        // Créer une variable pour recréer le mot à l'envers (nom : "inverse")
+        let inverse = '';
+        // Parcourir le mot mais en commençant de la fin
+        for (let i = str.length - 1; i >= 0; i--) {
+            // ajouter la lettre en cours de parcours à la variable "inverse"
+            inverse += str[i];
+        }
+        // fin parcours
+        return inverse;
+    }
+
+    console.log(inverseWord("espion"));
+
     function myIndexOf(haystack, needle) {
         for (let i = 0; i < haystack.length; i++) {
             if (haystack[i] === needle) {
