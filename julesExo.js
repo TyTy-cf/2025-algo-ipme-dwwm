@@ -156,11 +156,64 @@ function removeDuplicate(array) {
 function inverseWord(str) {
     let strReverse = "";
 
-    for (let i = str.length; i >= 0; i = i - 1) {
-        strReverse.push(str);
+    for (let i = str.length - 1; i >= 0; i--) {
+        strReverse += str[i];
     }
     return strReverse;
 }
 
-const inverser = inverseWord("coucou les copinous");
-console.log(inverser);
+//const inverser = inverseWord("coucou les copinous");
+//console.log(inverser);
+
+//12
+
+function isSecuredPassword(password) {
+    // let passwordSize = false;
+    // let passwordChar = false;
+
+    // if (password.length >= 9) {
+    //     passwordSize = true;
+    // }
+    // for (let i = 0; i >= password.length; i++) {
+    //     if (password[i] === "!" || password[i] === "@") {
+    //         passwordChar = true;
+    //     }
+    // }
+    // return (
+    //     "Le password contient un ! ou @ ? " +
+    //     passwordChar +
+    //     " Le password fait bien plus de 9 caractères ? " +
+    //     passwordSize
+    // );
+    return (
+        password.length >= 9 &&
+        (password.includes("@") || password.includes("!"))
+    );
+}
+
+//const cyber = isSecuredPassword("auvergne6363@");
+//console.log(cyber);
+
+//13
+
+function excerpt(str, from) {
+    if (str.length >= from) {
+        return str.slice(0, from) + "...";
+    } else {
+        return str;
+    }
+}
+
+//const short = excerpt("Lorem quisque class vestibulum", 2);
+//console.log(short);
+
+//14
+
+function isPangram(str) {
+    let pangram = false;
+    if (str.includes()) {
+        return (pangram = true);
+    } else {
+        return (pangram = false);
+    }
+}
