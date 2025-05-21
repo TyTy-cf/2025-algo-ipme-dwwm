@@ -155,17 +155,18 @@
     // inverseWord("espion")
 
     // exo 12
-    function changeSentences(sentences){
-        const vowels = ["a", "e", "i", "o", "u", "y"];
-        let sentenceChange = "";
-        for(let i = 0; i < sentences.length; i++) {
-            sentenceChange += sentences[i]
-            if(sentences[i] === "a" || sentences[i] === "e" || sentences[i] === "i" || sentences[i] === "o" ||  sentences[i] === "u" ||  sentences[i] === "y" ) {
-
-                sentenceChange += `fe${sentences[i]}`
-            }
-        }
-        console.log(sentenceChange)
+    function changeSentences(sentences) {
+    const vowels = ["a", "e", "i", "o", "u", "y"];
+    let newSentences = "";
+    for (let i = 0; i < sentences.length; i++) {
+      const currentChar = sentences[i];
+      if (vowels.includes(currentChar)) {
+        newSentences += `${currentChar}fe${currentChar}`;
+      } else {
+        newSentences += currentChar;
+      }
+      console.log(newSentences);
     }
-    changeSentences("chat");
+  }
+  changeSentences("chat")
 </script>
