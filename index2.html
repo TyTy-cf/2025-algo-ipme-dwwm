@@ -220,6 +220,7 @@
       //       return;
       //     }
       //   }
+            // return true;
       //   console.log("C'est un palindrome");
       // }
       //       // appeler la fonction
@@ -319,6 +320,23 @@
             // appeler la fonction
             console.log(changeSentences("Hello World"));
             console.log(changeSentences("chat"));
+
+            // exercice 13 excerpt
+            // 1. créer une fonction qui limite une chaîne de caractères à 15 caractères maximum
+            // 2. en paramètre str = une chaîne de caractères et from = un entirer à 15
+            function excerpt(str, from) {
+              // initialiser une variable pour stocker la chaîne de caractères modifiée
+              let temp = "";
+              // parcourir la chaîne de caractères
+              for (let i = 0; i < str.length; i++) {
+                    // ajouter le caractère à la variable temporaire
+                    temp += str[i];
+                }
+                // retourner la chaîne de caractères modifiée
+                return temp.slice(0, from) + "...";
+              }
+            // appeler la fonction
+            console.log(excerpt("Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum debitis eaque mollitia officia? Repellendus ipsum a earum ea aspernatur velit facere consequatur reiciendis iste dolorem, explicabo, quidem, recusandae quibusdam. Hic?", 15));
     </script>
   </body>
 </html>
