@@ -173,10 +173,8 @@
 
     // exo 13
     function excerpt(str, from = 15){
-        let newString = "";
         if(str.length > from) {
-            newString = str.slice(0, from) + "...";
-            return newString
+            return str.slice(0, from) + "...";
         }
         return str;
     }
@@ -187,23 +185,42 @@
     function isPangram(str){
         const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-        for (let i = 0; i < alphabet.length; i++) {
-            if(str.includes(alphabet[i])){
-                return true;
+        let allAlphabetLetters = 0;
+        for (let i = 0; i < str.length; i++) {
+            if(alphabet.includes(str[i])){
+                allAlphabetLetters++
+                if(allAlphabetLetters === 26) {
+                    return true
+                }
             }
-            return false;
         }
+        return false;
     }
-    // console.log(isPangram("The quick brown fox jumps over the lazy dog."));
-    // console.log(isPangram("Test test"));
+  //   console.log(isPangram("The quick brown fox jumps over the lazy dog."));
+  //   console.log(isPangram("Test test"));
+  //   console.log(isPangram("a"));
 
     // exo 15
     function isRange(anArray){
-        return anArray.at(-1) - anArray[0];
+        let minNum = Math.min(...anArray)
+        let maxNum = Math.max(...anArray)
+        return maxNum - minNum;
     }
-    // console.log(isRange([12, 78, 45, 96, 12, 32, 65, 78, 96]))
+    // console.log(isRange([98, 78, 45, 96, 12, 32, 65, 78, 12]))
 
     // exo 16
+    function palindromes(str){
+        let string = "";
+        for(let i = str.length -1; i >= 0; i--) {
+            string += str[i];
+        }
+        return str === string;
+    }
+    // console.log(palindromes("ressasser"))
+    // console.log(palindromes("rever"))
+    // console.log(palindromes("toto"))
+
+    // exo 17
     function getScrabbleScore(str){
         let sum = 0;
         const onePoint = ["a", "e", "i", "o", "u", "l", "n", "r", "s", "t"];
@@ -213,62 +230,48 @@
         const fivePoint = ["k"];
         const heightPoint = ["j", "x"];
         const tenPoint = ["q", "z"];
-        for (let j = 0; j < str.length; j++) {
-            for (let i = 0; i < onePoint.length; i++) {
-                if(str[j].includes(onePoint[i]) ){
-                    sum++;
-                }
+        for (let i = 0; i < str.length; i++) {
+            if(onePoint.includes(str[i]) ){
+                sum++;
             }
-            for (let i = 0; i < twoPoint.length; i++) {
-                if (str[j].includes(twoPoint[i])) {
-                    sum += 2;
-                }
+            else if (twoPoint.includes(str[i])) {
+                sum += 2;
             }
-            for (let i = 0; i < threePoint.length; i++) {
-                if (str[j].includes(threePoint[i])){
-                    sum += 3;
-                }
+            else if (threePoint.includes(str[i])){
+                sum += 3;
             }
-            for (let i = 0; i < fourPoint.length; i++) {
-                if (str[j].includes(fourPoint[i])){
-                    sum += 4;
-                }
+            else if (fourPoint.includes(str[i])){
+                sum += 4;
             }
-            for (let i = 0; i < fivePoint.length; i++) {
-                if (str[j].includes(fivePoint[i])){
-                    sum += 5;
-                }
+            else if (fivePoint.includes(str[i])){
+                sum += 5;
             }
-            for (let i = 0; i < heightPoint.length; i++) {
-                if (str[j].includes(heightPoint[i])){
-                    sum += 8;
-                }
+            else if (heightPoint.includes(str[i])){
+                sum += 8;
             }
-            for (let i = 0; i < tenPoint.length; i++) {
-                if (str[j].includes(tenPoint[i])){
-                    sum += 10;
-                }
+            else if (tenPoint.includes(str[i])){
+                sum += 10;
             }
         }
         return sum;
     }
-    console.log(getScrabbleScore("lazy"))
-    console.log(getScrabbleScore("test"))
-    console.log(getScrabbleScore("aaaaa"))
+    // console.log(getScrabbleScore("lazy"))
+    // console.log(getScrabbleScore("test"))
+    // console.log(getScrabbleScore("aaaaa"))
 
-      // exo 17
+      // exo 18
+      // reduire le traitement dans le if else qui est le même
       function changeSentences(sentences) {
       const vowels = ["a", "e", "i", "o", "u", "y"];
       let newSentences = "";
       for (let i = 0; i < sentences.length; i++) {
         const currentChar = sentences[i];
+        newSentences += currentChar;
         if (vowels.includes(currentChar)) {
-          newSentences += `${currentChar}fe${currentChar}`;
-        } else {
-          newSentences += currentChar;
+          newSentences += `fe${currentChar}`;
         }
-        console.log(newSentences);
-      }
     }
-  //   changeSentences("chat")
+    console.log(newSentences);
+    }
+    // changeSentences("chat");
 </script>
