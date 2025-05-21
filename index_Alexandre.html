@@ -229,10 +229,21 @@
         }
         return str
       }
-      console.log(excerpt("Salut comment ça va ?"));
+      // console.log(excerpt("Salut comment ça va ?"));
 
       // exercice 14
       function isPangram(str){
-
+        const alphabet ="abcdefghijklmnopqrstuvwxyz";
+        // caractères spéciaux à ne pas retenir
+        const banned = " ?!,.";
+        const array = [];
+        str = str.toLowerCase();
+        for (let i = 0; i<str.length; i++){
+          if(!array.includes(str[i]) && !banned.includes(str[i])){
+            array.push(str[i]);
+          }
+        }
+        return array.sort().join("") === alphabet;
       }
+      console.log(isPangram("The quick brown fox jumps over the lazy dog."));
 </script>
