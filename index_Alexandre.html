@@ -193,23 +193,6 @@
 
       // console.log(inverseWord("espion"));
 
-
-    // exercice chafeat
-      function changeSentences(sentences){
-        let newStr = "";
-        const voyelles = "aeiouy";
-        for (let i = 0; i<sentences.length; i++){
-          newStr+=sentences[i];
-          if (voyelles.includes(sentences[i])){
-            newStr+="fe"+sentences[i];
-          }
-        }
-        return newStr
-      }
-      // console.log(changeSentences("chateau"));
-
-
-
       // exercice 12
 
       function isSecuredPassword(password){
@@ -273,4 +256,23 @@
         return str === inverse;
       }
       console.log(isPalindrome("toto"));
+
+      // exercice 17
+      function getScrabbleScore(str){
+
+      }
+
+      // exercice 18
+      function changeSentences(sentences){
+        let newStr = "";
+        const voyelles = "aeiouy";
+        for (let i = 0; i<sentences.length; i++){
+          newStr+=sentences[i];
+          if (voyelles.includes(sentences[i])){
+            newStr+="fe"+sentences[i];
+          }
+        }
+        return newStr
+      }
+      // console.log(changeSentences("chateau"));
 </script>
