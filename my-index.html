@@ -201,7 +201,60 @@
     function isRange(anArray){
         return anArray.at(-1) - anArray[0];
     }
-    console.log(isRange([12, 78, 45, 96, 12, 32, 65, 78, 96]))
+    // console.log(isRange([12, 78, 45, 96, 12, 32, 65, 78, 96]))
+
+    // exo 16
+    function getScrabbleScore(str){
+        let sum = 0;
+        const onePoint = ["a", "e", "i", "o", "u", "l", "n", "r", "s", "t"];
+        const twoPoint = ["d", "g"];
+        const threePoint = ["b", "c", "m", "p"];
+        const fourPoint = ["f", "h", "v", "w", "y"];
+        const fivePoint = ["k"];
+        const heightPoint = ["j", "x"];
+        const tenPoint = ["q", "z"];
+        for (let j = 0; j < str.length; j++) {
+            for (let i = 0; i < onePoint.length; i++) {
+                if(str[j].includes(onePoint[i]) ){
+                    sum++;
+                }
+            }
+            for (let i = 0; i < twoPoint.length; i++) {
+                if (str[j].includes(twoPoint[i])) {
+                    sum += 2;
+                }
+            }
+            for (let i = 0; i < threePoint.length; i++) {
+                if (str[j].includes(threePoint[i])){
+                    sum += 3;
+                }
+            }
+            for (let i = 0; i < fourPoint.length; i++) {
+                if (str[j].includes(fourPoint[i])){
+                    sum += 4;
+                }
+            }
+            for (let i = 0; i < fivePoint.length; i++) {
+                if (str[j].includes(fivePoint[i])){
+                    sum += 5;
+                }
+            }
+            for (let i = 0; i < heightPoint.length; i++) {
+                if (str[j].includes(heightPoint[i])){
+                    sum += 8;
+                }
+            }
+            for (let i = 0; i < tenPoint.length; i++) {
+                if (str[j].includes(tenPoint[i])){
+                    sum += 10;
+                }
+            }
+        }
+        return sum;
+    }
+    console.log(getScrabbleScore("lazy"))
+    console.log(getScrabbleScore("test"))
+    console.log(getScrabbleScore("aaaaa"))
 
       // exo 17
       function changeSentences(sentences) {
