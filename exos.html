@@ -423,4 +423,22 @@
 	function decrypt(str, gap) {
 		// ...
 	}
+
+	// 20
+	function calculateHypotenuse(w = 0, h = 0) {
+		return Math.sqrt(h ** 2 + w ** 2);
+	}
+
+	// 21
+	function getGain(nbSubscribers = 0) {
+		if (nbSubscribers > 1000) {
+			return nbSubscribers * 4.99 * 0.05;
+		} else if (nbSubscribers > 500) {
+			return nbSubscribers * 4.99 * 0.15;
+		} else if (nbSubscribers > 100) {
+			return nbSubscribers * 4.99 * 0.25;
+		} else {
+			return nbSubscribers * 4.99 * 0.4;
+		}
+	}
 </script>
