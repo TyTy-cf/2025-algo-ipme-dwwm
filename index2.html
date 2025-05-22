@@ -9,401 +9,434 @@
     <h1>ALGO JS</h1>
     <script lang="js">
 
-                            // function toto(toto) {
-                                //     console.log(toto);
-                                // }
-                                //
-                                // toto(10);
+                                // function toto(toto) {
+                                    //     console.log(toto);
+                                    // }
+                                    //
+                                    // toto(10);
 
-                                // exercice 1
-                        //         function time() {
-                        //           // demander heure et minutes au user ds variables
-                        //           let hour = prompt("Enter the hour");
-                        //           let minutes = prompt("Enter the minutes");
+                                    // exercice 1
+                            //         function time() {
+                            //           // demander heure et minutes au user ds variables
+                            //           let hour = prompt("Enter the hour");
+                            //           let minutes = prompt("Enter the minutes");
 
-                        //           // convertir heure et mn en entier sinon prompt=string
-                        //           hour = parseInt(hour);
-                        //           minutes = parseInt(minutes);
+                            //           // convertir heure et mn en entier sinon prompt=string
+                            //           hour = parseInt(hour);
+                            //           minutes = parseInt(minutes);
 
-                        //           // incrémente de 1 minute
-                        //           minutes++;
+                            //           // incrémente de 1 minute
+                            //           minutes++;
 
-                        //            // si les minutes sont égales à 60, alors
-                        //       if (minutes === 60) {
-                        //           // On met les minutes à 0
-                        //           minutes = 0;
-                        //           // On incrémente de 1 les heures
-                        //           hours++;
-                        //           // si les heures sont égales à 24, alors
-                        //           if (hours === 24) {
-                        //               // On met les heures à 0
-                        //               hours = 0;
-                        //           }
-                        //       }
+                            //            // si les minutes sont égales à 60, alors
+                            //       if (minutes === 60) {
+                            //           // On met les minutes à 0
+                            //           minutes = 0;
+                            //           // On incrémente de 1 les heures
+                            //           hours++;
+                            //           // si les heures sont égales à 24, alors
+                            //           if (hours === 24) {
+                            //               // On met les heures à 0
+                            //               hours = 0;
+                            //           }
+                            //       }
 
-                        //       // si les minutes sont inférieures à 10, alors
-                        //       if (minutes < 10) {
-                        //           // On concatène un "0" aux minutes
-                        //           minutes = '0' + minutes;
-                        //       }
+                            //       // si les minutes sont inférieures à 10, alors
+                            //       if (minutes < 10) {
+                            //           // On concatène un "0" aux minutes
+                            //           minutes = '0' + minutes;
+                            //       }
 
-                        //       // On affiche le résultat
-                        //       console.log("Dans 1min il va etre " + hours + "h" + minutes);
-                        //   }
-                        //       time();
+                            //       // On affiche le résultat
+                            //       console.log("Dans 1min il va etre " + hours + "h" + minutes);
+                            //   }
+                            //       time();
 
-                              // afficher l'heure réelle
-                              const now = new Date();
+                                  // afficher l'heure réelle
+                                  const now = new Date();
 
-                              const hours = now.getHours();
-                              const minutes = now.getMinutes();
+                                  const hours = now.getHours();
+                                  const minutes = now.getMinutes();
 
-                              console.log(
-                              "Il est actuellement " + hours + " heures et " + minutes + " minutes."
-                              );
+                                  console.log(
+                                  "Il est actuellement " + hours + " heures et " + minutes + " minutes."
+                                  );
 
-                        // exercice 2
-                        // function numberOfCopie(number) {
-                        //   let numberOfCopies = prompt("Entrez le nombre de copies");
-                        //   // On convertit le nombre de copies en entier
-                        //   number = parseInt(numberOfCopies);
+                            // exercice 2
+                            // function numberOfCopie(number) {
+                            //   let numberOfCopies = prompt("Entrez le nombre de copies");
+                            //   // On convertit le nombre de copies en entier
+                            //   number = parseInt(numberOfCopies);
 
-                        //   // initialiser à zero
-                        //   numberOfCopies = 0.11;
+                            //   // initialiser à zero
+                            //   numberOfCopies = 0.11;
 
-                        //   // vérifier si le nombre de copies est valide
-                        //   if (isNaN(number) || number <= 0) {
-                        //       console.log("Veuillez entrer un nombre valide de copies.");
-                        //       return;
-                        //   }
+                            //   // vérifier si le nombre de copies est valide
+                            //   if (isNaN(number) || number <= 0) {
+                            //       console.log("Veuillez entrer un nombre valide de copies.");
+                            //       return;
+                            //   }
 
-                        //     // si copie est inférieure à 10 le prix unitaire est de 0.10
-                        //     if (number <= 10) {
-                        //         // On multiplie le nombre de copies par le prix unitaire
-                        //         numberOfCopies = number * 10 / 100;
-                        //     }
-                        //     // si le nombre de copies est supérieur ou égal à 10 et inférieur à 30
-                        //     else if (number > 10 && number <= 50) {
-                        //         // On multiplie le nombre de copies par le prix unitaire
-                        //         numberOfCopies = number * 9 /100;
-                        //     }
-                        //     // si le nombre de copies est supérieur ou égal à 30 et inférieur à 50
-                        //     else if (number > 50 && number <= 100) {
-                        //         // On multiplie le nombre de copies par le prix unitaire
-                        //         numberOfCopies = number * 8 /100;
-                        //     }
-
-                        //     console.log("Le prix de " + number + " copies est de " + numberOfCopies + "€");
-                        // }
-                        // numberOfCopie();
-                      //   numberOfCopie(10);
-                      //     numberOfCopie(50);
-                      //     numberOfCopie(100);
-
-                      // exercice 3
-                      // function getAge(year) {
-                      //   // obtenir l'année actuelle
-                      //   year = new Date().getFullYear();
-                      //     // Demander à l'utilisateur son année de naissance
-                      //     let birthYear = prompt("Entrez votre année de naissance");
-                      //     // On convertit l'année de naissance en entier
-                      //     birthYear = parseInt(birthYear);
-                      //     // On calcule l'âge
-                      //     let age = year - birthYear;
-                      //     // On affiche l'âge
-                      //     console.log("Vous avez " + age + " ans");
-                      //     }
-
-                      //       // On appelle la fonction
-                      //       getAge();
-
-
-                            // exercice 4
-                            // function countUpToTen(startFrom) {
-                            //     for (let i = (startFrom+1); i <= 10; i++) {
-                            //         console.log(i);
+                            //     // si copie est inférieure à 10 le prix unitaire est de 0.10
+                            //     if (number <= 10) {
+                            //         // On multiplie le nombre de copies par le prix unitaire
+                            //         numberOfCopies = number * 10 / 100;
                             //     }
+                            //     // si le nombre de copies est supérieur ou égal à 10 et inférieur à 30
+                            //     else if (number > 10 && number <= 50) {
+                            //         // On multiplie le nombre de copies par le prix unitaire
+                            //         numberOfCopies = number * 9 /100;
+                            //     }
+                            //     // si le nombre de copies est supérieur ou égal à 30 et inférieur à 50
+                            //     else if (number > 50 && number <= 100) {
+                            //         // On multiplie le nombre de copies par le prix unitaire
+                            //         numberOfCopies = number * 8 /100;
+                            //     }
+
+                            //     console.log("Le prix de " + number + " copies est de " + numberOfCopies + "€");
                             // }
+                            // numberOfCopie();
+                          //   numberOfCopie(10);
+                          //     numberOfCopie(50);
+                          //     numberOfCopie(100);
 
-                            // exercice 5
-                //             function displayMultiply(digit) {
-                //     for (let i = 1; i <= 12; i++) {
-                //         console.log(i + " x " + digit + " = " + (i * digit));
-                //     }
-                // }
-                // displayMultiply(3);
-                // // Affichera la table de 3 de 1 à 12
+                          // exercice 3
+                          // function getAge(year) {
+                          //   // obtenir l'année actuelle
+                          //   year = new Date().getFullYear();
+                          //     // Demander à l'utilisateur son année de naissance
+                          //     let birthYear = prompt("Entrez votre année de naissance");
+                          //     // On convertit l'année de naissance en entier
+                          //     birthYear = parseInt(birthYear);
+                          //     // On calcule l'âge
+                          //     let age = year - birthYear;
+                          //     // On affiche l'âge
+                          //     console.log("Vous avez " + age + " ans");
+                          //     }
 
-                // // exercice 6
-                // function addUpTo(max) {
-                //     let sum = 0;
-                //     for (let i = 1; i <= max; i++) {
-                //         sum += i;
-                //     }
-                //     console.log("La somme de 1 à " + max + " est " + sum);
-                // }
-                // addUpTo(10);
-                // Affichera la somme de 1 à 10
-
-                // exercice 7
-                // function displayVowels() {
-                //   // créer un tableau des voyelles de l'alphabet
-                //   const vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
-                //   // afficher le tableau
-                //   console.log("Les voyelles de l'alphabet sont : " + vowels.join(", "));
-                // }
-                // // appeler la fonction
-                // displayVowels();
-
-                // // exercice 8
-                // // calculer la moyenne des nombres d'un tableau
-                // function getAverage(grades) {
-                //   // initialiser la somme à 0
-                //   let sum = 0;
-                //   // parcourir le tableau
-                //   for (let i = 0; i < grades.length; i++) {
-                //     // ajouter chaque nombre du tableau à la somme
-                //     sum += grades[i];
-                //   }
-                //   // calculer la moyenne
-                //   const average = sum / grades.length;
-                //   // afficher la moyenne
-                //   console.log("La moyenne est : " + average);
-                // }
-                // // appeler la fonction
-                // getAverage([10, 15, 15, 12, 18]);
-                // getAverage([14, 16, 17, 13, 10]);
-                // getAverage([14, 16, 17, 13, 18, 2, 14]);
-
-                // exercice 9
-                // 1 vérifier si les deux tableaux sont de même longueur
-              //   function addArray(first, second) {
-              //     // vérifier si les deux tableaux sont de même longueur
-              //     if (first.length !== second.length) {
-              //       console.log("Les tableaux ne sont pas de même longueur");
-              //       return;
-              //     }
-              //   // ils sont de même longueur
-              //     // créer un tableau pour stocker les résultats
-              //     const result = [];
-              //     // parcourir les deux tableaux
-              //     for (let i = 0; i < first.length; i++) {
-              //       // ajouter les éléments des deux tableaux
-              //       result.push(first[i] + second[i]);
-              //     }
-              //     // afficher le tableau résultat
-              //     console.log("Le tableau résultat est : " + result);
-              //   }
-
-              // // appeler la fonction
-              // addArray([1, 2, 3], [4, 5, 6]);
+                          //       // On appelle la fonction
+                          //       getAge();
 
 
-              // // exercice 10
-              // // créer une fonction qui supprime les doublons
-              // //  d'un tableau paramètre array de type entier string charactère
-              // function removeDuplicate(array) {
-              //   // créer un tableau pour stocker les résultats ex panier achat session
-              //   const result = [];
-              //   // parcourir le tableau
-              //   for (let i = 0; i < array.length; i++) {
-              //     // vérifier si l'élément n'est pas déjà dans le tableau résultat
-              //     if (!result.includes(array[i])) {
-              //       // ajouter l'élément au tableau résultat
-              //       result.push(array[i]);
-              //     }
-              //   }
-              //   // afficher le tableau résultat
-              //   console.log("Le tableau sans doublons est : " + result);
-              // }
-              // // appeler la fonction
-              // removeDuplicate([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-              // removeDuplicate(["u", "e", "i", "o", "a", "u", "e", "i", "o", "a"]);
-              // removeDuplicate(["free", "free", "free", "free", "free", "free", "free", "free", "free", "free"]);
+                                // exercice 4
+                                // function countUpToTen(startFrom) {
+                                //     for (let i = (startFrom+1); i <= 10; i++) {
+                                //         console.log(i);
+                                //     }
+                                // }
 
-               // exercice palindrome
-              // créer une fonction qui vérifie si un tableau est un palindrome
-              // 1. un palindrome est un mot ou une phrase qui se lit de la même manière à l'envers qu'à l'endroit
-              // logique c'est une symétrie il faut comparer le premier élément avec le dernier élément
-        //       function isPalindrome(array) {
-        //   for (let i = 0; i < array.length / 2; i++) {
-        //     if (array[i] !== array[array.length - 1 - i]) {
-        //       console.log("Ce n'est pas un palindrome");
-        //       return;
-        //     }
-        //   }
-              // return true;
-        //   console.log("C'est un palindrome");
-        // }
-        //       // appeler la fonction
-        //       isPalindrome([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-        //       isPalindrome(["u", "e", "i", "o", "a", "u", "e", "i", "o", "a"]);
-        //       isPalindrome(["free", "free", "free", "free", "free", "free", "free", "free", "free", "free"]);
-        //       isPalindrome(["radar"]);
-        //       isPalindrome(["level"]);
-        //       isPalindrome([1, 2, 3, 2, 1]);
+                                // exercice 5
+                    //             function displayMultiply(digit) {
+                    //     for (let i = 1; i <= 12; i++) {
+                    //         console.log(i + " x " + digit + " = " + (i * digit));
+                    //     }
+                    // }
+                    // displayMultiply(3);
+                    // // Affichera la table de 3 de 1 à 12
 
+                    // // exercice 6
+                    // function addUpTo(max) {
+                    //     let sum = 0;
+                    //     for (let i = 1; i <= max; i++) {
+                    //         sum += i;
+                    //     }
+                    //     console.log("La somme de 1 à " + max + " est " + sum);
+                    // }
+                    // addUpTo(10);
+                    // Affichera la somme de 1 à 10
 
-              // exercice 11
-              // 1. créer une fonction qui inverse la chaîne de caractères
-              // 2. la fonction doit prendre en paramètre une chaîne de caractères
-              // 3. la fonction doit retourner la chaîne de caractères inversée
-              // 4. la fonction doit utiliser une boucle for pour inverser la chaîne de caractères
-              // 5. la fonction doit utiliser une variable temporaire pour stocker la chaîne de caractères inversée
-              // 6. la fonction doit retourner la chaîne de caractères inversée
-              // function inverseWord(str) {
-              //   // créer une variable temporaire pour stocker la chaîne de caractères inversée
-              //   let temp = "";
-              //   // parcourir la chaîne de caractères
-              //   for (let i = str.length - 1; i >= 0; i--) {
-              //     // ajouter chaque caractère à la variable temporaire
-              //     temp += str[i];
-              //   }
-              //   // retourner la chaîne de caractères inversée
-              //   return temp;
-              // }
-              // // appeler la fonction
-              // console.log(inverseWord("Hello World"));
-              // console.log(inverseWord("espion"));
+                    // exercice 7
+                    // function displayVowels() {
+                    //   // créer un tableau des voyelles de l'alphabet
+                    //   const vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
+                    //   // afficher le tableau
+                    //   console.log("Les voyelles de l'alphabet sont : " + vowels.join(", "));
+                    // }
+                    // // appeler la fonction
+                    // displayVowels();
 
-              // exercise 11 b
-              // créer une fonction qui inverse la chaîne de caractères sans utiliser .length
-              // function inverseWord(str) {
-              //   // créer une variable temporaire pour stocker la chaîne de caractères inversée
-              //   let temp = "";
-              //   // parcourir la chaîne de caractères
-              //   for (let i = str.indexOf(str[str.length - 1]); i >= 0; i--) {
-              //     // ajouter chaque caractère à la variable temporaire
-              //     temp += str[i];
-              //   }
-              //   // retourner la chaîne de caractères inversée
-              //   return temp;
-              // }
-              // // appeler la fonction
-              // console.log(inverseWord("Hello World"));
-              // console.log(inverseWord("espion"));
+                    // // exercice 8
+                    // // calculer la moyenne des nombres d'un tableau
+                    // function getAverage(grades) {
+                    //   // initialiser la somme à 0
+                    //   let sum = 0;
+                    //   // parcourir le tableau
+                    //   for (let i = 0; i < grades.length; i++) {
+                    //     // ajouter chaque nombre du tableau à la somme
+                    //     sum += grades[i];
+                    //   }
+                    //   // calculer la moyenne
+                    //   const average = sum / grades.length;
+                    //   // afficher la moyenne
+                    //   console.log("La moyenne est : " + average);
+                    // }
+                    // // appeler la fonction
+                    // getAverage([10, 15, 15, 12, 18]);
+                    // getAverage([14, 16, 17, 13, 10]);
+                    // getAverage([14, 16, 17, 13, 18, 2, 14]);
+
+                    // exercice 9
+                    // 1 vérifier si les deux tableaux sont de même longueur
+                  //   function addArray(first, second) {
+                  //     // vérifier si les deux tableaux sont de même longueur
+                  //     if (first.length !== second.length) {
+                  //       console.log("Les tableaux ne sont pas de même longueur");
+                  //       return;
+                  //     }
+                  //   // ils sont de même longueur
+                  //     // créer un tableau pour stocker les résultats
+                  //     const result = [];
+                  //     // parcourir les deux tableaux
+                  //     for (let i = 0; i < first.length; i++) {
+                  //       // ajouter les éléments des deux tableaux
+                  //       result.push(first[i] + second[i]);
+                  //     }
+                  //     // afficher le tableau résultat
+                  //     console.log("Le tableau résultat est : " + result);
+                  //   }
+
+                  // // appeler la fonction
+                  // addArray([1, 2, 3], [4, 5, 6]);
 
 
-              // exercice 12
-              //créer une fonction qui vérifie si le password
-              //  a au moin 9 caractères et contient un @ ou un !
-              // paramètre password = une chaîne de caractères
-              // function isSecuredPassword(password) {
-              //   // vérifier si le mot de passe a au moins 9 caractères
-              //   if (password.length < 9) {
-              //     console.log("Le mot de passe doit contenir au moins 9 caractères");
-              //     return;
-              //   }
-              //   // vérifier si le mot de passe contient un @ ou un !
-              //   if (!password.includes("@") && !password.includes("!")) {
-              //     console.log("Le mot de passe doit contenir un @ ou un !");
-              //     return;
-              //   }
-              //   return true;
-              //   // console.log("Le mot de passe est sécurisé");
-              // }
-              // // appeler la fonction
-              // console.log(isSecuredPassword("passworza@!"));
+                  // // exercice 10
+                  // // créer une fonction qui supprime les doublons
+                  // //  d'un tableau paramètre array de type entier string charactère
+                  // function removeDuplicate(array) {
+                  //   // créer un tableau pour stocker les résultats ex panier achat session
+                  //   const result = [];
+                  //   // parcourir le tableau
+                  //   for (let i = 0; i < array.length; i++) {
+                  //     // vérifier si l'élément n'est pas déjà dans le tableau résultat
+                  //     if (!result.includes(array[i])) {
+                  //       // ajouter l'élément au tableau résultat
+                  //       result.push(array[i]);
+                  //     }
+                  //   }
+                  //   // afficher le tableau résultat
+                  //   console.log("Le tableau sans doublons est : " + result);
+                  // }
+                  // // appeler la fonction
+                  // removeDuplicate([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+                  // removeDuplicate(["u", "e", "i", "o", "a", "u", "e", "i", "o", "a"]);
+                  // removeDuplicate(["free", "free", "free", "free", "free", "free", "free", "free", "free", "free"]);
 
-              // exercice 13
-              // 1. créer une fonction qui ajoute "fe" à la fin
-              //  de chaque voyelle d'une chaîne de caractères
-              // 2. la fonction doit prendre en paramètre une chaîne de caractères
-              // 3. la fonction doit retourner la chaîne de caractères modifiée
-              // 4. la fonction doit utiliser une boucle for pour parcourir la chaîne de caractères
-              // 5. la fonction doit utiliser une variable temporaire pour stocker la chaîne de caractères modifiée
-              // function changeSentences(sentences) {
-              //   // créer une variable temporaire pour stocker la chaîne de caractères modifiée
-              //   let temp = "";
-              //   // parcourir la chaîne de caractères
-              //   for (let i = 0; i < sentences.length; i++) {
-              //     // vérifier si le caractère est une voyelle
-              //     if (sentences[i] === "a" || sentences[i] === "e" || sentences[i] === "i" || sentences[i] === "o" || sentences[i] === "u") {
-              //       // ajouter "fe" à la fin de la voyelle + la voyelle de l'index i
-              //       temp += sentences[i] + "fe" + sentences[i];
-              //     } else {
-              //       // ajouter le caractère à la variable temporaire
-              //       temp += sentences[i];
-              //     }
-              //   }
-              //   // retourner la chaîne de caractères modifiée
-              //   return temp;
-              // }
-              // // appeler la fonction
-              // console.log(changeSentences("Hello World"));
-              // console.log(changeSentences("chat"));
-
-              // exercice 13 excerpt
-              // 1. créer une fonction qui limite une chaîne de caractères à 15 caractères maximum
-              // 2. en paramètre str = une chaîne de caractères et from = un entirer à 15
-              function excerpt(str, from) {
-                // initialiser une variable pour stocker la chaîne de caractères modifiée
-                let temp = "";
-                // parcourir la chaîne de caractères
-                for (let i = 0; i < str.length; i++) {
-                      // ajouter le caractère à la variable temporaire
-                      temp += str[i];
-                  }
-                  // retourner la chaîne de caractères modifiée
-                  return temp.slice(0, from) + "...";
+                   // exercice palindrome
+                  // créer une fonction qui vérifie si un tableau est un palindrome
+                  // 1. un palindrome est un mot ou une phrase qui se lit de la même manière à l'envers qu'à l'endroit
+                  // logique c'est une symétrie il faut comparer le premier élément avec le dernier élément
+                  function isPalindrome(array) {
+              for (let i = 0; i < array.length / 2; i++) {
+                if (array[i] !== array[array.length - 1 - i]) {
+                  console.log("Ce n'est pas un palindrome");
+                  return;
                 }
-              // appeler la fonction
-              console.log(excerpt("Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum debitis eaque mollitia officia? Repellendus ipsum a earum ea aspernatur velit facere consequatur reiciendis iste dolorem, explicabo, quidem, recusandae quibusdam. Hic?", 15));
-
-              // exercice 14
-              // 1. créer une fonction qui vérifie si une chaîne de caractères contient toutes les lettres de l'alphabet
-              // 2. la fonction doit prendre en paramètre une chaîne de caractères str et retourne un boolean
-              function isPangram(str) {
-                // créer un tableau pour stocker les lettres de l'alphabet
-                const alphabet = "abcdefghijklmnopqrstuvwxyz";
-                // parcourir le tableau
-                for (let i = 0; i < alphabet.length; i++) {
-                  // vérifier si la lettre n'est pas dans la chaîne de caractères
-                  if (!str.includes(alphabet[i])) {
-                    return false;
-                  }
-                }
-                return true;
-                // console.log("La chaîne de caractères contient toutes les lettres de l'alphabet");
               }
-              // appeler la fonction
-              console.log(isPangram("The quick brown fox jumps over the lazy dog"));
-              console.log(isPangram("The over the lazy dog"));
+                  // return true;
+              console.log("C'est un palindrome");
+            }
+                  // appeler la fonction
+                  // isPalindrome([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+                  // isPalindrome(["u", "e", "i", "o", "a", "u", "e", "i", "o", "a"]);
+                  // isPalindrome(["free"]);
+                  // isPalindrome(["radar"]);
+                  // isPalindrome(["level"]);
+                  // isPalindrome([1, 2, 3, 2, 1]);
+                  isPalindrome(["rêver"]);
 
-              // exercice 15
-              // 1. créer une fonction qui retourne la différence entre la valeur la plus petite et la plus grande valeur du tableau anArray
-              // 2. la fonction doit prendre en paramètre anArray = un tableau d'entiers
-              function isPangrams(anArray) {
-                // initialiser une variable pour stocker la valeur la plus petite
-                let min = anArray[0];
-                // initialiser une variable pour stocker la valeur la plus grande
-                let max = anArray[0];
-                // parcourir le tableau
-                for (let i = 0; i < anArray.length; i++) {
-                  // vérifier si la valeur est plus petite que la valeur la plus petite
-                  if (anArray[i] < min) {
-                    min = anArray[i];
+
+                  // exercice 11
+                  // 1. créer une fonction qui inverse la chaîne de caractères
+                  // 2. la fonction doit prendre en paramètre une chaîne de caractères
+                  // 3. la fonction doit retourner la chaîne de caractères inversée
+                  // 4. la fonction doit utiliser une boucle for pour inverser la chaîne de caractères
+                  // 5. la fonction doit utiliser une variable temporaire pour stocker la chaîne de caractères inversée
+                  // 6. la fonction doit retourner la chaîne de caractères inversée
+                  // function inverseWord(str) {
+                  //   // créer une variable temporaire pour stocker la chaîne de caractères inversée
+                  //   let temp = "";
+                  //   // parcourir la chaîne de caractères
+                  //   for (let i = str.length - 1; i >= 0; i--) {
+                  //     // ajouter chaque caractère à la variable temporaire
+                  //     temp += str[i];
+                  //   }
+                  //   // retourner la chaîne de caractères inversée
+                  //   return temp;
+                  // }
+                  // // appeler la fonction
+                  // console.log(inverseWord("Hello World"));
+                  // console.log(inverseWord("espion"));
+
+                  // exercise 11 b
+                  // créer une fonction qui inverse la chaîne de caractères sans utiliser .length
+                  // function inverseWord(str) {
+                  //   // créer une variable temporaire pour stocker la chaîne de caractères inversée
+                  //   let temp = "";
+                  //   // parcourir la chaîne de caractères
+                  //   for (let i = str.indexOf(str[str.length - 1]); i >= 0; i--) {
+                  //     // ajouter chaque caractère à la variable temporaire
+                  //     temp += str[i];
+                  //   }
+                  //   // retourner la chaîne de caractères inversée
+                  //   return temp;
+                  // }
+                  // // appeler la fonction
+                  // console.log(inverseWord("Hello World"));
+                  // console.log(inverseWord("espion"));
+
+
+                  // exercice 12
+                  //créer une fonction qui vérifie si le password
+                  //  a au moin 9 caractères et contient un @ ou un !
+                  // paramètre password = une chaîne de caractères
+                  // function isSecuredPassword(password) {
+                  //   // vérifier si le mot de passe a au moins 9 caractères
+                  //   if (password.length < 9) {
+                  //     console.log("Le mot de passe doit contenir au moins 9 caractères");
+                  //     return;
+                  //   }
+                  //   // vérifier si le mot de passe contient un @ ou un !
+                  //   if (!password.includes("@") && !password.includes("!")) {
+                  //     console.log("Le mot de passe doit contenir un @ ou un !");
+                  //     return;
+                  //   }
+                  //   return true;
+                  //   // console.log("Le mot de passe est sécurisé");
+                  // }
+                  // // appeler la fonction
+                  // console.log(isSecuredPassword("passworza@!"));
+
+                  // exercice 13
+                  // 1. créer une fonction qui ajoute "fe" à la fin
+                  //  de chaque voyelle d'une chaîne de caractères
+                  // 2. la fonction doit prendre en paramètre une chaîne de caractères
+                  // 3. la fonction doit retourner la chaîne de caractères modifiée
+                  // 4. la fonction doit utiliser une boucle for pour parcourir la chaîne de caractères
+                  // 5. la fonction doit utiliser une variable temporaire pour stocker la chaîne de caractères modifiée
+                  // function changeSentences(sentences) {
+                  //   // créer une variable temporaire pour stocker la chaîne de caractères modifiée
+                  //   let temp = "";
+                  //   // parcourir la chaîne de caractères
+                  //   for (let i = 0; i < sentences.length; i++) {
+                  //     // vérifier si le caractère est une voyelle
+                  //     if (sentences[i] === "a" || sentences[i] === "e" || sentences[i] === "i" || sentences[i] === "o" || sentences[i] === "u") {
+                  //       // ajouter "fe" à la fin de la voyelle + la voyelle de l'index i
+                  //       temp += sentences[i] + "fe" + sentences[i];
+                  //     } else {
+                  //       // ajouter le caractère à la variable temporaire
+                  //       temp += sentences[i];
+                  //     }
+                  //   }
+                  //   // retourner la chaîne de caractères modifiée
+                  //   return temp;
+                  // }
+                  // // appeler la fonction
+                  // console.log(changeSentences("Hello World"));
+                  // console.log(changeSentences("chat"));
+
+                  // exercice 13 excerpt
+                  // 1. créer une fonction qui limite une chaîne de caractères à 15 caractères maximum
+                  // 2. en paramètre str = une chaîne de caractères et from = un entirer à 15
+                  function excerpt(str, from) {
+                    // initialiser une variable pour stocker la chaîne de caractères modifiée
+                    let temp = "";
+                    // parcourir la chaîne de caractères
+                    for (let i = 0; i < str.length; i++) {
+                          // ajouter le caractère à la variable temporaire
+                          temp += str[i];
+                      }
+                      // retourner la chaîne de caractères modifiée
+                      return temp.substring(0, from) + "...";
+                      // return temp.slice(0, from) + "...";
+                    }
+                  // appeler la fonction
+                  console.log(excerpt("Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum debitis eaque mollitia officia? Repellendus ipsum a earum ea aspernatur velit facere consequatur reiciendis iste dolorem, explicabo, quidem, recusandae quibusdam. Hic?", 15));
+
+
+                  // exercice 14
+                  // 1. créer une fonction qui vérifie si une chaîne de caractères contient toutes les lettres de l'alphabet
+                  // 2. la fonction doit prendre en paramètre une chaîne de caractères str et retourne un boolean
+                  function isPangram(str) {
+                    // créer un tableau pour stocker les lettres de l'alphabet
+                    const alphabet = "abcdefghijklmnopqrstuvwxyz";
+                    // parcourir le tableau
+                    for (let i = 0; i < alphabet.length; i++) {
+                      // vérifier si la lettre n'est pas dans la chaîne de caractères
+                      if (!str.includes(alphabet[i])) {
+                        return false;
+                      }
+                    }
+                    return true;
+                    // console.log("La chaîne de caractères contient toutes les lettres de l'alphabet");
                   }
-                  // vérifier si la valeur est plus grande que la valeur la plus grande
-                  if (anArray[i] > max) {
-                    max = anArray[i];
+                  // appeler la fonction
+                  console.log(isPangram("The quick brown fox jumps over the lazy dog"));
+                  console.log(isPangram("The over the lazy dog"));
+
+                  // exercice 15
+                  // 1. créer une fonction qui retourne la différence entre la valeur la plus petite et la plus grande valeur du tableau anArray
+                  // 2. la fonction doit prendre en paramètre anArray = un tableau d'entiers
+                  function isPangrams(anArray) {
+                    // initialiser une variable pour stocker la valeur la plus petite
+                    let min = anArray[0];
+                    // initialiser une variable pour stocker la valeur la plus grande
+                    let max = anArray[0];
+                    // parcourir le tableau
+                    for (let i = 0; i < anArray.length; i++) {
+                      // vérifier si la valeur est plus petite que la valeur la plus petite
+                      if (anArray[i] < min) {
+                        min = anArray[i];
+                      }
+                      // vérifier si la valeur est plus grande que la valeur la plus grande
+                      if (anArray[i] > max) {
+                        max = anArray[i];
+                      }
+                    }
+                    return max - min;
                   }
-                }
-                return max - min;
-              }
-              // appeler la fonction
-              console.log(isPangrams([15, 78, 45, 96, 12, 32, 65, 78, 91]));
+                  // appeler la fonction
+                  console.log(isPangrams([15, 78, 45, 96, 12, 32, 65, 78, 91]));
 
 
-              // exercice créer la fonction IndexOf qui reprend indexOf method js
-                  function myIndexOf(haystack, needle) {
-          for (let i = 0; i < haystack.length; i++) {
-              if (haystack[i] === needle) {
-                  return i;
+                  // exercice créer la fonction IndexOf qui reprend indexOf method js
+                      function myIndexOf(haystack, needle) {
+              for (let i = 0; i < haystack.length; i++) {
+                  if (haystack[i] === needle) {
+                      return i;
+                  }
               }
+              return -1;
           }
-          return -1;
-      }
+
+          // exercice 17 scrabble
+          // créer une fonction qui calcule les points d'un mot au scrabble
+          // 1. créer un tableau de points pour chaque lettre
+          // 2. créer une fonction qui prend en paramètre un mot et retourne le nombre de points
+          // 3. la fonction doit parcourir le mot et additionner les points de chaque lettre
+          function getScrabbleScore(str) {
+            // initialiser le score à 0
+            let score = 0;
+            // créer une const de points pour chaque lettre
+            const point = {a: 1, b: 3, c:3, d: 2, e: 1, f: 4, g: 2, h:4, i:1, j: 8,
+            k: 5, l: 1, m: 3, n: 1, o: 1, p: 3, q: 10, r: 1, s: 1, t: 1,
+            u: 1, v: 4, w: 4, x: 8, y: 4, z: 10
+            };
+            // parcourir le mot
+            for (let i = 0; i < str.length; i++) {
+              // vérifier si la lettre est dans le tableau de points
+              if (point[str[i].toLowerCase()]) {
+                // ajouter les points à la variable score
+                score += point[str[i].toLowerCase()];
+              }
+            }
+            // retourner le score
+            return score;
+          }
+
+      console.log("Le score du mot est : " + getScrabbleScore("Hello World"));
+      console.log("Le score du mot est : " + getScrabbleScore("lazy"));
+      console.log("Le score du mot est : " + getScrabbleScore("cat"));
+      console.log("Le score du mot est : " + getScrabbleScore("zorro"));
     </script>
   </body>
 </html>
