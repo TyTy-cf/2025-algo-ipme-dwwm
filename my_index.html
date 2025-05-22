@@ -467,4 +467,56 @@
     }
 
     //console.log(generateLetters());
+
+    //25)
+    
+    function randomRange(first, last) 
+    {
+        return first + Math.floor(Math.random() * last);
+    }
+    
+    function mastermind(difficulty) 
+    {
+        let original = [];
+        for (let i = 0; i < difficulty; i++)
+        {
+            original.push(randomRange(1, difficulty));
+        }
+
+        console.log(original);
+        console.log("Vous avez " + difficulty + " essais");
+        for (let nbTry = 1; nbTry <= difficulty; nbTry++)
+        {
+            let guess = [];
+            console.log("Essai n°" + nbTry);
+            for (let i = 0; i < difficulty; i++)
+            {
+                guess.push(parseInt(prompt("nombre " + (i+1) + ":")));
+            }
+    
+            let result = [];
+            let isSame = true;
+            for (let i = 0; i < original.length; i++)
+            {
+                if (original[i] === guess[i])
+                {
+                    result.push(original[i]);
+                }
+                else
+                {
+                    result.push("X");
+                    isSame = false;
+                }
+            }
+            console.log(result);
+            if (isSame)
+            {
+                console.log("Vous avez gagné !!!.");
+                return;
+            }
+        }
+        console.log("Vous avez perdu.");
+    }
+    
+    mastermind(prompt("Difficulté ?"));
 </script>
