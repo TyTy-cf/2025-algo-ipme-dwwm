@@ -172,23 +172,28 @@
           //   console.log(isPangram("the quick brown fox jumps over the lazy dog."))
 
              //EXERCICE 15 :
-             function getRange(anArray) {
-               let min = Math.min(...anArray);
-               let max = Math.max(...anArray);
-               return max - min;
-             }
-          //   console.log(getRange([15, 78, 45, 96, 12, 32, 65, 78, 91]));
+             function getRange(anArray){
+                 let min = anArray[0];
+                 let max = anArray[0]; 
+                 for(let i = 0; i < anArray.length; i++ ){
+                    if (anArray[i] < min ) {
+                        min = anArray[i];
+                    }
+                    if (anArray[i] > max){
+                        max = anArray[i];
+                    }
+                }
+                return max - min;
+            }
+            // console.log(getRange([15, 78, 45, 96, 12, 32, 65, 78, 91]));
 
              // Exercice 16 :
               function isPalindrome(str) {
                        let newStr = "";
                        for (let i = str.length - 1; i >= 0; i--){
                             newStr += str[i];
-                          if(newStr === str){
-                              return true;
-                          }
                        }
-                        return false;
+                        return newStr === str;
                    }
               //console.log(isPalindrome("rever"));
 
@@ -231,7 +236,28 @@
         //  console.log(getScrabbleScore("lazy"));
 
         // EXERCICE 18 : 
-            function changeSentences{
-                
+        function changeSentences(sentences){
+            let vowels = ["a", "e", "i", "o", "u", "y"];
+            let newSentences = "";
+            for( let i = 0; i < sentences.length; i++){
+                newSentences += sentences[i];
+                if(vowels.includes(sentences[i])){
+                newSentences += "fe" + sentences[i];
+                }
             }
+            return newSentences;
+        }
+        console.log(changeSentences("chat"));
+
+        // EXERCICE 19 :
+        function encrypt(str, gap){
+            const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+            let crypt = "";
+            
+            for (let i = 0; i < str.length; i++) {
+                   
+            }
+            return ;
+        }
+        console.log(encrypt("chat", 3));
 </script>
