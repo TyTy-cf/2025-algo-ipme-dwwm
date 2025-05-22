@@ -69,39 +69,48 @@
 	// changeSentencesAlt('Comment il va en vrai ?');
 	// changeSentencesAlt('La femelle oiseau à créée un nît.');
 
-	console.log(' ');
-	console.warn('isSecuredPassword');
-	console.log(isSecuredPassword('Gros rythme.'));
-	console.log(isSecuredPassword('password@gmail.com!'));
-	console.log(isSecuredPassword('@!'));
+	// console.log(' ');
+	// console.warn('isSecuredPassword');
+	// console.log(isSecuredPassword('Gros rythme.'));
+	// console.log(isSecuredPassword('password@gmail.com!'));
+	// console.log(isSecuredPassword('@!'));
+
+	// console.log(' ');
+	// console.warn('removeDuplicate');
+	// console.log(removeDuplicate([]));
+	// console.log(removeDuplicate([1, 2, 2, 4, 5, 2, 1, 2, 1, 6]));
+
+	// console.log(' ');
+	// console.warn('inverseWord');
+	// console.log(inverseWord('hello world'));
+
+	// console.log(' ');
+	// console.warn('getRange');
+	// console.log(getRange([4, 9, 199, 27]));
+	// console.log(getRange([9, 3, 'ok', 1]));
+	// console.log(getRange([-(9372 ** 24), 2 ** 24]));
+
+	// console.log(' ');
+	// console.warn('isPangram');
+	// console.log(isPangram(''));
+	// console.log(isPangram('hello woreld'));
+	// console.log(isPangram('The quick brown fox jumps over the lazy dog'));
+
+	// console.log(' ');
+	// console.warn('isPalindrome');
+	// console.log(isPalindrome(''));
+	// console.log(isPalindrome('hello woreld'));
+	// console.log(isPalindrome('ressasser'));
+	// console.log(isPalindrome('radar'));
 
 	console.log(' ');
-	console.warn('removeDuplicate');
-	console.log(removeDuplicate([]));
-	console.log(removeDuplicate([1, 2, 2, 4, 5, 2, 1, 2, 1, 6]));
+	console.warn('getScrabbleScore');
+	console.log(getScrabbleScore(''));
+	console.log(getScrabbleScore('hello woreld'));
+	console.log(getScrabbleScore('ressasser'));
+	console.log(getScrabbleScore(3));
 
-	console.log(' ');
-	console.warn('inverseWord');
-	console.log(inverseWord('hello world'));
-
-	console.log(' ');
-	console.warn('getRange');
-	console.log(getRange([4, 9, 199, 27]));
-	console.log(getRange([9, 3, 'ok', 1]));
-	console.log(getRange([-(9372 ** 24), 2 ** 24]));
-
-	console.log(' ');
-	console.warn('isPangram');
-	console.log(isPangram(''));
-	console.log(isPangram('hello woreld'));
-	console.log(isPangram('The quick brown fox jumps over the lazy dog'));
-
-	console.log(' ');
-	console.warn('isPalindrome');
-	console.log(isPalindrome(''));
-	console.log(isPalindrome('hello woreld'));
-	console.log(isPalindrome('ressasser'));
-	console.log(isPalindrome('radar'));
+	mastermind();
 
 	//
 	// Fn
@@ -392,8 +401,68 @@
 	}
 
 	// 17
-	function getScrabbleScore(str) {
-		return 0;
+	function getScrabbleScore(str = '') {
+		if (typeof str !== 'string') {
+			console.info('Not a string');
+			return;
+		}
+
+		let score = 0;
+
+		for (const char of str.toUpperCase()) {
+			switch (char) {
+				case 'A':
+				case 'E':
+				case 'I':
+				case 'O':
+				case 'U':
+				case 'L':
+				case 'N':
+				case 'R':
+				case 'S':
+				case 'T':
+					score++;
+					break;
+
+				case 'D':
+				case 'G':
+					score += 2;
+					break;
+
+				case 'B':
+				case 'C':
+				case 'M':
+				case 'P':
+					score += 3;
+					break;
+
+				case 'F':
+				case 'H':
+				case 'V':
+				case 'W':
+				case 'Y':
+					score += 3;
+					break;
+
+				case 'K':
+					score += 5;
+					break;
+
+				case 'J':
+				case 'X':
+					score += 8;
+					break;
+
+				case 'Q':
+				case 'Z':
+					score += 10;
+					break;
+
+				default:
+			}
+		}
+
+		return score;
 	}
 
 	// 18
@@ -452,4 +521,65 @@
 
 	// 22
 	function getLettersBy(str = '') {}
+
+	// 25
+	function mastermind() {
+		let computerArray = [];
+		let guessing = true;
+		let running = true;
+		let i = 0;
+
+		while (running) {
+			let display = '';
+			let valid = 0;
+			let tries = 0;
+
+			// Create guessing array
+			for (i = 0; i < 4; i++) {
+				const ran = Math.round(Math.random() * 5) + 1;
+				computerArray.push(ran);
+			}
+
+			while (guessing) {
+				let userArray = [];
+
+				// Let user guess
+				for (i = 0; i < 4; i++) {
+					const chiffre = parseInt(prompt(`Choisissez le chiffre ${i + 1}`));
+					userArray.push(chiffre);
+				}
+
+				// Compare result
+				for (i = 0; i < 4; i++) {
+					if (computerArray[i] === userArray[i]) {
+						display += computerArray[i] + ', ';
+						valid++;
+					} else {
+						display += 'x, ';
+					}
+				}
+
+				display = '[' + display + ']';
+				alert(display);
+
+				tries++;
+				display = '';
+				userArray = [];
+
+				if (valid === 4) {
+					alert('Vous avez gagné !');
+					computerArray = [];
+					guessing = false;
+				} else if (tries === 5) {
+					alert('Vous avez perdu !');
+					computerArray = [];
+					guessing = false;
+				}
+			}
+
+			if (prompt('(R)ejouer ?') !== 'R') {
+				running = false;
+			}
+		}
+	}
 </script>
