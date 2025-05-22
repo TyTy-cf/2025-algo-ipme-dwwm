@@ -68,7 +68,7 @@ console.log(inverseWord("batman"));
   </script> -->
   
   <!-- exo 9 -->
-   <script>
+   <!-- <script>
     
     function addArray (first, seconde) {
         const aArray = fist.length;
@@ -85,4 +85,113 @@ console.log(inverseWord("batman"));
 
     }
     console.log(addArray([5,5,4,2],[6,8,4,5]));
-   </script>
+   </script> -->
+
+   <!-- exo 13 -->
+    <!-- <script>
+        function excerpt(str, from) {
+         if(str.length> 15){
+          
+        return   str.substr(0,15)+"...";
+        
+           }
+        return str;
+        }    
+      
+        console.log(excerpt("aujourd'hui il fait beau"))
+    </script> -->
+
+    
+      <!-- exo 15 -->
+<!-- <script>
+    function getRange(anArray){
+        let max = 0;
+        let min = anArray[0];
+
+        for(i = 0; i<anArray.length; i++) {  
+            if (max < anArray[i]) {
+                max = anArray[i];              
+            } 
+            if(min > anArray[i]){
+                min = anArray[i];
+            }
+        
+        }
+        return max-min;
+    }
+    console.log(getRange([15, 78, 45, 96, 12, 32, 65, 78, 91]))
+</script> -->
+
+<!-- exo 16 -->
+ <!-- <script>
+    function isPalindrome(str){
+        return str === inversWord(str);
+
+    }
+    console.log(isPalindrome("rever"))
+    console.log(isPalindrome("toto"))
+ </script> -->
+ <!-- exo 17 -->
+ <!-- <script>
+    function getScrabbleScore(str) {
+        let sum = 0;
+        let onePoint ='aeioulnrst';
+        let towPoint = 'dg';
+        let threePoint = 'bcmp';
+        let fourPoint = 'fhvwy';
+        let fivePoint = 'k';
+        let heightPoint = 'jk';
+        let tenPoint = 'oz';
+
+        for(i=0; i<str.length; i++){
+            if(onePoint.includes(str[i])){
+                sum += 1;
+            }
+             if(towPoint.includes(str[i])){
+                 sum += 2;
+            }
+             if(threePoint.includes(str[i])){
+                 sum += 3;
+            }
+             if(fourPoint.includes(str[i])){
+                 sum += 4;
+            }
+             if(fivePoint.includes(str[i])){
+                 sum += 5;
+            }
+             if(heightPoint.includes(str[i])){
+                 sum += 8;
+            }
+             if(tenPoint.includes(str[i])){
+                 sum += 10;
+            }
+            
+        }
+        return sum;
+    }
+
+    console.log(getScrabbleScore('mille et une nuit'));
+
+    function getAlphabet(){
+      return  'abcdefghijklmnopqrstuvwxyz'}
+ </script>
+ utilisation d'une boucle for pour exo 17
+ params = params.toUpperCase()
+  for (const element of params){ if if if } -->
+
+  <!-- exo 18 -->
+
+  <script>
+    function changeSentences(sentenses) {
+       
+       const voyelles ='aeiouy';
+    let newSentenses = '';
+        for(i = 0; i<sentenses.length; i++) {
+            if(voyelles.includes(str[i])){
+                newSentenses = sentenses.voyelles[i] + 'fe" +voyelles[i];
+            } 
+        }
+        return newSentenses;
+    }
+    console.log(changeSentences('aller'));
+  </script>
