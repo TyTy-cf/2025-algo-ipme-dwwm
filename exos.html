@@ -96,6 +96,13 @@
 	console.log(isPangram('hello woreld'));
 	console.log(isPangram('The quick brown fox jumps over the lazy dog'));
 
+	console.log(' ');
+	console.warn('isPalindrome');
+	console.log(isPalindrome(''));
+	console.log(isPalindrome('hello woreld'));
+	console.log(isPalindrome('ressasser'));
+	console.log(isPalindrome('radar'));
+
 	//
 	// Fn
 	//
@@ -346,8 +353,8 @@
 	// 15
 	function getRange(arr) {
 		const len = arr.length;
-		let min;
-		let max;
+		let min = arr[0];
+		let max = arr[0];
 
 		for (let ii = 0; ii < len; ii++) {
 			if (isNaN(arr[ii])) {
@@ -355,10 +362,10 @@
 				return NaN;
 			}
 
-			if (!min || arr[ii] < min) {
+			if (arr[ii] < min) {
 				min = arr[ii];
 			}
-			if (!max || arr[ii] > max) {
+			if (arr[ii] > max) {
 				max = arr[ii];
 			}
 		}
@@ -367,8 +374,21 @@
 	}
 
 	// 16
-	function isPalindrome(str) {
-		return false;
+	function isPalindrome(str = '') {
+		const half = window.parseInt(str.length / 2);
+		let matches = 0;
+
+		for (let i = 0; i < half; i++) {
+			const end_i = str.length - i - 1;
+			const end = str[end_i];
+			const start = str[i];
+
+			if (start === end) {
+				matches++;
+			}
+		}
+
+		return str.length > 1 && matches === half;
 	}
 
 	// 17
