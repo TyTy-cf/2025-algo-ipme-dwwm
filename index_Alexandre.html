@@ -321,7 +321,17 @@
         }else if(nbSubscribers<1000){
           gainSite = calculatePercentage(gainChaine,15);
         }
-        return `Le site gagne ${gainSite.toFixed(2)}, et le streamer ${gainChaine-gainSite}`
+        return `Le site gagne ${gainSite.toFixed(2)}, et le streamer ${gainChaine-gainSite}`;
       }
-      console.log(getGain(1000));
+      // console.log(getGain(1000));
+
+      // exercice 22
+      function displayHoursByTime(time){
+        let hour = (time - time%3600)/3600;
+        let minute = (time/60)%60;
+        console.log (hour);
+        console.log(minute);
+        
+      }
+      console.log(displayHoursByTime(7100));
 </script>
