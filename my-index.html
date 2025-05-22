@@ -350,5 +350,26 @@
         }
         return pourcentage;
     }
-    console.log(getGain(99));
+    // console.log(getGain(99));
+
+    // exo 22
+    function displayHoursByTime(time){
+        let hour;
+        let min;
+        hour = time / 60;
+        hour = parseFloat(hour).toFixed(2);
+        min = (hour + "").split(".")[1];
+        min /= 100;
+        min *= 60;
+        hour = Math.trunc(hour);
+        min = Math.round(min);
+        if(hour < 10){
+            hour = '0' + hour;
+        }
+        if(min < 10){
+            min = '0' + min;
+        }
+        return `${hour}h${min}`;
+    }
+    console.log(displayHoursByTime(90))
 </script>
