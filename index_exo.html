@@ -135,20 +135,71 @@
 
 // fonction d'except
 
-function excerpt(str, from){
-    // determiner longueur chaine de caractere
-    let strLenght = str.length;
-    let retour = str;
-    let retou
-   
-    if (strLenght > from) {
-        retour = str.substring(0, from);
-        retour = retour +"...";
-    }
 
-    return retour;
-}
 
 
 console.log(excerpt("Super journée d'algo en vue", 15));
+
+
+// Fonction de pangram
+
+function isPangram(str){
+//  Constance contenant  les lettres de l'alphabet
+   const alphabet ="abcdefghijklmnopqrstwxyz"
+// mettre le texte en minuscule
+   let text = str.toLowerCase();
+   
+// determiner sa longueur
+//  extraire et parcourir pour chaque lettre  de  l'alphabet' et parcourir le texte
+//    for(i=o; i<alphabet.length;i++ ){
+//       lettreextraite = alphabet.charAt(i);
+//        if (str.includes(lettreextraite)){
+        
+//       }
+//       else {
+//         message = "Ce texte n'est pas un pangram";
+//         break;
+//       }
+//     } 
+// console.log()
+
+//// interrogation sur str[i] ??
+/// correction pangram
+
+
+// fonction retourner ecart plus petite valeur et la plus grand
+
+// fonction ecart
+
+function  getRange(anArray){
+    let max = 0;
+    let min =anArray[0];
+
+    for (i=0; i<anArray.length ; i++){
+        if(max<anArray[i]){
+            max = anArray[i];
+        }
+        if (min>anArray[i]){
+            min = anArray[i];
+        }
+    }
+    return max-min;
+}
+
+  const otherArray = [1,2,3,89,56,58,5,7];
+  console.log(getRange(otherArray));
+
+       
+    }
+    
+    // fonction pallidrone
+
+    function pallidrone(str){
+        if( str.length.mod(2)== 0){
+            // diviser le tableau en deux
+            //comparer les deux tableaux
+        }
+    }
+  // fonction scrubble
+
 </script>
