@@ -260,7 +260,6 @@
     // console.log(getScrabbleScore("aaaaa"))
 
     // exo 18
-    // reduire le traitement dans le if else qui est le même
     function changeSentences(sentences) {
     const vowels = ["a", "e", "i", "o", "u", "y"];
     let newSentences = "";
@@ -313,15 +312,16 @@
             let alphabetIndex;
             if(encrypt){
                 alphabetIndex = (alphabet.indexOf(char) + gap) % 26;
-            } else {
+            }
+            else {
                 alphabetIndex = (alphabet.indexOf(char) - gap + alphabet.length) % 26;
             }
             newSentences += alphabet[alphabetIndex];
         }
         return newSentences;
     }
-    console.log(encryptDescrypt("chat", 3, true))
-    console.log(encryptDescrypt("chatz", 3, true))
-    console.log(encryptDescrypt("fkdw", 3, false))
-    console.log(encryptDescrypt("fkdwa", 3, false))
+    console.log(encryptDescrypt("chat", 3, true));
+    console.log(encryptDescrypt("chatz", 3, true));
+    console.log(encryptDescrypt("fkdw", 3, false));
+    console.log(encryptDescrypt("fkdwa", 3, false));
 </script>
