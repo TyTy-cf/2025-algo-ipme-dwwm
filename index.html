@@ -146,16 +146,15 @@
         const sizeFirst = first.length;
         const sizeSecond = second.length;
         const newArray = [];
-        // SI, sizeFirst == sizeSecond, ALORS
         if (sizeFirst === sizeSecond) {
-            // POUR, i = 0 JUSQU'A i < size?, ALORS
             for (let i = 0; i < sizeFirst; i++) {
-                // newArray.push( ? + ? )
-            // FINPOUR
+                newArray.push(first[i], second[i]);
             }
-        // FINSI
+            // for (const i in first) {
+            //     newArray.push(first[i], second[i]);
+            // }
         }
-        // RETOUR newArray
+        return newArray;
     }
 
     const aFirst = [1, 2, 3, 4, 5];
@@ -170,7 +169,7 @@
             // if (noDuplicate.indexOf(element) === -1) { // version sans le "!" car si un element n'est pas trouvé avec indexOf il vous renvoie -1
             // if (!noDuplicate.includes(element)) {
             if (myIndexOf(noDuplicate, element) === -1) {
-                noDuplicate.push(array[i]);
+                noDuplicate.push(element);
             }
         }
 
@@ -279,33 +278,109 @@
         return str === inverseWord(str);
     }
 
-    console.log(isPalindrome("rever")); // vrai
-    console.log(isPalindrome("kayak")); // vrai
-    console.log(isPalindrome("ressasser")); // vrai
-    console.log(isPalindrome("algorithmie")); // faux
+    // console.log(isPalindrome("rever")); // vrai
+    // console.log(isPalindrome("kayak")); // vrai
+    // console.log(isPalindrome("ressasser")); // vrai
+    // console.log(isPalindrome("algorithmie")); // faux
 
     function getScrabbleScores(str) {
-        const points = {a: 1};
-        points[a] // 1
+        const pointsByLetter = {
+          a: 1, b: 3, c: 3, d: 2, e: 1, f: 4, g: 3, h: 4, i: 1, j: 8, k: 5, l: 1, m: 3,
+          n: 1, o: 1, p: 3, q: 10, r: 1, s: 1, t: 1, u: 1, v: 4, w: 4, x: 8, y: 4, z: 10
+        };
+        let points = 0;
+        str = str.toLowerCase();
+
+        for (const strLetter of str) {
+            points += pointsByLetter[strLetter];
+        }
+
+        return points;
     }
 
+    // console.log(getScrabbleScores("zebre"));
+    // console.log(getScrabbleScores("quinquenat"));
 
+    function changeSentences(str) {
+        const vowels = "aeiouy";
+        let newStr = '';
 
+        for (const strLetter of str) {
+            newStr += strLetter;
+            if (vowels.includes(strLetter)) {
+                newStr += 'fe' + strLetter;
+            }
+        }
 
+        return newStr;
+    }
 
+    // console.log(changeSentences("chat")); // chafeat
 
+    function caesarCrypt(str, gap, mode = 1) {
+        const alphabet = getAlphabet();
+        const size = alphabet.length;
+        let crypt = '';
+        str = str.toLowerCase();
 
+        // const strLetter => const strLetter = str[i]
+        for (const strLetter of str) {
+            let index = ((alphabet.indexOf(strLetter)) + gap * mode + size) % size;
+            crypt += alphabet[index];
+        }
 
+        return crypt;
+    }
 
+    // const zeroCrypt = caesarCrypt("zero", 9);
+    // console.log(zeroCrypt);
+    // console.log(caesarCrypt(zeroCrypt, 9, -1));
 
+    function calculateHypotenuse(h, w) {
+        return Math.sqrt(h*h + w*w);
+    }
 
+    // console.log(calculateHypotenuse(2, 4));
 
+    function getGain(subscribers) {
+        const gain = subscribers * 4.99;
+        let streamingWebSiteGain = 0;
 
-    // let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-    // let alphabetStr = [];
-    // for (let i = 0; i <= alphabet.length; i++) {
-    //     // ?
-    // }
-    // return alphabet.length === alphabetStr.length;
+        if (subscribers > 1000) {
+            streamingWebSiteGain = (5 / 100) * gain;
+        } else if (subscribers > 500) {
+            streamingWebSiteGain = (15 / 100) * gain;
+        } else if (subscribers > 100) {
+            streamingWebSiteGain = (25 / 100) * gain;
+        } else {
+            streamingWebSiteGain = (40 / 100) * gain;
+        }
+
+        console.log("Le site de streaming empoche " + streamingWebSiteGain + "€ et le streamer empoche " + (gain - streamingWebSiteGain) + "€");
+    }
+
+    getGain(80);
+    getGain(300);
+    getGain(800);
+    getGain(2000);
+
+    function getLettersBy(str) {
+        const vowels = "aeiouy";
+        let vowelsCount = 0;
+        let consonantCount = 0;
+        const strSanitized = str.toLowerCase().replace(' ', '');
+
+        for (const strLetter of strSanitized) {
+            if (vowels.includes(strLetter)) {
+                vowelsCount++;
+            } else {
+                consonantCount++;
+            }
+        }
+
+        return "Le mot " + str + " contient " + vowelsCount + " voyelles et " + consonantCount + " consonnes";
+    }
+
+    console.log(getLettersBy("Dobry wieczor"));
 
 </script>
