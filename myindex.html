@@ -208,17 +208,17 @@
         const alphabetOfStr = [];
       
         for (let i = 0; i < strCase.length; i++) {
-          if (!alphabetOfStr.includes(strCase[i])) {
+          if (alphabet.includes(strCase[i]) && !alphabetOfStr.includes(strCase[i])) {
             alphabetOfStr.push(strCase[i]);
           }
         }
-
-        console.log(alphabetOfStr);
-
+        
         return alphabetOfStr.length === 26;
       }
 
-      console.log(isPangram("The quick brown fox jumps over the lazy dog."));
+      console.log(isPangram("The quick brown fox jumps over the lazy dog.")); 
+      console.log(isPangram("Waltz, bad nymph, for quick jigs vex."));
+      console.log(isPangram("The boxing wizards jump quickly."));
 
       /* EXERCICE 18 */
 
