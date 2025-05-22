@@ -71,6 +71,16 @@ while (i <= 10) {
     console.log(i);
     i++; // i = i + 1;
 }
+
+// Boucle "for..of"
+for (const letter of str) { // Part forcément de l'index 0 jusqu'à l'index final du tableau
+    // letter = str[i]
+    // letter est forcément une constante ! ON NE PEUT PAS LA MODIFIER
+    if (alphabet.includes(letter) && !existingLetters.includes(letter)) {
+        existingLetters += letter;
+    }
+}
+
 ```
 
 ### Les fonctions
