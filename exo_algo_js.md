@@ -187,7 +187,7 @@ La fonction doit vérifier si le mot de passe est sécurisé ou non, un mot de p
 - Nom de la fonction : "excerpt"
 - Paramètres :
   - "str", une chaine de caractères
-  - "from", un entier, par défaut à 15
+  - "algo", un entier, par défaut à 15
 - Retour : une chaine de caractère
 ```
 
