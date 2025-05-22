@@ -1,4 +1,21 @@
 <script>
+    function randomRange(first, last) 
+    {
+        return first + Math.floor(Math.random() * last);
+    }
+
+    function shuffle(array)
+    {
+        for (let i = array.length - 1; i < 0; i--)
+        {
+            let j = Math.floor(Math.random() * (i + 1));
+
+            let temp = array[i]; 
+            array[i] = array[j]; 
+            array[j] = t;
+        }
+    }
+
     class Position
     {
         x;
@@ -24,17 +41,31 @@
 
         toString()
         {
-            if (!this.isHit)
-            {
-                return "o";
-            }
-            else if (this.isBoat)
+            // if (!this.isHit)
+            // {
+            //     return "o";
+            // }
+            // else if (this.isBoat)
+            // {
+            //     return "ø";
+            // }
+            // else
+            // {
+            //     return "x";
+            // }
+
+            //Cheat boat pos (comment over)
+            if (this.isBoat)
             {
                 return "ø";
             }
-            else
+            else if (this.isHit)
             {
                 return "x";
+            }
+            else
+            {
+                return "o";
             }
         }
     }
@@ -87,12 +118,93 @@
         constructor(sizeGrid) 
         {
             this.grid = new Grid(sizeGrid);
+            this.setBoats(sizeGrid);
         }
 
         gameloop()
         {
             this.draw();
         }
+
+        setBoats(sizeGrid)
+        {
+            const boatSizes = [5,4,3,3,2];
+            for (let i = 0; i < boatSizes.length; i++)
+            {
+                console.log("test boat " + i);
+                let x = randomRange(0, sizeGrid-1);
+                let y = randomRange(0, sizeGrid-1);
+                
+                let directionOrder = [0,1,2,3];
+                shuffle(directionOrder);
+                let boatCreated = false;
+                for (let j = 0; j < directionOrder.length; j++)
+                {
+                    console.log("test direction" + j);
+                    boatCreated = this.createBoat(x, y, directionOrder[j], boatSizes[i], sizeGrid);
+                    if (boatCreated)
+                    {
+                        j = directionOrder.length;
+                    }
+                }
+                if (boatCreated == false)
+                {
+                    i--;
+                }
+            }
+        }
+
+        createBoat(x, y, dir, sizeBoat, sizeGrid)
+        {
+            let factor;
+            if (dir === 0 || dir === 1)
+            {
+                factor = (dir == 0)? 1:-1;
+                if (x + (sizeBoat * factor) < 0 || x + (sizeBoat * factor) >= sizeGrid) //Si ca déborde
+                {
+                    return false;
+                }
+                else//BUG BOUCLE INFINIE A CORRIGER
+                {
+                    for (let i = x; i < x + sizeBoat * factor; i += factor)
+                    {
+                        if (this.grid.squares[i][y].isBoat)
+                        {
+                            return false;
+                        }
+                    }
+                    for (let i = x; i < x + sizeBoat * factor; i += factor)
+                    {
+                        this.grid.squares[i][y].isBoat = true;
+                    }
+                }
+            }
+            else
+            {
+                factor = (dir == 2)? 1:-1;
+                if (y + (sizeBoat * factor) < 0 || y + (sizeBoat * factor) >= sizeGrid) //Si ca déborde
+                {
+                    return false;
+                }
+                else
+                {
+                    for (let i = y; i < y + sizeBoat * factor; i += factor)
+                    {
+                        if (this.grid.squares[x][i].isBoat)
+                        {
+                            return false;
+                        }
+                    }
+                    for (let i = y; i < y + sizeBoat * factor; i += factor)
+                    {
+                        this.grid.squares[x][i].isBoat = true;
+                    }
+                }
+            }
+            
+            return true;
+        }
+
 
         attack(strAttack)
         {
@@ -105,17 +217,12 @@
 
         draw()
         {
-            console.clear()
+            //console.clear()
             this.grid.display();
         }
     }
 
     let game = new Game(10);
-    game.gameloop();
-    game.attack("b2");
-    game.attack("c3");
-    game.attack("d4");
-    game.attack("b2");
     game.gameloop();
 
 
