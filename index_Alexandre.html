@@ -329,9 +329,10 @@
       function displayHoursByTime(time){
         let hour = (time - time%3600)/3600;
         let minute = (time/60)%60;
-        console.log (hour);
-        console.log(minute);
-        
+        if (minute <10){
+          return `${hour}h${Math.floor(minute)}0`
+        }
+        return `${hour}h${Math.floor(minute)}`;
       }
-      console.log(displayHoursByTime(7100));
+      console.log(displayHoursByTime(3600));
 </script>
