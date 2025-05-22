@@ -410,3 +410,24 @@ La fonction envoie un prompt à l'utilisateur, et lui demande "Consonne ou voyel
 L'utilisateur doit répondre par "C" ou "V".
 Si l'utilisateur met "C", la fonction ajoute une consonne dans un tableau, sinon une voyelle.
 Au bout de 9 lettres ajoutées dans le tableau, la fonction s'arrête et retourne le tableau de lettres à l'utilisateur.
+
+### 25. Le Mastermind
+
+```
+- Nom de la fonction : "mastermind"
+- Paramètres : aucun
+- Retour : aucun
+```
+
+Le but est de simuler un "mastermind".
+La fonction doit générer un tableau d'entier allant de 1 à 5, sur une taille de 4, par exemple [1, 2, 4, 4] ou encore [4, 5, 3, 5], le contenu des tableaux est généré aléatoirement.
+Une fois la tableau généré, la fonction demande à l'utilisateur de saisir 4 entiers allant de 1 à 5 (un prompt par entier), ces chiffres seront stockés dans un tableau.
+La fonction doit ensuite comparé le tableau d'entier saisie par l'utilisateur avec celui qu'il a généré et afficher un tableau indiquant les positions valides, par exemple :
+```
+Tableau à trouver : [4, 4, 5, 1]
+Tableau saisie : [1, 1, 1, 1]
+Tableau de réponse affiché : [x, x, x, 1]
+```
+
+Une fois le tableau de réponse affiché, on redemande à l'utilisateur de saisir à nouveau 4 chiffres, et ce un maximum de 9 fois.
+Au bout des 9 fois, si l'utilisateur a trouvé les entiers, alors on lui dit qu'il a gagné, sinon qu'il a perdu.
