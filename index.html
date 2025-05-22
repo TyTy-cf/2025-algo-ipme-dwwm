@@ -219,8 +219,8 @@
         return str;
     }
 
-    console.log(excerpt("Lorem quisque class vestibulum"));
-    console.log(excerpt("Lorem quisque class vestibulum", 25));
+    // console.log(excerpt("Lorem quisque class vestibulum"));
+    // console.log(excerpt("Lorem quisque class vestibulum", 25));
 
     function myIndexOf(haystack, needle) {
         for (let i = 0; i < haystack.length; i++) {
@@ -250,28 +250,39 @@
         return existingLetters.length === alphabet.length;
     }
 
-    console.log(isPangram("Toto"));
+    // console.log(isPangram("Toto"));
 
     function getAlphabet() {
         return "abcdefghijklmnopqrstuvwxyz";
     }
 
     function getRange(anArray) {
-        // max <- 0
-        // min <- anArray[0]
-        // POUR i = 0, JUSQU'A i < anArray.length, FAIRE
-            // SI max < anArray[i], ALORS
-                // max <- anArray[i]
-            // FINSI
-            // SI min > anArray[i], ALORS
-                // min <- anArray[i]
-            // FINSI
-            // incrémenter i
-        // FINPOUR
-        // RETOUR max - min
+        if (anArray.length === 0) {
+            return -1;
+        }
+        let max = 0;
+        let min = anArray[0];
+        for (const element of anArray) {
+            if (max < element) {
+                max = element;
+            }
+            if (min > element) {
+                min = element;
+            }
+        }
+        return max - min;
     }
 
-    console.log(getRange([15, 78, 45, 96, 12, 32, 65, 78, 91]));
+    // console.log(getRange([15, 78, 45, 96, 12, 32, 65, 78, 91]));
+
+    function isPalindrome(str) {
+        return str === inverseWord(str);
+    }
+
+    console.log(isPalindrome("rever")); // vrai
+    console.log(isPalindrome("kayak")); // vrai
+    console.log(isPalindrome("ressasser")); // vrai
+    console.log(isPalindrome("algorithmie")); // faux
 
     function getScrabbleScores(str) {
         const points = {a: 1};
