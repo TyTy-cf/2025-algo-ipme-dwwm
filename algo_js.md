@@ -15,6 +15,16 @@ toto.length; // ici c'est 4
 toto.push(18); // ajoute un élément en fin de tableau
 toto.length; // ici c'est 5
 console.log(toto); // [10, 15, 12, 15, 18]
+
+// "Tableau associatif" => tableau dont les index ne commencent pas par 0, on choisit nous-même la valeur de l'index
+const pointsByLetter = {
+    a: 1, b: 3, c: 3, d: 2, e: 1, f: 4, g: 3, h: 4, i: 1, j: 8, k: 5, l: 1, m: 3,
+    n: 1, o: 1, p: 3, q: 10, r: 1, s: 1, t: 1, u: 1, v: 4, w: 4, x: 8, y: 4, z: 10
+};
+
+// Pour accéder à la valeur, c'est le même principe
+console.log(pointsByLetter[a]) // affichera 1
+console.log(pointsByLetter[v]) // affichera 4
 ```
 
 ### Les chaînes de caractères

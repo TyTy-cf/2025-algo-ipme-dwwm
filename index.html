@@ -219,8 +219,8 @@
         return str;
     }
 
-    console.log(excerpt("Lorem quisque class vestibulum"));
-    console.log(excerpt("Lorem quisque class vestibulum", 25));
+    // console.log(excerpt("Lorem quisque class vestibulum"));
+    // console.log(excerpt("Lorem quisque class vestibulum", 25));
 
     function myIndexOf(haystack, needle) {
         for (let i = 0; i < haystack.length; i++) {
@@ -250,33 +250,57 @@
         return existingLetters.length === alphabet.length;
     }
 
-    console.log(isPangram("Toto"));
+    // console.log(isPangram("Toto"));
 
     function getAlphabet() {
         return "abcdefghijklmnopqrstuvwxyz";
     }
 
     function getRange(anArray) {
-        // max <- 0
-        // min <- anArray[0]
-        // POUR i = 0, JUSQU'A i < anArray.length, FAIRE
-            // SI max < anArray[i], ALORS
-                // max <- anArray[i]
-            // FINSI
-            // SI min > anArray[i], ALORS
-                // min <- anArray[i]
-            // FINSI
-            // incrémenter i
-        // FINPOUR
-        // RETOUR max - min
+        if (anArray.length === 0) {
+            return -1;
+        }
+        let max = 0;
+        let min = anArray[0];
+        for (const element of anArray) {
+            if (max < element) {
+                max = element;
+            }
+            if (min > element) {
+                min = element;
+            }
+        }
+        return max - min;
     }
 
-    console.log(getRange([15, 78, 45, 96, 12, 32, 65, 78, 91]));
+    // console.log(getRange([15, 78, 45, 96, 12, 32, 65, 78, 91]));
+
+    function isPalindrome(str) {
+        return str === inverseWord(str);
+    }
+
+    // console.log(isPalindrome("rever")); // vrai
+    // console.log(isPalindrome("kayak")); // vrai
+    // console.log(isPalindrome("ressasser")); // vrai
+    // console.log(isPalindrome("algorithmie")); // faux
 
     function getScrabbleScores(str) {
-        const points = {a: 1};
-        points[a] // 1
+        const pointsByLetter = {
+          a: 1, b: 3, c: 3, d: 2, e: 1, f: 4, g: 3, h: 4, i: 1, j: 8, k: 5, l: 1, m: 3,
+          n: 1, o: 1, p: 3, q: 10, r: 1, s: 1, t: 1, u: 1, v: 4, w: 4, x: 8, y: 4, z: 10
+        };
+        let points = 0;
+        str = str.toLowerCase();
+
+        for (const strLetter of str) {
+            points += pointsByLetter[strLetter];
+        }
+
+        return points;
     }
+
+    console.log(getScrabbleScores("zebre"));
+    console.log(getScrabbleScores("quinquenat"));
 
 
 
@@ -294,6 +318,6 @@
     // let alphabetStr = [];
     // for (let i = 0; i <= alphabet.length; i++) {
     //     // ?
-    // }
+    // },
     // return alphabet.length === alphabetStr.length;
 </script>
