@@ -1,0 +1,122 @@
+<script>
+    class Position
+    {
+        x;
+        y;
+
+        constructor(x, y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+    }
+    class Square
+    {
+        pos;
+        isHit;
+        isBoat;
+        constructor(pos, isHit = false, isBoat = false)
+        {
+            this.pos = pos;
+            this.isHit = isHit;
+            this.isBoat = isBoat;
+        }
+
+        toString()
+        {
+            if (!this.isHit)
+            {
+                return "o";
+            }
+            else if (this.isBoat)
+            {
+                return "ø";
+            }
+            else
+            {
+                return "x";
+            }
+        }
+    }
+
+    class Grid
+    {
+        squares;
+        size;
+
+        constructor(size = 10)
+        {
+            this.size = size;
+            this.squares = new Array(size);
+            for (let i = 0; i < size; i++)
+            {
+                this.squares[i] = new Array(size);
+            }
+            for (let i = 0; i < size; i++)
+            {
+                for (let j = 0; j < size; j++)
+                {
+                    this.squares[i][j] = new Square(new Position(i,j), false, false);
+                }
+            }
+        }
+
+        attack(x,y)
+        {
+            (this.squares[x][y]).isHit = true;
+        }
+
+        display()
+        {
+            console.log("0 a b c d e f g h i j");
+            for (let i = 0; i < this.size; i++)
+            {
+                let str = (i + 1)%10 + " ";
+                for (let j = 0; j < this.size; j++)
+                {
+                    str += this.squares[i][j].toString() + " ";
+                }
+                console.log(str);
+            }
+        }
+    }
+
+    class Game 
+    {
+        grid;
+        constructor(sizeGrid) 
+        {
+            this.grid = new Grid(sizeGrid);
+        }
+
+        gameloop()
+        {
+            this.draw();
+        }
+
+        attack(strAttack)
+        {
+            let str = strAttack.toLowerCase();
+            let xIndex = str.charCodeAt(0) - "a".charCodeAt(0);
+            let yIndex = (str[1]-1)%10;
+            console.log(xIndex + " " + yIndex);
+            this.grid.attack(xIndex, yIndex);
+        }
+
+        draw()
+        {
+            console.clear()
+            this.grid.display();
+        }
+    }
+
+    let game = new Game(10);
+    game.gameloop();
+    game.attack("b2");
+    game.attack("c3");
+    game.attack("d4");
+    game.attack("b2");
+    game.gameloop();
+
+
+</script>
