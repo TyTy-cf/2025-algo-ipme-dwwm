@@ -391,5 +391,23 @@
         }
         return `Il y a ${nbVowles} voyelles et ${nbConsonants} consonnes dans la chaine de caractères "${str}"`;
     }
-    console.log(getLettersBy("dobry wieczor"));
+    // console.log(getLettersBy("dobry wieczor"));
+
+    // exo 24
+    function generateLetters(){
+        const vowels = ["a", "e", "i", "o", "u", "y"];
+        const consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "z"];
+        let sentence = [];
+        while(sentence.length < 9){
+            let letter = prompt("Consonne ou voyelle ? c ? v ?");
+            if(letter === "c"){
+                sentence.push(consonants[Math.floor(Math.random() * consonants.length)]);
+            }
+            if(letter === "v") {
+                sentence.push(vowels[Math.floor(Math.random() * vowels.length)]);
+            }
+        }
+        return sentence;
+    }
+    console.log(generateLetters());
 </script>
