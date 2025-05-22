@@ -358,3 +358,42 @@ On a crypté, maintenant, on aimerai pouvoir décrypter aussi :
         - Si la chaine a moins de 1000 abonnés, le site va gagner 15% des gains (de la formule précédente)
         - Au-delà, le site va gagner 5% des gains (de la formule précédente)
 
+### 22. Affiche de l'heure "lisible"
+
+```
+- Nom de la fonction : "displayHoursByTime"
+- Paramètres :
+  - "time" : un entier, une durée en secondes
+- Retour : une chaine de caractère au format "xxhxx"
+```
+
+- Contraintes : pas de fonctions relatives aux dates !
+- Si les heures dépassent 24, on continue de les additionner, par exemple je peux avoir "120h20"
+
+### 23. Compter les lettres d'un mot
+
+```
+- Nom de la fonction : "getLettersBy"
+- Paramètres :
+  - "str" : une chaine de caractère
+- Retour : Une chaine de caractère indiquant le nombre de voyelles et de consonnes dans le mot
+```
+
+Exemple :
+```
+- Paramètre "str" : "Dobry wieczór"
+- Retour : Il y a 5 voyelles et 7 consonnes dans la chaine de caractères "Dobry wieczór"
+ ```
+
+### 24. Des lettres et... des lettres
+
+```
+- Nom de la fonction : "generateLetters"
+- Paramètres : aucun
+- Retour : Un tableau de lettres
+```
+
+La fonction envoie un prompt à l'utilisateur, et lui demande "Consonne ou voyelle ?"
+L'utilisateur doit répondre par "C" ou "V".
+Si l'utilisateur met "C", la fonction ajoute une consonne dans un tableau, sinon une voyelle.
+Au bout de 9 lettres ajoutées dans le tableau, la fonction s'arrête et retourne le tableau de lettres à l'utilisateur.
