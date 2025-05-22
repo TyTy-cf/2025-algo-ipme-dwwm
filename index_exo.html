@@ -166,16 +166,16 @@
                      if (alphabet.includes(str[i]) && !alphabetStr.includes(str[i])) {
                      alphabetStr.push(str[i]);
                      }
-        }
-        return alphabetStr.length === alphabet.length;
-    }
+                 }
+                return alphabetStr.length === alphabet.length;
+               }
           //   console.log(isPangram("the quick brown fox jumps over the lazy dog."))
 
-             //EXERCICE 15 : 
+             //EXERCICE 15 :
              function getRange(anArray) {
                let min = Math.min(...anArray);
                let max = Math.max(...anArray);
-               return max - min; 
+               return max - min;
              }
           //   console.log(getRange([15, 78, 45, 96, 12, 32, 65, 78, 91]));
 
@@ -186,9 +186,52 @@
                             newStr += str[i];
                           if(newStr === str){
                               return true;
-                          }  
+                          }
                        }
                         return false;
                    }
-                  console.log(isPalindrome("rever"));
+              //console.log(isPalindrome("rever"));
+
+            // EXERCICE 17 :
+            function getScrabbleScore(str){
+                let p1 = ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T"];
+                let p2 = ["D", "G"];
+                let p3 = ["B", "C", "M", "P"];
+                let p4 = ["F", "H", "V", "W", "Y"];
+                let p5 = ["K"];
+                let p8 = ["J", "X"];
+                let p10 = ["Q", "Z"];
+                let score = 0;
+                let newStr = str.toUpperCase(str) 
+                for (let i = 0; i < str.length ; i++){
+                    if(p1.includes(newStr[i])){
+                        score += 1;
+                    }
+                    if(p2.includes(newStr[i])){
+                        score += 2;
+                    }
+                    if(p3.includes(newStr[i])){
+                        score += 3;
+                    }
+                    if(p4.includes(newStr[i])){
+                        score += 4;
+                    }
+                    if(p5.includes(newStr[i])){
+                        score += 5;
+                    }
+                    if(p8.includes(newStr[i])){
+                        score += 8;
+                    }
+                    if(p10.includes(newStr[i])){
+                        score += 10;
+                    }
+                }
+                return score;
+            }
+        //  console.log(getScrabbleScore("lazy"));
+
+        // EXERCICE 18 : 
+            function changeSentences{
+                
+            }
 </script>
