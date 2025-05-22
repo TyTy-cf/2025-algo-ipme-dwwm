@@ -363,27 +363,36 @@
         const voyelle = ["a", "e", "i", "o", "u", "y"];
         const consonne = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "z"];
         if ( char === "c"){
-          let letter = consonne[Math.floor(Math.random() * consonne.length)];
-          return letter
-        }else{
-          letter = voyelle[Math.floor(Math.random() * voyelle.length)];
-          return letter
-        }
+          return consonne[Math.floor(Math.random() * consonne.length)]
+        }        
+        return voyelle[Math.floor(Math.random() * voyelle.length)]
       }
 
       function generateLetters(){
         const table = [];
-        for (let i = 0; i<9; i++){
+        for (let i = 0; i < 9;){
           let userChoice = prompt("Consonne ou voyelle ? (répondre par c ou v)");
-          if(userChoice === "c"){
-            table.push(randomLetter("c"))
-          }else if(userChoice === "v"){
-            table.push(randomLetter("v"))
-          }else{
-            return "Erreur d'entrée! Merci de respecter les règles"
+          if (userChoice === "c" || userChoice === 'v'){
+            table.push(randomLetter(userChoice))
+             i++;
           }
         }
         return table
       }
-      console.log(generateLetters());
+      // console.log(generateLetters());
+
+
+
+      // exercice 25
+      function mastermind(){
+        const figureTable = [];
+        for (let i = 0; i < 4; i++ ){
+          figureTable.push((Math.floor(Math.random() * 5))+1);
+        }
+
+        
+      }
+      console.log (mastermind())
+
+
 </script>
