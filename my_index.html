@@ -415,5 +415,56 @@
     // console.log(displayHoursByTime(7000));
     // console.log(displayHoursByTime(200000));
 
-    
+    //23)
+    function getLettersBy(str) 
+    {
+        const vowels = "aeiouy";
+        const consonants = "zrtpqsdfghjklmwxcvbn";
+        let nbVowels = 0;
+        let nbConsonant = 0;
+        const lowStr = str.toLowerCase();
+        for (let i = 0; i < lowStr.length; i++)
+        {
+            if (vowels.includes(lowStr[i]))
+            {
+                nbVowels++;
+            }
+            else if (consonants.includes(lowStr[i]))
+            {
+                nbConsonant++;
+            }
+        }
+
+        return "Dans " + str + " il y a " + nbVowels + " voyelles et " + nbConsonant + " consonnes";
+    }
+
+    //console.log(getLettersBy("Dobry wieczor"));
+
+    //24)
+    function generateLetters()
+    {
+        const vowels = "aeiouy";
+        const consonants = "zrtpqsdfghjklmwxcvbn";
+
+        let str = [];
+        while (str.length < 9)
+        {
+            let choice = prompt("Consonne ou voyelle ? C/V");
+            if (choice.toLowerCase() === 'c')
+            {
+                str.push(consonants[Math.floor(Math.random() * consonants.length)]);
+            }
+            else if (choice.toLowerCase() === 'v')
+            {
+                str.push(vowels[Math.floor(Math.random() * vowels.length)]);
+            }
+            else
+            {
+                console.log("Mauvais input, recommencez :");
+            }
+        }
+        return str;
+    }
+
+    //console.log(generateLetters());
 </script>
