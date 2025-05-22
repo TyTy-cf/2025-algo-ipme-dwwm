@@ -343,12 +343,9 @@
         const voyelle = "aeiouy";
         let voyelleCount = 0;
         let consonneCount = 0;
-        let strRemade = "";
         // on supprime les espaces
-        for (let i = 0; i<str.length; i++){
-          strRemade = str.replace(" ","");
-        }     
-        // et on compte
+        let strRemade = str.replace(" ","");
+
         for (let i = 0; i<strRemade.length; i++){
           if(voyelle.includes(strRemade[i])){
             voyelleCount ++;
@@ -358,5 +355,35 @@
         }
         return `il y a ${voyelleCount} voyelles et ${consonneCount} consonnes dans la chaine de caractères ${str}`;
       }
-      console.log(getLettersBy("Dobry wieczor"));
+      // console.log(getLettersBy("Dobry wieczor"));
+
+      // exercice 24
+
+      function randomLetter(char){
+        const voyelle = ["a", "e", "i", "o", "u", "y"];
+        const consonne = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "z"];
+        if ( char === "c"){
+          let letter = consonne[Math.floor(Math.random() * consonne.length)];
+          return letter
+        }else{
+          letter = voyelle[Math.floor(Math.random() * voyelle.length)];
+          return letter
+        }
+      }
+
+      function generateLetters(){
+        const table = [];
+        let letterCount = 0;
+        while (letterCount < 9){
+          let userChoice = prompt("Consonne ou voyelle ? (répondre par C ou V)");
+          letterCount++;
+          if(userChoice === "c"){
+            table.push(randomLetter("c"))
+          }else{
+            table.push(randomLetter("v"))
+          }
+        }
+        return table
+      }
+      console.log(generateLetters());
 </script>
