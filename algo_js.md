@@ -91,6 +91,10 @@ for (const letter of str) { // Part forcément de l'index 0 jusqu'à l'index fin
     }
 }
 
+// Boucle "for..in" => au lieu de parcourir directement les valeurs (commme le for..of) il vous donne les index 
+for (const i in str) {
+    console.log(str[i]);
+}
 ```
 
 ### Les fonctions
