@@ -409,4 +409,55 @@
         return sentence;
     }
     // console.log(generateLetters());
+
+    // exo 25
+    function mastermind(){
+        let refArray = [];
+        let userArray = [];
+        let totalArray = [];
+
+        while(refArray.length < 4){
+            refArray.push(Math.floor(Math.random() * 5)+1)
+        }
+        while(userArray.length < 4){
+            let num = parseInt(prompt("Entrez une nombre entre 1 et 5"));
+            if(num >= 1 && num <= 5){
+                userArray.push(num);
+            }
+        }
+
+        for (let i = 0; i < refArray.length; i++) {
+            if(refArray[i] === userArray[i]){
+                totalArray.push(refArray[i]);
+            }
+            else {
+                totalArray.push("x");
+            }
+        }
+        console.log(totalArray);
+
+        // console.log("Tableau à trouver: " + refArray);
+        // console.log("Tableau saisie: " + userArray);
+        // console.log("Tableau de réponse: " + totalArray);
+
+        let i = 0;
+        while(i < 5){
+            for(let i = 0; i < totalArray.length; i++) {
+                if(totalArray[i] === "x"){
+                    let num = parseInt(prompt("Entrez une nombre entre 1 et 5"));
+                    if((num >= 1 && num <= 5) && (refArray[i] === num)){
+                        totalArray[i] = num;
+                    }
+                }
+                else if (!totalArray.includes("x")){
+                    console.log("Bravo vous avez gangé !");
+                    return totalArray;
+                }
+            }
+            console.log(totalArray)
+            i++;
+        }
+        return totalArray;
+    }
+    console.log(mastermind());
 </script>
