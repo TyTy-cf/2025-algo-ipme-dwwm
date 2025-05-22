@@ -375,12 +375,14 @@
         const table = [];
         let letterCount = 0;
         while (letterCount < 9){
-          let userChoice = prompt("Consonne ou voyelle ? (répondre par C ou V)");
+          let userChoice = prompt("Consonne ou voyelle ? (répondre par c ou v)");
           letterCount++;
           if(userChoice === "c"){
             table.push(randomLetter("c"))
-          }else{
+          }else if(userChoice === "v"){
             table.push(randomLetter("v"))
+          }else{
+            return "erreur d'entrée! Merci de respecter les règles"
           }
         }
         return table
