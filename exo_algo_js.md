@@ -358,3 +358,14 @@ On a crypté, maintenant, on aimerai pouvoir décrypter aussi :
         - Si la chaine a moins de 1000 abonnés, le site va gagner 15% des gains (de la formule précédente)
         - Au-delà, le site va gagner 5% des gains (de la formule précédente)
 
+### 22. Affiche de l'heure "lisible"
+
+```
+- Nom de la fonction : "displayHoursByTime"
+- Paramètres :
+  - "time" : un entier, une durée en secondes
+- Retour : une chaine de caractère au format "xxhxx"
+```
+
+- Contraintes : pas de fonctions relatives aux dates !
+- Si les heures dépassent 24, on continue de les additionner, par exemple je peux avoir "120h20"
