@@ -138,7 +138,7 @@
 
 
 
-console.log(excerpt("Super journée d'algo en vue", 15));
+//console.log(excerpt("Super journée d'algo en vue", 15));
 
 
 // Fonction de pangram
@@ -200,6 +200,57 @@ function  getRange(anArray){
             //comparer les deux tableaux
         }
     }
-  // fonction scrubble
+  // fonction scrabble
+
+  function getScrabbleScore(str){
+
+    //unpoint
+    const onepoint= 'aeioulnrst';
+    const twopoints = 'dg';
+    const threepoints = 'bcmp';
+    const fourpoints = 'fhvwy';
+    const fivepoints = 'k'
+    const eightpoints = 'jx';
+    const tenpoints ='qz';
+
+    let nbtotal = 0;
+    // parcourir le tableau 
+    for (i=0; i<str.length; i++){
+        // verifier que la lettre str[i] appartient à l'un des 
+       // tableaux
+
+       // test 1
+       if (onepoint.includes(str[i])){
+        nbtotal = nbtotal +1;
+       }
+       if (twopoints.includes(str[i])){
+        nbtotal = nbtotal +2;
+       }
+       if (threepoints.includes(str[i])){
+        nbtotal = nbtotal + 3;
+       }
+       if (fourpoints.includes(str[i])){
+        nbtotal = nbtotal +4;
+       }
+       if (fivepoints.includes(str[i])){
+        nbtotal = nbtotal +5;
+       }
+       if (eightpoints.includes(str[i])){
+        nbtotal = nbtotal +8;
+       }
+       if (tenpoints.includes(str[i])){
+        nbtotal = nbtotal +10;
+       }
+    }
+    return nbtotal;
+  }
+
+
+  const mot = 'zebre';
+  console.log(getScrabbleScore(mot));
+
+
+
+  
 
 </script>
