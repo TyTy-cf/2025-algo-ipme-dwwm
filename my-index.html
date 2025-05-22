@@ -444,13 +444,13 @@
         while(i < 5){
             for(let i = 0; i < totalArray.length; i++) {
                 if(totalArray[i] === "x"){
-                    let num = parseInt(prompt("Entrez une nombre entre 1 et 5"));
+                    let num = parseInt(prompt(`Entrez une nombre entre 1 et 5 pour la position ${i + 1}`));
                     if((num >= 1 && num <= 5) && (refArray[i] === num)){
                         totalArray[i] = num;
                     }
                 }
                 else if (!totalArray.includes("x")){
-                    console.log("Bravo vous avez gangé !");
+                    console.log("Bravo vous avez gagné !");
                     return totalArray;
                 }
             }
