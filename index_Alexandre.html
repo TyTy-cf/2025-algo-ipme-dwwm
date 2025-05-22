@@ -330,9 +330,33 @@
         let hour = (time - time%3600)/3600;
         let minute = (time/60)%60;
         if (minute <10){
-          return `${hour}h${Math.floor(minute)}0`
+          return `${hour}h0${Math.floor(minute)}`
         }
         return `${hour}h${Math.floor(minute)}`;
       }
-      console.log(displayHoursByTime(3600));
+      // console.log(displayHoursByTime(7400));
+
+
+      // exercice 23
+
+      function getLettersBy(str){
+        const voyelle = "aeiouy";
+        let voyelleCount = 0;
+        let consonneCount = 0;
+        let strRemade = "";
+        // on supprime les espaces
+        for (let i = 0; i<str.length; i++){
+          strRemade = str.replace(" ","");
+        }     
+        // et on compte
+        for (let i = 0; i<strRemade.length; i++){
+          if(voyelle.includes(strRemade[i])){
+            voyelleCount ++;
+          }else{
+            consonneCount++;
+          }
+        }
+        return `il y a ${voyelleCount} voyelles et ${consonneCount} consonnes dans la chaine de caractères ${str}`;
+      }
+      console.log(getLettersBy("Dobry wieczor"));
 </script>
