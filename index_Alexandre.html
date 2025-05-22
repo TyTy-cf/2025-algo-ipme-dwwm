@@ -384,14 +384,36 @@
 
 
       // exercice 25
+
       function mastermind(){
         const figureTable = [];
-        for (let i = 0; i < 4; i++ ){
+        
+        const display = ["x","x","x","x"];
+
+        for (let i = 0; i < 5; i++ ){
           figureTable.push((Math.floor(Math.random() * 5))+1);
         }
-
         
+
+        for ( let i = 0 ; i < 6 ; i++){
+          const userTable = [];
+
+          for ( let j = 1 ; j <= 4 ; j++){
+            let userFigure = parseInt(prompt(`Saisisez un nombre en position numéro ${j}`));
+            userTable.push(userFigure);
+          }
+          
+          
+          for (let j = 0 ; j<figureTable.length ; j++){
+            
+            if(figureTable[j] === userTable[j]){
+              display.splice(j, 1, figureTable[j]);
+            }
+        }
+        console.log(display);
       }
+      return display
+    }
       console.log (mastermind())
 
 
