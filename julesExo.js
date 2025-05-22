@@ -210,10 +210,49 @@ function excerpt(str, from) {
 //14
 
 function isPangram(str) {
-    let pangram = false;
-    if (str.includes()) {
-        return (pangram = true);
-    } else {
-        return (pangram = false);
+    let word = "abcdefghijklmnopqrstuvwxyz";
+    const choucroute = [];
+
+    for (let i = 0; i <= str.length; i++) {
+        if (str.includes(word[i])) {
+            choucroute.push(word[i]);
+        }
     }
+    return choucroute.length === 26;
 }
+
+// const lettres = isPangram("the quick brown fox jumps over the lazy dog");
+// console.log(lettres);
+
+//15
+
+function getRange(anArray) {
+    let max = anArray[0];
+    let mini = anArray[0];
+    for (i = 0; i <= anArray.length; i++) {
+        if (max < anArray[i]) {
+            max = anArray[i];
+        }
+        if (mini > anArray[i]) {
+            mini = anArray[i];
+        }
+    }
+
+    return max - mini;
+}
+
+// const tableau = getRange([15, 805, 45, 96, 12, 32, 65, 5, 91]);
+// console.log(tableau);
+
+//16
+
+function isPalindrome(str) {
+    return inverseWord(str) === str;
+}
+
+// const palindrome = isPalindrome("false");
+// console.log(palindrome);
+
+//17
+
+function getScrabbleScore(str) {}
