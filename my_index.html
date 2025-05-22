@@ -18,37 +18,71 @@ function addArray(first , second) {
 console.log(addArray([2, 5, 8], [4, 9, 7])); -->
 
 <!-- </script>
- exo 10 -->
+ 
 
 
 
-<!-- exo 11 -->
+    
+
+
+ <! exo 12 -->
 
  <!-- <script>
-    
- function inverseWord(str) {
-    
-    let inverse = "";
-    
-    for(let i = str.length - 1; i>=0; i-- ){
+    function isSecuredPassword(password) {
 
-        inverse += str[i];
+        if ((password.includes('@') || password.includes('!')) && password.length >= 9) {
+           return true;
+        }
+    
+    return false;
     }
-    return invers;
-
- }
-
-console.log(inverseWord("espion"));
-
+    console.log(isSecuredPassword("hkjklkmlmkjhgjhg"));
  </script> -->
 
- <!-- exo 12 -->
+<!-- exo 11 -->
+ <!-- <script>
+    function inverseWord(str) {
+        let inverse = '';
+        for( i= str.length - 1; i>=0 ; i--){
+            inverse += str[i];
+        }
+        return inverse;
+    }
+console.log(inverseWord("batman"));
+ </script> -->
+ <!-- exo 10 -->
 
- <script>
-    function isSecuredPassword(password) {
-        let crPasword="";
-        let lenghtPasword= "";
-        if (crpassword.includes('@' ))
+  <!-- <script>
+
+    function removeDuplicate(array) {
+        const noDuplicate = [];
+        for(let i = 0; i< array.length; i++) {
+         if (myIndexOf(noDuplicate, element) === -1) {
+            noDuplicate.push(array[i]);
+         }
+    
+        }
+        return noDuplicate;
+    }
+    console.log(removeDuplicate([1,1,1,5,2,2,4]));
+  </script> -->
+  
+  <!-- exo 9 -->
+   <script>
+    
+    function addArray (first, seconde) {
+        const aArray = fist.length;
+        const bArray = second.length;
+        const newArray = [];
+        if( aArray === bArray){
+        for(i = 0; i < aArray; i++){
+            newArray.push(aArray[i] + bArray[i])
+
+        }
+        return newArray;
+    }
+
 
     }
- </script>
+    console.log(addArray([5,5,4,2],[6,8,4,5]));
+   </script>
