@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>algo-perso</title>
+  </head>
+  <body>
+    <h1>perso algo</h1>
+
+    <script>
+      // 1 l'utilisateur entre l'heure
+      // 2 l'utilisateur entre les minutes
+      // 3 afficher l'heure réelle
+      // demamder l'heure et l'afficher avec plus 1 minute
+
+      //   function whatHour() {
+      //     let hours = prompt("Entrez l'heure :");
+      //     // demander les minutes
+      //     let minutes = prompt("Entrez les minutes :");
+
+      //     hours = parseInt(hours);
+      //     minutes = parseInt(minutes);
+
+      //     minutes++;
+
+      //     if (minutes === 60) {
+      //       minutes = 0;
+      //       hours++;
+      //       if (hours === 24) {
+      //         hours = 0;
+      //       }
+      //     }
+      //     if (minutes < 10) {
+      //       minutes = "0" + minutes;
+      //     }
+      //     console.log(
+      //       "Dans 1 minute, il sera " +
+      //         hours +
+      //         " heures et " +
+      //         minutes +
+      //         " minutes."
+      //     );
+      //   }
+      //   whatHour();
+
+      // afficher l'heure réelle
+      const now = new Date();
+
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+
+      console.log(
+        "Il est actuellement " + hours + " heures et " + minutes + " minutes."
+      );
+
+      // demander à l'utilisateur combien de copies et obtenir le prix
+      // demander le nombre de copies
+      // créer une fonction qui calcule le prix
+      //   function calculPriceBy(copy) {
+      //     let calculPriceBy = prompt("Combien de copies voulez-vous ?");
+
+      //     copy = parseInt(calculPriceBy);
+
+      //     // vérifier si le nombre de copies est valide
+      //     if (isNaN(copy) || copy <= 0) {
+      //       console.log("Veuillez entrer un nombre valide de copies.");
+      //       return;
+      //     }
+
+      //     let price = 0.11;
+
+      //     if (copy >= 100) {
+      //       price = 0.08;
+      //     } else if (copy >= 50) {
+      //       price = 0.09;
+      //     } else if (copy >= 10) {
+      //       price = 0.1;
+      //     }
+      //     let total = price * copy;
+      //     console.log("Le prix pour " + copy + " copies est de " + total + "€");
+      //   }
+      //   calculPriceBy();
+
+      // créer une fonction qui calcule l'âge selon l'année de naissance
+      function getAge(year) {
+        // year = prompt("Entrez votre année de naissance :");
+        year = parseInt(year);
+        const currentYear = new Date().getFullYear();
+        let age = currentYear - year;
+        return console.log("vous avez " + age + " ans");
+      }
+      getAge(1998);
+
+      //   créer une fonction qui compte depuis un nombre
+      //  donné dans le paramètre startFrom plus 10 et affiche les chiffres
+      function countUpToTen(startFrom) {
+        let count = startFrom;
+        while (count <= startFrom + 10) {
+          console.log(count);
+          count++;
+        }
+      }
+      countUpToTen(5); // Affiche les nombres de 5 à 15
+
+      //   afficher la table de multiplication
+      function displayMultiply(digit) {
+        for (let i = 1; i <= 10; i++) {
+          console.log(digit + " x " + i + " = " + digit * i);
+        }
+      }
+      displayMultiply(5); // Affiche la table de multiplication de 5
+
+      //   créer une fonction qui va additionner les chiffres jusqu'au paramètre max
+      function addUpTo(max) {
+        let sum = 0;
+        for (let i = 1; i <= max; i++) {
+          sum += i;
+        }
+        console.log("La somme des nombres jusqu'à " + max + " est : " + sum);
+      }
+      addUpTo(5);
+    </script>
+  </body>
+</html>

@@ -52,38 +52,50 @@
                         //   }
                         //       time();
 
+                              // afficher l'heure réelle
+                              const now = new Date();
+
+                              const hours = now.getHours();
+                              const minutes = now.getMinutes();
+
+                              console.log(
+                              "Il est actuellement " + hours + " heures et " + minutes + " minutes."
+                              );
+
                         // exercice 2
-                      //   function numberOfCopie(number) {
-                      //     // let numberOfCopies = prompt("Entrez le nombre de copies");
-                      //     // // On convertit le nombre de copies en entier
-                      //     // number = parseInt(numberOfCopies);
-                      //     // // On vérifie si le nombre de copies est inférieur à 0
-                      //     // if (number < 0) {
-                      //     //     // On affiche un message d'erreur
-                      //     //     console.log("Le nombre de copies ne peut pas être négatif");
-                      //     // }
+                        // function numberOfCopie(number) {
+                        //   let numberOfCopies = prompt("Entrez le nombre de copies");
+                        //   // On convertit le nombre de copies en entier
+                        //   number = parseInt(numberOfCopies);
 
-                      //     // initialiser à zero
-                      //     let numberOfCopies = 0;
+                        //   // initialiser à zero
+                        //   numberOfCopies = 0.11;
 
-                      //       // si copie est inférieure à 10 le prix unitaire est de 0.10
-                      //       if (number <= 10) {
-                      //           // On multiplie le nombre de copies par le prix unitaire
-                      //           numberOfCopies = number * 10 / 100;
-                      //       }
-                      //       // si le nombre de copies est supérieur ou égal à 10 et inférieur à 30
-                      //       else if (number > 10 && number <= 50) {
-                      //           // On multiplie le nombre de copies par le prix unitaire
-                      //           numberOfCopies = number * 9 /100;
-                      //       }
-                      //       // si le nombre de copies est supérieur ou égal à 30 et inférieur à 50
-                      //       else if (number > 50 && number <= 100) {
-                      //           // On multiplie le nombre de copies par le prix unitaire
-                      //           numberOfCopies = number * 8 /100;
-                      //       }
+                        //   // vérifier si le nombre de copies est valide
+                        //   if (isNaN(number) || number <= 0) {
+                        //       console.log("Veuillez entrer un nombre valide de copies.");
+                        //       return;
+                        //   }
 
-                      //       console.log("Le prix de " + number + " copies est de " + numberOfCopies + "€");
-                      //   }
+                        //     // si copie est inférieure à 10 le prix unitaire est de 0.10
+                        //     if (number <= 10) {
+                        //         // On multiplie le nombre de copies par le prix unitaire
+                        //         numberOfCopies = number * 10 / 100;
+                        //     }
+                        //     // si le nombre de copies est supérieur ou égal à 10 et inférieur à 30
+                        //     else if (number > 10 && number <= 50) {
+                        //         // On multiplie le nombre de copies par le prix unitaire
+                        //         numberOfCopies = number * 9 /100;
+                        //     }
+                        //     // si le nombre de copies est supérieur ou égal à 30 et inférieur à 50
+                        //     else if (number > 50 && number <= 100) {
+                        //         // On multiplie le nombre de copies par le prix unitaire
+                        //         numberOfCopies = number * 8 /100;
+                        //     }
+
+                        //     console.log("Le prix de " + number + " copies est de " + numberOfCopies + "€");
+                        // }
+                        // numberOfCopie();
                       //   numberOfCopie(10);
                       //     numberOfCopie(50);
                       //     numberOfCopie(100);
