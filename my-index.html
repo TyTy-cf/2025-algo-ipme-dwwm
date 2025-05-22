@@ -356,7 +356,7 @@
     function displayHoursByTime(time){
         let hour;
         let min;
-        hour = time / 60;
+        hour = time / 3600;
         hour = parseFloat(hour).toFixed(2);
         min = (hour + "").split(".")[1];
         min /= 100;
@@ -371,5 +371,25 @@
         }
         return `${hour}h${min}`;
     }
-    console.log(displayHoursByTime(90))
+    // console.log(displayHoursByTime(5400));
+
+    // exo 23
+    function getLettersBy(str){
+        const vowels = ["a", "e", "i", "o", "u", "y"];
+        const consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "z"];
+
+        let nbVowles = 0;
+        let nbConsonants = 0;
+
+        for(let i = 0; i < str.length; i++){
+            if(vowels.includes(str[i])) {
+                nbVowles++;
+            }
+            if(consonants.includes(str[i])) {
+                nbConsonants++;
+            }
+        }
+        return `Il y a ${nbVowles} voyelles et ${nbConsonants} consonnes dans la chaine de caractères "${str}"`;
+    }
+    console.log(getLettersBy("dobry wieczor"));
 </script>
