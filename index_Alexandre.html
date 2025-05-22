@@ -265,7 +265,7 @@
           s : 1, t : 1, u : 1, v : 4, w : 4, x : 8, y : 4, z : 10
         }
         let sum = 0;
-        for (i=0; i<str.length;i++){
+        for (let i=0; i<str.length;i++){
           sum += scrabbleScore[str[i]];
         }
         return sum
@@ -420,6 +420,7 @@
         }
         console.log(display);
       }
+      
       mastermind();
 
 </script>
