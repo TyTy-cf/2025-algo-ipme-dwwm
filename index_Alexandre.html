@@ -303,5 +303,25 @@
       function calculateHypotenuse(h, w){
         return Math.sqrt((Math.pow(h,2)+Math.pow(w,2)));
       }
-      console.log(calculateHypotenuse(1, 1));
+      // console.log(calculateHypotenuse(1, 1));
+
+      // exercice 21
+
+      function calculatePercentage(total,percentage){
+        return total * (percentage /100)
+      }
+
+      function getGain(nbSubscribers){
+        let gainChaine = nbSubscribers*4.99;
+        let gainSite = calculatePercentage(gainChaine,5);
+        if(nbSubscribers<100){
+          gainSite = calculatePercentage(gainChaine,40);
+        }else if(nbSubscribers<500){
+          gainSite = calculatePercentage(gainChaine,25);
+        }else if(nbSubscribers<1000){
+          gainSite = calculatePercentage(gainChaine,15);
+        }
+        return `Le site gagne ${gainSite.toFixed(2)}, et le streamer ${gainChaine-gainSite}`
+      }
+      console.log(getGain(1000));
 </script>
