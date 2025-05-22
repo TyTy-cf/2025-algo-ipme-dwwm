@@ -330,5 +330,25 @@
         let hypotenuse = Math.hypot(h, w);
         return hypotenuse;
     }
-    console.log(calculateHypotenuse(3, 4));
+    // console.log(calculateHypotenuse(3, 4));
+
+    // exo 21
+    function getGain(nbSubscribers){
+        let gain = (4.99 * nbSubscribers);
+        let pourcentage;
+        if(nbSubscribers < 100){
+            pourcentage = (40 / 100) * gain;
+        }
+        else if(nbSubscribers < 500){
+            pourcentage = (25 / 100) * gain;
+        }
+        else if(nbSubscribers < 1000){
+            pourcentage = (15 / 100) * gain;
+        }
+        else {
+            pourcentage = (5 / 100) * gain;
+        }
+        return pourcentage;
+    }
+    console.log(getGain(99));
 </script>
