@@ -385,32 +385,41 @@
 
       // exercice 25
 
-      function mastermind(){
-        const figureTable = [];
-        
-        const display = ["x","x","x","x"];
-
-        for (let i = 0; i < 5; i++ ){
-          figureTable.push((Math.floor(Math.random() * 5))+1);
+      function generateTable(){
+        const table = [];
+        for (let i = 0; i < 4; i++ ){
+          table.push((Math.floor(Math.random() * 5))+1);
         }
-        
-          for ( let j = 1 ; j <= 4 ; j++){
-            let userFigure = parseInt(prompt(`Saisisez un nombre en position numéro ${j}`));
-            userTable.push(userFigure);
+        return table
+      }
+
+      function userTable(){
+        const table = [];
+        for ( let i = 1 ; i <= 4 ; i++){
+          let userFigure = parseInt(prompt(`Saisisez un nombre en position numéro ${i}`));
+          table.push(userFigure);
+        }
+        return table;
+      }
+
+      function compareTable(table1, table2, display){
+        for (let i = 0 ; i<table1.length ; i++){ 
+          if(table1[i] === table2[i]){
+            display.splice(i, 1, table1[i]);
           }
-          
-          
-          for (let j = 0 ; j<figureTable.length ; j++){
-            
-            if(figureTable[j] === userTable[j]){
-              display.splice(j, 1, figureTable[j]);
-            }
         }
-        
-      
-      return display
-    }
-      console.log (mastermind())
+        console.log(display);
+      }
 
+      function mastermind(){
+        const display = ["x", "x", "x", "x"];
+        const combination = generateTable();
+        for (let i = 0 ; i < 8 ; i++){
+          const userCombination = userTable();          
+          compareTable(combination, userCombination, display);
+        }
+        console.log(display);
+      }
+      mastermind();
 
 </script>
