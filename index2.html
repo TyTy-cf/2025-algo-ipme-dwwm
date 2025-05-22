@@ -396,6 +396,7 @@
                   }
                   // appeler la fonction
                   console.log(isPangrams([15, 78, 45, 96, 12, 32, 65, 78, 91]));
+                  console.log(isPangrams([15, 78, 45, 96, 12, 32, 60, 70, 99]));
 
 
                   // exercice créer la fonction IndexOf qui reprend indexOf method js
@@ -437,6 +438,49 @@
       console.log("Le score du mot est : " + getScrabbleScore("lazy"));
       console.log("Le score du mot est : " + getScrabbleScore("cat"));
       console.log("Le score du mot est : " + getScrabbleScore("zorro"));
+
+      // exercice 19 cesar
+      // créer une fonction qui chiffre un message avec le chiffre de César
+      // 1. créer une fonction qui prend en paramètre un message et un décalage selon l'alphabet
+      // 2. la fonction doit retourner le message chiffré
+      function encrypt(str, gap) {
+        // variable pour stocker le message chiffré
+        let encrypt = "";
+
+        // créer un tableau de l'alphabet
+        const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
+        for (let i = 0; i < str.length; i++) {
+            // trouver l'index de la lettre dans l'alphabet
+            let index = alphabet.indexOf(str[i].toUpperCase());
+            // ajouter le décalage à l'index
+            index = (index + gap) % 26;
+            // index = (index + gap) % alphabet.length;
+            // ajouter la lettre chiffrée à la chaîne de caractères
+            encrypt += alphabet[index];
+        }
+        return encrypt;
+      }
+      console.log(encrypt("chat", 3));
+
+      // suite decrypter
+      function decrypt(str, gap) {
+        let decrypt = "";
+
+        const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
+          for (let i = 0; i < str.length; i++) {
+            // trouver l'index de la lettre dans l'alphabet
+            let index = alphabet.indexOf(str[i].toUpperCase());
+            // enlever le décalage à l'index
+            index = (index - gap + alphabet.length) % alphabet.length;
+
+            // ajouter la lettre déchiffrée à la chaîne de caractères
+            decrypt += alphabet[index];
+        }
+        return decrypt;
+      }
+      console.log(decrypt("chat", 3));
     </script>
   </body>
 </html>
