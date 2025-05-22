@@ -9,37 +9,37 @@
 
     // 1. Algorithme de prédiction d'avenir
 
-    function add_a_minute_and_show(hour, minutes) {
+//     function add_a_minute_and_show(hour, minutes) {
 
-        if(minutes===59) {
-            minutes = minutes + 1;
-            minutes = 0;
-        }
+//         if(minutes===59) {
+//             minutes = minutes + 1;
+//             minutes = 0;
+//         }
         
-        if(x!=59) {
-            hour= hour;
-            minutes =minutes +1;
-        }
+//         if(x!=59) {
+//             hour= hour;
+//             minutes =minutes +1;
+//         }
         
 
-         console.log("Dans une minute, il est" +hour, "et", +minutes, "minutes");
+//          console.log("Dans une minute, il est" +hour, "et", +minutes, "minutes");
 
-    }
-///   Le magasin de reprographie
- function calculPriceBy(copy) {
-    let priceCopy =0;
+//     }
+// ///   Le magasin de reprographie
+//  function calculPriceBy(copy) {
+//     let priceCopy =0;
 
-    if (copy<=10 ){
-        priceCopy = copy *0.10;
-    }
-    if ((copy<=50) &&(copy<10) ){
-        priceCopy = copy *0.09;
-    }
-    if (copy<=100 ){
-        priceCopy = copy *0.08;
-    }
-    console.log(priceCopy)
- }
+//     if (copy<=10 ){
+//         priceCopy = copy *0.10;
+//     }
+//     if ((copy<=50) &&(copy<10) ){
+//         priceCopy = copy *0.09;
+//     }
+//     if (copy<=100 ){
+//         priceCopy = copy *0.08;
+//     }
+//     console.log(priceCopy)
+//  }
 
 // calculPriceBy(12);
 // calculPriceBy(52);
@@ -57,7 +57,7 @@
 
 //  Ajout de tableau
 
-function addArray(first,second){
+// function addArray(first,second){
 
    // const maxlenghttab= 100;
 //let first =  new array(maxlenghttab);
@@ -65,34 +65,90 @@ function addArray(first,second){
      
 
     // verification de l'égalité des tailles des tableaux
-    const sizefirst = first.length;
-    const sizesecond = second.length;
+//     const sizefirst = first.length;
+//     const sizesecond = second.length;
      
-    let third = [];
+//     let third = [];
      
-    if (sizefirst==sizesecond) {
+//     if (sizefirst==sizesecond) {
 
-        // calcul 
+//         // calcul 
     
 
-        for (i=0; i<sizefirst ; i++ ){
-       //     third[i]= first[i]+ second[i];
-       third.push(first[i]+second[i]);
-        }
+//         for (i=0; i<sizefirst ; i++ ){
+//        //     third[i]= first[i]+ second[i];
+//        third.push(first[i]+second[i]);
+//         }
 
+//     }
+
+//      return third;
+// }
+
+// const first=[1,2,3];
+// const second=[3,4,3];
+// console.log(addArray([1,2,3],[3,4,3]));
+
+// //console.log(addArray(first,second));
+
+// /// les doublons
+
+// function removeDuplicate(array){
+//     Const noDuplicate =[];
+    
+//     let element = array[0];
+    
+//     ]
+//     for (let i= 0; i<array.length;i++){
+        
+//        if( array(i).includes())
+        
+//         noDuplicate.push(array[i]);
+
+//         //
+//     }
+
+//     // fonction inversion de mot
+     
+
+// function inverseWord(str){
+//     // commencer 
+// }    let inverse = [];
+//  for (let i = str.length; 
+
+// }
+
+   // le mot de passe securise
+// function IsSecuredPassword(password){
+//     //calculer la longeur du mot de passe
+//     let lenghtPassword =password.length
+//    //verification longueur
+//      if((lenghtPassword > 8){
+//        //mettre les caracteres obligatoires
+//        const element1 ="@";
+//        const element2 ="!";
+
+
+//      }
+
+//      }
+
+// fonction d'except
+
+function excerpt(str, from){
+    // determiner longueur chaine de caractere
+    let strLenght = str.length;
+    let retour = str;
+    let retou
+   
+    if (strLenght > from) {
+        retour = str.substring(0, from);
+        retour = retour +"...";
     }
 
-     return third;
+    return retour;
 }
 
-const first=[1,2,3];
-const second=[3,4,3];
-console.log(addArray([1,2,3],[3,4,3]));
 
-//console.log(addArray(first,second));
-
-/// les doublons
-
-
-
+console.log(excerpt("Super journée d'algo en vue", 15));
 </script>
