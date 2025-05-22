@@ -376,7 +376,6 @@
     // exo 23
     function getLettersBy(str){
         const vowels = ["a", "e", "i", "o", "u", "y"];
-        const consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "z"];
 
         let nbVowles = 0;
         let nbConsonants = 0;
@@ -385,7 +384,7 @@
             if(vowels.includes(str[i])) {
                 nbVowles++;
             }
-            if(consonants.includes(str[i])) {
+            else {
                 nbConsonants++;
             }
         }
@@ -409,5 +408,5 @@
         }
         return sentence;
     }
-    console.log(generateLetters());
+    // console.log(generateLetters());
 </script>
