@@ -1,10 +1,10 @@
 <script lang="js">
 
-          // function toto(toto) {
-          //     console.log(toto);
-          // }
-          //
-          // toto(10);
+           // function toto(toto) {
+           //     console.log(toto);
+           // }
+           //
+           // toto(10);
 
 
 
@@ -13,173 +13,314 @@
 
 
 
-          //1
+           //1
 
-      function predictFuture() {
-              // Demander à l'utilisateur heure & minutes, les récupérer dans des variables
-              let hours = prompt("Donne moi une heure ");
-              let minutes = prompt("Donne moi les minutes ");
+       function predictFuture() {
+               // Demander à l'utilisateur heure & minutes, les récupérer dans des variables
+               let hours = prompt("Donne moi une heure ");
+               let minutes = prompt("Donne moi les minutes ");
 
-              // On converti les valeurs saisies par l'utilisateur en entier
-              hours = parseInt(hours);
-              minutes = parseInt(minutes);
+               // On converti les valeurs saisies par l'utilisateur en entier
+               hours = parseInt(hours);
+               minutes = parseInt(minutes);
 
-              // On incrémente de 1 les minutes
-              minutes++;
+               // On incrémente de 1 les minutes
+               minutes++;
 
-              // si les minutes sont égales à 60, alors
-              if (minutes === 60) {
-                  // On met les minutes à 0
-                  minutes = 0;
-                  // On incrémente de 1 les heures
-                  hours++;
-                  // si les heures sont égales à 24, alors
-                  if (hours === 24) {
-                      // On met les heures à 0
-                      hours = 0;
-                  }
-              }
+               // si les minutes sont égales à 60, alors
+               if (minutes === 60) {
+                   // On met les minutes à 0
+                   minutes = 0;
+                   // On incrémente de 1 les heures
+                   hours++;
+                   // si les heures sont égales à 24, alors
+                   if (hours === 24) {
+                       // On met les heures à 0
+                       hours = 0;
+                   }
+               }
 
-              // si les minutes sont inférieures à 10, alors
-              if (minutes < 10) {
-                  // On concatène un "0" aux minutes
-                  minutes = '0' + minutes;
-              }
+               // si les minutes sont inférieures à 10, alors
+               if (minutes < 10) {
+                   // On concatène un "0" aux minutes
+                   minutes = '0' + minutes;
+               }
 
-              // On affiche le résultat
-              console.log("Dans 1min il va etre " + hours + "h" + minutes);
-          }
+               // On affiche le résultat
+               console.log("Dans 1min il va etre " + hours + "h" + minutes);
+           }
 
-          //predictFuture();
-
-
-
-    //2
-
-      function totalprice(copies){
-        let price = [0.10,0.09,0.08]
-        let total = 0
-
-        if (copies >= 10) {
-            total = copies*price[0]
-        }
-        else if (copies >= 50) {
-            total = copies*price[1]
-        }
-        else {
-        total = copies*price [2]
-        }
-       console.log(total + "€");
-
-      }
-      totalprice(7)
+           //predictFuture();
 
 
-      //3
 
-    function getage (birthdate) {
+     //2
 
-        let yearnow = new Date(2025)
-        let age = yearnow - birthdate
+       function totalprice(copies){
+         let price = [0.10,0.09,0.08]
+         let total = 0
 
-    console.log ("vous avez " + age + " ans")
-    }
-    getage(1971)
+         if (copies >= 10) {
+             total = copies*price[0]
+         }
+         else if (copies >= 50) {
+             total = copies*price[1]
+         }
+         else {
+         total = copies*price [2]
+         }
+        console.log(total + "€");
 
-
-    //4
-
-    function coutUptoTen(number) {
-       for (let i = number + 1 ; i < number +10 ; i++) {
-
-        console.log(i)
        }
+       // totalprice(7)
 
-    }
-    coutUptoTen(17)
 
-    //5
+       //3
 
-    function displayMultiply(digit) {
-      for (let i = 1; i < 12 ; i++) {
-          console.log (i + "x" + digit + "=" + (i*digit))
+     function getage (birthdate) {
+
+         let yearnow = new Date(2025)
+         let age = yearnow - birthdate
+
+     console.log ("vous avez " + age + " ans")
+     }
+    // getage(1971)
+
+
+     //4
+
+     function coutUptoTen(number) {
+        for (let i = number + 1 ; i < number +10 ; i++) {
+
+         console.log(i)
         }
-    }
-    displayMultiply(10)
 
-    //9
+     }
+    // coutUptoTen(17)
+
+     //5
+
+     function displayMultiply(digit) {
+       for (let i = 1; i < 12 ; i++) {
+           console.log (i + "x" + digit + "=" + (i*digit))
+         }
+     }
+    // displayMultiply(10)
+
+     //9
 
 
-    function addarray(first, second) {
-      const sizeFirst = first.lenght;
-      const sizeSecond = second.lenght;
+     function addarray(first, second) {
+       const sizeFirst = first.lenght;
+       const sizeSecond = second.lenght;
+       let newarray = []
+
+         if (sizeFirst === sizeSecond) {
+             for (let i = 0; i < first.length; i++) {
+            newarray.push (first[i] + second[i])
+
+             }
+
+         }
+   return newarray
+     }
+
+
+
+     //console.log(addarray([12,15,13,14], [65,24,86,35]))
+
+   //10
+
+   function removeDuplicate(array) {
       let newarray = []
 
-        if (sizeFirst === sizeSecond) {
-            for (let i = 0; i < first.length; i++) {
-           newarray.push (first[i] + second[i])
-
-            }
-
-        }
-  return newarray
-    }
-
-
-
-    console.log(addarray([12,15,13,14], [65,24,86,35]))
-
-  //10
-
-  function removeDuplicate(array) {
-     let newarray = []
-
-     for (let i = 0; i < array.length; i++) {
-      if (!newarray.includes(array[i])){
-          newarray.push(array[i])
-      }
-    }
-    return newarray
-  }
+      for (let i = 0; i < array.length; i++) {
+       if (!newarray.includes(array[i])){
+           newarray.push(array[i])
+       }
+     }
+     return newarray
+   }
   console.log (removeDuplicate([1,3,5,6,7,8,3,5,8,9,5]))
 
-  //11
+   //11
 
-  function inverseword(Mot) {
-    let NewMot = "" ;
-      for (let i = Mot.length - 1 ; i >= 0 ; i--) {
-      NewMot += Mot[i];
+   function inverseword(Mot) {
+     let NewMot = "" ;
+       for (let i = Mot.length - 1 ; i >= 0 ; i--) {
+       NewMot += Mot[i];
+       }
+
+       return NewMot
+   }
+   //console.log(inverseword("espion"))
+
+
+
+   //12
+
+
+   function isSecuredPassword(password) {
+     if ((password.includes ("@") || password.includes("!")) && password.length >= 9)
+      {
+             return true
+
+         }
+         return false
+     }
+
+   //console.log(isSecuredPassword("francois98@"))
+
+   //13
+
+
+  //  function excerpt(str) {
+  //   if (str.length > 15) {
+
+  //    return (str.substring(0,15) + "...")
+  //    }
+  //   }
+
+    //console.log (excerpt("Lorem quisque class vestibulum"))
+
+    //14
+
+    // function isPangram(str) {
+
+    //   let Alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    //   let existingLetters = ""
+
+    //   for (let i = 0; i < str.length; i++) {
+    //   if ((Alphabet.includes(str[i])) && (!existingLetters.includes (str[i]))) {
+    //     existingLetters += str[i]
+    //   }
+
+    //   }
+    //   return existingLetters.length === Alphabet.length
+    // }
+
+    //console.log(isPangram("The quick brown fox jumps over the lazy dog"))
+
+    //15
+
+//     function getRange(anArray) {
+//     maxArrey = 0
+//     minArrey = anArray [0]
+
+//     for (let i = 0; i < anArray.length; i++) {
+    
+
+//     if (maxArrey < anArray[i]) {
+//       maxArrey = anArray[i]
+//     }
+
+//     if (minArrey > anArray[i]) {
+//       minArrey = anArray[i]
+//     }
+// }
+
+//     return  maxArrey - minArrey
+  // }
+    //console.log (getRange([15, 78, 45, 96, 12, 32, 65, 78, 91]))
+
+    //16
+
+    // function isPalindrome(str) {
+    //   return str === removeDuplicate
+    // }
+    // console.log (isPalindrome ("ressasser"))
+
+
+
+  //17
+
+  function getScrabblePoint(str) {
+    let oneP = ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T"]; 
+    let twoP = ["D", "G"];
+    let threeP = ["B", "C", "M", "P"];
+    let fourP = ["F", "H", "V", "W", "Y"];
+    let fiveP = ["K"];
+    let eightP = ["J", "X"];
+    let tenP = ["Q", "Z"];
+    let points = 0;
+    str = str.toUpperCase();
+    
+    for (let i = 0; i < str.length; i++) {
+      if (oneP.includes(str[i])) {
+        points ++;
       }
-
-      return NewMot
-  }
-  console.log(inverseword("espion"))
-
-
-
-  //12
-
-
-  function isSecuredPassword(password) {
-    if ((password.includes ("@") || password.includes("!")) && password.length >= 9)
-     {
-            return true
-
-        }
-        return false
+      if (twoP.includes(str[i])) {
+        points += 2;
+      }
+      if (threeP.includes(str[i])) {
+        points += 3;
+      }
+      if (fourP.includes(str[i])) {
+        points += 4;
+      }
+      if (fiveP.includes(str[i])) {
+        points += 5;
+      }
+      if (eightP.includes(str[i])) {
+        points += 8;
+      }
+      if (tenP.includes(str[i])) {
+        points += 10;
+      } 
     }
-
-  console.log(isSecuredPassword("francois98@"))
-
-  //13
-
-
-  function excerpt( str, from) {
-    let str = ""
-    let from = ""
-
-    if (condition) {
-        
-    }
+    return points;    
   }
+   console.log(getScrabblePoint("lettre"))
+
+
+   //18
+   function changeSentences(sentences) {
+    let voyelle = ["a", "e", "i", "o", "u", "y"]
+    let newsentences = ""
+    for (let i = 0; i <= sentences.lenght; i++) {
+
+    if (voyelle.includes(sentences[i])) {
+      newsentences.push (sentences[i] + "fe")
+  }
+
+   }
+
+   return newsentences
+  }
+  console.log (changeSentences("francois"))
+
+
+
+   //20
+
+   function calculateHypotenuse(h,w) {
+     return Math.sqrt(h*h + w * w )
+   }
+   // console.log(calculateHypotenuse(4,5))
+
+
+   //21
+
+
+   function getGain(nbSub) {
+     let price = (nbSub)*4.99
+     let totalPrice = 0
+
+     if (nbSub <= 100) {
+        totalPrice = price * 0.4
+
+     }
+     else if (nbSub <= 500) {
+        totalPrice = price * 0.25
+
+     }
+     else if (nbSub <= 1000) {
+        totalPrice = price * 0.15
+     }
+
+   else {totalPrice = price * 0.05
+  }
+      return totalPrice
+   }
+   //  console.log(getGain(30)
 </script>
