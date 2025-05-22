@@ -77,9 +77,7 @@ class Player
 
     draw(deck, nbCard = 1)
     {
-
-        this.hand.concat(deck.draw(nbCard));
-
+        this.hand = this.hand.concat(deck.draw(nbCard));
     }
 
     display()
@@ -92,7 +90,7 @@ class Player
     }
 }
 
-class PokerGame
+class CardGame
 {
     players = [];
     deck;
@@ -101,7 +99,7 @@ class PokerGame
     {
         this.players = players;
         this.deck = new Deck();
-        this.deck.shuffle;
+        this.deck.shuffle();
     }
 
     distribute(nbCard)
@@ -125,7 +123,7 @@ class PokerGame
 }
 
 
-    let poker = new PokerGame([new Player("Thomas"), new Player("Julie"), new Player("Manon"), new Player("Fred")]);
+    let poker = new CardGame([new Player("Thomas"), new Player("Julie"), new Player("Manon"), new Player("Fred")]);
     poker.distribute(3);
-    //poker.displayStatus();
+    poker.displayStatus();
 </script>
