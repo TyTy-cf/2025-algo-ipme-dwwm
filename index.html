@@ -202,10 +202,25 @@
         // return (password.includes('@') || password.includes('!')) && password.length >= 9;
     }
 
-    console.log(isSecuredPassword("espion@developpeur")); // vrai
-    console.log(isSecuredPassword("espion!developpeur")); // vrai
-    console.log(isSecuredPassword("espiondeveloppeur")); // faux
-    console.log(isSecuredPassword("espion@")); // faux
+    // console.log(isSecuredPassword("espion@developpeur")); // vrai
+    // console.log(isSecuredPassword("espion!developpeur")); // vrai
+    // console.log(isSecuredPassword("espiondeveloppeur")); // faux
+    // console.log(isSecuredPassword("espion@")); // faux
+
+    function excerpt(str, from = 15) {
+        // SI str.length > 15, ALORS,
+        if (str.length > from) {
+            // je decoupe la chaine "str" jusqu'à 15 caractères
+            // je concatène '...' à cette nouvelle chaine découpée
+            str = str.substring(0, from) + '...';
+        // FINSI
+        }
+        // RETOUR str (modifiée ou non ?)
+        return str;
+    }
+
+    // console.log(excerpt("Lorem quisque class vestibulum"));
+    // console.log(excerpt("Lorem quisque class vestibulum", 25));
 
     function myIndexOf(haystack, needle) {
         for (let i = 0; i < haystack.length; i++) {
@@ -217,12 +232,93 @@
     }
 
     function isPangram(str) {
-        let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-        let alphabetStr = [];
-        for (let i = 0; i <= alphabet.length; i++) {
-            // ?
+        const alphabet = getAlphabet();
+        str = str.toLowerCase();
+        let existingLetters = '';
+
+        // for (let i = 0; i < str.length; i++) {
+        //     if (alphabet.includes(str[i]) && !existingLetters.includes(str[i])) {
+        //         existingLetters += str[i];
+        //     }
+        // }
+        for (const letter of str) {
+            if (alphabet.includes(letter) && !existingLetters.includes(letter)) {
+                existingLetters += letter;
+            }
         }
-        return alphabet.length === alphabetStr.length;
+
+        return existingLetters.length === alphabet.length;
     }
+
+    // console.log(isPangram("Toto"));
+
+    function getAlphabet() {
+        return "abcdefghijklmnopqrstuvwxyz";
+    }
+
+    function getRange(anArray) {
+        if (anArray.length === 0) {
+            return -1;
+        }
+        let max = 0;
+        let min = anArray[0];
+        for (const element of anArray) {
+            if (max < element) {
+                max = element;
+            }
+            if (min > element) {
+                min = element;
+            }
+        }
+        return max - min;
+    }
+
+    // console.log(getRange([15, 78, 45, 96, 12, 32, 65, 78, 91]));
+
+    function isPalindrome(str) {
+        return str === inverseWord(str);
+    }
+
+    // console.log(isPalindrome("rever")); // vrai
+    // console.log(isPalindrome("kayak")); // vrai
+    // console.log(isPalindrome("ressasser")); // vrai
+    // console.log(isPalindrome("algorithmie")); // faux
+
+    function getScrabbleScores(str) {
+        const pointsByLetter = {
+          a: 1, b: 3, c: 3, d: 2, e: 1, f: 4, g: 3, h: 4, i: 1, j: 8, k: 5, l: 1, m: 3,
+          n: 1, o: 1, p: 3, q: 10, r: 1, s: 1, t: 1, u: 1, v: 4, w: 4, x: 8, y: 4, z: 10
+        };
+        let points = 0;
+        str = str.toLowerCase();
+
+        for (const strLetter of str) {
+            points += pointsByLetter[strLetter];
+        }
+
+        return points;
+    }
+
+    console.log(getScrabbleScores("zebre"));
+    console.log(getScrabbleScores("quinquenat"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    // let alphabetStr = [];
+    // for (let i = 0; i <= alphabet.length; i++) {
+    //     // ?
+    // },
+    // return alphabet.length === alphabetStr.length;
 
 </script>
