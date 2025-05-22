@@ -77,10 +77,9 @@ class Player
 
     draw(deck, nbCard = 1)
     {
-        for (let i = 0; i < nbCard; i++)
-        {
-            this.hand.push(deck.draw());
-        }
+
+        this.hand.concat(deck.draw(nbCard));
+
     }
 
     display()
@@ -117,7 +116,10 @@ class PokerGame
     {
         for (let i = 0; i < this.players.length; i++)
         {
-            this.players[i].display();
+            if (this.players[i] instanceof Player) 
+            {    
+                this.players[i].display();
+            }
         }
     }
 }

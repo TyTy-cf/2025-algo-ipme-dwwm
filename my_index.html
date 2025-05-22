@@ -362,4 +362,58 @@
     // console.log(cesarCrypt("chat"));
     // console.log(cesarCrypt("fkdw", 3, false));
     // console.log(cesarCrypt(cesarCrypt("koala"), 3, false));
+
+    //20)
+    function calculateHypotenuse(h, w) 
+    {
+        return Math.sqrt(h*h + w*w);
+    }
+
+    //console.log(calculateHypotenuse(5, 2));
+
+    //21)
+    function getGain(nbSubscribers) 
+    {
+        let totalGains = nbSubscribers * 4.99;
+        let platformGain = 0;
+        if (nbSubscribers < 100)
+        {
+            platformGain = totalGains * 0.4;
+        }
+        else if (nbSubscribers < 500)
+        {
+            platformGain = totalGains * 0.25;
+        }
+        else if (nbSubscribers < 1000)
+        {
+           platformGain = totalGains * 0.15;
+        }
+        else
+        {
+            platformGain= totalGains * 0.05;
+        }
+        let streamerGains = totalGains - platformGain;
+
+        return "Sur " + totalGains + "$ le streamer gagne " + streamerGains + "$ et la plateforme gagne " + platformGain + "$";  
+    }
+
+    // console.log(getGain(10));
+    // console.log(getGain(200));
+    // console.log(getGain(600));
+    // console.log(getGain(2000));
+
+    //22)
+    function displayHoursByTime(timeInSec) 
+    {
+        let min  = timeInSec/60;
+        let hours  = min/60;
+
+        return Math.floor(hours) + "h " + ((min < 10)? "0" : "") + (Math.floor(min) % 60) + "min " + timeInSec % 60 + "sec";
+    }
+
+    // console.log(displayHoursByTime(70));
+    // console.log(displayHoursByTime(7000));
+    // console.log(displayHoursByTime(200000));
+
+    
 </script>
