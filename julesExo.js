@@ -211,14 +211,14 @@ function excerpt(str, from) {
 
 function isPangram(str) {
     let word = "abcdefghijklmnopqrstuvwxyz";
-    const choucroute = [];
+    const array = [];
 
     for (let i = 0; i <= str.length; i++) {
         if (str.includes(word[i])) {
-            choucroute.push(word[i]);
+            array.push(word[i]);
         }
     }
-    return choucroute.length === 26;
+    return array.length === 26;
 }
 
 // const lettres = isPangram("the quick brown fox jumps over the lazy dog");
@@ -255,4 +255,107 @@ function isPalindrome(str) {
 
 //17
 
-function getScrabbleScore(str) {}
+function getScrabbleScore(str) {
+    let one = "aeioulnrst";
+    let two = "dg";
+    let three = "bcmp";
+    let four = "fhvwy";
+    let five = "k";
+    let eight = "jx";
+    let ten = "qz";
+    let sum = 0;
+
+    for (let i = 0; i <= str.length; i++) {
+        if (one.includes(str[i])) {
+            sum = sum + 1;
+        }
+        if (two.includes(str[i])) {
+            sum = sum + 2;
+        }
+        if (three.includes(str[i])) {
+            sum = sum + 3;
+        }
+        if (four.includes(str[i])) {
+            sum = sum + 4;
+        }
+        if (five.includes(str[i])) {
+            sum = sum + 5;
+        }
+        if (eight.includes(str[i])) {
+            sum = sum + 8;
+        }
+        if (ten.includes(str[i])) {
+            sum = sum + 10;
+        }
+    }
+    return sum;
+}
+
+// const score = getScrabbleScore("lazy");
+// console.log(score);
+
+//18
+
+function changeSentences(sentences) {
+    let vowels = "aeiouy";
+    let str = "";
+
+    for (let i = 0; i < sentences.length; i++) {
+        const char = sentences[i];
+        str += char;
+
+        if (vowels.includes(char)) {
+            str += "fe" + char;
+        }
+    }
+    return str;
+}
+
+// const resultat = changeSentences("chat");
+// console.log(resultat);
+
+//19
+
+function encrypt(str, gap) {
+    let myAlphabet = "abcdefghijklmnopqrstuvwxyz";
+    let newStr = "";
+
+    for (let i = 0; i < str.length; i++) {
+        let index = myAlphabet.indexOf(str[i]);
+        index = index + gap;
+        index = index % 26;
+
+        if (str[i] === " ") {
+            newStr += str[i];
+        } else {
+            newStr += myAlphabet[index];
+        }
+    }
+
+    return newStr;
+}
+
+// const strCrypt = encrypt("chat chat", 3);
+// console.log(strCrypt);
+
+function decrypt(str, gap) {
+    let myAlphabet = "abcdefghijklmnopqrstuvwxyz";
+    let newStr = "";
+
+    for (let i = 0; i < str.length; i++) {
+        let index = myAlphabet.indexOf(str[i]);
+        index = index - gap;
+        index = index % 26;
+
+        if (str[i] === " ") {
+            newStr += str[i];
+        } else {
+            newStr += myAlphabet[index];
+        }
+    }
+
+    return newStr;
+}
+
+// const strDecrypt = decrypt("fkdw fkdw", 3);
+// console.log(strDecrypt);
