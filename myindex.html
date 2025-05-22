@@ -239,6 +239,28 @@
 
       // console.log(getRange([15, 78, 45, 96, 12, 32, 65, 78, 91]));
 
+      /* EXERCICE 16 */
+
+      function isPalindrome(str) {
+        let reverseWord = "";
+
+        for (let i = str.length - 1; i >= 0; i--) {
+          reverseWord += str[i];
+        }
+        
+        if (reverseWord === str) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      /* console.log(isPalindrome("ressasser")); // true
+      console.log(isPalindrome("rever")); // true
+      console.log(isPalindrome("toto")); // false */
+
+      /* EXERCICE 17 */
+
       /* EXERCICE 18 */
 
       function changeSentences(sentences) {
