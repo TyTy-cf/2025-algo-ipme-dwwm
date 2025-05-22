@@ -216,9 +216,28 @@
         return alphabetOfStr.length === 26;
       }
 
-      console.log(isPangram("The quick brown fox jumps over the lazy dog.")); 
-      console.log(isPangram("Waltz, bad nymph, for quick jigs vex."));
-      console.log(isPangram("The boxing wizards jump quickly."));
+      /* console.log(isPangram("The quick brown fox jumps over the lazy dog.")); // true
+      console.log(isPangram("Waltz, bad nymph, for quick jigs vex.")); // true
+      console.log(isPangram("The boxing wizards jump quickly.")); //false */
+
+      /* EXERCICE 15 */
+
+      function getRange(anArray) {
+        let minValue = 1000000000;
+        let maxValue = 0;
+
+        for (let i = 0; i < anArray.length; i++) {
+            if (anArray[i] > maxValue) {
+              maxValue = anArray[i];
+            } else if (anArray[i] < minValue){
+              minValue = anArray[i];
+            }
+          }
+        
+        return maxValue - minValue;
+        }
+
+      // console.log(getRange([15, 78, 45, 96, 12, 32, 65, 78, 91]));
 
       /* EXERCICE 18 */
 
@@ -233,13 +252,13 @@
             newSentences += sentences[i];
           }
         }
-
-        console.log(newSentences);
+        return newSentences;
       }
 
-      /* changeSentences("chat");
-      changeSentences("Intel");
-      changeSentences("Ultra Y"); */
+      /* console.log(changeSentences("chat"));
+      console.log(changeSentences("Intel"));
+      console.log(changeSentences("Ultra Y")); */
+
     </script>
   </head>
   <body></body>
