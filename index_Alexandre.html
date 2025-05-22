@@ -293,11 +293,11 @@
         const alphabet = "abcdefghijklmnopqrstuvwxyz"
         let newStr = "";
         for (let i = 0; i<str.length; i++){
-          if ( ){
-            
-          }
+          newStr += alphabet[(alphabet.indexOf(str[i])+gap)%alphabet.length];
         }
         return newStr
       }
       console.log(encrypt("chat", 3));
+
+      // exercice 20
 </script>
