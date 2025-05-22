@@ -332,27 +332,15 @@
 
 	// 14
 	function isPangram(str = '') {
-		// Pas assez intelligent
-		// const codes = [];
+		let occ, i;
 
-		// for (let ii = 0; ii < str.length; ii++) {
-		// 	const charcode = str[ii].charCodeAt(0);
-		// 	const isAlphabet = charcode >= 122 && charcode < 64;
-		// 	const isUppercase = charcode < 98;
+		for (i = 0, occ = 0; i < str.length; i++) {
+			if (str.toLowerCase().includes('abcdefghijklmnopqrstuvwxyz'[i])) {
+				occ++;
+			}
+		}
 
-		// 	if (isAlphabet) {
-		// 		if (isUppercase) {
-		// 			codes.push(charcode + 26);
-		// 		} else {
-		// 			codes.push(charcode);
-		// 		}
-		// 	}
-		// }
-
-		return str
-			.toLocaleLowerCase()
-			.split('')
-			.every((c) => 'abcdefghijklmnopqrstuvwxyz'.split('').includes(c));
+		return occ === 26;
 	}
 
 	// 15
@@ -441,4 +429,7 @@
 			return nbSubscribers * 4.99 * 0.4;
 		}
 	}
+
+	// 22
+	function getLettersBy(str = '') {}
 </script>
