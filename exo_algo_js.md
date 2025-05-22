@@ -217,7 +217,7 @@ Exemple :
 ### 15. Fonction de "getRange"
 
 ```
-- Nom de la fonction : "isPangram"
+- Nom de la fonction : "getRange"
 - Paramètres :
   - "anArray", un tableau d'entier
 - Retour : un entier
@@ -325,6 +325,33 @@ On a crypté, maintenant, on aimerai pouvoir décrypter aussi :
 - Retour : la chaine décryptée
 ```
 
+### 20. Un peu de maths...
 
+```
+- Nom de la fonction : "calculateHypotenuse"
+- Paramètres :
+  - "h" : un nombre à virgule, la hauteur de triangle
+  - "w" : un nombre à virgule, la largeur du triangle
+- Retour : le calcul de l'hypoténuse d'un triangle
+```
 
+- Il faut appliquer la formule suivante :
+    - hypotenuse = RACINE CARRE ( H² + W² )
+
+### 21. Calcul de gain d'une chaine de streaming
+
+```
+- Nom de la fonction : "getGain"
+- Paramètres :
+  - "nbSubscribers" : un entier, le nombre d'abonnés à une chaine de streaming
+- Retour : une chaine de caractère indiquant les gains pour le site et pour le streamer
+```
+
+- Il faut appliquer la formule suivante :
+    - Les gains sont calculés de cette manière :
+        - nbSubscribers * 4.99
+        - Si la chaine a moins de 100 abonnés, le site va gagner 40% des gains (de la formule précédente)
+        - Si la chaine a moins de 500 abonnés, le site va gagner 25% des gains (de la formule précédente)
+        - Si la chaine a moins de 1000 abonnés, le site va gagner 15% des gains (de la formule précédente)
+        - Au-delà, le site va gagner 5% des gains (de la formule précédente)
 
