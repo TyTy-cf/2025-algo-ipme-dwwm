@@ -293,8 +293,8 @@
         return score;
       }
 
-      console.log(getScrabbleScore("lazy")); //16
-      console.log(getScrabbleScore("zoo")); //12
+      /* console.log(getScrabbleScore("lazy")); //16
+      console.log(getScrabbleScore("zoo")); //12 */
 
       /* EXERCICE 18 */
 
@@ -315,6 +315,48 @@
       /* console.log(changeSentences("chat"));
       console.log(changeSentences("Intel"));
       console.log(changeSentences("Ultra Y")); */
+
+      /* EXERCICE 19 */
+
+      function encrypt(str, gap) {
+        const alphabet = getAlphabet();
+        let cryptedMess = "";
+
+        for (const char of str) {
+          let i = alphabet.indexOf(char) + gap;
+          if (i < 26) {
+            cryptedMess += alphabet[i];
+          } else {
+            i %= 26;
+            cryptedMess += alphabet[i];
+          }
+        }
+        return cryptedMess;
+      }
+
+      /* console.log(encrypt("chat", 3)); // fkdw
+      console.log(encrypt("zoo", 1)); // app
+      console.log(encrypt("wagon", 5)); // bflts */
+
+      function decrypt(str, gap) {
+        const alphabet = getAlphabet();
+        let decryptedMess = "";
+
+        for (const char of str) {
+          let i = alphabet.indexOf(char) - gap;
+          if (i >= 0) {
+            decryptedMess += alphabet[i];
+          } else {
+            i += 26;
+            decryptedMess += alphabet[i];
+          }
+        }
+        return decryptedMess;
+      }
+
+      /* console.log(decrypt("fkdw", 3)); // chat
+      console.log(decrypt("app", 1)); // zoo
+      console.log(decrypt("bflts", 5)); // wagon */
 
       function getAlphabet() {
         return "abcdefghijklmnopqrstuvwxyz";
