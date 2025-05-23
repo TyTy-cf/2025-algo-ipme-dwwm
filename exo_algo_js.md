@@ -418,3 +418,85 @@ Tableau de réponse affiché : [x, x, x, 1]
 
 Une fois le tableau de réponse affiché, on redemande à l'utilisateur de saisir à nouveau 4 chiffres, et ce un maximum de 9 fois.
 Au bout des 9 fois, si l'utilisateur a trouvé les entiers, alors on lui dit qu'il a gagné, sinon qu'il a perdu.
+
+### 26. Temps de voyage
+
+```
+- Nom de la fonction : "getTimeTraveling"
+- Paramètres :
+    - "km", le nombre de kilomètre à parcourir
+- Retour : une chaine de caractère indiquant le temps de parcours
+```
+
+La fonction calcule pour chaque mode de locomotion de "base" le temps estimé pour réaliser le trajet.
+On admet que :
+- À pied on fait du 5km/h
+- En vélo on fait du 20km/h
+- En voiture sur route on fait du 90km/h
+- En voiture sur autoroute on fait du 130km/h
+
+Exemple :
+```
+- Paramètre "km" : 100
+- En retour :
+"- À pied vous mettrez 20h pour faire 100km
+- En vélo vous mettrez 5h pour faire 100km
+- En voiture sur route vous mettrez 1h18 pour faire 100km
+- En voiture sur autoroute vous mettrez 0h45 pour faire 100km
+```
+
+### 27. Toujours plus...
+
+```
+- Nom de la fonction : "isAnagram"
+- Paramètres :
+    - "str1", une chaine de caractères
+    - "str2", une chaine de caractères
+- Retour : un booléan
+```
+
+Deux mots sont des anagrammes s'ils possèdent les mêmes lettres, mais pas forcément dans le même ordre
+
+Exemple :
+```
+- Paramètres "str1", "mot"
+- Paramètres "str2", "tom"
+- Retour : true
+```
+
+### 28. Mot le plus long...
+
+```
+- Nom de la fonction : "getLongestWord"
+- Paramètres :
+    - "str", une chaine de caractères
+- Retour : une chaine de caractères
+```
+
+La fonction renvoie le mot le plus long de la phrase "str"
+
+Exemple :
+```
+- Paramètres "str", "The quick brown fox jumps over the lazy dog."
+- Retour : quick (5)
+```
+
+Aller plus loin... Cette fois si la phrase contient plusieurs mots ayant la longueur max, alors on affiche tous les mots ?
+
+
+### 29. Compresser
+
+```
+- Nom de la fonction : "compressed"
+- Paramètres :
+    - "str", une chaine de caractères
+- Retour : une chaine de caractères
+```
+
+La fonction doit afficher chaque lettre du mot, suivi de son nombre d'occurence
+
+Exemple :
+```
+- Paramètres "str", "aaabbc"
+- Retour : "a3b2c1"
+```
