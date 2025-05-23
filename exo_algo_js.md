@@ -441,6 +441,6 @@ Exemple :
 - En retour :
 "- À pied vous mettrez 20h pour faire 100km
 - En vélo vous mettrez 5h pour faire 100km
-- En voiture sur route vous mettrez 1h06 pour faire 100km
+- En voiture sur route vous mettrez 1h18 pour faire 100km
 - En voiture sur autoroute vous mettrez 0h45 pour faire 100km
 ```
