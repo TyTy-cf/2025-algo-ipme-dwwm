@@ -397,3 +397,50 @@ La fonction envoie un prompt à l'utilisateur, et lui demande "Consonne ou voyel
 L'utilisateur doit répondre par "C" ou "V".
 Si l'utilisateur met "C", la fonction ajoute une consonne dans un tableau, sinon une voyelle.
 Au bout de 9 lettres ajoutées dans le tableau, la fonction s'arrête et retourne le tableau de lettres à l'utilisateur.
+
+### 25. Le Mastermind
+
+```
+- Nom de la fonction : "mastermind"
+- Paramètres : aucun
+- Retour : aucun
+```
+
+Le but est de simuler un "mastermind".
+La fonction doit générer un tableau d'entier allant de 1 à 5, sur une taille de 4, par exemple [1, 2, 4, 4] ou encore [4, 5, 3, 5], le contenu des tableaux est généré aléatoirement.
+Une fois la tableau généré, la fonction demande à l'utilisateur de saisir 4 entiers allant de 1 à 5 (un prompt par entier), ces chiffres seront stockés dans un tableau.
+La fonction doit ensuite comparé le tableau d'entier saisie par l'utilisateur avec celui qu'il a généré et afficher un tableau indiquant les positions valides, par exemple :
+```
+Tableau à trouver : [4, 4, 5, 1]
+Tableau saisie : [1, 1, 1, 1]
+Tableau de réponse affiché : [x, x, x, 1]
+```
+
+Une fois le tableau de réponse affiché, on redemande à l'utilisateur de saisir à nouveau 4 chiffres, et ce un maximum de 9 fois.
+Au bout des 9 fois, si l'utilisateur a trouvé les entiers, alors on lui dit qu'il a gagné, sinon qu'il a perdu.
+
+### 26. Temps de voyage
+
+```
+- Nom de la fonction : "getTimeTraveling"
+- Paramètres :
+    - "km", le nombre de kilomètre à parcourir
+- Retour : une chaine de caractère indiquant le temps de parcours
+```
+
+La fonction calcule pour chaque mode de locomotion de "base" le temps estimé pour réaliser le trajet.
+On admet que :
+- À pied on fait du 5km/h
+- En vélo on fait du 20km/h
+- En voiture sur route on fait du 90km/h
+- En voiture sur autoroute on fait du 130km/h
+
+Exemple :
+```
+- Paramètre "km" : 100
+- En retour :
+"- À pied vous mettrez 20h pour faire 100km
+- En vélo vous mettrez 5h pour faire 100km
+- En voiture sur route vous mettrez 1h18 pour faire 100km
+- En voiture sur autoroute vous mettrez 0h45 pour faire 100km
+```
