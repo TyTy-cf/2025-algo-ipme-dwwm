@@ -459,5 +459,37 @@
         }
         return totalArray;
     }
-    console.log(mastermind());
+    // console.log(mastermind());
+
+    // pas finit
+    function getTimeTraveling(km){
+        let walk = 5;
+        let bike = 20;
+        let carRoad = 90;
+        let car = 130;
+
+        let timeWalk = km/walk;
+        let timeBike = km/bike;
+        let timeCarRoad = km/carRoad;
+        let timeCar = km/car;
+
+        console.log("pieds: " + timeWalk);
+        console.log("vélo: " + timeBike);
+        console.log("voiture route: " + timeCarRoad);
+        console.log("voiture: " + timeCar);
+
+        let spliteTimeCarRoad = timeCarRoad + "";
+        spliteTimeCarRoad = spliteTimeCarRoad.split('.')[1];
+        lenghtSplitTimeCarRoad = spliteTimeCarRoad.length;
+        spliteTimeCarRoad = spliteTimeCarRoad / Math.pow(10, lenghtSplitTimeCarRoad);
+        console.log(spliteTimeCarRoad);
+        minutesTimeCarRoad = spliteTimeCarRoad/60*100;
+        console.log(minutesTimeCarRoad);
+
+
+        let msg = `A pied vous mettrez ${timeWalk}h pour faire ${km}km. En vélo vous mettrez ${timeBike}h pour faire ${km}km. En voiture sur route vous mettrez ${timeCarRoad} pour faire ${km}km. En voiture sur autoroute vous mettrez ${timeCar} pour faire ${km}km.`;
+
+        return msg;
+    }
+    console.log(getTimeTraveling(100));
 </script>
