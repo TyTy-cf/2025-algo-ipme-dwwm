@@ -151,23 +151,152 @@
 // console.log(isPangram("The quick brown fox jumps over the lazy dog."));
 
 
-// function getAlphabet() {
-//   return "abcdefghijklmnopqrstuvwxyz"
+function getAlphabet() {
+  return "abcdefghijklmnopqrstuvwxyz"
+}
+
+// function getRange(anArray) {
+  
+//   let max = "";
+//   let min = anArray[0];
+
+// for (let i = 0; i < anArray.length; i++) {
+  
+//   if (max < anArray[i]) {
+//     max = anArray[i]
+//   }
+
+//   if (min > anArray[i]) {
+//     min = anArray[i]
+//   }
+
+
 // }
 
-function getRange(anArray) {
+// return max - min;
+
+// }
+
+// console.log(getRange([15, 78, 45, 96, 12, 32, 65, 78, 91]));
+
+
+
+
+
+// function isPalindrome(str) {
   
-for () {
+// const test = str.length;
+
+// for (let i = 0; i < test; i++) {
   
+//   if (str[i] !== str[test - 1 - i]) {
+//     return false;
+//   }
+//     return true;
+ 
+// }
+
+// }
+
+// console.log(isPalindrome("julien"));
+
+// function isPalindrome(str) {
+//   return str === iverseWord;
+
+// }
+
+// function name(params) {
   
+//   const onePoint = ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T"]; 
+//   const twoPoint = ["D", "G"];
+//   const threePoint = ["B", "C", "M", "P"];
+//   const fourPoint = ["F", "H", "V", "W", "Y"];
+//   const fivePoint = ["K"];
+//   const eightPoint = ["J", "X"];
+//   const ninePoint = ["Q", "Z"];
+//   params = params.toUpperCase();
+//   let sum = 0;
+
+
+//   for (const element of params) {
+
+//     if (onePoint.includes(element)) {
+//       sum += 1;
+//     }
+
+//     if (twoPoint.includes(element)) {
+//       sum += 2;
+//     }
+
+//     if (threePoint.includes(element)) {
+//       sum += 3;
+//     }
+
+//     if (fourPoint.includes(element)) {
+//       sum += 4;
+//     }
+
+//     if (fivePoint.includes(element)) {
+//       sum += 5;
+//     }
+
+//     if (eightPoint.includes(element)) {
+//       sum += 8;
+//     }
+
+//     if (ninePoint.includes(element)) {
+//       sum += 9;
+//     }
+
+//   }
+// return sum;
+
+// }
+
+// console.log(name("voiture"));
+
+
+function changeSentences(sentences) {
+
+  const voyelles = "aeiouy";
+  let newSentences = "";
+  for (const element of sentences){
+
+  newSentences += element;
+
+  if (voyelles.includes(element)) {
+
+  }
+
+  }       
+  
+  return newSentences;
 }
 
+console.log(sentences("chat"));
 
 
 
-}
 
-console.log(getRange([15, 78, 45, 96, 12, 32, 65, 78, 91]));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
