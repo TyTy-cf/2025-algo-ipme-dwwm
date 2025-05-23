@@ -206,13 +206,13 @@
         const strCase = str.toLowerCase();
         const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
         const alphabetOfStr = [];
-      
+
         for (let i = 0; i < strCase.length; i++) {
           if (alphabet.includes(strCase[i]) && !alphabetOfStr.includes(strCase[i])) {
             alphabetOfStr.push(strCase[i]);
           }
         }
-        
+
         return alphabetOfStr.length === 26;
       }
 
@@ -233,7 +233,7 @@
               minValue = anArray[i];
             }
           }
-        
+
         return maxValue - minValue;
         }
 
@@ -247,7 +247,7 @@
         for (let i = str.length - 1; i >= 0; i--) {
           reverseWord += str[i];
         }
-        
+
         if (reverseWord === str) {
           return true;
         } else {
@@ -368,14 +368,40 @@
 
       /* EXERCICE 21 */
 
-      
+      function getGain(nbSubscribers) {
+        let income = nbSubscribers * 4.99;
+        let hostIncome;
+        let streamerIncome;
+
+        if (nbSubscribers < 100) {
+          hostIncome = income * 0.4;
+          streamerIncome = income - hostIncome;
+        } else if (nbSubscribers < 500) {
+          hostIncome = income * 0.25;
+          streamerIncome = income - hostIncome;
+        } else if (nbSubscribers < 1000) {
+          hostIncome = income * 0.15;
+          streamerIncome = income - hostIncome;
+        } else {
+          hostIncome = income * 0.05;
+          streamerIncome = income - hostIncome;
+        }
+
+        return `Avec ${nbSubscribers} abonnés, le streamer gagne ${streamerIncome.toFixed(2)}€ et le site ${hostIncome.toFixed(2)}€`
+      }
+
+      /* console.log(getGain(50));
+      console.log(getGain(200));
+      console.log(getGain(600));
+      console.log(getGain(1200)); */
+
+      /* EXERCICE 22 */
 
       /* ==================================================== */
 
       function getAlphabet() {
         return "abcdefghijklmnopqrstuvwxyz";
       }
-
     </script>
   </head>
   <body></body>
