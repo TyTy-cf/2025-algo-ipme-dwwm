@@ -1,18 +1,18 @@
 <script>
-    function randomRange(first, last) 
+    function randomRange(first, last)
     {
         return first + Math.floor(Math.random() * last);
     }
 
     function shuffle(array)
     {
-        for (let i = array.length - 1; i < 0; i--)
+        for (let i = array.length - 1; i > 0; i--)
         {
             let j = Math.floor(Math.random() * (i + 1));
 
-            let temp = array[i]; 
-            array[i] = array[j]; 
-            array[j] = t;
+            let temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
         }
     }
 
@@ -25,6 +25,38 @@
         {
             this.x = x;
             this.y = y;
+        }
+    }
+    class Boat
+    {
+        squares = [];
+        hasSunk = false;
+
+        hasSquare(squareToCheck)
+        {
+            this.squares.forEach(square => 
+            {
+                if (square == squareToCheck)
+                {
+                    console.log("has !");
+                    return true;
+                }
+            });
+            return false;
+        }
+
+        isDead()
+        {
+            console.log("test dead");
+            this.squares.forEach(square => 
+            {
+                if (!square.isHit)
+                {
+                    return false;
+                }
+            });
+            this.hasSunk = true;
+            return true;
         }
     }
     class Square
@@ -41,32 +73,32 @@
 
         toString()
         {
-            // if (!this.isHit)
-            // {
-            //     return "o";
-            // }
-            // else if (this.isBoat)
-            // {
-            //     return "ø";
-            // }
-            // else
-            // {
-            //     return "x";
-            // }
-
-            //Cheat boat pos (comment over)
-            if (this.isBoat)
-            {
-                return "ø";
-            }
-            else if (this.isHit)
-            {
-                return "x";
-            }
-            else
+            if (!this.isHit)
             {
                 return "o";
             }
+            else if (this.isBoat)
+            {
+                return "ø";
+            }
+            else
+            {
+                return "x";
+            }
+
+            //Cheat boat pos (comment over)
+            // if (this.isBoat)
+            // {
+            //     return "ø";
+            // }
+            // else if (this.isHit)
+            // {
+            //     return "x";
+            // }
+            // else
+            // {
+            //     return "o";
+            // }
         }
     }
 
@@ -94,36 +126,80 @@
 
         attack(x,y)
         {
+            if ((this.squares[x][y]).isHit)
+            {
+                return "Raté ! Vous avez déjà attaqué cette zone !"
+            }
             (this.squares[x][y]).isHit = true;
+            if ((this.squares[x][y]).isBoat)
+            {
+                return "Touché !";
+            }
+            else
+            {
+                return "Raté !"
+            }
         }
 
         display()
         {
-            console.log("0 a b c d e f g h i j");
+            console.log("0  a  b  c  d  e  f  g  h  i  j");
             for (let i = 0; i < this.size; i++)
             {
-                let str = (i + 1)%10 + " ";
+                let str = (i + 1)%10 + "  ";
                 for (let j = 0; j < this.size; j++)
                 {
-                    str += this.squares[i][j].toString() + " ";
+                    str += this.squares[i][j].toString() + "  ";
                 }
                 console.log(str);
             }
         }
     }
 
-    class Game 
+    class Game
     {
         grid;
-        constructor(sizeGrid) 
+        turnLeft;
+        sizeGrid;
+        str = "";
+        historic = [];
+        boats = [];
+
+        constructor(sizeGrid)
         {
             this.grid = new Grid(sizeGrid);
             this.setBoats(sizeGrid);
+            this.sizeGrid = sizeGrid;
+            this.turnLeft = 50;
         }
 
         gameloop()
+        {        
+            do {
+                this.draw();
+                console.log(this.boats);
+                console.log(this.historic);
+                console.log(this.str);
+                console.log("Tour restants : " + this.turnLeft);
+                this.str = this.attack(prompt("Choisir la case (ex a3)"))
+                this.turnLeft--;
+                prompt();//To test turn
+            } while (this.turnLeft > 0 && this.isGameWon() === false);
+        }
+
+        isGameWon()
         {
-            this.draw();
+            for (let i = 0; i < this.sizeGrid; i++)
+            {
+                for (let j = 0; j < this.sizeGrid; j++)
+                {
+                    if (this.grid.squares[i][j].isBoat && this.grid.squares[i][j].isHit === false)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
 
         setBoats(sizeGrid)
@@ -131,16 +207,17 @@
             const boatSizes = [5,4,3,3,2];
             for (let i = 0; i < boatSizes.length; i++)
             {
-                console.log("test boat " + i);
+                //console.log("test boat " + i);
                 let x = randomRange(0, sizeGrid-1);
                 let y = randomRange(0, sizeGrid-1);
-                
+
                 let directionOrder = [0,1,2,3];
                 shuffle(directionOrder);
+                //console.log(directionOrder);
                 let boatCreated = false;
                 for (let j = 0; j < directionOrder.length; j++)
                 {
-                    console.log("test direction" + j);
+                    //console.log("test direction" + directionOrder[j]);
                     boatCreated = this.createBoat(x, y, directionOrder[j], boatSizes[i], sizeGrid);
                     if (boatCreated)
                     {
@@ -156,52 +233,105 @@
 
         createBoat(x, y, dir, sizeBoat, sizeGrid)
         {
-            let factor;
             if (dir === 0 || dir === 1)
             {
-                factor = (dir == 0)? 1:-1;
-                if (x + (sizeBoat * factor) < 0 || x + (sizeBoat * factor) >= sizeGrid) //Si ca déborde
+                if (dir === 0)
                 {
-                    return false;
-                }
-                else//BUG BOUCLE INFINIE A CORRIGER
-                {
-                    for (let i = x; i < x + sizeBoat * factor; i += factor)
+                    if (x + sizeBoat >= sizeGrid) //Si ca déborde
+                    {
+                        return false;
+                    }
+                    for (let i = x; i < x + sizeBoat; i++)
                     {
                         if (this.grid.squares[i][y].isBoat)
                         {
                             return false;
                         }
                     }
-                    for (let i = x; i < x + sizeBoat * factor; i += factor)
+                    let boat = new Boat();
+                    for (let i = x; i < x + sizeBoat; i++)
                     {
                         this.grid.squares[i][y].isBoat = true;
+                        boat.squares.push(this.grid.squares[i][y]);
+                        //console.log("x :" + i);
+                        //console.log("y :" + y);
                     }
+                    this.boats.push(boat);
+                }
+                else
+                {
+                    if (x - sizeBoat < 0) //Si ca déborde
+                    {
+                        return false;
+                    }
+                    for (let i = x; i > x - sizeBoat; i--)
+                    {
+                        if (this.grid.squares[i][y].isBoat)
+                        {
+                            return false;
+                        }
+                    }
+                    let boat = new Boat();
+                    for (let i = x; i > x - sizeBoat; i--)
+                    {
+                        this.grid.squares[i][y].isBoat = true;
+                        boat.squares.push(this.grid.squares[i][y]);
+                        //console.log("x :" + i);
+                        //console.log("y :" + y);
+                    }
+                    this.boats.push(boat);
                 }
             }
             else
             {
-                factor = (dir == 2)? 1:-1;
-                if (y + (sizeBoat * factor) < 0 || y + (sizeBoat * factor) >= sizeGrid) //Si ca déborde
+                if (dir === 2)
                 {
-                    return false;
-                }
-                else
-                {
-                    for (let i = y; i < y + sizeBoat * factor; i += factor)
+                    if (y + sizeBoat >= sizeGrid) //Si ca déborde
+                    {
+                        return false;
+                    }
+                    for (let i = y; i < y + sizeBoat; i++)
                     {
                         if (this.grid.squares[x][i].isBoat)
                         {
                             return false;
                         }
                     }
-                    for (let i = y; i < y + sizeBoat * factor; i += factor)
+                    let boat = new Boat();
+                    for (let i = y; i < y + sizeBoat; i++)
                     {
                         this.grid.squares[x][i].isBoat = true;
+                        boat.squares.push(this.grid.squares[x][i]);
+                        //console.log("x :" + x);
+                        //console.log("y :" + i);
                     }
+                    this.boats.push(boat);
+                }
+                else
+                {
+                    if (y - sizeBoat < 0) //Si ca déborde
+                    {
+                        return false;
+                    }
+                    for (let i = y; i > y - sizeBoat; i--)
+                    {
+                        if (this.grid.squares[x][i].isBoat)
+                        {
+                            return false;
+                        }
+                    }
+                    let boat = new Boat();
+                    for (let i = y; i > y - sizeBoat; i--)
+                    {
+                        this.grid.squares[x][i].isBoat = true;
+                        boat.squares.push(this.grid.squares[x][i]);
+                        //console.log("x :" + x);
+                        //console.log("y :" + i);
+                    }
+                    this.boats.push(boat);
                 }
             }
-            
+            //console.log("bateau " + sizeBoat + "cree");
             return true;
         }
 
@@ -209,21 +339,33 @@
         attack(strAttack)
         {
             let str = strAttack.toLowerCase();
-            let xIndex = str.charCodeAt(0) - "a".charCodeAt(0);
-            let yIndex = (str[1]-1)%10;
-            console.log(xIndex + " " + yIndex);
-            this.grid.attack(xIndex, yIndex);
+            this.historic.push(str);
+            let yIndex = str.charCodeAt(0) - "a".charCodeAt(0);
+            let xIndex = str.substring(1) - 1;
+            //console.log(xIndex + " " + yIndex);
+            let attackResult = "";
+            let index = -1;
+            attackResult += this.grid.attack(xIndex, yIndex);
+            this.boats.forEach(boat => 
+            {
+                if (boat.hasSquare(this.grid.squares[xIndex][yIndex]))
+                {
+                    if (boat.isDead())
+                    {
+                        attackResult += " Coulé !";
+                    }
+                }
+            });
+            return attackResult;
         }
 
         draw()
         {
-            //console.clear()
+            console.clear()
             this.grid.display();
         }
     }
 
     let game = new Game(10);
     game.gameloop();
-
-
 </script>
