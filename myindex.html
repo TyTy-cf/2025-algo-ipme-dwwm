@@ -397,11 +397,31 @@
 
       /* EXERCICE 22 */
 
+      function displayHoursByTime(time) {
+        let hours = Math.round(time / 3600);
+        let minutes = Math.round((time % 3600) / 60);
+
+        if (hours < 10 && minutes < 10) {
+          return `0${hours}h0${minutes}`;
+        } else if (hours < 10) {
+          return `0${hours}h${minutes}`;
+        } else if (minutes < 10) {
+          return `${hours}h0${minutes}`;
+        }
+        return `${hours}h${minutes}`;
+      }
+
+      /* console.log(displayHoursByTime(8400));
+      console.log(displayHoursByTime(7400));
+      console.log(displayHoursByTime(90300));
+      console.log(displayHoursByTime(43920)); */
+
       /* ==================================================== */
 
       function getAlphabet() {
         return "abcdefghijklmnopqrstuvwxyz";
       }
+
     </script>
   </head>
   <body></body>
