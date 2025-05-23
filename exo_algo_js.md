@@ -419,7 +419,7 @@ Tableau de réponse affiché : [x, x, x, 1]
 Une fois le tableau de réponse affiché, on redemande à l'utilisateur de saisir à nouveau 4 chiffres, et ce un maximum de 9 fois.
 Au bout des 9 fois, si l'utilisateur a trouvé les entiers, alors on lui dit qu'il a gagné, sinon qu'il a perdu.
 
-### 25. Temps de voyage
+### 26. Temps de voyage
 
 ```
 - Nom de la fonction : "getTimeTraveling"
