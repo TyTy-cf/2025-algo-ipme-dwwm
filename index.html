@@ -359,10 +359,10 @@
         console.log("Le site de streaming empoche " + streamingWebSiteGain + "€ et le streamer empoche " + (gain - streamingWebSiteGain) + "€");
     }
 
-    getGain(80);
-    getGain(300);
-    getGain(800);
-    getGain(2000);
+    // getGain(80);
+    // getGain(300);
+    // getGain(800);
+    // getGain(2000);
 
     function getLettersBy(str) {
         const vowels = "aeiouy";
@@ -381,6 +381,65 @@
         return "Le mot " + str + " contient " + vowelsCount + " voyelles et " + consonantCount + " consonnes";
     }
 
-    console.log(getLettersBy("Dobry wieczor"));
+    // console.log(getLettersBy("Dobry wieczor"));
+
+    function mastermind(maxNumber = 5) {
+        // Génère aléatoirement un tableau de 4 entier allant de 1 à 5
+        const toFind = [];
+        for (let i = 0; i < 4; i++) {
+            toFind.push(getRandomByRange(maxNumber));
+        }
+
+        let j = 0;
+        let isWinning = false;
+        while (j < maxNumber && !isWinning) {
+            console.log("Coup n°" + (j + 1) + "/" + maxNumber);
+            // Génère le tableau de saisie des réponses utilisateur
+            const userFind = [];
+            for (let i = 0; i < 4;) {
+                const int = parseInt(prompt("Saisir le chiffre n°" + (i + 1)));
+                // Ce test assure que l'utilisateur ai bien saisie un chiffre valide
+                if (int >= 1 && int <= 5) {
+                    userFind.push(int);
+                    // Le fait de mettre le "i" ici assure que l'on ai bien 4 chiffres valides
+                    i++;
+                }
+            }
+
+            // Génère le tableau de comparaison des réponses
+            const result = [];
+            // Est-ce qu'il a gagné ?
+            let winner = 0;
+            for (const key in userFind) {
+                // Par défaut à "X"
+                result[key] = 'X';
+                // Si c'est identique on met la valeur au lieu du X
+                if (userFind[key] === toFind[key]) {
+                    result[key] = toFind[key];
+                    // On incrémente notre compteur de victoire
+                    winner++;
+                }
+            }
+            console.log(result);
+            // Si le compteur de victoire est à 4, alors il a trouvé les 4 chiffres
+            if (winner === 4) {
+                console.log("Vous avez gagné !");
+                // Permet d'arrêter la boucle
+                isWinning = true;
+            }
+            j++;
+        }
+
+        if (!isWinning) {
+            console.log("C'est la loose !")
+        }
+
+    }
+
+    mastermind();
+
+    function getRandomByRange(range) {
+        return Math.floor(Math.random() * range) + 1;
+    }
 
 </script>
