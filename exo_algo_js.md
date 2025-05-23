@@ -431,3 +431,29 @@ Tableau de réponse affiché : [x, x, x, 1]
 
 Une fois le tableau de réponse affiché, on redemande à l'utilisateur de saisir à nouveau 4 chiffres, et ce un maximum de 9 fois.
 Au bout des 9 fois, si l'utilisateur a trouvé les entiers, alors on lui dit qu'il a gagné, sinon qu'il a perdu.
+
+### 26. Temps de voyage
+
+```
+- Nom de la fonction : "getTimeTraveling"
+- Paramètres :
+    - "km", le nombre de kilomètre à parcourir
+- Retour : une chaine de caractère indiquant le temps de parcours
+```
+
+La fonction calcule pour chaque mode de locomotion de "base" le temps estimé pour réaliser le trajet.
+On admet que :
+- À pied on fait du 5km/h
+- En vélo on fait du 20km/h
+- En voiture sur route on fait du 90km/h
+- En voiture sur autoroute on fait du 130km/h
+
+Exemple :
+```
+- Paramètre "km" : 100
+- En retour :
+"- À pied vous mettrez 20h pour faire 100km
+- En vélo vous mettrez 5h pour faire 100km
+- En voiture sur route vous mettrez 1h18 pour faire 100km
+- En voiture sur autoroute vous mettrez 0h45 pour faire 100km
+```
