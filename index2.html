@@ -439,6 +439,48 @@
       console.log("Le score du mot est : " + getScrabbleScore("cat"));
       console.log("Le score du mot est : " + getScrabbleScore("zorro"));
 
+
+      // 1. créer une fonction qui retourne l'alphabet
+      // 2. la fonction doit prendre en paramètre un entier
+      // 3. la fonction doit retourner l'alphabet à partir de l'entier
+      // 4. la fonction doit utiliser une boucle for pour parcourir l'alphabet
+      // 5. la fonction doit utiliser une variable temporaire pour stocker l'alphabet
+      // function getAlphabet() {
+      //   // créer une variable temporaire pour stocker l'alphabet
+      //   let alphabet = "";
+      //   // parcourir l'alphabet
+      //   for (let i = 65; i <= 90; i++) {
+      //     // ajouter chaque lettre à la variable temporaire
+      //     alphabet += String.fromCharCode(i);
+      //   }
+      //   // retourner l'alphabet
+      //   return alphabet;
+      // }
+      // // appeler la fonction
+      // console.log(getAlphabet());
+
+
+          function getAlphabet() {
+            // créer une variable temporaire pour stocker l'alphabet
+            // let alphabet = "";
+            // // parcourir l'alphabet
+            // for (let i = 65; i <= 90; i++) {
+            //   // ajouter chaque lettre à la variable temporaire
+            //   alphabet += String.fromCharCode(i);
+            // }
+
+            const alphabet = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
+            // returns ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+            // retourner l'alphabet
+            return alphabet;
+          }
+          // appeler la fonction
+          console.log(getAlphabet());
+
+
+
+
+
       // exercice 19 cesar
       // créer une fonction qui chiffre un message avec le chiffre de César
       // 1. créer une fonction qui prend en paramètre un message et un décalage selon l'alphabet
@@ -448,11 +490,12 @@
         let encrypt = "";
 
         // créer un tableau de l'alphabet
-        const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+        // const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+        const alphabet = getAlphabet();
 
         for (let i = 0; i < str.length; i++) {
             // trouver l'index de la lettre dans l'alphabet
-            let index = alphabet.indexOf(str[i].toUpperCase());
+            let index = alphabet.indexOf(str[i]);
             // ajouter le décalage à l'index
             index = (index + gap) % 26;
             // index = (index + gap) % alphabet.length;
@@ -467,11 +510,12 @@
       function decrypt(str, gap) {
         let decrypt = "";
 
-        const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+        const alphabet = getAlphabet();
+        // const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
           for (let i = 0; i < str.length; i++) {
             // trouver l'index de la lettre dans l'alphabet
-            let index = alphabet.indexOf(str[i].toUpperCase());
+            let index = alphabet.indexOf(str[i]);
             // enlever le décalage à l'index
             index = (index - gap + alphabet.length) % alphabet.length;
 
@@ -480,7 +524,7 @@
         }
         return decrypt;
       }
-      console.log(decrypt("chat", 3));
+      console.log(decrypt("fkdw", 3));
     </script>
   </body>
 </html>
