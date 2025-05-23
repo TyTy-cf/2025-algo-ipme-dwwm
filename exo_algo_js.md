@@ -457,3 +457,59 @@ Exemple :
 - En voiture sur route vous mettrez 1h18 pour faire 100km
 - En voiture sur autoroute vous mettrez 0h45 pour faire 100km
 ```
+
+### 27. Toujours plus...
+
+```
+- Nom de la fonction : "isAnagram"
+- Paramètres :
+    - "str1", une chaine de caractères
+    - "str2", une chaine de caractères
+- Retour : un booléan
+```
+
+Deux mots sont des anagrammes s'ils possèdent les mêmes lettres, mais pas forcément dans le même ordre
+
+Exemple :
+```
+- Paramètres "str1", "mot"
+- Paramètres "str2", "tom"
+- Retour : true
+```
+
+### 28. Mot le plus long...
+
+```
+- Nom de la fonction : "getLongestWord"
+- Paramètres :
+    - "str", une chaine de caractères
+- Retour : une chaine de caractères
+```
+
+La fonction renvoie le mot le plus long de la phrase "str"
+
+Exemple :
+```
+- Paramètres "str", "The quick brown fox jumps over the lazy dog."
+- Retour : quick (5)
+```
+
+Aller plus loin... Cette fois si la phrase contient plusieurs mots ayant la longueur max, alors on affiche tous les mots ?
+
+
+### 29. Compresser
+
+```
+- Nom de la fonction : "compressed"
+- Paramètres :
+    - "str", une chaine de caractères
+- Retour : une chaine de caractères
+```
+
+La fonction doit afficher chaque lettre du mot, suivi de son nombre d'occurence
+
+Exemple :
+```
+- Paramètres "str", "aaabbc"
+- Retour : "a3b2c1"
+```
