@@ -95,11 +95,18 @@
       /* EXERCICE 7 */
 
       function displayVowels() {
-        let vowels = ["a", "e", "i", "o", "u", "y"];
-        console.log(vowels);
+        const vowels = ["a", "e", "i", "o", "u", "y"];
+        return vowels;
       }
 
-      // displayVowels();
+      // console.log(displayVowels());
+
+      function displayConsonant() {
+        const consonant = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "z"];
+        return consonant;
+      }
+
+      // console.log(displayConsonant());
 
       /* EXERCICE 8 */
 
@@ -415,6 +422,28 @@
       console.log(displayHoursByTime(7400));
       console.log(displayHoursByTime(90300));
       console.log(displayHoursByTime(43920)); */
+
+      /* EXERCICE 23 */
+
+      function getLettersBy(str) {
+        const vowels = displayVowels();
+        const consonant = displayConsonant();
+        const strCase = str.toLowerCase();
+        let vowelsCounter = 0;
+        let consonantCounter = 0;
+
+        for (char of strCase) {
+          if (vowels.includes(char)) {
+            vowelsCounter++;
+          } else if (consonant.includes(char)) {
+            consonantCounter++;
+          }
+        }
+
+        return `Il y a ${vowelsCounter} voyelles et ${consonantCounter} consonnes dans la chaine de caractères ${str}`
+      }
+
+      // console.log(getLettersBy("Dobry wieczor"));
 
       /* ==================================================== */
 
