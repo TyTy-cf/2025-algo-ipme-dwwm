@@ -436,9 +436,37 @@
 
     }
 
-    mastermind();
+    // mastermind();
 
     function getRandomByRange(range) {
         return Math.floor(Math.random() * range) + 1;
     }
+
+    function isAnagram(str1, str2) {
+        str1 = str1.trim();
+        str2 = str2.trim();
+
+        if (str1.length !== str2.length) {
+            return false;
+        }
+
+        // On génère une chaine contenant une seule fois les lettres existantes dans str1
+        let lettersExistingStr1 = "";
+        for (const lettersStr1 of str1) {
+            if (!lettersExistingStr1.includes(lettersStr1)) {
+                lettersExistingStr1 += lettersStr1;
+            }
+        }
+
+
+        for (const lettersStr2 of str2) {
+            if (!lettersExistingStr1.includes(lettersStr2)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    console.log(isAnagram("marie", "aimer"));
 </script>
