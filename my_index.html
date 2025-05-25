@@ -89,10 +89,10 @@ console.log(inverseWord("batman"));
 
    <!-- exo 13 -->
     <!-- <script>
-        function excerpt(str, from) {
+        function excerpt(str, from=15) {
          if(str.length> 15){
           
-        return   str.substr(0,15)+"...";
+           str = str.substr(0,15)+"...";
         
            }
         return str;
@@ -181,17 +181,376 @@ console.log(inverseWord("batman"));
 
   <!-- exo 18 -->
 
-  <script>
+  <!-- <script>
     function changeSentences(sentenses) {
        
        const voyelles ='aeiouy';
-    let newSentenses = '';
-        for(i = 0; i<sentenses.length; i++) {
-            if(voyelles.includes(str[i])){
-                newSentenses = sentenses.voyelles[i] + 'fe" +voyelles[i];
+       let newSentenses = '';
+        for(const strLetter of str) {
+            if(voyelles.includes(strLetter)){
+                newSentenses += 'fe' + strLetter;
             } 
         }
         return newSentenses;
     }
     console.log(changeSentences('aller'));
-  </script>
+  </script> -->
+
+<!-- revision -->
+  <!-- exo 1 -->
+
+   <!-- <script>
+function predictFuture() {
+    let hours = prompt("donne moi une heure");
+    let minutes = prompt("donne moi les minutes");
+    hours = parseInt(heure);
+    minutes = parseInt(minutes);
+    minutes++;
+
+    if(minutes === 60) {
+        hours ++;
+        minutes = 0;
+    
+    if(hours === 24) {
+        hours = 0;
+    }
+}
+    return hours
+    if (minutes<10) {
+        minutes = 0 + minutes; 
+        //  a revoir
+    }
+
+
+}
+console.log("Dans 1min il va etre" + hours + "h" + minutes );
+   </script> -->
+
+   <!-- exo 2 -->
+<!-- <script>
+    function calculPriceBy(copy) {
+            let price= 0.11;
+                  
+            if(copy >= 100){
+                price=0.08;
+            }
+            else if(copy >= 50) {
+                price = 0.09;
+            }
+           else if(copy>= 10){
+                price = 0.1;
+            }          
+
+        
+return price*copy;
+    }
+    console.log(calculPriceBy("60"));
+
+</script> -->
+
+<!-- exo 3 -->
+
+<!-- <script>
+    function getAge(year) {
+     const currentYear = new Date().getFullYear() ;
+     return currentYear - year;
+        }   
+     console.log("vous avez :" +" " + getAge(1990) +" "+ "ans");
+    
+</script> -->
+
+<!-- exo 4 -->
+ <!-- <Script>
+
+    function countUpToTen(startFrom) {
+        
+        for(let i = startFrom ; i <= (startFrom + 10); i++) {
+          console.log(i);
+        }
+          }
+    console.log(countUpToTen(17));
+
+ </Script> -->
+
+ <!-- exo 5 -->
+  <!-- <script>
+    function displayMultiPlay(digit) {
+        for(i=1; i<=12; i++) {
+            console.log(i + "x" + digit + "=" + (digit*i))
+        }
+    }
+console.log(displayMultiPlay(3))
+  </script> -->
+  <!-- exo 6 -->
+   <!-- <script>
+    function addUpTo(max) {
+        let sum = 0;
+        let i=1;
+        let sumDetails = i;
+        for(i; i<=max; i++) {
+          
+            if(i!== 1) {
+         sumDetails += ' + ' + i;  
+
+            }
+            sum += i;
+
+        }
+        // sumDetails += ' = ' + sum;
+        console.log(sumDetails);
+        return sum;
+    }
+    // const sum = addUpTo(8);
+    console.log(addUpTo(8));
+   </script> -->
+   <!-- exo 7 -->
+    <!-- <script>
+        function displayVowels() {
+            return ['a','i','o','u','e','y']; **** on peut afficher un tableau sans le diclerer et faire une boucle.
+            
+        }
+        console.log(displayVowels())
+    </script> -->
+
+    <!-- exo 8 -->
+     <!-- <script>
+        function getAverage(grades) {
+            let sum = 0;
+            const sizeArray = grades.length;
+            for(let i = 0; i< sizeArray; i++) {
+             sum += grades[i];
+            }
+            return sum/sizeArray;
+            // return parseFloat((sum/sizeArray).toFixed(2));***** pour arrendir le chiffre decimal a 2 chiffres apres la virgule.
+        }
+        console.log(getAverage([14, 16, 17, 13, 18, 2, 14 ]));
+     </script> -->
+
+     <!-- exo 9 -->
+      <!-- <script>
+
+    //     function addArray(first, second) {
+
+    //         const sizeFirst = first.length;
+    //         const sizeSecond = second.length;
+    //         const newArray = [];
+    //         // if(sizeFirst === sizeSecond) {
+
+    //         for(let i = 0; i< sizeFirst; i++) {
+    //            newArray.push(first[i] + second[i]);
+    //                 ***PUSH POUR AJOUTER DES ELEMENTS A UN TABLEAU
+    //         // }
+    //     }
+    //         return newArray;
+    //     }
+        
+    //     console.log(addArray([1, 2, 3], [1, 8, 6]));
+    //   </script> -->
+
+    <!-- EXO 10 -->
+     <!-- <script>
+        function removeDuplicate(array) {
+            const noDuplicate = [];
+            
+            for(let i = 0; i< array.length; i++) {
+                const element = array[i];
+                if(noDuplicate.indexOf(element) === -1) {
+
+                noDuplicate.push(element)
+                }
+            }
+            return noDuplicate;
+        }
+        console.log(removeDuplicate([1, 1, 1, 1, 2]))
+     </script> -->
+
+     <!-- exo 11 -->
+      <!-- <script>
+
+        function inverseWord(str) {
+            let invers = '';
+            for(let i=(str.length)-1 ; i >= 0 ; i--) {
+              invers += str [i];
+
+            }
+            return invers;
+        }
+        console.log(inverseWord("espion"));
+      </script> -->
+
+      <!-- exo 12 -->
+       <!-- <script>
+        function isSecuredPassword(password) {
+           
+                if(password.includes('@')|| password.includes('!') && password.length >= 9) {
+                     return true;
+                }
+                return false;
+
+            }
+            
+                 
+        console.log(isSecuredPassword("hjaheyujfnnfn@"))
+
+       </script> -->
+
+       <!-- exo 13 -->
+
+        <!-- <script>
+            function excerpt(str, from = 15) {
+                let newSentenses = '';
+                for(i = 0; i< str.length; i++) {
+                   newSentenses = str.substr(0, from) + '...';
+            }
+                return newSentenses;
+            }
+            console.log(excerpt("gzhekjehifrujbeheu"))
+
+        </script>
+
+        MA VERSION A MOI AVEC BOUCLE ET TABLEAU -->
+
+        <!-- <script>
+            function excerpt(str, from=15) {
+               
+                if(str.length > from) {
+                  str= str.substr(0, 15)+'...';
+                }
+                return str;
+            }
+            console.log(excerpt('je suis la bien venu chez moi!'))
+        </script> -->
+
+        <!-- exo 14 -->
+         <!-- <script>
+            function isPangram(str) {
+
+            
+                const alphabet= getAlphabet();
+                 str =str.toLowerCase();
+                let existingLetters ='';
+
+                for(const letter of str){
+                    if (alphabet.includes(letter) && !existingLetters.includes(letter)) {
+                    existingLetters += letter;
+                }
+            }
+         return existingLetters.length === alphabet.length;
+
+            }
+            function getAlphabet() {
+                return 'abcdefghijklmnopqrstuvwxyz';
+            }
+            console.log(isPangram('montagsyhf'))
+         </script> -->
+
+         <!-- EXO 15 -->
+
+          <!-- <SCript>
+            function getRange(anArray) {
+
+                if(anArray.length === 0){return 0}
+                let min =anArray[0];
+                let max=anArray[0];
+                // for(let i=0; i< anArray.length; i++) {
+                //     if(anArray[i] > max){
+                //         max= anArray[i];
+                //     }
+                //     if(anArray[i] <min) {
+                //        min = anArray[i] ;
+                //     }
+                for(const element of anArray) {
+                    if(max< element){
+                        max= element
+                    }
+                    if(min> element) {
+                        min=element;
+                    }
+                }
+              return max-min;  
+                }
+                
+         console.log(getRange([2, 5, 6, 8, 4]))
+         console.log(getRange([1]))
+          </SCript>
+
+          exo 16 -->
+           <!-- <script>
+            function isPalindrome(str) {
+             
+               return str === inverseWord(str); 
+                }
+               function inverseWord(str) {
+            let invers = '';
+            for(let i=(str.length)-1 ; i >= 0 ; i--) {
+              invers += str [i];
+
+            }
+            return invers;
+        }            
+             
+            console.log(isPalindrome('toto'));
+            console.log(isPalindrome('kayak'));
+           </script> -->
+           <!-- exo 17 -->
+
+            <!-- <script>
+                function getScrabbleScore(str) {
+                    const firstpoint ='aeioulnrst';
+                    str = str.toLowerCase();
+                    let sum = 0;
+
+                    for(const element of str) {
+                        if(firstpoint.includes(element)){
+                            sum += 1;
+                        }
+                    }
+                    return sum;
+
+                }
+                console.log(getScrabbleScore('aminacoly'));
+            </script>
+             JAI ESSAYE QUE UNE CATEGORIE -->
+             <!-- EXO 18 -->
+
+             <!-- <SCript>
+            function changeSentences(sentences) {
+                const vowels= 'aeiouy';
+                let newSentences = '';
+               
+                for(const element of sentences ) {
+                  
+                    if(vowels.includes(element)){
+                       
+                        newSentences += element +'fe' + element;
+                    }
+                    else {
+                        newSentences += element;
+                    }
+                    
+                }
+                return newSentences;
+            }
+            console.log(changeSentences('chat'));
+             </SCript> --> 
+             <!-- MA METHODE A MOI 
+
+             <SCript>
+                function changeSentences(str) {
+
+                    const vowels = 'aeiouy';
+                    let newStr = '';
+                    for( const strLetter of str) {
+                        newStr += strLetter;
+                        if(vowels.includes(strLetter)){
+                            newStr += 'fe' + strLetter;
+                        }                       
+
+                    }
+                    return newStr;
+                }
+                console.log(changeSentences('chat'))
+
+             </SCript> -->
+
+             <!-- exo 19 -->
