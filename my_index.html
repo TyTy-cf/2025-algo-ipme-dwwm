@@ -554,3 +554,142 @@ console.log(displayMultiPlay(3))
              </SCript> -->
 
              <!-- exo 19 -->
+              <!-- <script>
+
+                function encrypt(str, gap, mode=1) {
+
+                    const alphabet = getAlphabet();
+                    const size = alphabet.length;
+                    let newStr = '';
+                    srt = str.toLowerCase();
+
+                    for( const element of str) {
+                       
+                        
+                       let index = (( alphabet.indexOf(element)) + gap * mode + size) % size;
+
+                            newStr += alphabet[index] ;
+                        
+
+                       
+
+                    }
+                     return newStr;
+                   
+
+
+                }
+                console.log(encrypt('chat',3))
+                function getAlphabet() {
+                    return 'abcdefghijklmnopqrstuvwxyz'
+
+                }
+              </script>
+               <script>
+                
+                function decrypt(str, gap, mode=-1) {
+
+                    const alphabet = getAlphabet();
+                    const size = alphabet.length;
+                    let newStr = '';
+                    srt = str.toLowerCase();
+
+                    for( const element of str) {
+                       
+                        
+                       let index = (( alphabet.indexOf(element)) + gap * mode + size) % size;
+
+                            newStr += alphabet[index] ;
+                        
+
+                       
+
+                    }
+                     return newStr;
+                   
+
+
+                }
+                console.log(decrypt('fkdw',3))
+                function getAlphabet() {
+                    return 'abcdefghijklmnopqrstuvwxyz'
+
+                }
+              </script> -->
+
+              <!-- exo 20
+               <script>
+                function calculatHypotenuse(h, w) {
+                   
+                    h = parseFloat(h);
+                   
+                    w= parseFloat(w);
+                    //  hypotenus = Math.sqrt(Math.pow(h, 2)+Math.pow(w, 2)).toFixed(2) ;
+                  
+                   
+                  return hypotenus;
+                }
+                console.log(calculatHypotenuse(1.2, 0.4));
+               </script>
+                ou: simplement:
+                    hypotenus=Math.sqrt(h*h+w*w)
+
+                exo 21    pas complet
+
+                 <script>
+                    function getGain(nbSubscribers) {
+                        let gain = nbSubscribers*4.99;
+                        let gainChain= 0;
+                        if(nbSubscribers>=1000){
+                            gainChain= ( gain*0.05)
+                        }
+
+return gainChain;
+
+                    }
+                 </script> -->
+ <!-- exo 22 -->
+     <script>
+         function displayHoursByTime(time) {
+
+            let h = Math.floor(time/3600);
+            let m = Math.floor((time%3600)/60);
+                                              
+                if(m < 10){
+                      m= '0'+ m;
+                        
+             }
+
+                if(h<10){
+                     h = '0'+ h;
+            }             
+                        
+
+                        
+         return 'il est'+ ' ' + h + 'h' + m;
+     }
+
+    console.log(displayHoursByTime(4500));
+
+     </script>
+<!-- EXO 23 -->
+ <script>
+    function getLettersBy(str) {
+    const vowels = 'aeiouy';
+    const consonnes = 'bcdfghjklmnpqrstvwxz';
+    str = str.toLowerCase();
+    size = str.length;
+    let nbVowels  = 0;
+    let nbConsonnes = 0;
+    for(const element of str) {
+     if(vowels.includes(element)) {
+        nbVowels++;
+     }
+      if(consonnes.includes(element)) {
+        nbConsonnes++;
+      }
+    }
+    return 'il y a ' + nbVowels + ' ' + ' Voyelles et' +' '+ nbConsonnes + ' consonnes dans la chaine de caracteres' + ' ' + str + '.';
+    }
+    console.log(getLettersBy('"Dobry wieczor"'))
+ </script>
