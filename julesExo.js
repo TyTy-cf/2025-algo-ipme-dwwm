@@ -311,7 +311,7 @@ function changeSentences(sentences) {
     return str;
 }
 
-// const resultat = changeSentences("chat");
+// resultat = changeSentences("le petit chat");
 // console.log(resultat);
 
 //19
@@ -335,7 +335,7 @@ function encrypt(str, gap) {
     return newStr;
 }
 
-// const strCrypt = encrypt("chat chat", 3);
+// const strCrypt = encrypt("kiwi est trop chou", 3);
 // console.log(strCrypt);
 
 function decrypt(str, gap) {
@@ -357,5 +357,5 @@ function decrypt(str, gap) {
     return newStr;
 }
 
-// const strDecrypt = decrypt("fkdw fkdw", 3);
-// console.log(strDecrypt);
+const strDecrypt = decrypt("nlzl hvw wurs fkrx", 3);
+console.log(strDecrypt);
